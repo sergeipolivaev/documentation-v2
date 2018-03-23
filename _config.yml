@@ -6,6 +6,10 @@ url: /
 # link to github repo
 github_editme_path: https://github.com/votor/documentation/tree/master/
 
+#feedback_email: ilytkin88@gmail.com
+#feedback_subject_line: feedback subject line
+feedback_disable: true
+
 image_path: docs/images/
 port: 4000
 highlighter: rouge
