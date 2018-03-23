@@ -1,0 +1,75 @@
+sidebarTitle: Документация платформы Эвотор
+owner: tomjohnson1492
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+- title: Начало
+  folderitems:
+  - title: Описание бизнеса
+    url: /index.html
+
+  - title: Описание инфраструктуры
+    url: /sample1.html
+
+- title: Разработка
+  folderitems:
+  - title: Введение
+    url: /index.html
+
+    subfolders:
+    - title: Работа с облаком
+      subfolderitems:
+
+      - title: Авторизация
+        url: /sublevel1.html
+
+      - title: Ошибки
+        url: /sublevel2.html
+
+      - title: Sublevel 3
+        url: /sublevel3.html
+
+        subsubfolders:
+        - title: Third level deep
+          subsubfolderitems:
+
+          - title: Sub-sublevel 1
+            url: /subsublevel1.html
+
+          - title: Sub-sublevel 2
+            url: /subsublevel2.html
+
+          - title: Sub-sublevel 3
+            url: /subsublevel3.html
+
+  - title: Java SDK
+    url: /java_introduction.html
+
+  - title: React Native
+    url: /rn_introduction.html
+
+- title: Распространение
+  folderitems:
+  - title: Биллинг
+    url: /index.html
+
+  - title: Хуиллинг
+    url: /sample1.html
+
+- title: FAQ
+  folderitems:
+  - title: Часто задаваемые вопросы
+    url: /index.html
+
+###########################
+
+related_resources_title: Other Resources
+
+related_resources_list:
+
+- title: Jekyll
+  url: http://jekyllrb.com
+
+- title: Github
+  url: http://github.com

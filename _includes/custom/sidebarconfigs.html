@@ -1,0 +1,12 @@
+{% if page.sidebar == "evomain" %}
+{% assign sidebar = site.data.sidebars.evomain.entries %}
+
+{% elsif page.sidebar == "evojava" %}
+{% assign sidebar = site.data.sidebars.evojava.entries %}
+
+{% elsif page.sidebar == "evoreact" %}
+{% assign sidebar = site.data.sidebars.evoreact.entries %}
+
+{% else %}
+{% assign sidebar = site.data.sidebars.evomain.entries %}
+{% endif %}

@@ -1,0 +1,10 @@
+  <div class="card">
+    <div >
+      <h4><b>{{ include.header }}</b></h4>
+
+{% if {{include.url}} %}<a class="noCrossRef" href="{{include.url}}">{% endif %}
+      <p>{{ include.content }}</p>
+{% if {{include.url}} %}</a>{% endif %}
+
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+sidebarTitle: Java SDK
+owner: tomjohnson1492
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+
+- title: Введение
+  url: /java_introduction.html
+
+- title: Руководства
+  url:
+
+  folderitems:
+  - title: Руководство 1
+    url: /java_guide1.html
+
+
+- title: Справочник
+  url:
+
+  folderitems:
+  - title: Справочник
+    url: /java_reference.html
+
+- title: Примеры реализации
+  url: /java_examples.html
