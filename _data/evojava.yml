@@ -9,19 +9,32 @@ folders:
   url: /java_introduction.html
 
 - title: Руководства
-  url:
-
   folderitems:
   - title: Руководство 1
     url: /java_guide1.html
 
+    subfolders:
+    - title: ЕГАИС
+      subfolderitems:
+        - title: Работа с ТТН
+          url: /doc_egais_waybill.html
+        - title: Работа с актами списания товара
+          url: /doc_egais_write_off.html
+        - title: Работа с актами приёмки в магазин
+          url: /doc_egais_charge_on_shop.html
+        - title: Чтение данных организации
+          url: /doc_egais_dictionary_org.html
+        - title: Чтение данных товара
+          url: /doc_egais_dictionary_product.html
 
-- title: Справочник
-  url:
 
+- title: Справочники
   folderitems:
-  - title: Справочник
-    url: /java_reference.html
+  - title: Integration-library
+    url: integration-library/index.html
+  - title: egais-api
+    url: egais-api/index.html
+
 
 - title: Примеры реализации
   url: /java_examples.html

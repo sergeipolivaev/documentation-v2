@@ -21,6 +21,8 @@ navbar_logo: docs/images/logo_white.png
 
 image_path: /docs/images/
 
+javadoc: /javadoc
+
 markdown: kramdown
 kramdown:
  input: GFM

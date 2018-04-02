@@ -1,0 +1,8 @@
+ru.evotor.egais.api
+ru.evotor.egais.api.model
+ru.evotor.egais.api.model.dictionary
+ru.evotor.egais.api.model.document
+ru.evotor.egais.api.model.document.actchargeonshop
+ru.evotor.egais.api.model.document.actwriteoff
+ru.evotor.egais.api.model.document.waybill
+ru.evotor.egais.api.provider

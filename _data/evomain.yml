@@ -6,11 +6,13 @@ owner: tomjohnson1492
 folders:
 - title: Начало
   folderitems:
-  - title: Описание бизнеса
-    url: /index.html
-
   - title: Описание инфраструктуры
     url: /sample1.html
+    subfolders:
+    - title: Описание бизнеса
+      subfolderitems:
+      - title: Продажа алкоголя
+        url: /doc_egais.html
 
 - title: Разработка
   folderitems:
