@@ -16,6 +16,8 @@ folders:
     subfolders:
     - title: ЕГАИС
       subfolderitems:
+        - title: Подготовка проекта для работы с egais-api
+          url: /doc_egais_project_creation.html
         - title: Работа с ТТН
           url: /doc_egais_waybill.html
         - title: Работа с актами списания товара

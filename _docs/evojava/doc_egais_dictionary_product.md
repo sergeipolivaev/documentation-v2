@@ -12,6 +12,7 @@ product:
 
 *Чтобы получить данные товаров:*
 
+1. [Создайте проект в Android Studio и подготовьте его для рабоы с egais-api](./doc_egais_project_creation.html).
 
 ## Пример
 
