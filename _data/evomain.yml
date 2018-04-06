@@ -1,5 +1,5 @@
 sidebarTitle: Документация платформы Эвотор
-owner: tomjohnson1492
+owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
@@ -55,9 +55,6 @@ folders:
   folderitems:
   - title: Биллинг
     url: /index.html
-
-  - title: Хуиллинг
-    url: /sample1.html
 
 - title: FAQ
   folderitems:

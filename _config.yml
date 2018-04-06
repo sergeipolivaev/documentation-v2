@@ -68,8 +68,9 @@ defaults:
 google_analytics: UA-84163503-7
 
 #algolia:
-#    application_id: '44FLY7BTEO'
+#    application_id: 'EL1PU8ZHNW'
 #    index_name:     'evotor-documentation'
+#    search_only_api_key: 49a2a5eecb0954222a7f3390556e9581
 #    record_css_selector: 'p,ul'
 #    settings:
 #    attributesToIndex:
@@ -88,8 +89,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-gems:
-#  - algoliasearch-jekyll
+#plugins:
+#  - jekyll-algolia
 
 ########## UI text ###############
 
@@ -108,4 +109,4 @@ uistring:
     product: Product
     page: Page
     excerpt: Excerpt
-    tag_page_intro: The following pages are tagged with
+    tag_page_intro: Страницы отмеченные тегом

@@ -10,7 +10,7 @@ product:
 
 1. Создайте проект в Android Studio.
 
-   При создании проекта выберите **No Activitty**.
+   Минимальная версия SDK проекта должна быть 22. При создании проекта выберите **No Activitty**.
 
    {% include tip.html content="Подробную информацию о том, как создать новый проект в Android Studio смотрите на сайте [developer.android.com](https://developer.android.com/training/basics/firstapp/creating-project.html)" %}
 

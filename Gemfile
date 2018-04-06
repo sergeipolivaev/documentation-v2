@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 group :jekyll_plugins do
-  gem 'algoliasearch-jekyll', '~> 0.8.0'
+  gem 'jekyll-algolia'
 end
 
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'github-pages'
 gem 'html-proofer'
