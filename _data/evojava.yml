@@ -13,6 +13,9 @@ folders:
   - title: Руководство 1
     url: /java_guide1.html
 
+  - title: Получение данных из базы данных смарт-терминала
+    url: /java_query_api.html
+
     subfolders:
     - title: ЕГАИС
       subfolderitems:
