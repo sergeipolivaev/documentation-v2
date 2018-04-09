@@ -1,5 +1,5 @@
 sidebarTitle: Java SDK
-owner: tomjohnson1492
+owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
@@ -18,16 +18,8 @@ folders:
       subfolderitems:
         - title: Подготовка проекта для работы с egais-api
           url: /doc_egais_project_creation.html
-        - title: Работа с ТТН
-          url: /doc_egais_waybill.html
-        - title: Работа с актами списания товара
-          url: /doc_egais_write_off.html
-        - title: Работа с актами приёмки в магазин
-          url: /doc_egais_charge_on_shop.html
-        - title: Чтение данных организации
-          url: /doc_egais_dictionary_org.html
-        - title: Чтение данных товара
-          url: /doc_egais_dictionary_product.html
+        - title: Чтение данных ЕГАИС
+          url: /doc_egais_data_reading_access.html
 
 
 - title: Справочники
