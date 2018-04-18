@@ -6,21 +6,28 @@ owner: Evotor
 folders:
 - title: Начало
   folderitems:
-  - title: Описание инфраструктуры
-    url: /sample1.html
+  - title: Введение
+    url: /index.html
     subfolders:
     - title: Описание бизнеса
       subfolderitems:
       - title: Продажа алкоголя
         url: /doc_egais.html
 
+    - title: Описание инфраструктуры
+      subfolderitems:
+      - title: Взаимодействие Облака Эвотор и смарт-терминала
+        url: /sample1.html
+      - title: Взаимодействие Облака Эвотор и сторонних систем
+        url: /sample1.html
+
 - title: Разработка
   folderitems:
   - title: Введение
-    url: /index.html
+    url: /doc_dev_introduction.html
 
     subfolders:
-    - title: Работа с облаком
+    - title: Облако Эвотор
       subfolderitems:
 
       - title: Авторизация
@@ -28,9 +35,6 @@ folders:
 
       - title: Ошибки
         url: /sublevel2.html
-
-      - title: Sublevel 3
-        url: /sublevel3.html
 
         subsubfolders:
         - title: Third level deep
@@ -45,30 +49,58 @@ folders:
           - title: Sub-sublevel 3
             url: /subsublevel3.html
 
-  - title: Java SDK
-    url: /java_introduction.html
+    - title: Портал разработчика Эвотор
+      subfolderitems:
 
-  - title: React Native
-    url: /rn_introduction.html
+      - title: Введение
+        url: /doc_dev_site_introduction.html
+
+        subsubfolders:
+        - title: Тестирование приложения
+          subsubfolderitems:
+
+          - title: Включение режима разработчика
+            url: /doc_app_developer_mode.html
+
+          - title: Установка приложения
+            url: /doc_app_installation.html
+
+          - title: Перевод приложения в тестирование
+            url: /doc_app_testing.html
+
+        - title: Публикация приложения
+          subsubfolderitems:
+
+        - title: Статистика
+          subsubfolderitems:
+
+    - title: Смарт-терминал
+      subfolderitems:
+
+        - title: Java SDK
+          url: /java_introduction.html
+
+        - title: React Native
+          url: /rn_introduction.html
 
 - title: Распространение
   folderitems:
   - title: Биллинг
-    url: /index.html
+    url: /sample1.html
 
 - title: FAQ
   folderitems:
   - title: Часто задаваемые вопросы
-    url: /index.html
+    url: /sample2.html
 
 ###########################
 
-related_resources_title: Other Resources
+related_resources_title: Другие источники
 
 related_resources_list:
 
-- title: Jekyll
-  url: http://jekyllrb.com
+- title: Wiki
+  url: http://wiki.evotor.ru/
 
 - title: Github
-  url: http://github.com
+  url: http://github.com/evotor

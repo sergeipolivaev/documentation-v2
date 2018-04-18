@@ -10,8 +10,8 @@ folders:
 
 - title: Руководства
   folderitems:
-  - title: Руководство 1
-    url: /java_guide1.html
+  - title: Вызов приложения из интерфейса смарт-терминала
+    url: /doc_java_app_icon.html
 
   - title: Получение данных из базы данных смарт-терминала
     url: /java_query_api.html

@@ -12,7 +12,7 @@ product:
 
 Пример запроса для получения данных товара:
 
-```java
+```js
 const products = await new ProductQuery()
         .alcoholByVolume.between(40, 70)
         .intersection(new ProductQuery()

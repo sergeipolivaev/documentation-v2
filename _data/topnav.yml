@@ -4,21 +4,21 @@ navbar_singleitems:
 - items:
     - title: REST API Облака
       url: https://api.evotor.ru/
-    - title: Java SDK
-      url: /java_introduction.html
-    - title: React Native
-      url: /rn_gettingstarted.html
+#    - title: Java SDK
+#      url: /java_introduction.html
+#    - title: React Native
+#      url: /rn_gettingstarted.html
 
 #Topnav dropdowns
-#navbar_dropdowns:
-#- folders:
-#
-#    - title: Смарт-терминал
-#      folderitems:
-#        - title: Java SDK
-#          url: /java_reference.html
-#        - title: React Native
-#          url: /rn_reference.html
+navbar_dropdowns:
+- folders:
+
+    - title: SDK cмарт-терминала
+      folderitems:
+        - title: Java SDK
+          url: /java_introduction.html
+        - title: React Native SDK
+          url: /rn_reference.html
 
 #    - title: Tags
 #      folderitems:
