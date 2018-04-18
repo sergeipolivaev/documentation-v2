@@ -16,10 +16,13 @@ folders:
     url: /doc_java_app_icon.html
 
   - title: Работа с пользователями смарт-терминала
-    url: /doc_java_app_icon.html
+    url: /doc_java_app_users.html
 
   - title: Получение данных из базы данных смарт-терминала
     url: /java_query_api.html
+
+  - title: Получение данных из базы данных смарт-терминала
+    url: /doc_java_online_store_receipt.html
 
     subfolders:
     - title: ЕГАИС
@@ -28,6 +31,11 @@ folders:
           url: /doc_egais_project_creation.html
         - title: Чтение данных ЕГАИС
           url: /doc_egais_data_reading_access.html
+
+    - title: Оборудование
+      subfolderitems:
+        - title: Работа с весами
+          url: /doc_java_scales.html
 
 
 - title: Справочники
