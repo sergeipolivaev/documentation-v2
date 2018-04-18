@@ -1,9 +1,9 @@
 ---
-title: Получение данных из базы данных смарт-терминала
+title: Обращение к базе данных смарт-терминала
 permalink: java_query_api.html
 sidebar: evojava
 tags:
-product:
+product: Java SDK
 ---
 
 С помощью запросов к базе данных смарт-терминала приложения могут получать необходимую информацию, например, данные товаров ([класс ProductQuery.kt](./integration-library/ru/evotor/framework/inventory/ProductQuery.html)).

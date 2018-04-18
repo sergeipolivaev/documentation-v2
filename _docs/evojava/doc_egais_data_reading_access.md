@@ -12,7 +12,7 @@ product:
 
 В таблице ниже представленны классы запросов к `egais-api`, а также соответствующие им классы данных, поля которых вы можете использовать для [фильтрации выдачи запросов](./java_query_api.html#comparisonOperators).
 
-| **Класс запроса** | **Модель данных** | **Описание** |
+| **Класс запроса** | **Класс данных**  | **Описание** |
 |-------------------|-------------------|--------------|
 | [ActChargeOnShopPositionQuery.kt](./egais-api/ru/evotor/egais/api/query/ActChargeOnShopPositionQuery.html) | [ActChargeOnShopPosition](./egais-api/ru/evotor/egais/api/model/document/actchargeonshop/ActChargeOnShopPosition.html) | Позиция в акте постановки на баланс |
 | [ActChargeOnShopQuery.kt](./egais-api/ru/evotor/egais/api/query/ActChargeOnShopQuery.html) | [ActChargeOnShop](./egais-api/ru/evotor/egais/api/model/document/actchargeonshop/ActChargeOnShop.html) | Акт постановки на баланс |

@@ -10,7 +10,12 @@ folders:
 
 - title: Руководства
   folderitems:
+  - title: Подключение библиотеки integration library
+    url: /doc_java_integration_library_connection.html
   - title: Вызов приложения из интерфейса смарт-терминала
+    url: /doc_java_app_icon.html
+
+  - title: Работа с пользователями смарт-терминала
     url: /doc_java_app_icon.html
 
   - title: Получение данных из базы данных смарт-терминала
