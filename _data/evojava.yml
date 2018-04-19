@@ -24,6 +24,9 @@ folders:
   - title: Получение данных из базы данных смарт-терминала
     url: /java_query_api.html
 
+  - title: Товароучёт
+    url: /doc_java_inventory.html
+
   - title: Передача электронных чеков
     url: /doc_java_online_store_receipt.html
 
