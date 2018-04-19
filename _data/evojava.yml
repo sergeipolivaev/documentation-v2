@@ -63,6 +63,9 @@ folders:
         - title: Создание дополнительных полей в чеке
           url: /doc_java_receipt_extras.html
 
+        - title: Получить данные сформированного чека
+          url: /doc_java_get_receipt.html
+
         - title: Печать внутри кассового чека
           url: /doc_java_receipt_print.html
 
