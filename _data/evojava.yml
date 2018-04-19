@@ -36,6 +36,8 @@ folders:
       subfolderitems:
         - title: Работа с весами
           url: /doc_java_scales.html
+        - title: Работа со сканером штрихкодов
+          url: /doc_java_barcode_scanner.html
 
 
 - title: Справочники
