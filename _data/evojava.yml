@@ -39,6 +39,9 @@ folders:
   - title: Печать Z-отчёта
     url: /doc_java_z_report.html
 
+  - title: Доступ к логам
+    url: /doc_java_logging.html
+
     subfolders:
     - title: ЕГАИС
       subfolderitems:
