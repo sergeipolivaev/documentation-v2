@@ -47,10 +47,14 @@ folders:
     subfolders:
     - title: Чеки
       subfolderitems:
-        - title: Подготовка проекта для работы с egais-api
-          url: /doc_egais_project_creation.html
-        - title: Чтение данных ЕГАИС
-          url: /doc_egais_data_reading_access.html
+        - title: Открытие чека в приложении
+          url: /doc_java_receipt_creation.html
+        - title: Разделение чека
+          url: /doc_java_receipt_division.html
+        - title:
+          url: /
+        - title:
+          url: /
 
     - title: Оборудование
       subfolderitems:
