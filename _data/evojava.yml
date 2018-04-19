@@ -33,6 +33,9 @@ folders:
   - title: Получение информации о кассовых сменах
     url: /doc_java_session.html
 
+  - title: Печать Z-отчёта
+    url: /doc_java_z_report.html
+
     subfolders:
     - title: ЕГАИС
       subfolderitems:
