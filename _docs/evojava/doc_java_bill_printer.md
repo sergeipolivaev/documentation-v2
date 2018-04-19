@@ -1,6 +1,6 @@
 ---
 title: Работа с принтером чеков
-sidebar: evotordoc_sidebar
+sidebar: evojava
 permalink: doc_java_bill_printer.html
 tags:
 product: Java SDK

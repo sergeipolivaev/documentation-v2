@@ -53,8 +53,8 @@ folders:
           url: /doc_java_receipt_division.html
         - title: Работа с позициями чека
           url: / doc_java_receipt_interactions.html
-        - title:
-          url: /
+        - title: Создание дополнительных полей в чеке
+          url: /doc_java_receipt_extras.html
 
     - title: Оборудование
       subfolderitems:
