@@ -21,6 +21,9 @@ folders:
   - title: Обмен сообщениями приложения и стороннего сервиса
     url: /doc_java_third_party_service_communication.html
 
+  - title: Обработка событий смарт-терминала
+    url: /doc_java_st_events.html
+
   - title: Работа с пользователями смарт-терминала
     url: /doc_java_app_users.html
 
