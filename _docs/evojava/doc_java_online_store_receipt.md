@@ -3,7 +3,7 @@ title: Передача электронных чеков
 sidebar: evojava
 permalink: doc_java_online_store_receipt.html
 tags:
-folder: Java SDK
+product: Java SDK
 ---
 
 Приложение может создавать чеки и передавать их для оформления в смарт-терминал. Такие чеки являются фискальными.

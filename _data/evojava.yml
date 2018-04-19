@@ -21,8 +21,11 @@ folders:
   - title: Получение данных из базы данных смарт-терминала
     url: /java_query_api.html
 
-  - title: Получение данных из базы данных смарт-терминала
+  - title: Передача электронных чеков
     url: /doc_java_online_store_receipt.html
+
+  - title: Использование различных способов оплаты
+    url: /doc_java_payment_systems.html
 
     subfolders:
     - title: ЕГАИС
