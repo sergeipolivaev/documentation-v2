@@ -33,6 +33,9 @@ folders:
   - title: Товароучёт
     url: /doc_java_inventory.html
 
+  - title: Поиск товара по штрихкоду
+    url: /doc_java_receipt_api.html
+
   - title: Передача электронных чеков
     url: /doc_java_online_store_receipt.html
 
