@@ -8,6 +8,9 @@ folders:
 - title: Введение
   url: /java_introduction.html
 
+- title: Манифест Java-приложения
+  url: /doc_java_app_manifest.html
+
 - title: Руководства
   folderitems:
   - title: Подключение библиотеки integration library
