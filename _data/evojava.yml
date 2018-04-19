@@ -35,12 +35,22 @@ folders:
         - title: Чтение данных ЕГАИС
           url: /doc_egais_data_reading_access.html
 
+    subfolders:
+    - title: Чеки
+      subfolderitems:
+        - title: Подготовка проекта для работы с egais-api
+          url: /doc_egais_project_creation.html
+        - title: Чтение данных ЕГАИС
+          url: /doc_egais_data_reading_access.html
+
     - title: Оборудование
       subfolderitems:
         - title: Работа с весами
           url: /doc_java_scales.html
         - title: Работа со сканером штрихкодов
           url: /doc_java_barcode_scanner.html
+        - title: Работа с принтером чеков
+          url: /doc_java_bill_printer.html
 
 
 - title: Справочники
