@@ -3,7 +3,7 @@ title: Подготовка проекта для работы с egais-api
 permalink: doc_egais_project_creation.html
 sidebar: evojava
 tags:
-product:
+product: Java SDK
 ---
 
 *Чтобы подготовить проект для работы с egais-api:*

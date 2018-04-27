@@ -48,6 +48,9 @@ folders:
   - title: Получение информации о кассовых сменах
     url: /doc_java_session.html
 
+  - title: Оповещение пользователей с помощью push-уведомлений
+    url: /doc_java_pushnotifications.html
+
   - title: Печать Z-отчёта
     url: /doc_java_z_report.html
 
@@ -62,7 +65,6 @@ folders:
         - title: Чтение данных ЕГАИС
           url: /doc_egais_data_reading_access.html
 
-    subfolders:
     - title: Чеки
       subfolderitems:
         - title: Открытие чека в приложении
