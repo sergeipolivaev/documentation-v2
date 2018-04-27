@@ -12,15 +12,15 @@ pipeline {
       steps {
         sh '''#!/usr/bin/bash
               set -e
-              arch=docs_${BUILD_TIMESTAMP}.tgz
+              arch=docs_v2_${BUILD_TIMESTAMP}.tgz
               tar -czf ${arch} --exclude-from=tar_exclude -C _site .
               echo "Deploing to ${SERVER_NAME}..."
-              scp ${arch} ${SERVER_USER}@${SERVER_NAME}:/srv/www/docs-arch
+              scp ${arch} ${SERVER_USER}@${SERVER_NAME}:/srv/www/docs-v2-arch
               ssh -T ${SERVER_USER}@${SERVER_NAME}  << EOF
-                cd /srv/www/docs
-                rm -rf /srv/www/docs/*
-                tar xzf /srv/www/docs-arch/${arch}
-                find /srv/www/docs-arch/ -name "docs_*" -mtime +60 -exec rm {} \\;
+                cd /srv/www/docs-v2
+                rm -rf /srv/www/docs-v2/*
+                tar xzf /srv/www/docs-v2-arch/${arch}
+                find /srv/www/docs-v2-arch/ -name "docs_v2_*" -mtime +60 -exec rm {} \\;
 EOF
               rm ${arch}
         '''
