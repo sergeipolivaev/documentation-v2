@@ -14,7 +14,7 @@ product: Java SDK
 
 ### createIntentForSellReceiptEdit
 
-```
+```java
 fun createIntentForSellReceiptEdit(): Intent
 ```
 
@@ -28,7 +28,7 @@ fun createIntentForSellReceiptEdit(): Intent
 
 ### createIntentForPaybackReceiptEdit
 
-```
+```java
 fun createIntentForPaybackReceiptEdit(): Intent
 ```
 
@@ -42,7 +42,7 @@ fun createIntentForPaybackReceiptEdit(): Intent
 
 ### createIntentForBuyReceiptEdit
 
-```
+```java
 fun createIntentForBuyReceiptEdit(): Intent
 ```
 
@@ -56,7 +56,7 @@ fun createIntentForBuyReceiptEdit(): Intent
 
 ### createIntentForBuybackReceiptEdit
 
-```
+```java
 fun createIntentForBuybackReceiptEdit(): Intent
 ```
 
@@ -70,7 +70,7 @@ fun createIntentForBuybackReceiptEdit(): Intent
 
 ### createIntentForSellReceiptPayment
 
-```
+```java
 fun createIntentForSellReceiptPayment(): Intent
 ```
 
@@ -84,7 +84,7 @@ fun createIntentForSellReceiptPayment(): Intent
 
 ### createIntentForPaybackReceiptPayment
 
-```
+```java
 fun createIntentForPaybackReceiptPayment(): Intent
 ```
 
@@ -98,7 +98,7 @@ fun createIntentForPaybackReceiptPayment(): Intent
 
 ### createIntentForBuyReceiptPayment
 
-```
+```java
 fun createIntentForBuyReceiptPayment(): Intent
 ```
 
@@ -112,7 +112,7 @@ fun createIntentForBuyReceiptPayment(): Intent
 
 ### createIntentForBuybackReceiptPayment
 
-```
+```java
 fun createIntentForBuybackReceiptPayment(): Intent
 ```
 
@@ -126,7 +126,7 @@ fun createIntentForBuybackReceiptPayment(): Intent
 
 ### createIntentForCashReceiptSettings
 
-```
+```java
 fun createIntentForCashReceiptSettings(): Intent
 ```
 
@@ -143,7 +143,7 @@ fun createIntentForCashReceiptSettings(): Intent
 
 ### createIntentForCashRegisterReport
 
-```
+```java
 fun createIntentForCashRegisterReport(): Intent
 ```
 
@@ -158,9 +158,9 @@ fun createIntentForCashRegisterReport(): Intent
 
 * `Intent`
 
-### createIntentForChangeUser
+### createIntentForChangeUser {#createIntentForChangeUser}
 
-```
+```java
 fun createIntentForChangeUser(): Intent
 ```
 
@@ -174,7 +174,7 @@ fun createIntentForChangeUser(): Intent
 
 ### createIntentForNewProduct
 
-```
+```java
 fun createIntentForNewProduct(productBuilder: NewProductIntentBuilder): Intent
 
 ```
@@ -187,7 +187,7 @@ fun createIntentForNewProduct(productBuilder: NewProductIntentBuilder): Intent
 
 * `productBuilder`
 
-```
+   ```
    class NewProductIntentBuilder {
        private var barcode: String? = null
 
@@ -203,7 +203,7 @@ fun createIntentForNewProduct(productBuilder: NewProductIntentBuilder): Intent
            }
        }
    }
-```
+   ```
 
 **Возвращает**
 
@@ -211,7 +211,7 @@ fun createIntentForNewProduct(productBuilder: NewProductIntentBuilder): Intent
 
 ### createIntentForEditProduct
 
-```
+```java
 fun createIntentForEditProduct(productBuilder: EditProductIntentBuilder): Intent
 ```
 
@@ -245,7 +245,7 @@ fun createIntentForEditProduct(productBuilder: EditProductIntentBuilder): Intent
 
 ### getProductUuid
 
-```
+```java
 fun getProductUuid(intent: Intent): String?
 ```
 

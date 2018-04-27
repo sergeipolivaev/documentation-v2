@@ -160,6 +160,28 @@ public class ReceiptClearedEvent extends ReceiptEvent {
 }
 ```
 
+### Событие смены пользователя
+
+При [смене пользователя](./doc_java_navigation.html#createIntentForChangeUser) приходит сообщение:
+
+```java
+public class UserChangedEvent extends UserEvent {
+    public static final String BROADCAST_ACTION_USER_CHANGED = "evotor.intent.event.user.CHANGED";
+
+    public UserChangedEvent() {
+        super();
+    }
+
+    @Nullable
+    public static UserChangedEvent create(@Nullable Bundle bundle) {
+        if (bundle == null) {
+            return null;
+        }
+        return new UserChangedEvent(bundle);
+    }
+}
+```
+
 ## Логирование различных событий смарт-терминала
 
 Ниже представлен пример логирования событий, которые может распространять смарт-терминал. Для обработки таких событий также требуется создавать приёмник широковещательных сообщений.
