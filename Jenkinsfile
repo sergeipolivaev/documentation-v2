@@ -23,7 +23,7 @@ pipeline {
           --set image.tag=$BUILD_TAG \
           --wait \
           dev-docs-v2 \
-          ./helm
+          ./helm/dev-docs-v2
         """
       }
     }
