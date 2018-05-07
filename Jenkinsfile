@@ -14,5 +14,18 @@ pipeline {
         sh "docker push docker-registry.market.local/developer-documentation-v2:$BUILD_TAG"
       }
     }
+    stage('Deploy to Test') {
+      steps {
+        sh """helm upgrade --install \
+          --kube-context test-cluster \
+          --namespace test \
+          --values ./helm/values/test.yaml \
+          --set image.tag=$BUILD_TAG \
+          --wait \
+          dev-docs-v2 \
+          ./helm
+        """
+      }
+    }
   }
 }
