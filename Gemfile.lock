@@ -274,6 +274,7 @@ GEM
       thread_safe (~> 0.1)
     unicode-display_width (1.3.0)
     verbal_expressions (0.1.5)
+    wdm (0.1.1)
     yell (2.0.7)
 
 PLATFORMS
@@ -285,6 +286,7 @@ DEPENDENCIES
   html-proofer
   jekyll
   jekyll-algolia
+  wdm (>= 0.1.0)
 
 BUNDLED WITH
    1.16.1

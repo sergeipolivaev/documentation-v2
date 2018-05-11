@@ -71,8 +71,8 @@ folders:
         - title: Публикация приложения
           subsubfolderitems:
 
-        - title: Статистика
-          subsubfolderitems:
+#        - title: Статистика
+#          subsubfolderitems:
 
     - title: Смарт-терминал
       subfolderitems:
@@ -95,12 +95,12 @@ folders:
 
 ###########################
 
-related_resources_title: Другие источники
+#related_resources_title: Другие источники
 
-related_resources_list:
+#related_resources_list:
 
-- title: Wiki
-  url: http://wiki.evotor.ru/
+#- title: Wiki
+#  url: http://wiki.evotor.ru/
 
-- title: Github
-  url: http://github.com/evotor
+#- title: Github
+#  url: http://github.com/evotor
