@@ -5,6 +5,8 @@ ru.evotor.egais.api.model.dictionary
 ru.evotor.egais.api.model.document
 ru.evotor.egais.api.model.document.actchargeonshop
 ru.evotor.egais.api.model.document.actwriteoff
+ru.evotor.egais.api.model.document.ticket
+ru.evotor.egais.api.model.document.transfer
 ru.evotor.egais.api.model.document.waybill
 ru.evotor.egais.api.model.document.waybillact
 ru.evotor.egais.api.query

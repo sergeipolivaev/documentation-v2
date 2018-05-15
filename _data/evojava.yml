@@ -64,6 +64,8 @@ folders:
           url: /doc_egais_project_creation.html
         - title: Чтение данных ЕГАИС
           url: /doc_egais_data_reading_access.html
+        - title: Получение настроек пользователя из УТМ
+          url: /doc_egais_clientsettingsquery.html
 
     - title: Чеки
       subfolderitems:

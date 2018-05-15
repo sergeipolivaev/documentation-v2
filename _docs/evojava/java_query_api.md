@@ -37,7 +37,7 @@ const products = await new ProductQuery()
 Для построения запросов доступны следующие операторы сравнения:
 
 * `fun equal(value: V)` – аналогичен оператору "равно" `=`.
-* `fun notEqual(value: V)` – аналогичен оператору "равно" `!=`.
+* `fun notEqual(value: V)` – аналогичен оператору "не равно" `!=`.
 * `fun greater(value: V, including: Boolean = false)` – аналогичен оператору "больше" `>`.
 * `fun lower(value: V, including: Boolean = false)` – аналогичен оператору "меньше" `<`.
 * `fun like(text: String, useEscape: Boolean = false)` – определяет совпадает ли символьная строка с заданным шаблоном.
