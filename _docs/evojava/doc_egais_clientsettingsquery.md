@@ -20,8 +20,6 @@ FSRAR ID – уникальный идентификатор организац�
 {% include tabs.html %}
 
 ```kotlin
-package ru.evotor.egais.api.example.client_settings
-
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.AppCompatButton
@@ -57,39 +55,36 @@ class ClientSettingsActivity : AppCompatActivity() {
 ```
 
 ```java
-package ru.evotor.egais.api.example.client_settings;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatButton;
+import android.support.v7.app.AppCompatActivity;
+import android.view.*;
 import android.widget.Toast;
 import ru.evotor.egais.api.example.R;
-
 //импортируйте класс ClientSettingsQuery.
 import ru.evotor.egais.api.query.ClientSettingsQuery;
 
 //Создайте операцию, которая реализует метод getFsRarId() по нажатию на кнопку.
-class ClientSettingsActivity : AppCompatActivity() {
-
-    val getFsRarIdButton by lazy { findViewById<AppCompatButton>(R.id.get_fsrarid_button) };
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+public class ClientSettingsActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_settings);
 
-        //Вызовите метод getFsRarId().
-        getFsRarIdButton.setOnClickListener {
-            getFsRarId();
-        };
-    };
+        findViewById(R.id.get_fsrarid_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFsRarId();
+            }
+        });
+    }
 
-    private fun getFsRarId() {
-        val fsRarId = ClientSettingsQuery().getFsRarId(this);
+    private void getFsRarId(){
+        String fsRarId = new ClientSettingsQuery().getFsRarId(this);
 
-        println("fsrarid = $fsRarId");
         //Выведите FSRAR ID на экран смарт-терминала.
-        Toast.makeText(this, "fsrarid = \"$fsRarId\"", Toast.LENGTH_SHORT).show();
-    };
+        Toast.makeText(this, "FSRAR ID JAVA = " + fsRarId, Toast.LENGTH_SHORT).show();
+    }
+
 }
 ```
 
