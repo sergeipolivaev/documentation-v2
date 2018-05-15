@@ -88,6 +88,6 @@ public class ClientSettingsActivity extends AppCompatActivity {
 }
 ```
 
-### Приложение
+### Пример в демонстрационном приложении
 
 Пример реализации класса `ClientSettingsQuery` вы можете посмотреть установив [демонстрационное приложение](https://github.com/evotor/egais-api-example).
