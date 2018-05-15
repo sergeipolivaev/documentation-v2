@@ -82,7 +82,7 @@ public class ClientSettingsActivity extends AppCompatActivity {
         String fsRarId = new ClientSettingsQuery().getFsRarId(this);
 
         //Выведите FSRAR ID на экран смарт-терминала.
-        Toast.makeText(this, "FSRAR ID JAVA = " + fsRarId, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "FSRAR ID = " + fsRarId, Toast.LENGTH_SHORT).show();
     }
 
 }
