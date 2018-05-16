@@ -5,49 +5,34 @@ sidebar: evomain
 topnav: topnav
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### О платформе
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Платформа Эвотор это:
 
-## Section
+* *Облако Эвотор*. Облако хранит информацию о сотрудниках (например, кассирах), терминалах, магазинах и товарах пользователей платформы. Пользователи могут создавать, редактировать и удалять магазины, терминалы и сотрудников. Облако также содержит информацию о товарах пользователей.
+* *Смарт-терминал*. Смарт-терминал позволяет совершать товарно-денежные операции с товарами пользователей. Это могут быть как произвольные товары, так и товары, которые хранятся локально на терминале.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+[Приобретая смарт-терминал](https://buy.evotor.ru/types) пользователи платформы получают доступ к базовой функциональности:
 
-Примеры
+*   Редактирование списка магазинов, сотрудников и смарт-терминалов.
+*   Редактирование номенклатуры.
+*   Просмотр базовых отчётов.
+*   Установка приложений для интеграции со сторонними сервисами.
 
-{% include tabs.html %}
+С помощью интеграции сторонних приложений, которые распространяются в *Магазине приложений*, вы можете помочь пользователям:
 
-```java
-const products = await new ProductQuery()
-        .alcoholByVolume.between(40, 70)
-        .intersection(new ProductQuery()
-            .price.greater(100, true)
-            .or().tareVolume.greater(10)
-            .union(new ProductQuery()
-                .price.lower(5)
-                .and().name.like("Водка")
-            )
-        ).sortOrder(new ProductSortOrder()
-            .price.asc()
-            .alcoholByVolume.desc()
-            .tareVolume.asc()
-        ).limit(1000)
-        .execute();
-```
-```kotlin
-const products = await new ProductQuery()
-        .alcoholByVolume.between(40, 70)
-        .intersection(new ProductQuery()
-            .price.greater(100, true)
-            .or().tareVolume.greater(10)
-            .union(new ProductQuery()
-                .price.lower(5)
-                .and().name.like("Водка")
-            )
-        ).sortOrder(new ProductSortOrder()
-            .price.asc()
-            .alcoholByVolume.desc()
-            .tareVolume.asc()
-        ).limit(1000)
-        .execute();
-```
+*   взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;
+*   автоматически обновлять информацию о магазинах в картографических сервисах;
+*   использовать различные системы лояльности для клиентов пользователей платформы;
+*   и многое другое.
+
+
+### С чего начать
+
+[Ознакомьтесь со способами интеграции с платформой Эвотор](./doc_integration_types.html).
+
+Чтобы наглядно ознакомиться с функциями смарт-терминала, [установите демонстрационное приложение](./doc_java_app_tutorial.html).
+
+### Полезные ресурсы
+
+Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте [api.evotor.ru](https://api.evotor.ru/docs/). Ознакомьтесь с [порталом разработчиков](https://dev.evotor.ru), которые создают смарт-терминалы. Узнайте [какие ошибки](doc_errors_returned.html) могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.
