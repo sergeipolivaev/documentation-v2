@@ -4,7 +4,7 @@ exclude: [vendor]
 url: /
 
 # link to github repo
-github_editme_path: https://github.com/votor/documentation/tree/master/
+github_editme_path: https://github.com/evotor/documentation-v2/tree/develop
 
 #feedback_email: ilytkin88@gmail.com
 #feedback_subject_line: feedback subject line
