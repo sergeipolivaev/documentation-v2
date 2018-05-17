@@ -30,24 +30,28 @@ folders:
     - title: Облако Эвотор
       subfolderitems:
 
-      - title: Авторизация
-        url: /sublevel1.html
-
-      - title: Ошибки
-        url: /sublevel2.html
+      - title: Введение
+        url: /doc_evotor_api_introduction.html
 
         subsubfolders:
-        - title: Third level deep
+      - title: Авторизация
           subsubfolderitems:
 
-          - title: Sub-sublevel 1
-            url: /subsublevel1.html
+          - title: Авторизация запросов к Облаку Эвотор
+            url: /doc_authorization.html
 
-          - title: Sub-sublevel 2
-            url: /subsublevel2.html
+          - title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
+            url: /doc_evotor_api_authorization.html
 
-          - title: Sub-sublevel 3
-            url: /subsublevel3.html
+
+      - title: Примеры запросов к Облаку Эвотор
+        url: /doc_example_calls.html
+
+      - title: Ошибки, которые может возвращать сторонний сервис
+        url: /doc_errors_returned.html
+
+      - title: Документы смарт-терминала
+        url: /doc_smart_terminal_documents.html
 
     - title: Портал разработчика Эвотор
       subfolderitems:
