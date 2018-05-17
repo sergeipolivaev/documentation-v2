@@ -34,7 +34,7 @@ folders:
         url: /doc_evotor_api_introduction.html
 
         subsubfolders:
-      - title: Авторизация
+        - title: Авторизация
           subsubfolderitems:
 
           - title: Авторизация запросов к Облаку Эвотор
@@ -80,12 +80,24 @@ folders:
 
     - title: Смарт-терминал
       subfolderitems:
-
         - title: Java SDK
           url: /java_introduction.html
-
         - title: React Native
           url: /rn_introduction.html
+
+    - title: Примеры реализации
+      subfolderitems:
+        - title: Сборка и установка демонстрационного приложения
+          url: /doc_java_app_tutorial.html
+        - title: IFrame на странице приложения
+          url: /doc_iframe_within_application_page.html
+        - title: Интеграция с облачными сервисами
+          url: /doc_cloud_systems_integration.html
+        - title: Интеграция с 1С
+          url: /doc_1C_integration.html
+
+    - title: Черновики, модерация и публикация приложения
+      url: /doc_app_review.html
 
 - title: Распространение и биллинг
   folderitems:

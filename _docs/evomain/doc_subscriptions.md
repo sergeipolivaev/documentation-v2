@@ -1,6 +1,6 @@
 ---
 title: Подписки
-keywords
+keywords:
 sidebar: evomain
 permalink: doc_subscriptions.html
 tags:
