@@ -14,12 +14,12 @@ folders:
       - title: Продажа алкоголя
         url: /doc_egais.html
 
-    - title: Описание инфраструктуры
-      subfolderitems:
-      - title: Взаимодействие Облака Эвотор и смарт-терминала
-        url: /sample1.html
-      - title: Взаимодействие Облака Эвотор и сторонних систем
-        url: /sample1.html
+#    - title: Описание инфраструктуры
+#      subfolderitems:
+#      - title: Взаимодействие Облака Эвотор и смарт-терминала
+#        url: /sample1.html
+#      - title: Взаимодействие Облака Эвотор и сторонних систем
+#        url: /sample1.html
 
 - title: Разработка
   folderitems:
@@ -29,51 +29,36 @@ folders:
     subfolders:
     - title: Облако Эвотор
       subfolderitems:
-
       - title: Введение
         url: /doc_evotor_api_introduction.html
-
         subsubfolders:
         - title: Авторизация
           subsubfolderitems:
-
           - title: Авторизация запросов к Облаку Эвотор
             url: /doc_authorization.html
-
           - title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
             url: /doc_evotor_api_authorization.html
-
-
       - title: Примеры запросов к Облаку Эвотор
         url: /doc_example_calls.html
-
       - title: Ошибки, которые может возвращать сторонний сервис
         url: /doc_errors_returned.html
-
       - title: Документы смарт-терминала
         url: /doc_smart_terminal_documents.html
-
-    - title: Портал разработчика Эвотор
+    - title: Приложение на портале разработчика Эвотор
       subfolderitems:
-
       - title: Введение
         url: /doc_dev_site_introduction.html
-
         subsubfolders:
         - title: Тестирование приложения
           subsubfolderitems:
-
           - title: Включение режима разработчика
             url: /doc_app_developer_mode.html
-
           - title: Установка приложения
             url: /doc_app_installation.html
-
           - title: Перевод приложения в тестирование
             url: /doc_app_testing.html
-
-        - title: Публикация приложения
-          subsubfolderitems:
+      - title: Черновики, модерация и публикация приложения
+        url: /doc_app_review.html
 
 #        - title: Статистика
 #          subsubfolderitems:
@@ -96,9 +81,6 @@ folders:
         - title: Интеграция с 1С
           url: /doc_1C_integration.html
 
-    - title: Черновики, модерация и публикация приложения
-      url: /doc_app_review.html
-
 - title: Распространение и биллинг
   folderitems:
   - title: О биллинге
@@ -116,7 +98,7 @@ folders:
 - title: FAQ
   folderitems:
   - title: Часто задаваемые вопросы
-    url: /sample2.html
+    url: /doc_faq.html
 
 ###########################
 
