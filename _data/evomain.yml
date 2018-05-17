@@ -87,10 +87,19 @@ folders:
         - title: React Native
           url: /rn_introduction.html
 
-- title: Распространение
+- title: Распространение и биллинг
   folderitems:
-  - title: Биллинг
-    url: /sample1.html
+  - title: О биллинге
+    url: /doc_about_billing.html
+  - title: О тарификации приложений
+    url: /doc_app_tariffication.html
+  - title: Тарифы
+    url: /doc_tariffs.html
+  - title: Выплаты
+    url: /doc_payoff.html
+  - title: Подписки
+    url: /doc_subscriptions.html
+
 
 - title: FAQ
   folderitems:
