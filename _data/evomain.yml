@@ -99,6 +99,8 @@ folders:
   folderitems:
   - title: Часто задаваемые вопросы
     url: /doc_faq.html
+  - title: Устранение проблем с установкой приложения
+    url: /doc_installation_troubleshooting.html
 
 ###########################
 

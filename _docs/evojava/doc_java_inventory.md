@@ -7,7 +7,7 @@ product: Java SDK
 ---
 ## Методы
 
-Класс [`InventoryApi`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt) содержит методы, описанные ниже.
+Класс [`InventoryApi`](https://github.com/evotor/integration-library/blob/master/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt) содержит методы, описанные ниже.
 
 ### Получить все штрихкоды товара:
 

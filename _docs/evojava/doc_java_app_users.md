@@ -7,7 +7,7 @@ Product: Java SDK
 
 С помощью User API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.
 
-Для работы используйте класс [`UserAPI`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/users/UserApi.kt).
+Для работы используйте класс [`UserAPI`](https://github.com/evotor/integration-library/tree/develop/src/main/java/ru/evotor/framework/users/UserApi.kt).
 
 ## Методы
 
