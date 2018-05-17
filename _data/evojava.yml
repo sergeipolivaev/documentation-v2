@@ -97,6 +97,18 @@ folders:
         - title: Работа с принтером чеков
           url: /doc_java_bill_printer.html
 
+- title: Драйвера для оборудования
+  folderitems:
+  - title: Подготовка к разработке
+    url: /doc_drivers_library_connection.html
+  - title: SDK для денежного ящика
+    url: /doc_drivers_cashdrawer.html
+  - title: SDK для банковский терминалов
+    url: /doc_drivers_pinpads.html
+  - title: SDK для весов
+    url: /doc_drivers_scales.html
+  - title: SDK для подключаемого USB-оборудования
+    url: /doc_drivers_other.html
 
 - title: Справочники
   folderitems:
