@@ -115,9 +115,9 @@ folders:
 
 - title: Справочники
   folderitems:
-  - title: Integration-library
+  - title: Библиотека integration-library
     url: /integration-library/index.html
-  - title: egais-api
+  - title: Библиотека egais-api
     url: /egais-api/index.html
 
 
