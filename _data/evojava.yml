@@ -9,8 +9,6 @@ folders:
   url: /java_introduction.html
 - title: Манифест Java-приложения
   url: /doc_java_app_manifest.html
-- title: Манифест Java-приложения
-  url: /doc_java_app_manifest.html
 - title: Точки интеграции
   url: /doc_app_integration_points.html
 

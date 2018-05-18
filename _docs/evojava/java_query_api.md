@@ -40,7 +40,7 @@ const products = await new ProductQuery()
 * `fun notEqual(value: V)` – аналогичен оператору "не равно" `!=`.
 * `fun greater(value: V, including: Boolean = false)` – аналогичен оператору "больше" `>`.
 * `fun lower(value: V, including: Boolean = false)` – аналогичен оператору "меньше" `<`.
-* `fun like(text: String, useEscape: Boolean = false)` – определяет совпадает ли символьная строка с заданным шаблоном.
+* `fun like(text: String, escape: Char? = null)` – определяет совпадает ли символьная строка с заданным шаблоном. Где escape – символ, предшествующий спецсимволам, если их надо использовать в прямом из значении (например, "%"), аналогично синтаксису SQL.
 * `fun between(leftValue: V, rightValue: V)` – задаёт диапазон для проверки.
 * `fun notBetween(leftValue: V, rightValue: V)` – задаёт диапазон, за пределами которого находится удовлетворяющий условию результат.
 * `fun inside(values: List<V>)` – определяет находится ли значение в заданном списке.

@@ -14,7 +14,7 @@ image_path: docs/images/
 port: 4000
 highlighter: rouge
 
-highlighting_css: monokai
+highlighting_css: darkly
 # options: "monokai" (black), "syntax" (white)
 navbar_style: lighttheme-evoblue
 navbar_logo: docs/images/logo_white.png
