@@ -583,3 +583,12 @@ ul#docnavsidebar li a:focus {
     border: 1px solid #ccc;
     border-top: none;
 }
+
+/* Enable horizontal scroll */
+pre code {
+    white-space: pre;
+    }
+
+.highlight {
+    overflow-x: auto;
+}

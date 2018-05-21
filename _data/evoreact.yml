@@ -78,5 +78,5 @@ folders:
         url: /rn_reference_devicescales.html
 
 
-- title: Примеры реализации
-  url: /rn_examples.html
+#- title: Примеры реализации
+#  url: /rn_examples.html
