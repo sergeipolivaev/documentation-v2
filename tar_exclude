@@ -1,0 +1,6 @@
+Gemfile
+Gemfile.lock
+Jenkinsfile
+buildandpush.sh
+jekyll.sh
+tar_exclude
