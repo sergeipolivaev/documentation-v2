@@ -26,6 +26,7 @@
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="nav#toc" data-offset="20">
@@ -155,6 +156,24 @@ image: {
     });
 </script>
 <script src="assets/js/tabs.js"></script>
+<!-- Add copy to clipboard button -->
+<script>
+var allCodeBlocksElements = $( "pre.highlight" );
+
+allCodeBlocksElements.each(function(i) {
+  // add different id for each code block
+
+  // target
+  var currentId = "codeblock" + (i + 1);
+  $(this).attr('id', currentId);
+
+  //trigger
+  var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+  $(this).after(clipButton);
+  });
+
+new Clipboard('.btn');
+</script>
 
 </body>
 {% if site.google_analytics %}

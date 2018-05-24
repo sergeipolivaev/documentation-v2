@@ -160,7 +160,7 @@ public class ReceiptClearedEvent extends ReceiptEvent {
 }
 ```
 
-### Событие смены пользователя
+### Событие смены пользователя {#UserChanged}
 
 При [смене пользователя](./doc_java_navigation.html#createIntentForChangeUser) приходит сообщение:
 

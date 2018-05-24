@@ -18,6 +18,9 @@ folders:
   - title: Создание и установка подписанного APK
     url: /rn_generatingsignedapk.html
 
+  - title: Обмен сообщениями со сторонним сервисом
+    url: /rn_third_party_service_communication.html
+
 - title: Справочник
   url:
 
@@ -75,5 +78,5 @@ folders:
         url: /rn_reference_devicescales.html
 
 
-- title: Примеры реализации
-  url: /rn_examples.html
+#- title: Примеры реализации
+#  url: /rn_examples.html

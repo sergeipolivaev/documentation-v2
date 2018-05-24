@@ -9,18 +9,9 @@ github_button: false
 
 ## integration-library
 
-{% include card.html header="Поиск товара" content="Пример показывает простой сценарий использования InventoryAPI" url="https://github.com" %}
+{% include card.html header="Integration-library-example" content="Приложение, демонстрирующее возможности библиотеки integration-library." url="https://github.com/evotor/evotor-api-example" %}
 
-{% include card.html header="Поиск товара" content="Пример показывает простой сценарий использования InventoryAPI" url="https://github.com" %}
 
 ## egais-api
 
-{% include card.html header="Чтение данных об организации" content="" url="https://github.com" %}
-
-{% include card.html header="Чтение данных о товарах" content="" url="https://github.com" %}
-
-{% include card.html header="Работа с ТТН" content="" url="https://github.com" %}
-
-{% include card.html header="Работа с актами списания" content="" url="https://github.com" %}
-
-{% include card.html header="Работа с актами приёмки в магазин" content="" url="https://github.com" %}
+{% include card.html header="Egais-api-example" content="Приложение, демонстрирующее возможности библиотеки egais-api." url="https://github.com/evotor/egais-api-example" %}

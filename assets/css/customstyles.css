@@ -553,6 +553,7 @@ ul#docnavsidebar li a:focus {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    border-radius: 5px;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -579,7 +580,14 @@ ul#docnavsidebar li a:focus {
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
+}
+
+/* Enable horizontal scroll */
+pre code {
+    white-space: pre;
+    }
+
+.highlight {
+    overflow-x: auto;
 }

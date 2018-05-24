@@ -7,9 +7,10 @@ folders:
 
 - title: Введение
   url: /java_introduction.html
-
 - title: Манифест Java-приложения
   url: /doc_java_app_manifest.html
+- title: Точки интеграции
+  url: /doc_app_integration_points.html
 
 - title: Руководства
   folderitems:
@@ -64,6 +65,8 @@ folders:
           url: /doc_egais_project_creation.html
         - title: Чтение данных ЕГАИС
           url: /doc_egais_data_reading_access.html
+        - title: Получение настроек пользователя из УТМ
+          url: /doc_egais_clientsettingsquery.html
 
     - title: Чеки
       subfolderitems:
@@ -95,13 +98,25 @@ folders:
         - title: Работа с принтером чеков
           url: /doc_java_bill_printer.html
 
+- title: Драйвера для оборудования
+  folderitems:
+  - title: Подготовка к разработке
+    url: /doc_drivers_library_connection.html
+  - title: SDK для денежного ящика
+    url: /doc_drivers_cashdrawer.html
+  - title: SDK для банковский терминалов
+    url: /doc_drivers_pinpads.html
+  - title: SDK для весов
+    url: /doc_drivers_scales.html
+  - title: SDK для подключаемого USB-оборудования
+    url: /doc_drivers_other.html
 
 - title: Справочники
   folderitems:
-  - title: Integration-library
-    url: integration-library/index.html
-  - title: egais-api
-    url: egais-api/index.html
+  - title: Библиотека integration-library
+    url: /integration-library/index.html
+  - title: Библиотека egais-api
+    url: /egais-api/index.html
 
 
 - title: Примеры реализации

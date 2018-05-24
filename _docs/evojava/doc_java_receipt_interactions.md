@@ -86,7 +86,7 @@ setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 
 Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.
 
-Конструкторы позиций описаны  в классе [`Position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
+Конструкторы позиций описаны  в классе [`Position.java`](https://github.com/evotor/integration-library/tree/develop/src/main/java/ru/evotor/framework/receipt/Position.java).
 
 Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть `uuid` товара):
 
@@ -122,7 +122,7 @@ public Position(
 * `name` – наименование товара из локальной базы товаров смарт-терминала.
 * `measureName` – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.
 * `measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
-* `taxNumber` – налоговая ставка. Может быть `null`. Доступные значения описаны в классе [`TaxNumber.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/TaxNumber.java). Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.
+* `taxNumber` – налоговая ставка. Может быть `null`. Доступные значения описаны в классе [`TaxNumber.java`](https://github.com/evotor/integration-library/tree/develop/src/main/java/ru/evotor/framework/receipt/TaxNumber.kt). Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.
 * `price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
 * `priceWithDiscountPosition` – цена позиции с учётом скидки.
 * `quantity` – количество добавленного товара.

@@ -4,7 +4,7 @@ exclude: [vendor]
 url: /
 
 # link to github repo
-github_editme_path: https://github.com/votor/documentation/tree/master/
+github_editme_path: https://github.com/evotor/documentation-v2/tree/develop/
 
 #feedback_email: ilytkin88@gmail.com
 #feedback_subject_line: feedback subject line
@@ -14,7 +14,7 @@ image_path: docs/images/
 port: 4000
 highlighter: rouge
 
-highlighting_css: monokai
+highlighting_css: darkly
 # options: "monokai" (black), "syntax" (white)
 navbar_style: lighttheme-evoblue
 navbar_logo: docs/images/logo_white.png

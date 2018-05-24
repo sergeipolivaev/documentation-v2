@@ -14,12 +14,12 @@ folders:
       - title: Продажа алкоголя
         url: /doc_egais.html
 
-    - title: Описание инфраструктуры
-      subfolderitems:
-      - title: Взаимодействие Облака Эвотор и смарт-терминала
-        url: /sample1.html
-      - title: Взаимодействие Облака Эвотор и сторонних систем
-        url: /sample1.html
+#    - title: Описание инфраструктуры
+#      subfolderitems:
+#      - title: Взаимодействие Облака Эвотор и смарт-терминала
+#        url: /sample1.html
+#      - title: Взаимодействие Облака Эвотор и сторонних систем
+#        url: /sample1.html
 
 - title: Разработка
   folderitems:
@@ -29,78 +29,87 @@ folders:
     subfolders:
     - title: Облако Эвотор
       subfolderitems:
-
-      - title: Авторизация
-        url: /sublevel1.html
-
-      - title: Ошибки
-        url: /sublevel2.html
-
+      - title: Введение
+        url: /doc_evotor_api_introduction.html
         subsubfolders:
-        - title: Third level deep
+        - title: Авторизация
           subsubfolderitems:
-
-          - title: Sub-sublevel 1
-            url: /subsublevel1.html
-
-          - title: Sub-sublevel 2
-            url: /subsublevel2.html
-
-          - title: Sub-sublevel 3
-            url: /subsublevel3.html
-
-    - title: Портал разработчика Эвотор
+          - title: Авторизация запросов к Облаку Эвотор
+            url: /doc_authorization.html
+          - title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
+            url: /doc_evotor_api_authorization.html
+      - title: Примеры запросов к Облаку Эвотор
+        url: /doc_example_calls.html
+      - title: Ошибки, которые может возвращать сторонний сервис
+        url: /doc_errors_returned.html
+      - title: Документы смарт-терминала
+        url: /doc_smart_terminal_documents.html
+    - title: Приложение на портале разработчика Эвотор
       subfolderitems:
-
       - title: Введение
         url: /doc_dev_site_introduction.html
-
         subsubfolders:
         - title: Тестирование приложения
           subsubfolderitems:
-
           - title: Включение режима разработчика
             url: /doc_app_developer_mode.html
-
           - title: Установка приложения
             url: /doc_app_installation.html
-
           - title: Перевод приложения в тестирование
             url: /doc_app_testing.html
+      - title: Черновики, модерация и публикация приложения
+        url: /doc_app_review.html
 
-        - title: Публикация приложения
-          subsubfolderitems:
-
-        - title: Статистика
-          subsubfolderitems:
+#        - title: Статистика
+#          subsubfolderitems:
 
     - title: Смарт-терминал
       subfolderitems:
-
         - title: Java SDK
           url: /java_introduction.html
-
         - title: React Native
           url: /rn_introduction.html
 
-- title: Распространение
+    - title: Примеры реализации
+      subfolderitems:
+        - title: Сборка и установка демонстрационного приложения
+          url: /doc_java_app_tutorial.html
+        - title: IFrame на странице приложения
+          url: /doc_iframe_within_application_page.html
+        - title: Интеграция с облачными сервисами
+          url: /doc_cloud_systems_integration.html
+        - title: Интеграция с 1С
+          url: /doc_1C_integration.html
+
+- title: Распространение и биллинг
   folderitems:
-  - title: Биллинг
-    url: /sample1.html
+  - title: О биллинге
+    url: /doc_about_billing.html
+  - title: О тарификации приложений
+    url: /doc_app_tariffication.html
+  - title: Тарифы
+    url: /doc_tariffs.html
+  - title: Выплаты
+    url: /doc_payoff.html
+  - title: Подписки
+    url: /doc_subscriptions.html
+
 
 - title: FAQ
   folderitems:
   - title: Часто задаваемые вопросы
-    url: /sample2.html
+    url: /doc_faq.html
+  - title: Устранение проблем с установкой приложения
+    url: /doc_installation_troubleshooting.html
 
 ###########################
 
-related_resources_title: Другие источники
+#related_resources_title: Другие источники
 
-related_resources_list:
+#related_resources_list:
 
-- title: Wiki
-  url: http://wiki.evotor.ru/
+#- title: Wiki
+#  url: http://wiki.evotor.ru/
 
-- title: Github
-  url: http://github.com/evotor
+#- title: Github
+#  url: http://github.com/evotor
