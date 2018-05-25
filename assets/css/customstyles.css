@@ -518,7 +518,8 @@ ul#docnavsidebar li a:focus {
 .center-image
 {
     text-align: center;
-    width: 100%;
+    width: auto;
+    height: auto;
 }
 
 /*image borders*/
