@@ -27,6 +27,8 @@ fun getReceipt(context: Context, type: Receipt.Type): Receipt?
 
 Метод возвращает чек или `null`, если чек закрыт.
 
+Чек содержит информацию о платежах (класс [Payment](./integration-library/ru/evotor/framework/receipt/Payment.html))
+
 ### Получить чек по идентификатору
 
 ```java
@@ -40,6 +42,8 @@ fun getReceipt(context: Context, uuid: String): Receipt?
 * `Receipt` – чек.
 
 Метод возвращает чек или `null`, если чек не найден.
+
+Чек содержит информацию о платежах (класс [Payment](./integration-library/ru/evotor/framework/receipt/Payment.html)
 
 ### Получить по штрихкоду позицию для добавления в чек:
 
