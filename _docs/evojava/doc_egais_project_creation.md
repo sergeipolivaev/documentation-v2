@@ -26,13 +26,19 @@ product: Java SDK
    }
    ```
 
-3. В файле `build.gradle` приложения (папка `app`), в зависимости подключите библиотеку egais-api:
+3. В файле `build.gradle` приложения (папка `app`), в зависимости подключите библиотеку `egais-api`:
 
    ```
    implementation 'com.github.evotor:egais-api:ebe58e1a79'
    ```
 
-4. В файле AndroidManifest.xml, в секции `application` укажите элемент `meta-data`, содержащий идентификатор приложения:
+4. В файле `AndroidManifest.xml`, перед секцией `application` укажите разрешение:
+
+   ```xml
+   <uses-permission android:name="ru.evotor.permission.EGAIS_READ_API" />
+   ```
+
+5. В файле `AndroidManifest.xml`, в секции `application` укажите элемент `meta-data`, содержащий идентификатор приложения:
 
    ```xml
    <meta-data
@@ -42,4 +48,4 @@ product: Java SDK
 
    {% include note.html content="Идентификатор приложения вы можете [скопировать на странице приложения на сайте разработчиков](./doc_java_app_manifest.html)." %}
 
-5. Убедитесь, что `PackageName` приложения совпадает с указанным на сайте разработчиков, это необходимо для [установки приложения на смарт-терминал](./doc_app_installation.html#adb-shell).
+6. Убедитесь, что `PackageName` приложения совпадает с указанным на сайте разработчиков, это необходимо для [установки приложения на смарт-терминал](./doc_app_installation.html#adb-shell).
