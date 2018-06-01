@@ -27,7 +27,7 @@ tags:
 
 Запрос:
 
-```
+```shell_session
 curl -X GET \
   https://api.evotor.ru/api/v1/inventories/stores/search \
   -H 'x-authorization: <токен приложения>'

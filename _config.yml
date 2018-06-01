@@ -15,7 +15,7 @@ port: 4000
 highlighter: rouge
 
 highlighting_css: darkly
-# options: "monokai" (black), "syntax" (white)
+# options: "monokai" (black), "syntax" (white), "darkly"
 navbar_style: lighttheme-evoblue
 navbar_logo: docs/images/logo_white.png
 
