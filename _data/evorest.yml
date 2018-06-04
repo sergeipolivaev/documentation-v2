@@ -20,3 +20,5 @@ folders:
   folderitems:
   - title: Push-уведомления
     url: /rest_push_notifications.html
+  - title: События приложения
+    url: /rest_events_streaming.html
