@@ -2,27 +2,23 @@
 ## if you want to list an external url, use url instead of url. the theme will apply a different link base.
 navbar_singleitems:
 - items:
-    - title: Платформа
+    - title: REST API Облака
       url: https://api.evotor.ru/
-    - title: Распространение
-      url: https://api.evotor.ru/
-    - title: Поддержка
-      url: https://api.evotor.ru/
-    - title: Вход
-      url: https://api.evotor.ru/
-
+        #https://api.evotor.ru/
+#    - title: Java SDK
+#      url: /java_introduction.html
+#    - title: React Native
+#      url: /rn_gettingstarted.html
 
 #Topnav dropdowns
 navbar_dropdowns:
 - folders:
 
-    - title: Документация
+    - title: SDK cмарт-терминала
       folderitems:
-        - title: Смарт-терминал
+        - title: Java SDK
           url: /java_introduction.html
-        - title: Облако Эвотор
-          url: /rn_gettingstarted.html
-        - title: Глоссарий
+        - title: React Native SDK
           url: /rn_gettingstarted.html
 
 #    - title: Tags
