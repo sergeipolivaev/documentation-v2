@@ -90,9 +90,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-#plugins:
+plugins:
 #  - jekyll-algolia
-
+#  - jekyll-remote-plantuml
 ########## UI text ###############
 
 
