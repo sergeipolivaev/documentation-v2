@@ -14,10 +14,10 @@ folders:
   folderitems:
   - title: Получение ключа издателя
     url: /rest_publisher_access_token.html
-- title: Cloud-api
-  folderitems:
-  - title: Push-уведомления
-    url: /rest_push_notifications.html
+#- title: Cloud-api
+#  folderitems:
+#  - title: Push-уведомления
+#    url: /rest_push_notifications.html
 - title: Publisher-api
   folderitems:
   - title: Push-уведомления
