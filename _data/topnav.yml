@@ -3,14 +3,11 @@
 navbar_singleitems:
 - items:
     - title: Платформа
-      url: https://api.evotor.ru/
+      url:
     - title: Распространение
-      url: https://api.evotor.ru/
+      url: /distribution.html
     - title: Поддержка
-      url: https://api.evotor.ru/
-    - title: Вход
-      url: https://api.evotor.ru/
-
+      url: /support.html
 
 #Topnav dropdowns
 navbar_dropdowns:
@@ -19,11 +16,11 @@ navbar_dropdowns:
     - title: Документация
       folderitems:
         - title: Смарт-терминал
-          url: /java_introduction.html
+          url: /smart-terminal.html
         - title: Облако Эвотор
-          url: /rn_gettingstarted.html
+          url: /rest-api.html
         - title: Глоссарий
-          url: /rn_gettingstarted.html
+          url: /glossary.html
 
 #    - title: Tags
 #      folderitems:

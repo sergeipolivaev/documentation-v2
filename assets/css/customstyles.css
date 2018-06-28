@@ -592,3 +592,62 @@ pre code {
 .highlight {
     overflow-x: auto;
 }
+
+
+/*Main navigation cards styles*/
+
+.feature-item {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.feature-item:hover {
+  background-color: #fad9d1;
+  border-radius: 3px;
+}
+
+.feature-item a {
+  text-decoration: none;
+  color: none;
+}
+
+.feature-item h2 {
+  color: #333;
+  font-weight: 300;
+  font-size: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+}
+
+.feature-item .fa {
+  margin-right: 5px;
+  color: #e6522c;
+}
+
+.feature-item p {
+  font-size: 16px;
+  line-height: 1.8em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #111;
+}
+
+/*End of main navigation cards styles*/
+
+/*copy btn*/
+
+.copy-btn {
+    -webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    padding: 2px 6px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+/*end copy btn*/

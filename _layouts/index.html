@@ -1,0 +1,95 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+  </script>
+    <meta charset="utf-8">
+    <title>{{page.title}} | {{site.uistring.title}}</title>
+    <base target="_self">
+    <meta name="description" content="{% if page.content %}{{ page.content | truncatewords: 30 | strip_html }} {% else %}{{site.uistring.description}}{% endif %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/{{site.highlighting_css}}.css" />
+    <link rel="stylesheet" href="assets/css/{{site.navbar_style}}.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+{% include topnav.html %}
+
+<ul class="nav navbar-nav navbar-right">
+
+  <li>
+    <!--start search-->
+    <div id="search-demo-container">
+      <form action="search.html" method="get">
+        <input type="text" id="search-input" placeholder="{{site.uistring.search_placeholder_global}}" name="query">
+      </form>
+    </div>
+    <!--end search-->
+  </li>
+
+</ul>
+
+<div class="row jumbotron">
+</div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12 feature-item card">
+      <a href="/docs/prometheus/latest/querying/basics/">
+        <h2><i class="fa fa-search"></i> Платформа Эвотор</h2>
+        <p> {{page.platform}} </p>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12 feature-item card">
+      <a href="/docs.html">
+        <h2><i class="fa fa-line-chart"></i> Документация</h2>
+        <p> {{page.docs}} </p>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12 feature-item card">
+        <a href="/distribution.html">
+          <h2><i class="fa fa-cog"></i> Распространение</h2>
+          <p> {{page.distribution}} </p>
+        </a>
+      </div>
+    <div class="col-md-3 col-sm-6 col-xs-12 feature-item card">
+        <a href="/support.html">
+          <h2><i class="fa fa-warning"></i> Поддержка</h2>
+          <p> {{page.support}} </p>
+        </a>
+      </div>
+  </div>
+
+  <script src="assets/js/jquery.magnific-popup.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/toc.js"></script>
+  <script src="assets/js/anchor.min.js"></script>
+  <script src="assets/js/customscripts.js"></script>
+
+
+  </body>
+  {% if site.google_analytics %}
+  {% include google_analytics.html %}
+  {% endif %}
+  </html>
