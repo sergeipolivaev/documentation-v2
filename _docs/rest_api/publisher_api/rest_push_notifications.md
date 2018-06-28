@@ -31,7 +31,7 @@ curl -X POST 'https://dev.evotor.ru/apps/{application_id}/push-notifications'
 -H "Authorization: bearer {OAUTH_TOKEN}"
 ```
 
-#### Пример тела запроса.
+#### Пример запроса
 
 ```json
 {

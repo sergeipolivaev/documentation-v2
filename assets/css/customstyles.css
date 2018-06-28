@@ -600,3 +600,8 @@ pre code {
 .highlight {
     overflow-x: auto;
 }
+
+/*copy to clipboard button styles*/
+.copy-btn {
+    float: right;
+}
