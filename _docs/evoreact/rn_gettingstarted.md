@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evoreact
 permalink: rn_gettingstarted.html
-tags: [terminal, react]
+tags: []
 ---
 
 ## Подготовка к разработке
@@ -23,25 +23,25 @@ tags: [terminal, react]
 
 1. Перейдите в папку, где будет создан ваш проект:
 
-   ```
+   ```shell
    cd devfolder
    ```
 
 2. Выполните команду:
 
-   ```
+   ```shell
    create-react-native-app YourAppName
    ```
 
 3. Перейдите в корневую папку проекта:
 
-   ```
+   ```shell
    cd YourAppName
    ```
 
 4. Выполните следующую команду, чтобы получить возможность подключать к своему приложению нативный код:
 
-   ```
+   ```shell
    npm run eject
    ```
 
@@ -69,7 +69,7 @@ tags: [terminal, react]
    ```
 2. Установите библиотеку, выполнив следующую команду в корневой папке проекта:
 
-   ```
+   ```shell
    npm install evotor-integration-library --save
    ```
 
@@ -77,7 +77,7 @@ tags: [terminal, react]
 
    * В корневой папке проекта выполните команду:
 
-   ```
+   ```shell
    react-native link evotor-integration-library
    ```
 
@@ -111,13 +111,13 @@ tags: [terminal, react]
 2. [Скачайте и установите менеджер пакетов Yarn](https://yarnpkg.com/lang/en/docs/install/).
 2. Выполните команду:
 
-   ```
+   ```shell
    yarn
    ```
 
 3. Повторно выполните команду:
 
-   ```
+   ```shell
    react-native link evotor-integration-library
    ```
 
@@ -146,7 +146,7 @@ tags: [terminal, react]
 
 5. Выполните следующую команду в корневой папке проекта:
 
-   ```
+   ```shell
    react-native run-android
    ```
 
@@ -158,14 +158,14 @@ tags: [terminal, react]
 
 7. Чтобы исправить ошибку, выполните команду, которая открывает **Меню разработчика** (**Developer Menu**):
 
-   ```
+   ```shell
    adb shell input keyevent 82
    ```
 
 8. В **Меню разработчика** выберите пункты **Dev Settings** → **Debug server host & port for device**.
 9. В открывшемся окне укажите:
 
-   ```
+   ```shell
    <IP-адрес вашего компьютера>:8081
    ```
 

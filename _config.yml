@@ -14,8 +14,8 @@ image_path: docs/images/
 port: 4000
 highlighter: rouge
 
-highlighting_css: darkly
-# options: "monokai" (black), "syntax" (white), "darkly"
+highlighting_css: grey
+# options: "monokai" (black), "syntax" (white), "darkly", "grey"
 navbar_style: lighttheme-evoblue
 navbar_logo: docs/images/logo_white.png
 
@@ -90,9 +90,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-#plugins:
+plugins:
 #  - jekyll-algolia
-
+#  - jekyll-remote-plantuml
 ########## UI text ###############
 
 

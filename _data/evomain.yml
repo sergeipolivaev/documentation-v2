@@ -51,7 +51,7 @@ folders:
         subsubfolders:
         - title: Тестирование приложения
           subsubfolderitems:
-          - title: Включение режима разработчика
+          - title: Включение и выключение режима разработчика
             url: /doc_app_developer_mode.html
           - title: Установка приложения
             url: /doc_app_installation.html
