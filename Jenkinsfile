@@ -36,6 +36,22 @@ pipeline {
         """
       }
     }
+    stage('Deploy to Prod [develop]') {
+      when {
+        environment name: "GIT_BRANCH", value: "origin/develop"
+      }
+      steps {
+        sh """helm upgrade --install \
+          --kube-context prod-cluster \
+          --namespace prod \
+          --values ./helm/values/develop.yaml \
+          --set image.tag=$BUILD_TAG \
+          --wait \
+          dev-docs-v2 \
+          ./helm/dev-docs-v2
+        """
+      }
+    }
     stage('Build [master]') {
       when {
         environment name: "GIT_BRANCH", value: "origin/master"
