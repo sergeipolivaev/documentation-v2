@@ -9,7 +9,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - loyalty.evotor.ru
+    - {{ .Values.service.host }}
     secretName: wildcard-evotor-ru
   rules:
   - host: {{ .Values.service.host }}
