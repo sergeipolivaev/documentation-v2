@@ -68,7 +68,7 @@ folders:
         - title: Java SDK
           url: /java_introduction.html
         - title: React Native
-          url: /rn_introduction.html
+          url: /rn_gettingstarted.html
 
     - title: Примеры реализации
       subfolderitems:
