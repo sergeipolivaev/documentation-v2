@@ -8,8 +8,7 @@ product: Java SDK
 
 Все запросы приложений к стороннему сервису проходят через Облако Эвотор:
 
-{: .center-image}
-![](images\cloud_proxy.png)
+{% include image.html file="cloud_proxy.png" url="images/cloud_proxy.png" caption="Схема передачи данных" %}
 
 Для отправки запросов приложения могут использовать только 80 и 443 порт.
 

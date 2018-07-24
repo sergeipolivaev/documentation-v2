@@ -18,7 +18,7 @@ navbar_dropdowns:
     - title: SDK cмарт-терминала
       folderitems:
         - title: Java SDK
-          url: /java_introduction.html
+          url: /doc_java_app_development_prerequisites.html
         - title: React Native SDK
           url: /rn_gettingstarted.html
 
