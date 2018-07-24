@@ -16,13 +16,13 @@ folders:
     url: /rest_publisher_access_token.html
   - title: Работа с push-уведомлениями
     url: /rest_push_notifications_guide.html
-#- title: Cloud-api
-#  folderitems:
-#  - title: Push-уведомления
-#    url: /rest_push_notifications.html
-- title: Publisher-api
+- title: Customer's API
+  folderitems:
+  - title: Изображения товаров
+    url: /rest_images.html
+- title: Publisher's API
   folderitems:
   - title: Push-уведомления
     url: /rest_push_notifications.html
-  - title: События приложения
-    url: /rest_events_streaming.html
+#  - title: События приложения
+#    url: /rest_events_streaming.html

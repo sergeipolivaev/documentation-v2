@@ -82,7 +82,7 @@ Location: /api/apps/:app-id/push-notifications/:task-id
 
 ## Получить push-уведомление
 
-    GET /api/apps/{appId}/push-notifications/{push-id}
+    GET /api/apps/{app-id}/push-notifications/{push-id}
 
 ### Ответ
 
