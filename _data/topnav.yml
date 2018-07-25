@@ -3,7 +3,7 @@
 navbar_singleitems:
 - items:
     - title: REST API Облака
-      url: https://api.evotor.ru/docs/
+      url: /rest_overview.html
         #https://api.evotor.ru/docs/
         #/rest_overview.html
 #    - title: Java SDK
