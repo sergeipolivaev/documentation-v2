@@ -23,7 +23,7 @@ multipart/form-data
 
 ## Передать изображение
 
-    POST /{store-id}/products/{product-id}/image
+    POST /stores/{store-id}/products/{product-id}/images
 
 ### Параметры запроса
 
@@ -46,27 +46,26 @@ multipart/form-data
 ```
 ```json
 {
-  "status": "Success"
+  "createdAt": "2018-07-25T11:45:50.235Z",
+  "id": "string",
+  "meta": {
+    "extension": "string",
+    "fileSize": 0,
+    "height": 0,
+    "width": 0
+  },
+  "updatedAt": "2018-07-25T11:45:50.235Z",
+  "url": "string"
 }
 ```
 
-## Изменить изображение товара
+`meta` – объект с параметрами изображения товара.
 
-    PUT /stores/{store-id}/products/{product-id}/image
 
-### Параметры запроса
 
-Имя  | Тип  | Описание
------|------|--------------
-`datafile`| `string` | **Обязательный**. Двоичный файл изображения товара.
+## Получить изображение
 
-#### Пример тела запроса
-
-```json
-{
-  "datafile": "string"
-}
-```
+    GET /stores/{storeUuid}/products/{productUuid}/images/{image-id}
 
 ### Ответ
 
@@ -75,6 +74,25 @@ multipart/form-data
 ```
 ```json
 {
-  "status": "Success"
+  "createdAt": "2018-07-25T12:37:06.999Z",
+  "id": "string",
+  "meta": {
+    "extension": "string",
+    "fileSize": 0,
+    "height": 0,
+    "width": 0
+  },
+  "updatedAt": "2018-07-25T12:37:06.999Z",
+  "url": "string"
 }
+```
+
+## Удалить изображение товара
+
+    DELETE /stores/{storeUuid}/products/{productUuid}/images/{image-id}
+
+### Ответ
+
+```
+204 No Content
 ```
