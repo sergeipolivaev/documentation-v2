@@ -18,6 +18,14 @@ folders:
     url: /rest_push_notifications_guide.html
 - title: Customer's API
   folderitems:
+  - title: Иерархия
+    url: /rest_hierarchy.html
+  - title: Документы
+    url: /rest_documents.html
+  - title: Номенклатура
+    url: /rest_products.html
+  - title: Характеристики товара
+    url: /rest_product_attributes.html
   - title: Изображения товаров
     url: /rest_images.html
 - title: Publisher's API
