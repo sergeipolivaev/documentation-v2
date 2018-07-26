@@ -25,6 +25,8 @@ folders:
   - title: Товары и модификации товаров
     url: /rest_products.html
   - title: Группы товаров и группы модификаций
+    url: /rest_products_groups.html
+  - title: Задачи для множественных операций
     url: /rest_bulk_tasks.html
   - title: Изображения товаров
     url: /rest_images.html

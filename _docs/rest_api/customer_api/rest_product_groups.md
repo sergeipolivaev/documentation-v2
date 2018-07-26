@@ -1,6 +1,6 @@
 ---
 title: Группы товаров и группы модификаций
-permalink: rest_products.html
+permalink: rest_products_groups.html
 sidebar: evorest
 product: REST API
 ---
