@@ -29,16 +29,25 @@ product: REST API
 ### Пример тела запроса
 
 ```json
-[
-  {
-    "parent_id": "1ddea16b-971b-dee5-3798-1b29a7aa2e27",
-    "name": "Группа",
-    "barcodes": [
-      "2000000000060"
-    ],
-    "attributes": {}
-  }
-]
+{
+  "parent_id": "1ddea16b-971b-dee5-3798-1b29a7aa2e27",
+  "name": "Группа",
+  "barcodes": [
+    "2000000000060"
+  ],
+  "attributes": [
+    {
+      "id": "36755a25-8f56-11e8-96a6-85f64fd5f8e3",
+      "name": "Цвет",
+      "choices": [
+        {
+          "id": "36755a27-8f56-11e8-96a6-85f64fd5f8e3",
+          "name": "Зелёный"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ### Ответ
@@ -54,7 +63,18 @@ product: REST API
   "barcodes": [
     "2000000000060"
   ],
-  "attributes": {}
+  "attributes": [
+    {
+      "id": "36755a25-8f56-11e8-96a6-85f64fd5f8e3",
+      "name": "Цвет",
+      "choices": [
+        {
+          "id": "36755a27-8f56-11e8-96a6-85f64fd5f8e3",
+          "name": "Зелёный"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -111,7 +131,18 @@ product: REST API
     "barcodes": [
       "2000000000060"
     ],
-    "attributes": {}
+    "attributes": [
+      {
+        "id": "36755a25-8f56-11e8-96a6-85f64fd5f8e3",
+        "name": "Цвет",
+        "choices": [
+          {
+            "id": "36755a27-8f56-11e8-96a6-85f64fd5f8e3",
+            "name": "Зелёный"
+          }
+        ]
+      }
+    ]
   }
 ]
 ```
@@ -172,7 +203,18 @@ product: REST API
       "barcodes": [
         "2000000000060"
       ],
-      "attributes": {}
+      "attributes": [
+        {
+          "id": "36755a25-8f56-11e8-96a6-85f64fd5f8e3",
+          "name": "Цвет",
+          "choices": [
+            {
+              "id": "36755a27-8f56-11e8-96a6-85f64fd5f8e3",
+              "name": "Зелёный"
+            }
+          ]
+        }
+      ]
     }
   ],
   "paging": {
@@ -204,9 +246,7 @@ product: REST API
 ```
 
 
-## Создать/заменить товар
-
-Создает или заменяет в магазине один товар или модификацию товара с указанным идентификатором.
+## Создать/заменить группу
 
     PUT /stores/{store-id}/product-groups/{product-group-id}
 
@@ -229,7 +269,18 @@ product: REST API
   "barcodes": [
     "2000000000060"
   ],
-  "attributes": {}
+  "attributes": [
+    {
+      "id": "36755a25-8f56-11e8-96a6-85f64fd5f8e3",
+      "name": "Цвет",
+      "choices": [
+        {
+          "id": "36755a27-8f56-11e8-96a6-85f64fd5f8e3",
+          "name": "Зелёный"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -258,7 +309,18 @@ product: REST API
   "barcodes": [
     "2000000000060"
   ],
-  "attributes": {}
+  "attributes": [
+    {
+      "id": "36755a25-8f56-11e8-96a6-85f64fd5f8e3",
+      "name": "Цвет",
+      "choices": [
+        {
+          "id": "36755a27-8f56-11e8-96a6-85f64fd5f8e3",
+          "name": "Зелёный"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -288,7 +350,7 @@ product: REST API
 200 Успешно
 ```
 
-## Удалить товар
+## Удалить группу
 
 Удаляет из магазина группу с указанным идентификатором.
 
