@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: model/types.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: model/types.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Перечисление версий ЕГАИС.
+ * @enum {string} Version
+ * @property {string} V1
+ * @property {string} V2
+ * @property {string} V3
+ */
+var Version;
+(function (Version) {
+    Version["V1"] = "V1";
+    Version["V2"] = "V2";
+    Version["V3"] = "V3";
+})(Version = exports.Version || (exports.Version = {}));
+/**
+ * Перечисление типов организаций.
+ * @enum {string} OrgType
+ * @property {string} UL Юридическое лицо
+ * @property {string} FL Индивидуальный предприниматель
+ * @property {string} FO Иностранец (исключая таможенный союз)
+ * @property {string} TS Таможенный союз
+ * @memberOf module:orgInfo#
+ */
+var OrgType;
+(function (OrgType) {
+    OrgType["UL"] = "UL";
+    OrgType["FL"] = "FL";
+    OrgType["FO"] = "FO";
+    OrgType["TS"] = "TS";
+})(OrgType = exports.OrgType || (exports.OrgType = {}));
+/**
+ * Перечисление поддерживаемых клиентом версий формата ТТН.
+ * @enum {string} WaybillTypeUsed
+ * @property {string} WAYBILL_V1 Версия 1
+ * @property {string} WAYBILL_V2 Версия 2
+ * @property {string} WAYBILL_V3 Версия 3
+ * @memberOf module:orgInfo#
+ */
+var WaybillTypeUsed;
+(function (WaybillTypeUsed) {
+    WaybillTypeUsed["WAYBILL_V1"] = "WAYBILL_V1";
+    WaybillTypeUsed["WAYBILL_V2"] = "WAYBILL_V2";
+    WaybillTypeUsed["WAYBILL_V3"] = "WAYBILL_V3";
+})(WaybillTypeUsed = exports.WaybillTypeUsed || (exports.WaybillTypeUsed = {}));
+/**
+ * Перечисление типов продукции.
+ * @enum {string} OrgType
+ * @property {string} AP Алкогольная продукция (АП)
+ * @property {string} SSP Спиртосодержащая продукция (ССП)
+ * @property {string} SSNP ССНП
+ * @property {string} SPIRT Спирт
+ * @memberOf module:productInfo#
+ */
+var ProductType;
+(function (ProductType) {
+    ProductType["AP"] = "AP";
+    ProductType["SSP"] = "SSP";
+    ProductType["SSNP"] = "SSNP";
+    ProductType["SPIRT"] = "SPIRT";
+})(ProductType = exports.ProductType || (exports.ProductType = {}));
+/**
+ * Перечисление направлений документа в представлении УТМ.
+ * @enum {string} Direction
+ * @property {string} IN Входящий
+ * @property {string} OUT Исходящий
+ * @memberOf module:waybill#
+ */
+var Direction;
+(function (Direction) {
+    Direction["IN"] = "IN";
+    Direction["OUT"] = "OUT";
+})(Direction = exports.Direction || (exports.Direction = {}));
+/**
+ * Перечисление типов резолюций ТТН.
+ * @enum {string} WaybillResolution
+ * @property {string} UNKNOWN Неизвестная
+ * @property {string} REJECTED Отклонённая
+ * @property {string} ACCEPTED Принятая
+ * @memberOf module:waybill#
+ */
+var WaybillResolution;
+(function (WaybillResolution) {
+    WaybillResolution["UNKNOWN"] = "UNKNOWN";
+    WaybillResolution["REJECTED"] = "REJECTED";
+    WaybillResolution["ACCEPTED"] = "ACCEPTED";
+})(WaybillResolution = exports.WaybillResolution || (exports.WaybillResolution = {}));
+/**
+ * Перечисление типов состояний ТТН.
+ * @enum {string} WaybillStatus
+ * @property {string} NOT_PROCESSED
+ * @property {string} WAIT_UTM_ANSWER
+ * @property {string} NOT_CONFIRMED
+ * @property {string} ERROR
+ * @property {string} FINISH
+ * @memberOf module:waybill#
+ */
+var WaybillStatus;
+(function (WaybillStatus) {
+    WaybillStatus["NOT_PROCESSED"] = "NOT_PROCESSED";
+    WaybillStatus["WAIT_UTM_ANSWER"] = "WAIT_UTM_ANSWER";
+    WaybillStatus["NOT_CONFIRMED"] = "NOT_CONFIRMED";
+    WaybillStatus["ERROR"] = "ERROR";
+    WaybillStatus["FINISH"] = "FINISH";
+})(WaybillStatus = exports.WaybillStatus || (exports.WaybillStatus = {}));
+/**
+ * Перечисление типов товарно-транспортной накладной (ТТН).
+ * @enum {string} WaybillType
+ * @property {string} INVOICE_FROM_ME Расход
+ * @property {string} RETURN_TO_ME Возврат мне
+ * @property {string} INVOICE_TO_ME Приход
+ * @property {string} RETURN_FROM_ME Возврат от меня
+ * @memberOf module:waybill#
+ */
+var WaybillType;
+(function (WaybillType) {
+    WaybillType["INVOICE_FROM_ME"] = "INVOICE_FROM_ME";
+    WaybillType["RETURN_TO_ME"] = "RETURN_TO_ME";
+    WaybillType["INVOICE_TO_ME"] = "INVOICE_TO_ME";
+    WaybillType["RETURN_FROM_ME"] = "RETURN_FROM_ME";
+})(WaybillType = exports.WaybillType || (exports.WaybillType = {}));
+/**
+ * Перечисление типов поставки.
+ * @enum {string} UnitType
+ * @property {string} PACKED Упакованная
+ * @property {string} UNPACKED Неупакованная
+ * @memberOf module:waybill#
+ */
+var UnitType;
+(function (UnitType) {
+    UnitType["PACKED"] = "PACKED";
+    UnitType["UNPACKED"] = "UNPACKED";
+})(UnitType = exports.UnitType || (exports.UnitType = {}));
+/**
+ * Перечисление статусов справки 2.
+ * @enum {string} TtnInformF2RegStatus
+ * @property {string} NOT_PROCESSED
+ * @property {string} FINISH
+ * @memberOf module:waybill#
+ */
+var TtnInformF2RegStatus;
+(function (TtnInformF2RegStatus) {
+    TtnInformF2RegStatus["NOT_PROCESSED"] = "NOT_PROCESSED";
+    TtnInformF2RegStatus["FINISH"] = "FINISH";
+})(TtnInformF2RegStatus = exports.TtnInformF2RegStatus || (exports.TtnInformF2RegStatus = {}));
+/**
+ * Тип подтверждения акта ТТН.
+ * @enum {string} AcceptType
+ * @property {string} ACCEPTED Принятие
+ * @property {string} DIFFERENCES Есть расхождения
+ * @property {string} REJECTED Отказ
+ * @memberOf module:waybillAct#
+ */
+var AcceptType;
+(function (AcceptType) {
+    AcceptType["ACCEPTED"] = "ACCEPTED";
+    AcceptType["DIFFERENCES"] = "DIFFERENCES";
+    AcceptType["REJECTED"] = "REJECTED";
+})(AcceptType = exports.AcceptType || (exports.AcceptType = {}));
+/**
+ * Тип акта расхождения к ТТН.
+ * @enum {string} WaybillActType
+ * @property {string} FULL Полный
+ * @property {string} PART частичный
+ * @memberOf module:waybillAct#
+ */
+var WaybillActType;
+(function (WaybillActType) {
+    WaybillActType["FULL"] = "FULL";
+    WaybillActType["PART"] = "PART";
+})(WaybillActType = exports.WaybillActType || (exports.WaybillActType = {}));
+/**
+ * Статус акта разногласия для ТТН.
+ * @enum {string} WaybillActStatus
+ * @property {string} NOT_PROCESSED
+ * @property {string} FINISH
+ * @property {string} REJECTED
+ * @memberOf module:waybillAct#
+ */
+var WaybillActStatus;
+(function (WaybillActStatus) {
+    WaybillActStatus["NOT_PROCESSED"] = "NOT_PROCESSED";
+    WaybillActStatus["FINISH"] = "FINISH";
+    WaybillActStatus["REJECTED"] = "REJECTED";
+})(WaybillActStatus = exports.WaybillActStatus || (exports.WaybillActStatus = {}));
+/**
+ * Причина постановки на баланс.
+ * @enum {string} ActChargeOnShopType
+ * @property {string} RESORTING Пересортица
+ * @property {string} OVERAGE Излишки
+ * @property {string} RECEIVED_BEFORE_01_01_2016 Продукция, полученная до 01.01.2016
+ * @memberOf module:actChargeOn#
+ */
+var ActChargeOnShopType;
+(function (ActChargeOnShopType) {
+    ActChargeOnShopType["RESORTING"] = "RESORTING";
+    ActChargeOnShopType["OVERAGE"] = "OVERAGE";
+    ActChargeOnShopType["RECEIVED_BEFORE_01_01_2016"] = "RECEIVED_BEFORE_01_01_2016";
+})(ActChargeOnShopType = exports.ActChargeOnShopType || (exports.ActChargeOnShopType = {}));
+/**
+ * Статус постановки на баланс.
+ * @enum {string} ActChargeOnShopStatus
+ * @property {string} NOT_PROCESSED
+ * @property {string} FINISH
+ * @property {string} REJECTED
+ * @memberOf module:actChargeOn#
+ */
+var ActChargeOnShopStatus;
+(function (ActChargeOnShopStatus) {
+    ActChargeOnShopStatus["NOT_PROCESSED"] = "NOT_PROCESSED";
+    ActChargeOnShopStatus["FINISH"] = "FINISH";
+    ActChargeOnShopStatus["REJECTED"] = "REJECTED";
+})(ActChargeOnShopStatus = exports.ActChargeOnShopStatus || (exports.ActChargeOnShopStatus = {}));
+/**
+ * Причина списания.
+ * @enum {string} ActWriteOffType
+ * @property {string} RESORTING Пересортица
+ * @property {string} OVERAGE Излишки
+ * @property {string} RECEIVED_BEFORE_01_01_2016 Продукция, полученная до 01.01.2016
+ * @memberOf module:actWriteOff#
+ */
+var ActWriteOffType;
+(function (ActWriteOffType) {
+    ActWriteOffType["RESORTING"] = "RESORTING";
+    ActWriteOffType["OVERAGE"] = "OVERAGE";
+    ActWriteOffType["RECEIVED_BEFORE_01_01_2016"] = "RECEIVED_BEFORE_01_01_2016";
+})(ActWriteOffType = exports.ActWriteOffType || (exports.ActWriteOffType = {}));
+/**
+ * Статус списания.
+ * @enum {string} ActWriteOffStatus
+ * @property {string} NOT_PROCESSED
+ * @property {string} FINISH
+ * @property {string} REJECTED
+ * @memberOf module:actWriteOff#
+ */
+var ActWriteOffStatus;
+(function (ActWriteOffStatus) {
+    ActWriteOffStatus["NOT_PROCESSED"] = "NOT_PROCESSED";
+    ActWriteOffStatus["FINISH"] = "FINISH";
+    ActWriteOffStatus["REJECTED"] = "REJECTED";
+})(ActWriteOffStatus = exports.ActWriteOffStatus || (exports.ActWriteOffStatus = {}));
+/**
+ * Тип заключения фиксации.
+ * @enum {string} ConclusionType
+ * @property {string} ACCEPTED
+ * @property {string} REJECTED
+ * @memberOf module:ticket#
+ */
+var ConclusionType;
+(function (ConclusionType) {
+    ConclusionType["ACCEPTED"] = "ACCEPTED";
+    ConclusionType["REJECTED"] = "REJECTED";
+})(ConclusionType = exports.ConclusionType || (exports.ConclusionType = {}));
+/**
+ * Статус тикета подтверждения.
+ * @enum {string} ConfirmTicketStatus
+ * @property {string} NOT_PROCESSED
+ * @property {string} FINISH
+ * @property {string} REJECTED
+ * @memberOf module:ticket#
+ */
+var ConfirmTicketStatus;
+(function (ConfirmTicketStatus) {
+    ConfirmTicketStatus["NOT_PROCESSED"] = "NOT_PROCESSED";
+    ConfirmTicketStatus["FINISH"] = "FINISH";
+    ConfirmTicketStatus["REJECTED"] = "REJECTED";
+})(ConfirmTicketStatus = exports.ConfirmTicketStatus || (exports.ConfirmTicketStatus = {}));
+/**
+ * Тип исходного документа.
+ * @enum {string} DocType
+ * @property {string} WAY_BILL Товарно-транспортная накладная
+ * @property {string} WAY_BILL_ACT Акт разногласий для товарно-транспортной накладной
+ * @property {string} TRANSFER_TO_SHOP Акт передачи продукции со склада в торговый зал
+ * @property {string} TRANSFER_FROM_SHOP Акт передачи продукции из торгового зала на склад
+ * @property {string} CONFIRM_TICKET Подтверждение акта разногласий для Товарно-Транспортной Накладной
+ * @property {string} QUERY_AP
+ * @property {string} QUERY_RESTS
+ * @property {string} QUERY_RESTS_SHOP
+ * @property {string} QUERY_CLIENTS
+ * @property {string} QUERY_RESEND_DOC
+ * @property {string} ACT_WRITE_OFF Акт списания
+ * @property {string} INFO_VERSION_TTN
+ * @property {string} ACT_CHARGE_ON_SHOP Акт постановки на баланс
+ * @property {string} ACT_WRITE_OFF_SHOP Акт списания из магазина
+ * @memberOf module:ticket#
+ */
+var DocType;
+(function (DocType) {
+    DocType["WAY_BILL"] = "WAY_BILL";
+    DocType["WAY_BILL_ACT"] = "WAY_BILL_ACT";
+    DocType["TRANSFER_TO_SHOP"] = "TRANSFER_TO_SHOP";
+    DocType["TRANSFER_FROM_SHOP"] = "TRANSFER_FROM_SHOP";
+    DocType["CONFIRM_TICKET"] = "CONFIRM_TICKET";
+    DocType["QUERY_AP"] = "QUERY_AP";
+    DocType["QUERY_RESTS"] = "QUERY_RESTS";
+    DocType["QUERY_RESTS_SHOP"] = "QUERY_RESTS_SHOP";
+    DocType["QUERY_CLIENTS"] = "QUERY_CLIENTS";
+    DocType["QUERY_RESEND_DOC"] = "QUERY_RESEND_DOC";
+    DocType["ACT_WRITE_OFF"] = "ACT_WRITE_OFF";
+    DocType["INFO_VERSION_TTN"] = "INFO_VERSION_TTN";
+    DocType["ACT_CHARGE_ON_SHOP"] = "ACT_CHARGE_ON_SHOP";
+    DocType["ACT_WRITE_OFF_SHOP"] = "ACT_WRITE_OFF_SHOP";
+})(DocType = exports.DocType || (exports.DocType = {}));
+/**
+ * Тип результата выполнения операции.
+ * @enum {string} OperationResult
+ * @property {string} ACCEPTED
+ * @property {string} REJECTED
+ * @memberOf module:ticket#
+ */
+var OperationResult;
+(function (OperationResult) {
+    OperationResult["ACCEPTED"] = "ACCEPTED";
+    OperationResult["REJECTED"] = "REJECTED";
+})(OperationResult = exports.OperationResult || (exports.OperationResult = {}));
+/**
+ * Статус перемещения.
+ * @enum {string} TransferStatus
+ * @property {string} NOT_PROCESSED
+ * @property {string} FINISH
+ * @property {string} REJECTED
+ * @memberOf module:transfer#
+ */
+var TransferStatus;
+(function (TransferStatus) {
+    TransferStatus["NOT_PROCESSED"] = "NOT_PROCESSED";
+    TransferStatus["FINISH"] = "FINISH";
+    TransferStatus["REJECTED"] = "REJECTED";
+})(TransferStatus = exports.TransferStatus || (exports.TransferStatus = {}));
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-actChargeOn.html">actChargeOn</a></li><li><a href="module-actWriteOff.html">actWriteOff</a></li><li><a href="module-orgInfo.html">orgInfo</a></li><li><a href="module-productInfo.html">productInfo</a></li><li><a href="module-productRest.html">productRest</a></li><li><a href="module-ticket.html">ticket</a></li><li><a href="module-transfer.html">transfer</a></li><li><a href="module-waybill.html">waybill</a></li><li><a href="module-waybillAct.html">waybillAct</a></li></ul><h3>Classes</h3><ul><li><a href="module-actChargeOn.ActChargeOnShop.html">ActChargeOnShop</a></li><li><a href="module-actChargeOn.ActChargeOnShopPosition.html">ActChargeOnShopPosition</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionQuery.html">ActChargeOnShopPositionQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionSortOrder.html">ActChargeOnShopPositionSortOrder</a></li><li><a href="module-actChargeOn.ActChargeOnShopQuery.html">ActChargeOnShopQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopSortOrder.html">ActChargeOnShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOff.html">ActWriteOff</a></li><li><a href="module-actWriteOff.ActWriteOffPosition.html">ActWriteOffPosition</a></li><li><a href="module-actWriteOff.ActWriteOffPositionQuery.html">ActWriteOffPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffPositionSortOrder.html">ActWriteOffPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffQuery.html">ActWriteOffQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShop.html">ActWriteOffShop</a></li><li><a href="module-actWriteOff.ActWriteOffShopPosition.html">ActWriteOffShopPosition</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionQuery.html">ActWriteOffShopPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionSortOrder.html">ActWriteOffShopPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffShopQuery.html">ActWriteOffShopQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopSortOrder.html">ActWriteOffShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffSortOrder.html">ActWriteOffSortOrder</a></li><li><a href="module-orgInfo.OrgInfo.html">OrgInfo</a></li><li><a href="module-orgInfo.OrgInfoAddress.html">OrgInfoAddress</a></li><li><a href="module-orgInfo.OrgInfoAddressFilter.html">OrgInfoAddressFilter</a></li><li><a href="module-orgInfo.OrgInfoAddressSortOrder.html">OrgInfoAddressSortOrder</a></li><li><a href="module-orgInfo.OrgInfoQuery.html">OrgInfoQuery</a></li><li><a href="module-orgInfo.OrgInfoSortOrder.html">OrgInfoSortOrder</a></li><li><a href="module-productInfo.ProductInfo.html">ProductInfo</a></li><li><a href="module-productInfo.ProductInfoFilter.html">ProductInfoFilter</a></li><li><a href="module-productInfo.ProductInfoInnerSortOrder.html">ProductInfoInnerSortOrder</a></li><li><a href="module-productRest.ProductRest.html">ProductRest</a></li><li><a href="module-productRest.ProductRestQuery.html">ProductRestQuery</a></li><li><a href="module-productRest.ProductRestSortOrder.html">ProductRestSortOrder</a></li><li><a href="module-productRest.ShopCommodity.html">ShopCommodity</a></li><li><a href="module-productRest.ShopCommodityQuery.html">ShopCommodityQuery</a></li><li><a href="module-productRest.ShopCommoditySortOrder.html">ShopCommoditySortOrder</a></li><li><a href="module-productRest.StockCommodity.html">StockCommodity</a></li><li><a href="module-productRest.StockCommodityQuery.html">StockCommodityQuery</a></li><li><a href="module-productRest.StockCommoditySortOrder.html">StockCommoditySortOrder</a></li><li><a href="module-ticket.ConfirmTicket.html">ConfirmTicket</a></li><li><a href="module-ticket.ConfirmTicketQuery.html">ConfirmTicketQuery</a></li><li><a href="module-ticket.ConfirmTicketSortOrder.html">ConfirmTicketSortOrder</a></li><li><a href="module-ticket.Ticket.html">Ticket</a></li><li><a href="module-ticket.TicketQuery.html">TicketQuery</a></li><li><a href="module-ticket.TicketSortOrder.html">TicketSortOrder</a></li><li><a href="module-transfer.TransferFromShop.html">TransferFromShop</a></li><li><a href="module-transfer.TransferFromShopPosition.html">TransferFromShopPosition</a></li><li><a href="module-transfer.TransferFromShopPositionQuery.html">TransferFromShopPositionQuery</a></li><li><a href="module-transfer.TransferFromShopPositionSortOrder.html">TransferFromShopPositionSortOrder</a></li><li><a href="module-transfer.TransferFromShopQuery.html">TransferFromShopQuery</a></li><li><a href="module-transfer.TransferFromShopSortOrder.html">TransferFromShopSortOrder</a></li><li><a href="module-transfer.TransferToShop.html">TransferToShop</a></li><li><a href="module-transfer.TransferToShopPosition.html">TransferToShopPosition</a></li><li><a href="module-transfer.TransferToShopPositionQuery.html">TransferToShopPositionQuery</a></li><li><a href="module-transfer.TransferToShopPositionSortOrder.html">TransferToShopPositionSortOrder</a></li><li><a href="module-transfer.TransferToShopQuery.html">TransferToShopQuery</a></li><li><a href="module-transfer.TransferToShopSortOrder.html">TransferToShopSortOrder</a></li><li><a href="module-waybill.Transport.html">Transport</a></li><li><a href="module-waybill.TtnInformF2Reg.html">TtnInformF2Reg</a></li><li><a href="module-waybill.TtnInformF2RegPosition.html">TtnInformF2RegPosition</a></li><li><a href="module-waybill.TtnInformF2RegPositionQuery.html">TtnInformF2RegPositionQuery</a></li><li><a href="module-waybill.TtnInformF2RegPositionSortOrder.html">TtnInformF2RegPositionSortOrder</a></li><li><a href="module-waybill.TtnInformF2RegQuery.html">TtnInformF2RegQuery</a></li><li><a href="module-waybill.TtnInformF2RegSortOrder.html">TtnInformF2RegSortOrder</a></li><li><a href="module-waybill.Waybill.html">Waybill</a></li><li><a href="module-waybill.WaybillPosition.html">WaybillPosition</a></li><li><a href="module-waybill.WaybillPositionMark.html">WaybillPositionMark</a></li><li><a href="module-waybill.WaybillPositionMarkQuery.html">WaybillPositionMarkQuery</a></li><li><a href="module-waybill.WaybillPositionMarkSortOrder.html">WaybillPositionMarkSortOrder</a></li><li><a href="module-waybill.WaybillPositionQuery.html">WaybillPositionQuery</a></li><li><a href="module-waybill.WaybillPositionSortOrder.html">WaybillPositionSortOrder</a></li><li><a href="module-waybill.WaybillQuery.html">WaybillQuery</a></li><li><a href="module-waybill.WaybillSortOrder.html">WaybillSortOrder</a></li><li><a href="module-waybillAct.WaybillAct.html">WaybillAct</a></li><li><a href="module-waybillAct.WaybillActPosition.html">WaybillActPosition</a></li><li><a href="module-waybillAct.WaybillActPositionMark.html">WaybillActPositionMark</a></li><li><a href="module-waybillAct.WaybillActPositionMarkQuery.html">WaybillActPositionMarkQuery</a></li><li><a href="module-waybillAct.WaybillActPositionMarkSortOrder.html">WaybillActPositionMarkSortOrder</a></li><li><a href="module-waybillAct.WaybillActPositionQuery.html">WaybillActPositionQuery</a></li><li><a href="module-waybillAct.WaybillActPositionSortOrder.html">WaybillActPositionSortOrder</a></li><li><a href="module-waybillAct.WaybillActQuery.html">WaybillActQuery</a></li><li><a href="module-waybillAct.WaybillActSortOrder.html">WaybillActSortOrder</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Version">Version</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 03 2018 17:48:55 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

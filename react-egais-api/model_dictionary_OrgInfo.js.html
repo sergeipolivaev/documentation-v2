@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: model/dictionary/OrgInfo.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: model/dictionary/OrgInfo.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Классы и типы для работы с информацией об организациях.
+ * @module module:orgInfo
+ */
+import {OrgType, WaybillTypeUsed} from "../types"
+
+/**
+ * @class module:orgInfo.OrgInfoAddress
+ * @classdesc Фактический адрес произвольной формы.
+ * @param {?string} country Страна
+ * @param {?string} index Индекс
+ * @param {?string} regionCode Код региона
+ * @param {?string} area Область
+ * @param {?string} city Город
+ * @param {?string} place Район
+ * @param {?string} street Улица
+ * @param {?string} house Дом
+ * @param {?string} building Строение
+ * @param {?string} liter Литера
+ * @param {?string} description Описание
+ */
+export class OrgInfoAddress {
+    constructor(country: (string | null),
+                index: (string | null),
+                regionCode: (string | null),
+                area: (string | null),
+                city: (string | null),
+                place: (string | null),
+                street: (string | null),
+                house: (string | null),
+                building: (string | null),
+                liter: (string | null),
+                description: (string | null)) {
+        this.index = index;
+        this.regionCode = regionCode;
+        this.area = area;
+        this.city = city;
+        this.place = place;
+        this.street = street;
+        this.house = house;
+        this.building = building;
+        this.liter = liter;
+        this.description = description;
+    }
+}
+
+/**
+ * @class module:orgInfo.OrgInfo
+ * @classdesc Информация об организации.
+ * @param {?module:orgInfo#OrgType} type
+ * @param {string} clientRegId Код организации
+ * @param {string} fullName Наименование организации полное
+ * @param {?string} shortName Наименование организации краткое
+ * @param {?string} inn ИНН
+ * @param {?string} kpp КПП
+ * @param {?string} unp УНП для респ.Беларусь
+ * @param {?string} rnn РНН(БИН/ИИН) для респ.Казахстан
+ * @param {?module:orgInfo.OrgInfoAddress} address Фактический адрес
+ * @param {?string} state Статус: действующая или удалена
+ * @param {?module:orgInfo#WaybillTypeUsed} versionWB Версия схемы накладной принимаемая организацией
+ */
+export default class OrgInfo {
+    constructor(type: (OrgType | null),
+                clientRegId: string,
+                fullName: string,
+                shortName: (string | null),
+                inn: (string | null),
+                kpp: (string | null),
+                unp: (string | null),
+                rnn: (string | null),
+                address: (OrgInfoAddress | null),
+                state: (string | null),
+                waybillVersion: (WaybillTypeUsed | null)) {
+        this.type = type;
+        this.clientRegId = clientRegId;
+        this.fullName = fullName;
+        this.shortName = shortName;
+        this.inn = inn;
+        this.kpp = kpp;
+        this.unp = unp;
+        this.rnn = rnn;
+        this.address = address;
+        this.state = state;
+        this.waybillVersion = waybillVersion;
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-actChargeOn.html">actChargeOn</a></li><li><a href="module-actWriteOff.html">actWriteOff</a></li><li><a href="module-orgInfo.html">orgInfo</a></li><li><a href="module-productInfo.html">productInfo</a></li><li><a href="module-productRest.html">productRest</a></li><li><a href="module-ticket.html">ticket</a></li><li><a href="module-transfer.html">transfer</a></li><li><a href="module-waybill.html">waybill</a></li><li><a href="module-waybillAct.html">waybillAct</a></li></ul><h3>Classes</h3><ul><li><a href="module-actChargeOn.ActChargeOnShop.html">ActChargeOnShop</a></li><li><a href="module-actChargeOn.ActChargeOnShopPosition.html">ActChargeOnShopPosition</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionQuery.html">ActChargeOnShopPositionQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionSortOrder.html">ActChargeOnShopPositionSortOrder</a></li><li><a href="module-actChargeOn.ActChargeOnShopQuery.html">ActChargeOnShopQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopSortOrder.html">ActChargeOnShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOff.html">ActWriteOff</a></li><li><a href="module-actWriteOff.ActWriteOffPosition.html">ActWriteOffPosition</a></li><li><a href="module-actWriteOff.ActWriteOffPositionQuery.html">ActWriteOffPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffPositionSortOrder.html">ActWriteOffPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffQuery.html">ActWriteOffQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShop.html">ActWriteOffShop</a></li><li><a href="module-actWriteOff.ActWriteOffShopPosition.html">ActWriteOffShopPosition</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionQuery.html">ActWriteOffShopPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionSortOrder.html">ActWriteOffShopPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffShopQuery.html">ActWriteOffShopQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopSortOrder.html">ActWriteOffShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffSortOrder.html">ActWriteOffSortOrder</a></li><li><a href="module-orgInfo.OrgInfo.html">OrgInfo</a></li><li><a href="module-orgInfo.OrgInfoAddress.html">OrgInfoAddress</a></li><li><a href="module-orgInfo.OrgInfoAddressFilter.html">OrgInfoAddressFilter</a></li><li><a href="module-orgInfo.OrgInfoAddressSortOrder.html">OrgInfoAddressSortOrder</a></li><li><a href="module-orgInfo.OrgInfoQuery.html">OrgInfoQuery</a></li><li><a href="module-orgInfo.OrgInfoSortOrder.html">OrgInfoSortOrder</a></li><li><a href="module-productInfo.ProductInfo.html">ProductInfo</a></li><li><a href="module-productInfo.ProductInfoFilter.html">ProductInfoFilter</a></li><li><a href="module-productInfo.ProductInfoInnerSortOrder.html">ProductInfoInnerSortOrder</a></li><li><a href="module-productRest.ProductRest.html">ProductRest</a></li><li><a href="module-productRest.ProductRestQuery.html">ProductRestQuery</a></li><li><a href="module-productRest.ProductRestSortOrder.html">ProductRestSortOrder</a></li><li><a href="module-productRest.ShopCommodity.html">ShopCommodity</a></li><li><a href="module-productRest.ShopCommodityQuery.html">ShopCommodityQuery</a></li><li><a href="module-productRest.ShopCommoditySortOrder.html">ShopCommoditySortOrder</a></li><li><a href="module-productRest.StockCommodity.html">StockCommodity</a></li><li><a href="module-productRest.StockCommodityQuery.html">StockCommodityQuery</a></li><li><a href="module-productRest.StockCommoditySortOrder.html">StockCommoditySortOrder</a></li><li><a href="module-ticket.ConfirmTicket.html">ConfirmTicket</a></li><li><a href="module-ticket.ConfirmTicketQuery.html">ConfirmTicketQuery</a></li><li><a href="module-ticket.ConfirmTicketSortOrder.html">ConfirmTicketSortOrder</a></li><li><a href="module-ticket.Ticket.html">Ticket</a></li><li><a href="module-ticket.TicketQuery.html">TicketQuery</a></li><li><a href="module-ticket.TicketSortOrder.html">TicketSortOrder</a></li><li><a href="module-transfer.TransferFromShop.html">TransferFromShop</a></li><li><a href="module-transfer.TransferFromShopPosition.html">TransferFromShopPosition</a></li><li><a href="module-transfer.TransferFromShopPositionQuery.html">TransferFromShopPositionQuery</a></li><li><a href="module-transfer.TransferFromShopPositionSortOrder.html">TransferFromShopPositionSortOrder</a></li><li><a href="module-transfer.TransferFromShopQuery.html">TransferFromShopQuery</a></li><li><a href="module-transfer.TransferFromShopSortOrder.html">TransferFromShopSortOrder</a></li><li><a href="module-transfer.TransferToShop.html">TransferToShop</a></li><li><a href="module-transfer.TransferToShopPosition.html">TransferToShopPosition</a></li><li><a href="module-transfer.TransferToShopPositionQuery.html">TransferToShopPositionQuery</a></li><li><a href="module-transfer.TransferToShopPositionSortOrder.html">TransferToShopPositionSortOrder</a></li><li><a href="module-transfer.TransferToShopQuery.html">TransferToShopQuery</a></li><li><a href="module-transfer.TransferToShopSortOrder.html">TransferToShopSortOrder</a></li><li><a href="module-waybill.Transport.html">Transport</a></li><li><a href="module-waybill.TtnInformF2Reg.html">TtnInformF2Reg</a></li><li><a href="module-waybill.TtnInformF2RegPosition.html">TtnInformF2RegPosition</a></li><li><a href="module-waybill.TtnInformF2RegPositionQuery.html">TtnInformF2RegPositionQuery</a></li><li><a href="module-waybill.TtnInformF2RegPositionSortOrder.html">TtnInformF2RegPositionSortOrder</a></li><li><a href="module-waybill.TtnInformF2RegQuery.html">TtnInformF2RegQuery</a></li><li><a href="module-waybill.TtnInformF2RegSortOrder.html">TtnInformF2RegSortOrder</a></li><li><a href="module-waybill.Waybill.html">Waybill</a></li><li><a href="module-waybill.WaybillPosition.html">WaybillPosition</a></li><li><a href="module-waybill.WaybillPositionMark.html">WaybillPositionMark</a></li><li><a href="module-waybill.WaybillPositionMarkQuery.html">WaybillPositionMarkQuery</a></li><li><a href="module-waybill.WaybillPositionMarkSortOrder.html">WaybillPositionMarkSortOrder</a></li><li><a href="module-waybill.WaybillPositionQuery.html">WaybillPositionQuery</a></li><li><a href="module-waybill.WaybillPositionSortOrder.html">WaybillPositionSortOrder</a></li><li><a href="module-waybill.WaybillQuery.html">WaybillQuery</a></li><li><a href="module-waybill.WaybillSortOrder.html">WaybillSortOrder</a></li><li><a href="module-waybillAct.WaybillAct.html">WaybillAct</a></li><li><a href="module-waybillAct.WaybillActPosition.html">WaybillActPosition</a></li><li><a href="module-waybillAct.WaybillActPositionMark.html">WaybillActPositionMark</a></li><li><a href="module-waybillAct.WaybillActPositionMarkQuery.html">WaybillActPositionMarkQuery</a></li><li><a href="module-waybillAct.WaybillActPositionMarkSortOrder.html">WaybillActPositionMarkSortOrder</a></li><li><a href="module-waybillAct.WaybillActPositionQuery.html">WaybillActPositionQuery</a></li><li><a href="module-waybillAct.WaybillActPositionSortOrder.html">WaybillActPositionSortOrder</a></li><li><a href="module-waybillAct.WaybillActQuery.html">WaybillActQuery</a></li><li><a href="module-waybillAct.WaybillActSortOrder.html">WaybillActSortOrder</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Version">Version</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 03 2018 17:48:55 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
