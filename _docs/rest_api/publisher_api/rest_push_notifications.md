@@ -1,7 +1,7 @@
 ---
 title: Push-уведомления
 permalink: rest_push_notifications.html
-sidebar: evorest
+sidebar: evorestreference
 tags: []
 product: REST API
 ---

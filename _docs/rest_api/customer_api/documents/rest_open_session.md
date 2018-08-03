@@ -1,7 +1,7 @@
 ---
 title: Открытие смены на смарт-терминале
 permalink: rest_open_session.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

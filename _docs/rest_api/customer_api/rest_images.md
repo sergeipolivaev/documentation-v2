@@ -1,7 +1,7 @@
 ---
 title: Изображения товаров
 permalink: rest_images.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

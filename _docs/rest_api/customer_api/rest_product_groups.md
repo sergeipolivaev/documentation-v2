@@ -1,7 +1,7 @@
 ---
 title: Группы товаров и группы модификаций
 permalink: rest_products_groups.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

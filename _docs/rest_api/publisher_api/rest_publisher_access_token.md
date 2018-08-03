@@ -1,7 +1,7 @@
 ---
 title: Получение ключа доступа издателя
 permalink: rest_publisher_access_token.html
-sidebar: evorest
+sidebar: evorestguides
 tags: []
 product: REST API
 ---

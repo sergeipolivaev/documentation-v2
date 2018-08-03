@@ -1,7 +1,7 @@
 ---
 title: Работа с push-уведомлениями
 permalink: rest_push_notifications_guide.html
-sidebar: evorest
+sidebar: evorestguides
 tags: []
 product: REST API
 ---

@@ -50,7 +50,7 @@
 
     <!-- Navigation -->
 
-    {% include topnav1.html %}
+    {% include topnav.html %}
 
     <ul class="nav navbar-nav navbar-right">
 
@@ -68,60 +68,46 @@
   </div>
   <!-- /.container -->
   </nav>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">REST API Облака Эвотор</h1>
-      <p class="lead">Несколько вводных слов о том, какие мы классные, какая у нас открытая платформа и т.п.</p>
-    </div>
-  </div>
-
   <div class="container">
     <div class="row row-offcanvas row-offcanvas-left">
 
-      <!-- main area -->
-      <div class="col-xs-12">
-        {% if page.type == "search" %}
-        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+      <!-- sidebar -->
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <!--<ul class="nav">-->
+        <!--<li class="active"><a href="#">Home</a></li>-->
+        <!--<li><a href="#">Link 1</a></li>-->
+        <!--<li><a href="#">Link 2</a></li>-->
+        <!--<li><a href="#">Link 3</a></li>-->
+        <!--</ul>-->
+        {% include sidebar.html %}
+      </div>
 
-        <div class="col-sm-6 box">
-          <p>Введение</p>
-          <p>Общие разделы вроде ошибок и авторизации</p>
+      <!-- main area -->
+      <div class="col-xs-12 col-sm-7">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1> {% else %}
+        <h1>{{page.title}}</h1> {% endif %}
+        <div class="toc-main-column">
+          {% include toc2.html %}
         </div>
-        <div class="col-sm-6 box">
-          <a href="https://dev.evotor.ru/#/store/auth/login">
-          <p>Publisher API</p>
-          <p>Краткое описание раздела.</p>
-          </a>
+        {{content}}
+        <div class="toc-main-column">
+          {% include tags.html %}
         </div>
+        {% unless page.github_button == false %} {% include github_button.html %}{% endunless %}
+
 
       </div>
-      <!--/.row-->
-    </div>
-    <!--/.container-->
-    <div class="row row-offcanvas row-offcanvas-left">
+      <!-- /.col-xs-12 main -->
 
-      <!-- main area -->
-      <div class="col-xs-12">
-        {% if page.type == "search" %}
-        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
-
-        <div class="col-sm-6 box">
-          <p>Customer API</p>
-          <p>Краткое описание раздела.</p>
-        </div>
-        <div class="col-sm-6 box">
-          <a href="https://dev.evotor.ru/#/store/auth/login">
-          <p>Webhooks</p>
-          <p>Краткое описание раздела.</p>
-          </a>
-        </div>
-
+      <div class="col-xs-12 col-sm-2 right-lane">
+        {% include toc.html %} {% include tags.html %}
       </div>
       <!--/.row-->
     </div>
     <!--/.container-->
   </div>
+  <!--/.page-container-->
 
 
 

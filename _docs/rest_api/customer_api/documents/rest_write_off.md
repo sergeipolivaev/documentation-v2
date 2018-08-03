@@ -1,7 +1,7 @@
 ---
 title: Списание товара
 permalink: rest_write_off.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

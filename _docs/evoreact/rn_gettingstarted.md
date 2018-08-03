@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evoreact
 permalink: rn_gettingstarted.html
-tags: []
+product: React Native
 ---
 
 ## Подготовка к разработке

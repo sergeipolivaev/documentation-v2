@@ -4,8 +4,7 @@ keywords: react
 sidebar: evoreact
 toc: true
 permalink: rn_reference_devicescales.html
-tags: [terminal, react]
-folder: rn_reference
+product: React Native
 ---
 
 ## Описание

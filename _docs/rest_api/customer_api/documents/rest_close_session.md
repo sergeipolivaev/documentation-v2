@@ -1,7 +1,7 @@
 ---
 title: Закрытие смены
 permalink: rest_close_session.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

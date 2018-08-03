@@ -1,7 +1,7 @@
 ---
 title: Смарт-терминалы
 permalink: rest_smart_terminals.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

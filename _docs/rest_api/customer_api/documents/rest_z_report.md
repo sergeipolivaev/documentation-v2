@@ -1,7 +1,7 @@
 ---
 title: Z-отчет (с гашением)
 permalink: rest_z_report.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

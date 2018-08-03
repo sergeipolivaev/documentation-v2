@@ -1,7 +1,7 @@
 ---
 title: Возврат товара продавцу
 permalink: rest_payback.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Документы
 permalink: rest_documents.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

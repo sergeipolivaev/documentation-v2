@@ -1,7 +1,7 @@
 ---
 title: Возврат товара поставщику
 permalink: rest_return.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

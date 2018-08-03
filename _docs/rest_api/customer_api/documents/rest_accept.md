@@ -1,7 +1,7 @@
 ---
 title: Приемка товара
 permalink: rest_accept.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Магазины, смарт-терминалы и сотрудники
 permalink: rest_hierarchy.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Продажа товара
 permalink: rest_sell.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

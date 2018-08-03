@@ -1,7 +1,7 @@
 ---
 title: Вскрытие тары
 permalink: rest_open_tare.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

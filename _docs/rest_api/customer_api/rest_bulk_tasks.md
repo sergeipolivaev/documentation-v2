@@ -1,7 +1,7 @@
 ---
 title: Задачи для множественных операций
 permalink: rest_bulk_tasks.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

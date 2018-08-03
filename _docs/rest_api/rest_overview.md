@@ -1,7 +1,7 @@
 ---
 title: Введение
 permalink: rest_overview.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

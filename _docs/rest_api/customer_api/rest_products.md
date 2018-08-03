@@ -1,7 +1,7 @@
 ---
 title: Товары и модификации товаров
 permalink: rest_products.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

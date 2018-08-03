@@ -1,7 +1,7 @@
 ---
 title: X-отчет (с гашением)
 permalink: rest_x_report.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

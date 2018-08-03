@@ -1,7 +1,7 @@
 ---
 title: Сотрудники
 permalink: rest_employees.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

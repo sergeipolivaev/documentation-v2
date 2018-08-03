@@ -1,7 +1,7 @@
 ---
 title: Переоценка товара
 permalink: rest_revaluation.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

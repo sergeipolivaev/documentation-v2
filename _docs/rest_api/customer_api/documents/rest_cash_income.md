@@ -1,7 +1,7 @@
 ---
 title: Внесение наличных в кассу
 permalink: rest_cash_income.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 

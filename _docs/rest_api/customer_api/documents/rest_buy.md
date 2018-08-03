@@ -1,7 +1,7 @@
 ---
 title: Выкуп (товара у клиента)
 permalink: rest_buy.html
-sidebar: evorest
+sidebar: evorestreference
 product: REST API
 ---
 
