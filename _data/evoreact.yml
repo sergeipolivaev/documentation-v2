@@ -83,11 +83,11 @@ folders:
 
 ###########################
 
-related_resources_title: Справочники
-
-related_resources_list:
-
-- title: Интеграционная библиотека
-  url: /react-integration-library\index.html
+#related_resources_title: Справочники
+#
+#related_resources_list:
+#
+#- title: Интеграционная библиотека
+#  url: /react-integration-library\index.html
 #- title: ЕГАИС API
 #  url: /egais-api\index.html

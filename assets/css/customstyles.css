@@ -548,6 +548,7 @@ ul#docnavsidebar li a:focus {
     vertical-align: top;
     width: 24%;
     margin: 1px;
+    height: 250px;
 }
 
 /* On mouse-over, add a deeper shadow */

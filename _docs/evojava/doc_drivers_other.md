@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evojava
 permalink: doc_drivers_other.html
-tags:
+product: Java SDK
 ---
 
 ### Определение внешнего сервиса в AndroidManifest.xml

@@ -4,6 +4,7 @@ keywords:
 sidebar: evojava
 permalink: doc_app_grants.html
 tags:
+product: Java SDK
 ---
 
 ## О правах приложения

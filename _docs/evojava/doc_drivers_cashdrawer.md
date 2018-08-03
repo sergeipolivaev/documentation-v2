@@ -3,7 +3,7 @@ title: SDK для денежного ящика
 keywords:
 sidebar: evojava
 permalink: doc_drivers_cashdrawer.html
-tags:
+product: Java SDK
 ---
 
 ### Определение внешнего сервиса в AndroidManifest.xml

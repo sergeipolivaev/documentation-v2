@@ -4,7 +4,7 @@
 <div class="sidebar-inner">
 <div class="productTitle">{{sidebar.sidebarTitle}}</div>
 <!-- search bar -->
-{% unless page.search == false %}
+<!-- {% unless page.search == false %}
 <div class="sidebarSearchBar">
 <form action="search-{{page.sidebar}}.html" method="get">
   <div class="input-group search">
@@ -16,7 +16,7 @@
     </div>
   </div>
 </form>
-</div>
+</div> -->
 {% endunless %}
 <!-- end search bar -->
 <ul id="docnavsidebar" class="docnav">
@@ -91,7 +91,7 @@
     </li>
 </ul>
 
-<hr class="resourceSeparator"></hr>
+<!-- <hr class="resourceSeparator"></hr> -->
 <div class="relatedResources">{{sidebar.related_resources_title}}</div>
 <ul id="entrypages">
         {% for item in sidebar.related_resources_list %}

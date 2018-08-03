@@ -2,7 +2,7 @@
 title: Установка приложения
 keywords:
 summary: Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell.
-sidebar: evomain
+sidebar: evojava
 permalink: doc_app_installation.html
 tags: []
 product: Generic

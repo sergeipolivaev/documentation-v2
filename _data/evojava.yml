@@ -9,9 +9,9 @@ folders:
   folderitems:
   - title: Подготовка к разработке приложения
     url: /doc_java_app_development_prerequisites.html
-  - title: Создание первого приложения
-    url: /doc_java_development_of_the_first_app.html
-  - title: Установка приложение
+#TODO  - title: Создание первого приложения
+#TODO    url: /doc_java_development_of_the_first_app.html
+  - title: Установка приложения
     url: /doc_app_installation.html
 - title: Приложение на смарт-терминале
   folderitems:
@@ -19,8 +19,8 @@ folders:
     url: /doc_java_app_icon.html
   - title: Передача данных
     url: /doc_java_third_party_service_communication.html
-  - title: Библиотеки Эвотора
-    url: /doc_java_evotor_libraries.html
+#TODO  - title: Библиотеки Эвотора
+#TODO    url: /doc_java_evotor_libraries.html
   - title: Точки интеграции
     url: /doc_app_integration_points.html
 
@@ -32,8 +32,8 @@ folders:
   folderitems:
   - title: Подключение библиотеки integration library
     url: /doc_java_integration_library_connection.html
-  - title: Вызов приложения из интерфейса смарт-терминала
-    url: /doc_java_app_icon.html
+#  - title: Вызов приложения из интерфейса смарт-терминала
+#    url: /doc_java_app_icon.html
 
   - title: Вызов окон смарт-терминала
     url: /doc_java_navigation.html
@@ -124,17 +124,17 @@ folders:
   - title: SDK для подключаемого USB-оборудования
     url: /doc_drivers_other.html
 
-- title: Примеры реализации
-  url: /java_examples.html
+#- title: Примеры реализации
+#  url: /java_examples.html
 
 
 ###########################
 
-related_resources_title: Справочники
-
-related_resources_list:
-
-- title: Интеграционная библиотека
-  url: /integration-library\index.html
-- title: ЕГАИС API
-  url: /egais-api\index.html
+#related_resources_title: Справочники
+#
+#related_resources_list:
+#
+#- title: Интеграционная библиотека
+#  url: /integration-library\index.html
+#- title: ЕГАИС API
+#  url: /egais-api\index.html

@@ -3,7 +3,7 @@ title: Получение данных из ЕГАИС
 permalink: doc_egais_data_reading_access.html
 sidebar: evojava
 tags:
-product:
+product: Java SDK
 ---
 
 С помощью `egais-api` ваше приложение может получать данные из ЕГАИС.
