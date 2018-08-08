@@ -36,8 +36,8 @@ product: REST API
 `sum`| `number`  |  Сумма для внесения. До двух знаков в дробной части.
 `description`| `string`  |  Основание для внесения.
 `contributor`| `string`  |  Имя вносителя средств ("От кого").
-`fn_serial_number`| `string`  |  Заводской номер фискального накопителя.
-`kkt_serial_number`| `string`  |  Серийный номер ККТ.
-`kkt_reg_number`| `string`  |  Регистрационный номер ККТ.
-`fiscal_sign_doc_number`| `string`  |  Номер фискального признака документа.
-`fiscal_document_number`| `string`  |  Фискальный номер документа в ККТ из ФН.
+`fn_serial_number`| `string`  | *Необязательный.* Заводской номер фискального накопителя.
+`kkt_serial_number`| `string`  |  *Необязательный.* Серийный номер ККТ.
+`kkt_reg_number`| `string`  |  *Необязательный.* Регистрационный номер ККТ.
+`fiscal_sign_doc_number`| `string`  |  *Необязательный.* Номер фискального признака документа.
+`fiscal_document_number`| `string`  |  *Необязательный.* Фискальный номер документа в ККТ из ФН.
