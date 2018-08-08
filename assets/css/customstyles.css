@@ -332,6 +332,7 @@ table > thead:first-child > tr:first-child > td {
 table > tbody + tbody {
     b
 }
+
 table > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
@@ -392,7 +393,7 @@ pre, table code {
     background-color: transparent !important;
 }
 /* svg styling */
-*
+/*
  * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
  *
  * [1] IE9
