@@ -58,8 +58,17 @@ folders:
         url: /rest_x_report.html
       - title: Z-отчет (с гашением)
         url: /rest_z_report.html
-  - title: Товары и модификации товаров
-    url: /rest_products.html
+    - title: Товары и модификации товаров
+      url: /rest_products.html
+      subfolderitems:
+      - title: Обычный товар
+        url: /rest_normal_product.url
+      - title: Маркированный алкоголь
+        url: /rect_marked_alcohol.url
+      - title: Немаркированный алкоголь
+        url: /rest_alcohol_not_marked.url
+      - title: Услуга
+        url: /rest_service_product.url
   - title: Группы товаров и группы модификаций
     url: /rest_products_groups.html
   - title: Задачи для множественных операций
