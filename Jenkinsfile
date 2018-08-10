@@ -6,9 +6,7 @@ pipeline {
         environment name: "GIT_BRANCH", value: "origin/develop"
       }
       steps {
-        sh '''#!/usr/bin/bash
-             . ~/.rvm/scripts/rvm && bundle exec jekyll build
-        '''
+        sh "docker run --rm --volume=\"${env.WORKSPACE}:/srv/jekyll\" jekyll/builder:3.8 jekyll build"
         sh "docker build -t docker-registry.market.local/developer-documentation-v2:$BUILD_TAG ."
       }
     }
