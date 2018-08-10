@@ -87,8 +87,14 @@ google_analytics: UA-84163503-7
 #      - summary
 
 exclude:
+  - buildandpush.sh
+  - Dockerfile
   - Gemfile
   - Gemfile.lock
+  - Jenkinsfile
+  - jekyll.sh
+  - README.md
+  - tar_exclude
 
 plugins:
 #  - jekyll-algolia
