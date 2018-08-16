@@ -622,3 +622,10 @@ pre code {
   position: fixed;
   margin-left: 15px;
 }
+
+
+/*rest-jumbotron*/
+.jumbotron {
+background-color: #ADD8E6;
+background-size: cover;
+}
