@@ -1,0 +1,10 @@
+sidebarTitle: Webhooks Облака Эвотор
+owner: Evotor
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+- title: Введение
+  url: /rest_webhooks_overview.html
+- title: Второй раздел
+  url: /rest_webhooks_second.html
