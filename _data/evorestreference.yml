@@ -75,6 +75,8 @@ folders:
     url: /rest_bulk_tasks.html
   - title: Изображения товаров
     url: /rest_images.html
+  - title: События
+    url: /rest_events.html
 - title: Publisher's API
   folderitems:
   - title: Push-уведомления
