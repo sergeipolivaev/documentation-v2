@@ -10,3 +10,5 @@ folders:
     url: /rest_overview.html
   - title: MIME-типы
     url: /rest_mime_types.html
+  - title: События
+    url: /rest_events.html

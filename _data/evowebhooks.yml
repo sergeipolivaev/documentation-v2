@@ -12,5 +12,7 @@ folders:
   url: /rest_webhooks_configuring_your_server.html
 - title: Тестирование вебхуков
   url: /rest_webhooks_configuring_your_server.html
+- title: Гарантия доставки
+  url: /rest_webhooks_ensured_delivery.html
 - title: Безопасность вебхуков
   url: /rest_webhooks_securing_your_webhooks.html

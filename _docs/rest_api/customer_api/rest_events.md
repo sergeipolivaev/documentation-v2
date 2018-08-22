@@ -1,8 +1,8 @@
 ---
 title: События
 permalink: rest_events.html
-sidebar: evorestreference
-product: Customer api
+sidebar: evorest
+product:
 ---
 
 # Общее введение
@@ -25,7 +25,8 @@ TODO: взять главные мысли и разнести по другим
 
 События могут быть получены через [Events API] или посредством [Webhook]. В последнем случае разработчик должен указать настройки доставки сообщений.
 
-# Описание схемы событий
+## Схема событий
+
 Каждое событие удовлетворяет следующей схеме:
 
 ```json
@@ -46,8 +47,10 @@ TODO: взять главные мысли и разнести по другим
 Самыми распространенными типами действий являются _created_, _updated_ и _removed_.
 Модель данных для всех типов действий одного типа событий всегда идентична.
 
-# Типы событий и их содержание
-## StoreEvent
+## Типы событий и их содержание
+
+### StoreEvent {#StoreEvent}
+
 Событие об изменении магазина.
 Доступные типы действий: _created_, _updated_ и _removed_.
 
@@ -68,7 +71,8 @@ TODO: взять главные мысли и разнести по другим
 }
 ```
 
-## DeviceEvent
+### DeviceEvent {#DeviceEvent}
+
 Событие об изменении терминала.
 Доступные типы действий: _created_, _updated_ и _removed_.
 
@@ -88,7 +92,9 @@ TODO: взять главные мысли и разнести по другим
     "type": "DeviceEvent"
 }
 ```
-## EmployeeEvent
+
+### EmployeeEvent {#EmployeeEvent}
+
 Событие об изменении сотрудника.
 Доступные типы действий: _created_, _updated_ и _removed_.
 
@@ -112,7 +118,8 @@ TODO: взять главные мысли и разнести по другим
 }
 ```
 
-## DocumentEvent
+### DocumentEvent {#DocumentEvent}
+
 Событие об создании документа.
 Доступные типы действий: _created_.
 
@@ -141,7 +148,8 @@ TODO: взять главные мысли и разнести по другим
 }
 ```
 
-## ProductEvent
+### ProductEvent {#ProductEvent}
+
 Событие об изменении продукта.
 Доступные типы действий: _created_, _updated_ и _removed_.
 
@@ -169,13 +177,15 @@ TODO: взять главные мысли и разнести по другим
 }
 ```
 
-## ProductGroupEvent
+### ProductGroupEvent {#ProductGroupEvent}
+
 Событие об изменении группы продуктов.
 Доступные типы действий: _created_, _updated_ и _removed_.
 
 TODO: // json model
 
-## ProductImageEvent
+### ProductImageEvent {#ProductImageEvent}
+
 Событие об изменении изображения продукта.
 Доступные типы действий: _created_ и _removed_.
 
@@ -203,8 +213,7 @@ TODO: // json model
 }
 ```
 
-## SystemEvent
-TODO: Перенести в раздел publisher api
+### SystemEvent {#SystemEvent}
 
 Системное событие, доступное через [Event API].
 Используется исключительно в технических целях, чтобы предотвратить разрыв клиентского соединения при [Event Streaming].
