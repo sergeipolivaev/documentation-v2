@@ -1,9 +1,9 @@
 ---
 title: Push-уведомления
 permalink: rest_push_notifications.html
-sidebar: evorestreference
+sidebar: evorestpublisherreference
 tags: []
-product: REST API
+product: Publisher API
 ---
 
 ## Передать push-уведомление

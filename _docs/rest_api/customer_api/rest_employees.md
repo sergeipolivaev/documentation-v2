@@ -2,7 +2,7 @@
 title: Сотрудники
 permalink: rest_employees.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 ## Получить список сотрудников

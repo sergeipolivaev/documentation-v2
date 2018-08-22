@@ -2,7 +2,7 @@
 title: Общие поля документов
 permalink: rest_common_fields.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 ### Общие поля документов

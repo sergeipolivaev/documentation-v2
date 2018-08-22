@@ -2,7 +2,7 @@
 title: Магазины, смарт-терминалы и сотрудники
 permalink: rest_hierarchy.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 В разделе описаны методы для получения таких сущностей пользователей Эвотора, как:

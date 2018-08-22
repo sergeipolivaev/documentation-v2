@@ -2,7 +2,7 @@
 title: Открытие смены в ККТ
 permalink: rest_pos_open_session.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 ### `POS_OPEN_SESSION`

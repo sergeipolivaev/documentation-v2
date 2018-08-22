@@ -2,7 +2,7 @@
 title: Магазины
 permalink: rest_stores.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 ## Получить список магазинов
 

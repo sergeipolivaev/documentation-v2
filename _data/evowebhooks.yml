@@ -6,5 +6,11 @@ owner: Evotor
 folders:
 - title: Введение
   url: /rest_webhooks_overview.html
-- title: Второй раздел
-  url: /rest_webhooks_second.html
+- title: Создание вебхуков
+  url: /rest_webhooks_creating_webhooks.html
+- title: Настройка сервера
+  url: /rest_webhooks_configuring_your_server.html
+- title: Тестирование вебхуков
+  url: /rest_webhooks_configuring_your_server.html
+- title: Безопасность вебхуков
+  url: /rest_webhooks_securing_your_webhooks.html

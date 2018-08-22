@@ -2,7 +2,7 @@
 title: Маркированный алкоголь
 permalink: rect_marked_alcohol.url
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 Схема товара с типом `ALCOHOL_MARKED`.

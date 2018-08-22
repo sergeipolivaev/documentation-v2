@@ -2,7 +2,7 @@
 title: Обратный выкуп (товара клиентом)
 permalink: rest_buyback.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 ### `BUYBACK`

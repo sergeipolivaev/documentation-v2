@@ -3,7 +3,7 @@ title: События приложения
 permalink: rest_events_streaming.html
 sidebar: evorestreference
 tags: []
-product: REST API
+product: Publisher API
 ---
 
 # События приложения

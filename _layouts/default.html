@@ -74,8 +74,10 @@
 
 
   <!-- SubNav -->
-  {% if page.product == "REST API" %}
-  {% include navsrest.html %}
+  {% if page.product == "Customer API" %}
+  {% include navscustomer.html %}
+  {% elsif page.product == "Publisher API" %}
+  {% include navspublisher.html %}
   {% elsif page.product == "React Native" %}
   {% include navsreact.html %}
   {% elsif page.product == "Java SDK" %}

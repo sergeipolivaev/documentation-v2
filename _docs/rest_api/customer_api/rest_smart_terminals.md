@@ -2,7 +2,7 @@
 title: Смарт-терминалы
 permalink: rest_smart_terminals.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 ## Получить список смарт-терминалов

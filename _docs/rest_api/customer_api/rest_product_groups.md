@@ -2,7 +2,7 @@
 title: Группы товаров и группы модификаций
 permalink: rest_products_groups.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 Запросы к Облаку Эвотор для управления группами товаров и группами модификаций.

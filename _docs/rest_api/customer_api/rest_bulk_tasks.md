@@ -2,7 +2,7 @@
 title: Задачи для множественных операций
 permalink: rest_bulk_tasks.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 В разделе приведены методы для получения информации о состоянии задач на массовый импорт данных в Облако Эвотор.

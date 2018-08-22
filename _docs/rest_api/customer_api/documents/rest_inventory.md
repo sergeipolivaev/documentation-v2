@@ -2,7 +2,7 @@
 title: Инвентаризация
 permalink: rest_inventory.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 ### `INVENTORY`

@@ -1,9 +1,9 @@
 ---
 title: Работа с push-уведомлениями
 permalink: rest_push_notifications_guide.html
-sidebar: evorestguides
+sidebar: evorestpublisherguides
 tags: []
-product: REST API
+product: Publisher API
 ---
 
 С помощью Облака Эвотор, вы можете передавать _push-уведомления_ (далее также _уведомления_) своему приложению на смарт-терминал.
@@ -21,4 +21,4 @@ curl -X POST 'https://dev.evotor.ru/apps/{application_id}/push-notifications'
 -H "Authorization: bearer {OAUTH_TOKEN}"
 ```
 
-Пример ответа на отправленное push-уведомление вы найдёте в [справочнике](./rest_push_notificztions.html).
+Пример ответа на отправленное push-уведомление вы найдёте в [справочнике](./rest_push_notifications.html).

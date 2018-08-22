@@ -2,7 +2,7 @@
 title: Услуга
 permalink: rest_service_product.url
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 Схема товара с типом `SERVICE`.

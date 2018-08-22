@@ -2,7 +2,7 @@
 title: Изъятие наличных из кассы
 permalink: rest_cash_outcome.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 ### `CASH_OUTCOME`

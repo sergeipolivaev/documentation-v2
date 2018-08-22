@@ -2,7 +2,7 @@
 title: Документы
 permalink: rest_documents.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 В разделе приведены методы для получения *документов*, которые смарт-терминал создаёт в процессе работы.

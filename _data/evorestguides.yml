@@ -1,14 +1,10 @@
-sidebarTitle: Руководства REST API Облака Эвотор
+sidebarTitle: Руководства Customer's API
 owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
 folders:
-- title: Publisher's API
+- title: Customers's API
   folderitems:
-  - title: Получение ключа издателя
-    url: /rest_publisher_access_token.html
-  - title: Работа с push-уведомлениями
-    url: /rest_push_notifications_guide.html
-#  - title: События приложения
-#    url: /rest_events_streaming.html
+  - title: Введение
+    url: /rest_customer_guides.html

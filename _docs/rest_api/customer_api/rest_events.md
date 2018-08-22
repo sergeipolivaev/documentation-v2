@@ -2,7 +2,7 @@
 title: События
 permalink: rest_events.html
 sidebar: evorestreference
-product: REST api
+product: Customer api
 ---
 
 # Общее введение

@@ -1,9 +1,9 @@
 ---
 title: Получение ключа доступа издателя
 permalink: rest_publisher_access_token.html
-sidebar: evorestguides
+sidebar: evorestpublisherguides
 tags: []
-product: REST API
+product: Publisher API
 ---
 
 Используя REST API Облака Эвотор как издатель, вы имеете доступ к следующим [ресурсам](./ссылка на глоссарий с описанием ресурса.html):

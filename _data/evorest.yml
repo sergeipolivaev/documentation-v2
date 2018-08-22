@@ -1,4 +1,4 @@
-sidebarTitle: REST API Облака Эвотор
+sidebarTitle: Обзор REST API Облака Эвотор
 owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
@@ -10,73 +10,3 @@ folders:
     url: /rest_overview.html
   - title: MIME-типы
     url: /rest_mime_types.html
-- title: Руководства
-  folderitems:
-  - title: Получение ключа издателя
-    url: /rest_publisher_access_token.html
-  - title: Работа с push-уведомлениями
-    url: /rest_push_notifications_guide.html
-- title: Customer's API
-  folderitems:
-  - title: Магазины
-    url: /rest_stores.html
-  - title: Смарт-терминалы
-    url: /rest_smart_terminals.html
-  - title: Сотрудники
-    url: /rest_employees.html
-    subfolders:
-    - title: Документы
-      url: /rest_documents.html
-      subfolderitems:
-      - title: Общие поля документов
-        url: /rest_common_fields.html
-      - title: Открытие смены на смарт-терминале
-        url: /rest_open_session.html
-      - title: Открытие смены в ККТ
-        url: /rest_pos_open_session.html
-      - title: Закрытие смены
-        url: /rest_close_session.html
-      - title: Внесение наличных в кассу
-        url: /rest_cash_income.html
-      - title: Изъятие наличных из кассы
-        url: /rest_cash_outcome.html
-      - title: Инвентаризация
-        url: /rest_inventory.html
-      - title: Приемка товара
-        url: /rest_accept.html
-      - title: Переоценка товара
-        url: /rest_revaluation.html
-      - title: Списание товара
-        url: /rest_write_off.html
-      - title: Возврат товара поставщику
-        url: /rest_return.html
-      - title: Вскрытие тары
-        url: /rest_open_tare.html
-      - title: Продажа товара
-        url: /rest_sell.html
-      - title: Возврат товара продавцу
-        url: /rest_payback.html
-      - title: Выкуп (товара у клиента)
-        url: /rest_buy.html
-      - title: Обратный выкуп (товара клиентом)
-        url: /rest_buyback.html
-      - title: X-отчет (без гашения)
-        url: /rest_x_report.html
-      - title: Z-отчет (с гашением)
-        url: /rest_z_report.html
-  - title: Товары и модификации товаров
-    url: /rest_products.html
-  - title: Группы товаров и группы модификаций
-    url: /rest_products_groups.html
-  - title: Задачи для множественных операций
-    url: /rest_bulk_tasks.html
-  - title: Изображения товаров
-    url: /rest_images.html
-  - title: События
-    url: /rest_events.html
-- title: Publisher's API
-  folderitems:
-  - title: Push-уведомления
-    url: /rest_push_notifications.html
-#  - title: События приложения
-#    url: /rest_events_streaming.html

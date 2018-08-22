@@ -1,15 +1,9 @@
-sidebarTitle: Справочники REST API Облака Эвотор
+sidebarTitle: Справочник Customer's API
 owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
 folders:
-- title: Начало
-  folderitems:
-  - title: Введение
-    url: /rest_overview.html
-  - title: MIME-типы
-    url: /rest_mime_types.html
 - title: Customer's API
   folderitems:
   - title: Магазины
@@ -77,9 +71,3 @@ folders:
     url: /rest_images.html
   - title: События
     url: /rest_events.html
-- title: Publisher's API
-  folderitems:
-  - title: Push-уведомления
-    url: /rest_push_notifications.html
-#  - title: События приложения
-#    url: /rest_events_streaming.html

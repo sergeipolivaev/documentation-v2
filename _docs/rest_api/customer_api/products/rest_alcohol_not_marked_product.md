@@ -2,7 +2,7 @@
 title: Немаркированный алкоголь
 permalink: rest_alcohol_not_marked.url
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 Схема товара с типом `ALCOHOL_NOT_MARKED`.

@@ -2,7 +2,7 @@
 title: Изображения товаров
 permalink: rest_images.html
 sidebar: evorestreference
-product: REST API
+product: Customer API
 ---
 
 В разделе описаны методы, с помощью которых вы можете управлять изображениями товаров в Облаке Эвотор.
