@@ -38,11 +38,11 @@ product: Java SDK
 
 3. [Приложение может разделить чек на несколько платежей](./doc_java_receipt_division.html#severalPayments) в счёт одного или нескольких юридических лиц.
 
-    Приложение возвращает данные о соответствии счетов и платежей в объекте `PaymentSelectedEventResult` и указывает разделение платежей в объекте `PaymentPurpose`.
+    Приложение возвращает данные о соответствии счетов и платежей в объекте `PaymentSelectedEventResult` и указывает разделение платежей в объекте [`PaymentPurpose`](./integration-library/ru/evotor/framework/payment/PaymentPurpose.html).
 
-    Каждый из платежей, указанных в `PaymentPurpose` содержит:
+    Каждый из платежей, указанных в [`PaymentPurpose`](./integration-library/ru/evotor/framework/payment/PaymentPurpose.html) содержит:
 
-    * собственный идентификатор объекта `PaymentPurpose`, который можно использовать для сопоставления платежа и печатной группы;
+    * собственный идентификатор объекта [`PaymentPurpose`](./integration-library/ru/evotor/framework/payment/PaymentPurpose.html), который можно использовать для сопоставления платежа и печатной группы;
     * сумму платежа;
     * идентификаторы платёжной системы и счёта в ней;
     * текст, который отображается пользователю при проведении данного платежа.
@@ -51,7 +51,7 @@ product: Java SDK
 
     <!-- В данный момент поддерживается разделение только в рамках той системы оплаты, которую выбрал пользователь. Разделение на различные системы оплаты (комбинированная оплата) не поддерживается. -->
 
-    Чтобы получить список счетов, доступных на данном смарт-терминале, [воспользуйтесь методом](./doc_java_receipt_division.html#PaymentSystemApiMethods) `getPaymentSystems`, класса `PaymentSystemApi`.
+    Чтобы получить список счетов, доступных на данном смарт-терминале, [воспользуйтесь методом](./doc_java_receipt_division.html#PaymentSystemApiMethods) `getPaymentSystems`, класса [`PaymentSystemApi`]([`PaymentPurpose`](./integration-library/ru/evotor/framework/payment/PaymentSystemApi.html)).
 
     Используйте команду `SetExtra`, чтобы добавить к чеку [дополнительные поля](./doc_java_receipt_extras.html).
 
@@ -91,7 +91,7 @@ product: Java SDK
 
 ## Методы PaymentSystem API {#PaymentSystemApiMethods}
 
-Используйте класс `PaymentSystemApi`.
+Используйте класс [`PaymentSystemApi`]([`PaymentPurpose`](./integration-library/ru/evotor/framework/payment/PaymentSystemApi.html).
 
 Получить список платёжных систем, а также их учётных записей, доступных на смарт-терминале:
 
@@ -99,9 +99,9 @@ product: Java SDK
 fun getPaymentSystems(context: Context): List<Pair<PaymentSystem, List<PaymentAccount>>>
 ```
 
-Метод возвращает список доступных на терминале платёжных систем (`PaymentSystem`) и соответствующих им счетов (`PaymentAccount`). Счета можно получить у приложений, которые реализуют различные способы оплаты.
+Метод возвращает список доступных на терминале платёжных систем ([`PaymentSystem`](./integration-library/ru/evotor/framework/payment/PaymentSystem.html)) и соответствующих им счетов (`PaymentAccount`). Счета можно получить у приложений, которые реализуют различные способы оплаты.
 
-Объекты `PaymentSystem` содержат:
+Объекты ([`PaymentSystem`](./integration-library/ru/evotor/framework/payment/PaymentSystem.html) содержат:
 
 * тип платёжной системы (наличные, электронные платежи, другие);
 * название, которое можно отобразить пользователю;
