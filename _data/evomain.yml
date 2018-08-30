@@ -13,6 +13,8 @@ folders:
       subfolderitems:
       - title: Продажа алкоголя
         url: /doc_egais.html
+      - title: Комбинированная оплата
+        url: /doc_combined_payment.html
 
 #    - title: Описание инфраструктуры
 #      subfolderitems:

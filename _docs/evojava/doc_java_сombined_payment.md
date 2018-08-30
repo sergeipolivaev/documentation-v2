@@ -2,9 +2,56 @@
 title: Комбинированная оплата
 sidebar: evojava
 permalink: doc_java_сombined_payment.html
-tags:
 product: Java SDK
 ---
+
+
+Вы можете создать приложение, которое будет реализовывать комбинированную оплату
+
+
+*Чтобы реализовать комбинированную оплату в своём приложении:*
+
+1. В манифесте приложения, добавьте разрешение:
+
+   ```xml
+   <uses-permission android:name="ru.evotor.permission.COMBINED"    />
+   ```
+
+2. Создайте службу, которая будет обрабатывать комбинированные платежи. Например, `.CombinedPaymentService`.
+
+   Служба `.CombinedPaymentService` наследуется от класса [`IntegrationService.java`](./ссылка на javadoc.html).
+
+3. В манифесте приложения, в intent-фильтре службы укажите событие, которое будет её запускать:
+
+   ```xml
+   <intent-filter>
+       <action android:name="evo.v2.receipt.sell.payment.COMBINED" />
+   </intent-filter>
+   ```
+
+   Для обработки события используйте класс `PaymentDelegatorEventProcessor.kt`.
+
+4. Чтобы получить данные всех приложений, которые позволяют оплачивать чек, используйте метод `getAllPaymentPerformers`, класса [`PaymentPerformerApi.kt`](./ссылка на javadoc.html).
+
+
+## События
+
+В зависимости от операции на смарт-терминале в службу могут поступать три типа событий:
+
+* [`PaymentDelegatorSelectedEventResult.kt`](./ссылка на javadoc.html) –
+* [`PaymentDelegatorCanceledEventResult.kt`](./ссылка на javadoc.html) –
+* [`PaymentDelegatorCanceledAllEventResult.kt`](./ссылка на javadoc.html) –
+
+
+
+
+
+
+
+
+
+
+======НИЖЕ СТАРАЯ ЧЕРНОВАЯ ВЕРСИЯ==================================================
 
 Комбинированная оплата позволяет клиентам оплачивать часть счёта наличными, а другую часть с помощью карты.
 
