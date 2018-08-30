@@ -59,6 +59,9 @@ folders:
   - title: Использование различных способов оплаты
     url: /doc_java_payment_systems.html
 
+  - title: Комбинированная оплата
+    url: /doc_java_combined_payment.html
+
   - title: Получение информации о кассовых сменах
     url: /doc_java_session.html
 

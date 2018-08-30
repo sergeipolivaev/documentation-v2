@@ -13,6 +13,8 @@ folders:
       subfolderitems:
       - title: Продажа алкоголя
         url: /doc_egais.html
+      - title: Комбинированная оплата
+        url: /doc_combined_payment.html
 
 #    - title: Описание инфраструктуры
 #      subfolderitems:
@@ -68,7 +70,7 @@ folders:
         - title: Java SDK
           url: /java_introduction.html
         - title: React Native
-          url: /rn_introduction.html
+          url: /rn_gettingstarted.html
 
     - title: Примеры реализации
       subfolderitems:

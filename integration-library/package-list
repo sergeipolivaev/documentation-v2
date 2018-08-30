@@ -18,6 +18,8 @@ ru.evotor.devices.commons.scales
 ru.evotor.devices.commons.services
 ru.evotor.framework
 ru.evotor.framework.calculator
+ru.evotor.framework.component
+ru.evotor.framework.component.viewdata
 ru.evotor.framework.core
 ru.evotor.framework.core.action.command.open_receipt_command
 ru.evotor.framework.core.action.command.print_receipt_command
@@ -33,6 +35,9 @@ ru.evotor.framework.core.action.event.receipt.changes.receipt.print_extra
 ru.evotor.framework.core.action.event.receipt.discount
 ru.evotor.framework.core.action.event.receipt.merges
 ru.evotor.framework.core.action.event.receipt.payment
+ru.evotor.framework.core.action.event.receipt.payment.combined
+ru.evotor.framework.core.action.event.receipt.payment.combined.event
+ru.evotor.framework.core.action.event.receipt.payment.combined.result
 ru.evotor.framework.core.action.event.receipt.payment.system
 ru.evotor.framework.core.action.event.receipt.payment.system.event
 ru.evotor.framework.core.action.event.receipt.payment.system.result
