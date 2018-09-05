@@ -9,32 +9,46 @@ product: Java SDK
 *Чтобы приложение получало данные от сканера штрихкодов:*
 
 1. В манифесте приложения добавьте разрешение на использование сканера штрихкодов:
+
     `<uses-permission android:name="ru.evotor.devices.SCANNER_RECEIVER" />`
 
-2. Объявите класс `BarcodeBroadcastReceiver`:
+2. Создайте приёмник `MyReceiver`:
 
    ```java
-   BarcodeBroadcastReceiver mBarcodeBroadcastReceiver = new BarcodeBroadcastReceiver() {
+   public class MyReceiver extends ScannerBroadcastReceiver {
 
-       @Override
-       public void onBarcodeReceived(String barcode, Context context) {
-           // Переменная barcode содержит считанный штрихкод.
-       }
+     @Override
+     void handleBarcodeReceivedEvent(Context context, BarcodeReceivedEvent barcodeReceivedEvent) {
+        //Тело метода
+     }
    };
    ```
 
-3. В операции (`Activity`) или фрагменте (`Fragment`) запускайте и останавливайте подписку `BarcodeBroadcastReceiver` :
+3. Подпишите приёмник на сообщение о сканировании штрихкода:
+
+   ```xml
+   <receiver
+       android:name=".MyReceiver"
+       android:enabled="true"
+       android:exported="true">
+       <intent-filter>
+           <action android:name="ru.evotor.devices.ScannedCode" />
+       </intent-filter>
+   </receiver>
+   ```
+
+4. В операции (`Activity`) или фрагменте (`Fragment`) запускайте и останавливайте подписку `ScannerBroadcastReceiver` :
 
    ```java
        @Override
        protected void onPause() {
            super.onPause();
-           unregisterReceiver(mBarcodeBroadcastReceiver);
+           unregisterReceiver(MyReceiver);
        }
        @Override
        protected void onResume() {
            super.onResume();
-           registerReceiver(mBarcodeBroadcastReceiver, BarcodeBroadcastReceiver.BARCODE_INTENT_FILTER, BarcodeBroadcastReceiver.SENDER_PERMISSION, null);
+           registerReceiver(MyReceiver, ScannerBroadcastReceiver.ACTION_BARCODE_RECEIVED, ScannerBroadcastReceiver.SENDER_PERMISSION, null);
        }
    }
    ```

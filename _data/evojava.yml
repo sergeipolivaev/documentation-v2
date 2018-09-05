@@ -11,6 +11,8 @@ folders:
   url: /doc_java_app_manifest.html
 - title: Точки интеграции
   url: /doc_app_integration_points.html
+- title: Использование приёмников широковещательных сообщений
+  url: /doc_java_broadcastreceiver.html
 
 - title: Руководства
   folderitems:
