@@ -27,13 +27,10 @@ folders:
 
 - title: Манифест Java-приложения
   url: /doc_java_app_manifest.html
-<<<<<<< HEAD
-=======
 - title: Точки интеграции
   url: /doc_app_integration_points.html
 - title: Использование приёмников широковещательных сообщений
   url: /doc_java_broadcastreceiver.html
->>>>>>> combo_payment
 
 - title: Интеграционная библиотека
   folderitems:
