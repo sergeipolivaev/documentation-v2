@@ -7,11 +7,17 @@ product: Customer API
 
 В разделе описаны методы, с помощью которых вы можете управлять изображениями товаров в Облаке Эвотор.
 
-Изображение товара представляет собой двоичный файл, который удовлетворяет следующим условиям:
+<!-- * TOC
+{:toc} -->
+
+Изображение товара это двоичный файл, который удовлетворяет следующим условиям:
 
 * Формат – png.
 * Разрешение – 300х300 пикселей.
 * Объём не более 5242800 байт.
+* Товар может иметь не более одного изображения.
+
+   {% include tip.html content="Если вы хотите заменить изображение, сначала [удалите](#delete) текущее изображение товара." %}
 
 Представленные методы поддерживают специальный MIME-тип данных:
 
@@ -19,7 +25,7 @@ product: Customer API
 multipart/form-data
 ```
 
-[Подробнее о MIME-типах наших API](./rest_mime_types.html).
+<!-- [Подробнее о MIME-типах наших API](./rest_mime_types.html). -->
 
 ## Передать изображение
 
@@ -44,28 +50,65 @@ multipart/form-data
 ```
 200 Success
 ```
+
 ```json
 {
-  "createdAt": "2018-07-25T11:45:50.235Z",
-  "id": "string",
-  "meta": {
-    "extension": "string",
-    "fileSize": 0,
-    "height": 0,
-    "width": 0
+  "id":"2392e522-bda2-4b52-ac98-78a5a1711af0",
+  "user_id":"02-200000000000033",
+  "store_id":"20170918-A3BF-4000-807E-091AD8B5BFB3",
+  "product_id":"gd68f8d5-d29f-48ad-9e32-5f47ef340008",
+  "url":"https://example.com/images/IBcJGKO/QACAfgka2LW/tA/Wj41dKfSK2eMl9H7zQACAE5LlIr2iS1KsmHiloXEa8A",
+  "meta":{
+    "extension":"png",
+    "file_size":429,
+    "width":300,
+    "height":300
   },
-  "updatedAt": "2018-07-25T11:45:50.235Z",
-  "url": "string"
+  "created_at":"2018-09-04T13:31:01.104+0000",
+  "updated_at":"2018-09-04T13:31:01.104+0000"
 }
 ```
 
 `meta` – объект с параметрами изображения товара.
 
+## Получить изображения
 
+    GET /stores/{store-id}/products/{product-id}/images
+
+### Ответ
+
+```
+200 Success
+```
+
+```json
+{
+  "items":[
+    {
+      "id":"1392e522-bda2-4b52-ac98-78a5a1711af1",
+      "user_id":"02-200000000000034",
+      "store_id":"30170918-A3BF-4000-807E-091AD8B5BFB4",
+      "product_id":"gd68f8d5-d29f-48ad-9e32-5f47ef340008",
+      "url":"https://example.com/images/IBcJGKO/QACAfgka2LW/tA/Wj41dKfSK2eMl9H7zQACAE5LlIr2iS1KsmHiloXEa8A",
+      "meta":{
+        "extension":"png",
+        "file_size":429,
+        "width":300,
+        "height":300
+      },
+      "created_at":"2018-09-04T13:31:01.104+0000",
+      "updated_at":"2018-09-04T13:31:01.104+0000"
+    }
+  ],
+  "paging":{
+
+  }
+}
+```
 
 ## Получить изображение
 
-    GET /stores/{storeUuid}/products/{productUuid}/images/{image-id}
+    GET /stores/{store-id}/products/{product-id}/images/{image-id}
 
 ### Ответ
 
@@ -74,22 +117,25 @@ multipart/form-data
 ```
 ```json
 {
-  "createdAt": "2018-07-25T12:37:06.999Z",
-  "id": "string",
-  "meta": {
-    "extension": "string",
-    "fileSize": 0,
-    "height": 0,
-    "width": 0
+  "id":"8993009f-bebc-4458-ad5c-77838ca51903",
+  "user_id":"02-200000000000033",
+  "store_id":"20170918-A3BF-4000-807E-091AD8B5BFB3",
+  "product_id":"g9b2a11c-3d74-4f63-9b52-2814005c69f4",
+  "url":"https://example.com/images/IBcJGKO/QACAfgka2LW/tA+bKhHD10T2ObUigUAFxp9AiZMAn768RFitXHeDjKUZAg",
+  "meta":{
+    "extension":"png",
+    "file_size":429,
+    "width":300,
+    "height":300
   },
-  "updatedAt": "2018-07-25T12:37:06.999Z",
-  "url": "string"
+  "created_at":"2018-09-04T13:31:10.357+0000",
+  "updated_at":"2018-09-04T13:31:10.357+0000"
 }
 ```
 
-## Удалить изображение товара
+## Удалить изображение {#delete}
 
-    DELETE /stores/{storeUuid}/products/{productUuid}/images/{image-id}
+    DELETE /stores/{store-id}/products/{product-id}/images/{image-id}
 
 ### Ответ
 

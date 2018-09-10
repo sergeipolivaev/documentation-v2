@@ -25,11 +25,12 @@ javadoc: /javadoc
 
 markdown: kramdown
 kramdown:
- input: GFM
+ input: "GFM"
  auto_ids: true
  transliterated_header_ids: true
  hard_wrap: false
- syntax_highlighter: rouge
+ syntax_highlighter: "rouge"
+ toc_levels: '1,2'
 
 collections:
   docs:
