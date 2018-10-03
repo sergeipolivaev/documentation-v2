@@ -5,6 +5,8 @@ sidebar: evorestreference
 product: Customer API
 ---
 
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте [здесь](./rest_overview.html)." %} 
+
 В разделе описаны методы, с помощью которых вы можете управлять изображениями товаров в Облаке Эвотор.
 
 <!-- * TOC
@@ -35,14 +37,15 @@ multipart/form-data
 
 Имя  | Тип  | Описание
 -----|------|--------------
-`datafile`| `string` | **Обязательный**. Двоичный файл изображения товара.
+`datafile`| `string` | **Обязательный**. Путь к изображению товара.
 
-#### Пример тела запроса
+#### Пример запроса
 
-```json
-{
-  "datafile": "string"
-}
+```shell
+curl -i -X POST "https://api.evotor.ru/stores/20180413-2595-40E8-80CB-4646C05D81B6/products/5e46f8de-ec4f-4f87-85de-337b88fa2bdd/images" \
+-H "X-Authorization:c14fc51c-d6ea-4992-85c0-786b8351d270" \
+-H "Content-Type:multipart/form-data" \
+-F datafile=@000.png  
 ```
 
 ### Ответ

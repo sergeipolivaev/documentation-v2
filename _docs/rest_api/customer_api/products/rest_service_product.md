@@ -1,6 +1,6 @@
 ---
 title: Услуга
-permalink: rest_service_product.url
+permalink: rest_service_product.html
 sidebar: evorestreference
 product: Customer API
 ---

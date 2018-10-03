@@ -1,6 +1,6 @@
 ---
 title: Обычный товар
-permalink: rest_normal_product.url
+permalink: rest_normal_product.html
 sidebar: evorestreference
 product: Customer API
 ---

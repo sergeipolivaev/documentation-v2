@@ -1,6 +1,6 @@
 ---
 title: Маркированный алкоголь
-permalink: rect_marked_alcohol.url
+permalink: rect_marked_alcohol.html
 sidebar: evorestreference
 product: Customer API
 ---

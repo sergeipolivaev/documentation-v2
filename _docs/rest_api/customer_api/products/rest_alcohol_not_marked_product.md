@@ -1,6 +1,6 @@
 ---
 title: Немаркированный алкоголь
-permalink: rest_alcohol_not_marked.url
+permalink: rest_alcohol_not_marked.html
 sidebar: evorestreference
 product: Customer API
 ---

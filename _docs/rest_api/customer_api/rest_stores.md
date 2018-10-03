@@ -4,6 +4,9 @@ permalink: rest_stores.html
 sidebar: evorestreference
 product: Customer API
 ---
+
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте [здесь](./rest_overview.html)." %} 
+
 ## Получить список магазинов
 
     GET /stores

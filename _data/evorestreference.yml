@@ -56,13 +56,13 @@ folders:
       url: /rest_products.html
       subfolderitems:
       - title: Обычный товар
-        url: /rest_normal_product.url
+        url: /rest_normal_product.html
       - title: Маркированный алкоголь
-        url: /rect_marked_alcohol.url
+        url: /rect_marked_alcohol.html
       - title: Немаркированный алкоголь
-        url: /rest_alcohol_not_marked.url
+        url: /rest_alcohol_not_marked.html
       - title: Услуга
-        url: /rest_service_product.url
+        url: /rest_service_product.html
   - title: Группы товаров и группы модификаций
     url: /rest_products_groups.html
   - title: Задачи для множественных операций
