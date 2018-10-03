@@ -6,7 +6,7 @@ tags: []
 product: Publisher API
 ---
 
-{% include note.html content="Общую информацию о запросах к API Облака вы найдёте [здесь](./rest_overview.html)." %} 
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %} 
 
 ## Передать push-уведомление
 

@@ -5,7 +5,7 @@ sidebar: evorestreference
 product: Customer API
 ---
 
-{% include note.html content="Общую информацию о запросах к API Облака вы найдёте [здесь](./rest_overview.html)." %} 
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %} 
 
 ## Создать товар
 
