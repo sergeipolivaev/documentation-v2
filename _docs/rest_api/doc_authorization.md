@@ -2,7 +2,7 @@
 title: Авторизация запросов к Облаку Эвотор
 keywords:
 summary:
-sidebar: evomain
+sidebar: evorest
 permalink: doc_authorization.html
 tags:
 ---

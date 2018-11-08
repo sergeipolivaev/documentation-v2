@@ -2,7 +2,7 @@
 title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
 keywords:
 summary:
-sidebar: evomain
+sidebar: evorest
 permalink: doc_evotor_api_authorization.html
 tags:
 ---
