@@ -4,9 +4,7 @@ owner: Evotor
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
 folders:
-- title: Publisher's API
-  folderitems:
-  - title: Push-уведомления
-    url: /rest_push_notifications.html
+- title: Push-уведомления
+  url: /rest_push_notifications.html
 #  - title: События приложения
 #    url: /rest_events_streaming.html

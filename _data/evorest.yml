@@ -4,15 +4,13 @@ owner: Evotor
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
 folders:
-- title: Начало
-  folderitems:
-  - title: Введение
-    url: /rest_overview.html
-  - title: Авторизация запросов к Облаку Эвотор
-    url: /doc_authorization.html
-  - title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
-    url: /doc_evotor_api_authorization.html
+- title: Введение
+  url: /rest_overview.html
+- title: Авторизация запросов к Облаку Эвотор
+  url: /doc_authorization.html
+- title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
+  url: /doc_evotor_api_authorization.html
 #  - title: MIME-типы
 #    url: /rest_mime_types.html
-  - title: События
-    url: /rest_events.html
+#- title: События
+#  url: /rest_events.html
