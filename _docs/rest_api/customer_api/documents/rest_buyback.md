@@ -223,7 +223,7 @@ product: Customer API
 `payments`| `Array of object` |Массив платежей (объекты payment).
 `payments.payment`| `object` |Массив платежей (объекты payment).
 `payments.payment.id`| `string` |Уникальный идентификатор платежа. Формат – uuid4, в соответствии с RFC.
-`payments.payment.type`| `string` |Способ платежа. Возможные значения: `CASH`, `CARD`, `ELECTRON`.
+`payments.payment.type`| `string` |Способ платежа. Возможные значения: `UNKNOWN` – по умолчанию, `CASH` – наличными деньгами, `ELECTRON` – электронными деньгами, `ADVANCE` – предоплатой (зачётом аванса), `CREDIT` – постоплатой (в кредит), `COUNTEROFFER` – встречным предоставлением.
 `payments.payment.app_payment`| `object` |*Необязательный*. Объект с информацией для электронных платежей, в случае типа оплаты ELECTRON.
 `payments.payment.app_payment.app_id`| `object` |*Необязательный*. Обязательный идентификатор приложения в формате uuid4, которое проводило платеж электронными средствами.
 `payments.payment.app_payment.name`| `object` |*Необязательный*. Наименование платежной системы, не более 2048 символов.
