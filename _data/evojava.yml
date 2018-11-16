@@ -91,7 +91,7 @@ folders:
         - title: Работа с позициями чека
           url: /doc_java_receipt_interactions.html
 
-        - title: Работа с позициями чека
+        - title: Запись в чек данных агентской схемы
           url: /doc_java_counterparties.html
 
         - title: Создание дополнительных полей в чеке

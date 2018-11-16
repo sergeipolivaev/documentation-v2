@@ -33,6 +33,6 @@ product: Java SDK
 
 После обработки событий, служба `.CombinedPaymentService` должна возвращать соответствующий результат:
 
-* [`PaymentDelegatorSelectedEventResult.kt`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/combined/result/PaymentDelegatorSelectedEventResult.html) – выбрана платёжная система, с помощью которой будет совершён платёж. Результат содержит объект [`PaymentPurpose`](./integration-library/ru/evotor/framework/PaymentPurpose.html)
+* [`PaymentDelegatorSelectedEventResult.kt`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/combined/result/PaymentDelegatorSelectedEventResult.html) – выбрана платёжная система, с помощью которой будет совершён платёж. Результат содержит объект [`PaymentPurpose`](./integration-library/ru/evotor/framework/payment/PaymentPurpose.html)
 * [`PaymentDelegatorCanceledEventResult.kt`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/combined/result/PaymentDelegatorCanceledEventResult.html) – пользователь отменил выбранный способ оплаты.
 * [`PaymentDelegatorCanceledAllEventResult.kt`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/combined/result/PaymentDelegatorCanceledAllEventResult.html) – пользователь отменил все способы оплаты. В этом случае смарт-терминал последовательно отменяет все выбранные способы оплаты.

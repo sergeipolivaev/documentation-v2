@@ -1,5 +1,5 @@
 ---
-title: Запись в чек данных агентской схемы (агентских реквизитов)
+title: Запись в чек данных агентской схемы
 permalink: doc_java_counterparties.html
 sidebar: evojava
 product: Java SDK
