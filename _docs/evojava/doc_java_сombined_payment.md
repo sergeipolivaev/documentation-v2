@@ -1,7 +1,7 @@
 ---
 title: Комбинированная оплата
 sidebar: evojava
-permalink: doc_java_сombined_payment_old.html
+permalink: doc_java_сombined_payment.html
 tags:
 product: Java SDK
 ---
