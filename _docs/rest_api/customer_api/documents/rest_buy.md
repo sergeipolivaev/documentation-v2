@@ -5,6 +5,8 @@ sidebar: evorestreference
 product: Customer API
 ---
 
+{% include important.html content="С первого января 2019 значение ставки НДС может быть 20%. Для учёта корректного значения налоговой ставки используйте значение поля `positions.position.tax.sum`, которое содержит сумму, начисленную в результате применения НДС." %}
+
 ### `BUY`
 
 ```json
@@ -190,7 +192,7 @@ product: Customer API
 `positions.position.alcohol_product_kind_code`| `integer` |*Необязательный*. Код вида алкогольной продукции ФСРАР.
 `positions.position.tare_volume`| `number` |*Необязательный*. Ёмкость тары алкогольной продукции в литрах. До трёх знаков в дробной части.
 `positions.position.tax`| `object` |*Необязательный*. Информация о расчете НДС на товарную позицию.
-`positions.position.tax.type`| `string` |Ставка НДС. Возможные значения: `NO_VAT` – без НДС; `VAT_0` – основная ставка 0%; `VAT_10` – основная ставка 10%; `VAT_10_110` – расчётная ставка 10%; `VAT_18` – основная ставка 18%; `VAT_18_118` – расчётная ставка 18%.
+`positions.position.tax.type`| `string` |Ставка НДС. Возможные значения: `NO_VAT` – без НДС; `VAT_0` – основная ставка 0%; `VAT_10` – основная ставка 10%; `VAT_10_110` – расчётная ставка 10%; `VAT_18` – основная ставка 18%. С первого января 2019 года может содержать 20%; `VAT_18_118` – расчётная ставка 18%. С первого января 2019 года может содержать 20%.
 `positions.position.tax.sum`| `number` |Сумма НДС на товарную позицию без применения скидок.
 `positions.position.tax.result_sum`| `number` |Сумма НДС на товарную позицию с учетом скидок.
 `positions.position.doc_distributed_discount`| `object` |*Необязательный*.
@@ -216,7 +218,7 @@ product: Customer API
 `positions.position.splitted_positions.splitted_position.result_sum`|`number`|Отпускная стоимость товарной позиции с учётом скидок. До двух знаков в дробной части.
 `positions.position.splitted_positions.splitted_position.position_discount`|`number`|Сумма скидки на позицию, применённой в момент добавления позиции в документ. Не учитывает скидку на весь документ. До двух знаков в дробной части.
 `positions.position.splitted_positions.splitted_position.doc_distributed_discount`|`number`|Сумма скидки, которая была распределена на позицию в момент применения скидки на документ. До двух знаков в дробной части.
-`positions.position.splitted_positions.splitted_position.tax_type`|`string`|Ставка НДС. Возможные значения: `NO_VAT` – без НДС; `VAT_0` – основная ставка 0%; `VAT_10` – основная ставка 10%; `VAT_10_110` – расчётная ставка 10%; `VAT_18` – основная ставка 18%; `VAT_18_118` – расчётная ставка 18%.
+`positions.position.splitted_positions.splitted_position.tax_type`|`string`|Ставка НДС. Возможные значения: `NO_VAT` – без НДС; `VAT_0` – основная ставка 0%; `VAT_10` – основная ставка 10%; `VAT_10_110` – расчётная ставка 10%; `VAT_18` – основная ставка 18%. С первого января 2019 года может содержать 20%; `VAT_18_118` – расчётная ставка 18%. С первого января 2019 года может содержать 20%.
 `positions.position.splitted_positions.splitted_position.result_tax_sum`|`number`|Сумма НДС на товарную позицию с учетом скидок. До двух знаков в дробной части.
 `payments`| `Array of object` |Массив платежей (объекты payment).
 `payments.payment`| `object` |Массив платежей (объекты payment).
