@@ -86,10 +86,13 @@ folders:
         - title: Разделение чека
           url: /doc_java_receipt_division.html
         - title: Начисление скидок
-          url: / doc_java_discounts.html
+          url: /doc_java_discounts.html
 
         - title: Работа с позициями чека
-          url: / doc_java_receipt_interactions.html
+          url: /doc_java_receipt_interactions.html
+
+        - title: Работа с позициями чека
+          url: /doc_java_counterparties.html
 
         - title: Создание дополнительных полей в чеке
           url: /doc_java_receipt_extras.html
