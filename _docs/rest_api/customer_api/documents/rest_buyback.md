@@ -173,7 +173,6 @@ product: Customer API
 `positions.position.product_type`|`string`|Тип товара: `NORMAL` - неалкогольный товар; `ALCOHOL_MARKED` - маркированный алкоголь; `ALCOHOL_NOT_MARKED` - немаркированный алкоголь; `SERVICE` - услуга. В список могут быть добавлены новые типы товаров.
 `positions.position.product_name`|`string`|Наименование товара.
 `positions.position.measure_name`|`string`|Единица измерения из карточки товара.
-`positions.position.product_id`|`string`|Идентификатор товара, уникальный в рамках магазина. Поле не передаётся, если производится продажа или возврат товара "Позиция по свободной цене". Формат `uuid4`, в соответствии с RFC.
 `positions.position.price`|`number`|Отпускная стоимость единицы товара. До двух знаков в дробной части.
 `positions.position.cost_price`|`number`|Закупочная стоимость единицы товара. До двух знаков в дробной части.
 `positions.position.sum`|`number `|Отпускная стоимость товарной позиции (price*quantity). До двух знаков в дробной части.
