@@ -258,6 +258,6 @@ product: Customer API
 `print_groups.print_group.org_name`| `string`|*Необязательный*. Наименование организации.
 `print_groups.print_group.org_inn`| `string`|*Необязательный*. ИНН организации.
 `print_groups.print_group.org_address`| `string`|*Необязательный*. Адрес организации.
-`print_groups.print_group.taxation_system`| `string`|*Необязательный*. Используемая система налогообложения: `COMMON` – общая; `SIMPLIFIED_INCOME` – упрощённая Доход; `SIMPLIFIED_INCOME_OUTCOME` – упрощённая Доход минус Расход; `SINGLE_IMPUTED_INCOME` – единый налог на вмененный доход; `SINGLE_AGRICULTURE` – единый сельскохозяйственный налог; `PATENT` – патентная система налогообложения.
+`print_groups.print_group.taxation_system`| `string`|*Необязательный*. Используемая система налогообложения: `COMMON` – общая; `SIMPLIFIED_INCOME` – упрощённая (Доход); `SIMPLIFIED_INCOME_OUTCOME` – упрощённая (Доход минус Расход); `SINGLE_IMPUTED_INCOME` – единый налог на вмененный доход; `SINGLE_AGRICULTURE` – единый сельскохозяйственный налог; `PATENT` – патентная система налогообложения.
 `customer_email`| `string`|*Необязательный*. Адрес электронной почты покупателя.
 `customer_phone`| `string`|*Необязательный*. Номер телефона покупателя.
