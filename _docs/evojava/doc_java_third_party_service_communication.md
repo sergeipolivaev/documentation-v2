@@ -41,7 +41,7 @@ product: Java SDK
 * `https://another\.host\.com/document.*\.jsp`;
 * `https://another\.host\.com/.*`.
 
-{% include tip.html content="Чтобы задавать маски веб-сайтов используйте [регулярные выражения](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)." %}
+{% include tip.html content="Чтобы задавать маски веб-сайтов используйте [регулярные выражения](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum). При этом, хорошей практикой будет указывать в масках адреса своих серверов." %}
 
 После создания списка и [установки приложения в Магазине приложений](./doc_app_installation.html#MarkeplaceAppInstallation), обмен сообщениями происходит по описанному ниже процессу.
 
