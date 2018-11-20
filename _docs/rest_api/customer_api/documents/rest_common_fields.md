@@ -25,16 +25,16 @@ product: Customer API
   "counterparties": [
     {
       "addresses": [],
-      "fullName": "Vasya",
+      "full_name": "Vasya",
       "index": 0,
       "inn": "1234567890",
       "kpp": "1234567890",
       "phones": [],
       "role": "AGENT",
-      "roleProperties": {
-        "agentType": "AGENT"
+      "role_properties": {
+        "agent_type": "AGENT"
       },
-      "shortName": "Vasya",
+      "short_name": "Vasya",
       "type": "INDIVIDUAL_ENTREPRENEUR"
     },
   ],
@@ -70,23 +70,23 @@ product: Customer API
 Имя  | Тип  | Описание
 -----|------|--------------
 `addresses`| `array` | *Необязательный* Список адресов контрагента.
-`fullName`| `string` | *Необязательный* Полное наименование контрагента.
+`full_name`| `string` | *Необязательный* Полное наименование контрагента.
 `index`| `integer` | Порядковый номер в списке (индекс).
 `inn`| `string` | *Необязательный* ИНН контрагента.
 `kpp`| `string` | *Необязательный* КПП контрагента.
 `phones`| `array` | *Необязательный* Список номеров телефонов контрагента.
 `role`| `string` | Роль контрагента. Возможные значения: `AGENT` – агент; `SUBAGENT` – субагент; `PRINCIPAL` – принципал; `TRANSACTION_OPERATOR` – оператор перевода.
-`roleProperties`| `object` | *Необязательный* Свойства, присущие данной роли. Объект присутствует только у контрагентов с ролью `AGENT` или `SUBAGENT`.
-`shortName`| `string` | *Необязательный* Краткое наименование контрагента.
+`role_properties`| `object` | *Необязательный* Свойства, присущие данной роли. Объект присутствует только у контрагентов с ролью `AGENT` или `SUBAGENT`.
+`short_name`| `string` | *Необязательный* Краткое наименование контрагента.
 `type`| `string` | *Необязательный*
 
-### Объект `roleProperties`
+### Объект `role_properties`
 
-{% include note.html content="Объект `roleProperties` присутствует в документе, только у контрагентов с ролью `AGENT` или `SUBAGENT`." %}
+{% include note.html content="Объект `role_properties` присутствует в документе, только у контрагентов с ролью `AGENT` или `SUBAGENT`." %}
 
 Свойства, присущие данной роли. Объект может содержать следующие поля:
 
 Имя  | Тип  | Описание
 -----|------|--------------
-`agentType`| `string` | *Необязательный* Тип агента. Поле присутствует в объекте, только у контрагентов с ролью `AGENT`. Возможные значения: `AGENT` – агент; `COMMISSIONER` – комиссионер; `ATTORNEY_IN_FACT` – поверенный; `PAYMENT_AGENT` – платёжный агент; `BANK_PAYMENT_AGENT` – банковский платёжный агент.
-`subagentType`| `string` | Тип субагента. Поле присутствует в объекте, только у контрагентов с ролью `SUBAGENT`. Возможные значения: `PAYMENT_SUBAGENT` – платёжный субагент; `BANK_PAYMENT_SUBAGENT` – банковский платёжный субагент.
+`agent_type`| `string` | *Необязательный* Тип агента. Поле присутствует в объекте, только у контрагентов с ролью `AGENT`. Возможные значения: `AGENT` – агент; `COMMISSIONER` – комиссионер; `ATTORNEY_IN_FACT` – поверенный; `PAYMENT_AGENT` – платёжный агент; `BANK_PAYMENT_AGENT` – банковский платёжный агент.
+`subagent_type`| `string` | Тип субагента. Поле присутствует в объекте, только у контрагентов с ролью `SUBAGENT`. Возможные значения: `PAYMENT_SUBAGENT` – платёжный субагент; `BANK_PAYMENT_SUBAGENT` – банковский платёжный субагент.

@@ -13,14 +13,14 @@ product: Customer API
     "positions": [
       {
         "position": {
-          "agentRequisites": {
-            "counterpartyIndexes": [
+          "agent_requisites": {
+            "counterparty_indexes": [
               0,
               1,
               2,
               3
             ],
-            "operationDescription": "Some description"
+            "operation_description": "Some description"
           },
           "product_id": "1022722e-9441-4beb-beae-c6bc5e7af30d",
           "parent_id": "1c4ba9e5-27f1-40a6-87a7-dfb08aa0cca8",
@@ -182,9 +182,9 @@ product: Customer API
 -----|------|--------------
 `positions`|`Array of object`|Массив товарных позиций (объектов position) к приёмке.
 `positions.position`|`object`|Позиция к продаже.
-`positions.position.agentRequisites`|`object`|*Необязательный* Агентские реквизиты. Присутствует в документе, только если на терминале установлено приложение "Агентская схема".
-`positions.position.agentRequisites.counterpartyIndexes`|`array`| Индексы контрагентов из списка в заголовке документа
-`positions.position.agentRequisites.operationDescription`|`string`|*Необязательный* Описание операции контрагента.
+`positions.position.agent_requisites`|`object`|*Необязательный* Агентские реквизиты. Присутствует в документе, только если на терминале установлено приложение "Агентская схема".
+`positions.position.agent_requisites.counterparty_indexes`|`array`| Индексы контрагентов из списка в заголовке документа
+`positions.position.agent_requisites.operation_description`|`string`|*Необязательный* Описание операции контрагента.
 `positions.position.quantity`|`number`|Количество товара, над которыми выполняется операция. Всегда положительное и содержит до трёх знаков в дробной части.
 `positions.position.initial_quantity`|`integer`|Остаток товара до выполнения операции. До трёх знаков в дробной части.
 `positions.position.product_type`|`string`|Тип товара: `NORMAL` - неалкогольный товар; `ALCOHOL_MARKED` - маркированный алкоголь; `ALCOHOL_NOT_MARKED` - немаркированный алкоголь; `SERVICE` - услуга. В список могут быть добавлены новые типы товаров.
