@@ -48,8 +48,8 @@ product: Customer API
 
 Имя  | Тип  | Описание
 -----|------|--------------
-`positions`|`Array of object`|Массив товарных позиций (объектов position) к приёмке.
-`positions.position`|`object`|Позиция к продаже.
+`positions`|`Array of object`|Массив товарных позиций (объектов position).
+`positions.position`|`object`|Товарная позиция.
 `positions.position.quantity`|`number`|Количество товара, над которыми выполняется операция. Всегда положительное и содержит до трёх знаков в дробной части.
 `positions.position.initial_quantity`|`integer`|Остаток товара до выполнения операции. До трёх знаков в дробной части.
 `positions.position.product_type`|`string`|Тип товара: `NORMAL` - неалкогольный товар; `ALCOHOL_MARKED` - маркированный алкоголь; `ALCOHOL_NOT_MARKED` - немаркированный алкоголь; `SERVICE` - услуга. В список могут быть добавлены новые типы товаров.

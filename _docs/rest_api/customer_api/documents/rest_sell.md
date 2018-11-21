@@ -180,8 +180,8 @@ product: Customer API
 
 Имя  | Тип  | Описание
 -----|------|--------------
-`positions`|`Array of object`|Массив товарных позиций (объектов position) к приёмке.
-`positions.position`|`object`|Позиция к продаже.
+`positions`|`Array of object`|Массив товарных позиций (объектов position).
+`positions.position`|`object`|Товарная позиция.
 `positions.position.agent_requisites`|`object`|*Необязательный* Агентские реквизиты. Присутствует в документе, только если на терминале установлено приложение "Агентская схема".
 `positions.position.agent_requisites.counterparty_indexes`|`array`| Индексы контрагентов из списка в заголовке документа
 `positions.position.agent_requisites.operation_description`|`string`|*Необязательный* Описание операции контрагента.
