@@ -68,4 +68,4 @@ product: Customer API
 `positions.position.extra_keys.extra_key.identity`|`string`|*Необязательный*. Уникальный идентификатор дополнительного атрибута товара. Формат – uuid4, в соответствии с RFC.
 `positions.position.extra_keys.extra_key.app_id`|`string`|*Необязательный*. Идентификатор приложения, в рамках которого к товарной позиции привязан дополнительный атрибут.
 `positions.position.extra_keys.extra_key.description`|`string`|*Необязательный*. Описание дополнительного атрибута для визуализации на смарт-терминале.
-`positions.position.alcohol_by_volume` | `number` | Крепость алкогольной продукции. До трёх знаков в дробной части.
+`positions.position.alcohol_by_volume` | `number` |*Необязательный*. Крепость алкогольной продукции. До трёх знаков в дробной части.

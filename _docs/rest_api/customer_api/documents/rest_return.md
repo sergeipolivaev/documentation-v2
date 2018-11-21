@@ -59,9 +59,9 @@ product: Customer API
 `positions.position.quantity`|`number`|Количество товара, над которыми выполняется операция. Всегда положительное и содержит до трёх знаков в дробной части.
 `positions.position.initial_quantity`|`integer`|Остаток товара до выполнения операции. До трёх знаков в дробной части.
 `positions.position.product_type`|`string`|Тип товара: `NORMAL` - неалкогольный товар; `ALCOHOL_MARKED` - маркированный алкоголь; `ALCOHOL_NOT_MARKED` - немаркированный алкоголь; `SERVICE` - услуга. В список могут быть добавлены новые типы товаров.
-`positions.position.alcohol_by_volume` | `number` |Крепость алкогольной продукции. До трёх знаков в дробной части.
-`positions.position.alcohol_product_kind_code`| `integer` |Код вида алкогольной продукции ФСРАР.
-`positions.position.tare_volume`| `number` |Ёмкость тары алкогольной продукции в литрах. До трёх знаков в дробной части.
+`positions.position.alcohol_by_volume` | `number` |*Необязательный*. Крепость алкогольной продукции. До трёх знаков в дробной части.
+`positions.position.alcohol_product_kind_code`| `integer` |*Необязательный*. Код вида алкогольной продукции ФСРАР.
+`positions.position.tare_volume`| `number` |*Необязательный*. Ёмкость тары алкогольной продукции в литрах. До трёх знаков в дробной части.
 `positions.position.code`|`string`|Код товара или модификации товара. Поле не передаётся, если производится продажа или возврат товара "Позиция по свободной цене".
 `positions.position.product_name`|`string`|Наименование товара.
 `positions.position.measure_name`|`string`|Единица измерения из карточки товара.
