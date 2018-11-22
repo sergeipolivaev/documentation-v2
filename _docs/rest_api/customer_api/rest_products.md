@@ -5,7 +5,7 @@ sidebar: evorestreference
 product: Customer API
 ---
 
-{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %} 
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %}
 
 ## Создать товар
 
@@ -20,8 +20,6 @@ product: Customer API
 Имя  | Тип  | Описание
 -----|------|--------------
 `cursor`| `string` | Идентификатор курсора для постраничного чтения данных.
-``| `` |  
-``| `` |  
 
 ### Пример тела запроса
 
@@ -69,7 +67,11 @@ product: Customer API
   "id": "01ba18b6-8707-5f47-3d9c-4db058054cb2",
   "quantity": 12,
   "cost_price": 100.123,
-  "attributes_choices": {}
+  "attributes_choices": {},
+  "store_id": "20180820-7052-4047-807D-E82C50000000",
+  "user_id": "00-000000000000000",
+  "created_at": "2018-09-11T16:18:35.397+0000",
+  "updated_at": "2018-09-11T16:18:35.397+0000"
 }
 ```
 
@@ -205,7 +207,11 @@ product: Customer API
       "barcodes": [
         "2000000000060"
       ],
-      "type": "ALCOHOL_NOT_MARKED"
+      "type": "ALCOHOL_NOT_MARKED",
+      "store_id": "20180820-7052-4047-807D-E82C50000000",
+      "user_id": "00-000000000000000",
+      "created_at": "2018-09-11T16:18:35.397+0000",
+      "updated_at": "2018-09-11T16:18:35.397+0000"
     }
   ],
   "paging": {
@@ -303,7 +309,11 @@ product: Customer API
   "id": "01ba18b6-8707-5f47-3d9c-4db058054cb2",
   "quantity": 12,
   "cost_price": 100.123,
-  "attributes_choices": {}
+  "attributes_choices": {},
+  "store_id": "20180820-7052-4047-807D-E82C50000000",
+  "user_id": "00-000000000000000",
+  "created_at": "2018-09-11T16:18:35.397+0000",
+  "updated_at": "2018-09-11T16:18:35.397+0000"
 }
 ```
 

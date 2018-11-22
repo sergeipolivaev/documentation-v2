@@ -5,7 +5,7 @@ sidebar: evorestreference
 product: Customer API
 ---
 
-{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %} 
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %}
 
 ## Получить список смарт-терминалов
 
@@ -36,7 +36,10 @@ product: Customer API
       "location": {
         "lng": 12.34,
         "lat": 12.34
-      }
+      },
+      "user_id": "00-000000000000000",
+      "created_at": "2018-04-17T10:11:49.393+0000",
+      "updated_at": "2018-07-16T16:00:10.663+0000"
     }
   ],
   "paging": {
