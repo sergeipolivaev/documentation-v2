@@ -7,6 +7,8 @@ product: Customer API
 
 Схема товара с типом `ALCOHOL_MARKED`.
 
+{% include important.html content="В связи с изменением законодательства, с первого января 2019 года значение `VAT_18` будет указывать на 20% ставку НДС." %}
+
 ```json
 {
 "parent_id": "1ddea16b-971b-dee5-3798-1b29a7aa2e27",
