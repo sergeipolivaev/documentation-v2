@@ -66,6 +66,14 @@ defaults:
       toc: false
       github_button: true
       search: false
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      sidebar: evomain
+      topnav: topnav
 
 google_analytics: UA-84163503-7
 

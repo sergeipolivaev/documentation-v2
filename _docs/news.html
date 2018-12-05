@@ -1,0 +1,22 @@
+---
+title: Новости
+sidebar: evomain
+permalink: news.html
+toc: false
+github_button: false
+---
+<div class="home">
+
+    <div class="post-list">
+        {% for post in site.posts limit:10 %}
+
+
+    <h2><a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a></h2>
+        <span class="post-meta">{{ post.date | date: "%-d %b, %Y" }} </span>
+
+        <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 50 }} {% endif %}</p>
+
+        {% endfor %}
+
+    </div>
+</div>
