@@ -3,6 +3,7 @@ title: Октябрь
 sidebar: evomain
 permalink: october_updates.html
 summary: "В октябре были сделаны следующие изменения:..."
+published: false
 github_button: false
 ---
 
