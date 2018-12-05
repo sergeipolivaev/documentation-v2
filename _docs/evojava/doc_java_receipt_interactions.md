@@ -41,7 +41,7 @@ product: Java SDK
    </service>
    ```
 
-В метод `call` процессора приходит событие `beforePositionsEditedEvent` и объект для возврата результата `callback`.
+В метод `call` процессора приходит событие [`beforePositionsEditedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html). и объект для возврата результата `callback`.
 
 
 
@@ -76,66 +76,21 @@ setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 
 Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html).
 
-
-
-### Описание события `BeforePositionsEditedEvent`
-
-О намерении изменения чека сообщает событие [`beforePositionsEditedEvent`](https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java):
-
 ## Описание позиции {#Position}
 
-Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.
+Вы можете добавить в чек позицию соответствующую товару в базе смарт-терминала (у позиции есть `uuid` товара) или задать свободную позицию.
 
-Конструкторы позиций описаны  в классе [`Position.java`](https://github.com/evotor/integration-library/tree/develop/src/main/java/ru/evotor/framework/receipt/Position.java).
+Конструкторы позиций описаны в классе [`Position`](./integration-library/ru/evotor/framework/receipt/Position.html).
 
-Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть `uuid` товара):
+Если при создании позиции вы не укажете ставку НДС (класс [`TaxNumber`](./integration-library/ru/evotor/framework/receipt/TaxNumber.html)), смарт-терминал обратится за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках (**Настройки** → **Правила торговли** → **Налоги**).
 
-```java
-public Position(
-        String uuid,
-        String productUuid,
-        String productCode,
-        ProductType productType,
-        String name,
-        String measureName,
-        int measurePrecision,
-        TaxNumber taxNumber,
-        BigDecimal price,
-        BigDecimal priceWithDiscountPosition,
-        BigDecimal quantity,
-        String barcode,
-        String mark,
-        BigDecimal alcoholByVolume,
-        Long alcoholProductKindCode,
-        BigDecimal tareVolume,
-        Set<ExtraKey> extraKeys,
-        List<Position> subPositions
-)
-```
+{% include important.html content="В связи с изменением законодательства, с первого января 2019 года значения `VAT_18` и `VAT_18_118` (класс [`TaxNumber`](./integration-library/ru/evotor/framework/receipt/TaxNumber.html)) могут указывать как на 18%, так и на 20% ставку НДС. Наименования значений (`VAT_18` и `VAT_18_118`), при этом не меняются.<br> Реальное значение ставки НДС зависит от того, имеет пользователь доступ к новому значению НДС или нет. Например, пользователь установил приложение [\"Пакет обновлений\"](https://market.evotor.ru/store/apps/9ddd7629-3397-47eb-a83a-1d987aa71610)." %}
 
-Где:
-
-* `uuid` – идентификатор позиции в формате uuid4.
-* `productUuid` – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.
-* `productCode` – Код товара. Может быть `null`.
-* `productType` – Вид товара.
-* `name` – наименование товара из локальной базы товаров смарт-терминала.
-* `measureName` – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.
-* `measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
-* `taxNumber` – налоговая ставка. Может быть `null`. Доступные значения описаны в классе [`TaxNumber.java`](https://github.com/evotor/integration-library/tree/develop/src/main/java/ru/evotor/framework/receipt/TaxNumber.kt). Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.
-* `price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
-* `priceWithDiscountPosition` – цена позиции с учётом скидки.
-* `quantity` – количество добавленного товара.
-* `barcode` – штрихкод, по которому найден товар. Может быть `null`.
-* `mark` – алкогольная марка.
-* `alcoholByVolume` – крепость алкогольной продукции. Может быть `null`.
-* `alcoholProductKindCode` – код вида продукции ФСРАР. Может быть `null`.
-* `tareVolume` – объём тары. Может быть `null`.
-* `extraKeys` – дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать `null`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
+Поле `extraKeys` задаёт дополнительные ключи (идентификаторы) позиции. Дополнительные ключи обладают следующими параметрами:
+* Описание (`description`), вместо которого можно передавать `null`. Описание отображается в интерфейсе и печатается на чеке.
+* Идентификатор (`identity`) – хранит данные о приложении, создавшем ключ (`appId`).
 
   {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
-
-* `subPositions` – список подпозиций.
 
 ### Позиция с подпозицией
 
