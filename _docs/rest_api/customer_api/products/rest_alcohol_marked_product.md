@@ -1,13 +1,13 @@
 ---
 title: Маркированный алкоголь
-permalink: rect_marked_alcohol.html
+permalink: rest_marked_alcohol.html
 sidebar: evorestreference
 product: Customer API
 ---
 
 Схема товара с типом `ALCOHOL_MARKED`.
 
-{% include important.html content="В связи с изменением законодательства, с первого января 2019 года значение `VAT_18` будет указывать на 20% ставку НДС." %}
+{% include important.html content="В связи с изменением законодательства, с первого января 2019 года значения `VAT_18` и `VAT_18_118` могут указывать как на 18%, так и на 20% ставку НДС." %}
 
 ```json
 {
