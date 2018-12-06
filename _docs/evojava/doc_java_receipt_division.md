@@ -91,7 +91,7 @@ product: Java SDK
 
 ## Методы PaymentSystem API {#PaymentSystemApiMethods}
 
-Используйте класс [`PaymentSystemApi`]([`PaymentPurpose`](./integration-library/ru/evotor/framework/payment/PaymentSystemApi.html).
+Используйте класс [`PaymentSystemApi`](./integration-library/ru/evotor/framework/payment/PaymentSystemApi.html).
 
 Получить список платёжных систем, а также их учётных записей, доступных на смарт-терминале:
 
@@ -101,7 +101,7 @@ fun getPaymentSystems(context: Context): List<Pair<PaymentSystem, List<PaymentAc
 
 Метод возвращает список доступных на терминале платёжных систем ([`PaymentSystem`](./integration-library/ru/evotor/framework/payment/PaymentSystem.html)) и соответствующих им счетов (`PaymentAccount`). Счета можно получить у приложений, которые реализуют различные способы оплаты.
 
-Объекты ([`PaymentSystem`](./integration-library/ru/evotor/framework/payment/PaymentSystem.html) содержат:
+Объекты [`PaymentSystem`](./integration-library/ru/evotor/framework/payment/PaymentSystem.html) содержат:
 
 * тип платёжной системы (наличные, электронные платежи, другие);
 * название, которое можно отобразить пользователю;
@@ -196,4 +196,4 @@ processorMap.put(
         );
 ```
 
-{% include note.html content="Поле `true` печатной группы `printGroup` указывает, что чек будет напечатан. " %}
+{% include note.html content="Поле `true` печатной группы `printGroup` указывает, что чек будет напечатан." %}
