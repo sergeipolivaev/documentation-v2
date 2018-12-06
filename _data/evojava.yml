@@ -140,11 +140,15 @@ folders:
 
 ###########################
 
-#related_resources_title: Справочники
-#
-#related_resources_list:
-#
-#- title: Интеграционная библиотека
-#  url: /integration-library\index.html
-#- title: ЕГАИС API
-#  url: /egais-api\index.html
+related_resources_title: Справочники
+
+related_resources_list:
+
+- title: Справочник integration-library
+  url: /integration-library\index.html
+- title: Справочник egais-api
+  url: /egais-api\index.html
+- title: Приложение для работы с integration-library
+  url: https://github.com/evotor/evotor-api-example
+- title: Приложение для работы с egais-api
+  url: https://github.com/evotor/egais-api-example

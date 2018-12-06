@@ -2,6 +2,7 @@
 title: Справочники и примеры
 permalink: java_examples.html
 product: Java SDK
+published: false
 github_button: false
 ---
 
