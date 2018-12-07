@@ -55,9 +55,7 @@ pipeline {
         environment name: "GIT_BRANCH", value: "origin/master"
       }
       steps {
-        sh '''#!/usr/bin/bash
-             . ~/.rvm/scripts/rvm && bundle exec jekyll build
-        '''
+        sh "docker run --rm -e \"JEKYLL_UID=\$(id -u jenkins)\" -e \"JEKYLL_GID=\$(id -g jenkins)\" --volume=\"${env.WORKSPACE}:/srv/jekyll\" jekyll/builder:3.8 jekyll build"
       }
     }
     stage('Deploy [master]') {
