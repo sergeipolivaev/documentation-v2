@@ -145,9 +145,9 @@ related_resources_title: Справочники
 related_resources_list:
 
 - title: Справочник integration-library
-  url: /docs/beta/integration-library\index.html
+  url: /integration-library\index.html
 - title: Справочник egais-api
-  url: /docs/beta/egais-api\index.html
+  url: /egais-api\index.html
 - title: Приложение для работы с integration-library
   url: https://github.com/evotor/evotor-api-example
 - title: Приложение для работы с egais-api
