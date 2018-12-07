@@ -1,0 +1,266 @@
+---
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W4CBFKS');
+  </script>
+  <meta charset="utf-8">
+  <title>{{page.title}} | {{site.uistring.title}}</title>
+  <base target="_self">
+  <meta name="description" content="{% if page.content %}{{ page.content | truncatewords: 30 | strip_html }} {% else %}{{site.uistring.description}}{% endif %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" value="notranslate">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+
+  <!--stylesheets / link tags loaded here-->
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/{{site.highlighting_css}}.css" />
+  <link rel="stylesheet" href="assets/css/{{site.navbar_style}}.css" />
+  <link rel="stylesheet" href="assets/css/customstyles.css" />
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/navgoco.jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+  <div class="page-container">
+
+
+    <!-- Navigation -->
+
+    {% include topnav1.html %}
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <li>
+        <!--start search-->
+        <div id="search-demo-container">
+          <form action="search.html" method="get">
+            <input type="text" id="search-input" placeholder="{{site.uistring.search_placeholder_global}}" name="query">
+          </form>
+        </div>
+        <!--end search-->
+      </li>
+    </ul>
+  </div>
+  </div>
+  <!-- /.container -->
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Платформа Эвотор</h1>
+      <p class="lead">Платформа Эвотор это Облако и терминал. Хочешь узнать больше? Тебе сюда.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="col-sm-4">
+          <p>Вы уже решили как ваше приложение может помочь вашим клиентам?</p>
+          <p>Разрабатывайте с помощью наших инструментов.</p>
+        </div>
+        <div class="col-sm-8 box">
+          <a href="https://dev.evotor.ru/#/store/auth/login">
+          <p>Зарегистроваться!!!!!1111</p>
+          </a>
+        </div>
+
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+<hr>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="col-sm-4 box">
+          <a href="/rest_index.html">
+          <p>Начните использовать REST API Облака Эвотор.</p>
+          </a>
+        </div>
+        <div class="col-sm-8">
+          <p>Разработайте приложения для смарт-терминала с помощью наших SDK.</p>
+          <row>
+            <div class="col-sm-6 box">
+              <a href="/java_introduction.html">
+              <p>Java</p>
+              </a>
+            </div>
+            <div class="col-sm-6 box">
+              <a href="/rn_gettingstarted.html">
+              <p>JavaScript</p>
+              </a>
+            </div>
+          </row>
+        </div>
+
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+<hr>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="col-sm-6 box">
+          <p>Ваше приложение готово и вы думаете как с его помощью заработать. Вам поможет информация из раздела **"Эвотор.Маркет**</p>
+        </div>
+        <div class="col-sm-6 box">
+          <a href="https://support.evotor.ru/hc/ru">
+          <p>Не нашли ответ на свой вопрос в [разделе ЧаВо](ссылка) или знаете как улучшить документацию?</p>
+          <p>Обратитесь к другим разработчикам или нашей поддержке.</p>
+          <p>Помогите нам стать лучше: откройте issue на интересующий раздел документации</p>
+          </a>
+        </div>
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+<hr>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="col-sm-12">
+          <p>Истории успеха</p>
+        </div>
+
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+
+  <!--/.page-container-->
+
+
+
+  <!--scripts loaded here-->
+  <script src="assets/js/jquery.magnific-popup.js"></script>
+  <script>
+    $('.no_icon').magnificPopup({
+      type: 'image',
+      closeBtnInside: false,
+      closeOnContentClick: false,
+
+      callbacks: {
+        open: function() {
+          var self = this;
+          self.wrap.on('click.pinhandler', 'img', function() {
+            self.wrap.toggleClass('mfp-force-scrollbars');
+          });
+        },
+        beforeClose: function() {
+          this.wrap.off('click.pinhandler');
+          this.wrap.removeClass('mfp-force-scrollbars');
+        }
+      },
+
+      image: {
+        verticalFit: false
+      }
+
+    });
+  </script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/toc.js"></script>
+  <script src="assets/js/anchor.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#docnavsidebar").navgoco({
+        caretHtml: '',
+        accordion: false,
+        openClass: 'open', // open
+        save: false, // leave false or nav highlighting doesn't work right
+        cookie: {
+          name: 'navgoco',
+          expires: false,
+          path: '/'
+        },
+        slide: {
+          duration: 300,
+          easing: 'swing'
+        }
+      });
+
+    });
+  </script>
+  <script src="assets/js/customscripts.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+  </script>
+  <script src="assets/js/tabs.js"></script>
+  <!-- Add copy to clipboard button -->
+  <script>
+    var allCodeBlocksElements = $("pre");
+
+    allCodeBlocksElements.each(function(i) {
+      // add different id for each code block
+
+      // target
+      var currentId = "codeblock" + (i + 1);
+      $(this).attr('id', currentId);
+
+      //trigger
+      var clipButton = '<button class="btn btn-sm copy-btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+      $(this).prepend(clipButton);
+    });
+
+    new Clipboard('.btn');
+  </script>
+
+</body>
+{% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
+
+</html>

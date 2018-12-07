@@ -1,5 +1,5 @@
-sidebarTitle: React Native
-owner: tomjohnson1492
+sidebarTitle: Руководства по React Native SDK
+owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
@@ -21,62 +21,77 @@ folders:
   - title: Обмен сообщениями со сторонним сервисом
     url: /rn_third_party_service_communication.html
 
-- title: Справочник
-  url:
-
-  folderitems:
   - title: Типы взаимодействия
     url: /rn_interactiontypes.html
 
-    subfolders:
-    - title: API
-      url: /rn_reference.html
+#- title: Справочник
+#  url:
+#
+#  folderitems:
+#  - title: Типы взаимодействия
+#    url: /rn_interactiontypes.html
+#
+#    subfolders:
+#    - title: API
+#      url: /rn_reference.html
+#
+#      subfolderitems:
+#      - title: Пользователи
+#        url: /rn_reference_userapi.html
+#
+#      - title: Чеки
+#        url: /rn_reference_receiptapi.html
+#
+#      - title: Товароучёт
+#        url: /rn_reference_inventoryapi.html
+#
+#      - title: Навигация
+#        url: /rn_reference_navigationapi.html
+#
+#      - title: Смены
+#        url: /rn_reference_sessionapi.html
+#
+#    - title: Службы
+#      url: /rn_reference.html
+#
+#      subfolderitems:
+#      - title: Инициализация служб
+#        url: /rn_reference_seviceapi.html
+#
+#      - title: Интеграционные службы
+#        url: /rn_reference_integrationapi.html
+#
+#      - title: Широковещательный приёмник
+#        url: /rn_reference_broadcastreceivers.html
+#
+#    - title: Устройства
+#      url: /rn_reference.html
+#
+#      subfolderitems:
+#      - title: Подключение устройств
+#        url: /rn_reference_devicesconnection.html
+#
+#      - title: Принтер
+#        url: /rn_reference_devicesprinter.html
+#
+#      - title: Сканер
+#        url: /rn_reference_devicescanner.html
+#
+#      - title: Весы
+#        url: /rn_reference_devicescales.html
+#
 
-      subfolderitems:
-      - title: Пользователи
-        url: /rn_reference_userapi.html
+###########################
 
-      - title: Чеки
-        url: /rn_reference_receiptapi.html
+related_resources_title: Справочники и примеры
 
-      - title: Товароучёт
-        url: /rn_reference_inventoryapi.html
+related_resources_list:
 
-      - title: Навигация
-        url: /rn_reference_navigationapi.html
-
-      - title: Смены
-        url: /rn_reference_sessionapi.html
-
-    - title: Службы
-      url: /rn_reference.html
-
-      subfolderitems:
-      - title: Инициализация служб
-        url: /rn_reference_seviceapi.html
-
-      - title: Интеграционные службы
-        url: /rn_reference_integrationapi.html
-
-      - title: Широковещательный приёмник
-        url: /rn_reference_broadcastreceivers.html
-
-    - title: Устройства
-      url: /rn_reference.html
-
-      subfolderitems:
-      - title: Подключение устройств
-        url: /rn_reference_devicesconnection.html
-
-      - title: Принтер
-        url: /rn_reference_devicesprinter.html
-
-      - title: Сканер
-        url: /rn_reference_devicescanner.html
-
-      - title: Весы
-        url: /rn_reference_devicescales.html
-
-
-#- title: Примеры реализации
-#  url: /rn_examples.html
+- title: Справочник integration-library
+  url: /react-integration-library\index.html
+- title: Справочник egais-api
+  url: /react-egais-api\index.html
+- title: Приложение для работы с integration-library
+  url: https://github.com/evotor/react-native-evotor-api-example
+- title: Приложение для работы с egais-api
+  url: https://github.com/evotor/react-native-egais-api-example

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: query/ProductRest.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: query/ProductRest.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __extends = (this &amp;&amp; this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array &amp;&amp; function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var abstract_query_builder_1 = require("abstract-query-builder");
+var ProductRest_1 = require("../model/dictionary/ProductRest");
+var ProductInfo_1 = require("./inner/ProductInfo");
+var converters_1 = require("./converters");
+var executor_1 = require("./executor");
+/**
+ * @class module:productRest.ProductRestSortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {module:productInfo.ProductInfoInnerSortOrder&lt;module:productRest.ProductRestSortOrder>} productInfo Информация о продукции
+ * @property {FieldSorter&lt;module:productRest.ProductRestSortOrder>} stockQuantity Количество продукции на складе
+ * @property {FieldSorter&lt;module:productRest.ProductRestSortOrder>} shopQuantity Количество продукции в торговом зале
+ * @property {FieldSorter&lt;module:productRest.ProductRestSortOrder>} totalQuantity Общее количество продукции
+ */
+var ProductRestSortOrder = /** @class */ (function (_super) {
+    __extends(ProductRestSortOrder, _super);
+    function ProductRestSortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.productInfo = _this.addInnerSortOrder(new ProductInfo_1.ProductInfoInnerSortOrder());
+        _this.stockQuantity = _this.addFieldSorter("STOCK_QUANTITY");
+        _this.shopQuantity = _this.addFieldSorter("SHOP_QUANTITY");
+        _this.totalQuantity = _this.addFieldSorter("TOTAL_QUANTITY");
+        return _this;
+    }
+    return ProductRestSortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.ProductRestSortOrder = ProductRestSortOrder;
+/**
+ * @class module:productRest.ProductRestQuery
+ * @classdesc Класс для формирования запроса на получение остатков продукции.
+ * @property {module:productInfo.ProductInfoFilter&lt;module:productRest.ProductRestQuery, module:productRest.ProductRestSortOrder, module:productRest.ProductRest>} productInfo Информация о продукции
+ * @property {FieldFilter&lt;number, module:productRest.ProductRestQuery, module:productRest.ProductRestSortOrder, module:productRest.ProductRest>} stockQuantity Количество продукции на складе
+ * @property {FieldFilter&lt;number, module:productRest.ProductRestQuery, module:productRest.ProductRestSortOrder, module:productRest.ProductRest>} shopQuantity Количество продукции в торговом зале
+ * @property {FieldFilter&lt;number, module:productRest.ProductRestQuery, module:productRest.ProductRestSortOrder, module:productRest.ProductRest>} totalQuantity Общее количество продукции
+ */
+var ProductRestQuery = /** @class */ (function (_super) {
+    __extends(ProductRestQuery, _super);
+    function ProductRestQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('ProductRest', ProductRest_1.default.prototype)) || this;
+        _this.productInfo = _this.addInnerFilterBuilder(new ProductInfo_1.ProductInfoFilter());
+        _this.stockQuantity = _this.addFieldFilter("STOCK_QUANTITY", converters_1.quantityConverter);
+        _this.shopQuantity = _this.addFieldFilter("SHOP_QUANTITY", converters_1.quantityConverter);
+        _this.totalQuantity = _this.addFieldFilter("TOTAL_QUANTITY", converters_1.quantityConverter);
+        return _this;
+    }
+    return ProductRestQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.ProductRestQuery = ProductRestQuery;
+/**
+ * @class module:productRest.ShopCommoditySortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:productRest.ShopCommoditySortOrder>} quantity Количество
+ * @property {module:productInfo.ProductInfoInnerSortOrder&lt;module:productRest.ShopCommoditySortOrder>} productInfo Информация о продукции
+ */
+var ShopCommoditySortOrder = /** @class */ (function (_super) {
+    __extends(ShopCommoditySortOrder, _super);
+    function ShopCommoditySortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.quantity = _this.addFieldSorter("QUANTITY");
+        _this.productInfo = _this.addInnerSortOrder(new ProductInfo_1.ProductInfoInnerSortOrder());
+        return _this;
+    }
+    return ShopCommoditySortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.ShopCommoditySortOrder = ShopCommoditySortOrder;
+/**
+ * @class module:productRest.ShopCommodityQuery
+ * @classdesc Класс для формирования запроса на получение информации о магазинных товарах.
+ * @property {FieldFilter&lt;number, module:productRest.ShopCommodityQuery, module:productRest.ShopCommoditySortOrder, module:productRest.ShopCommodity>} quantity Количество
+ * @property {module:productInfo.ProductInfoFilter&lt;module:productRest.ShopCommodityQuery, module:productRest.ShopCommoditySortOrder, module:productRest.ShopCommodity>} productInfo Информация о продукции
+ */
+var ShopCommodityQuery = /** @class */ (function (_super) {
+    __extends(ShopCommodityQuery, _super);
+    function ShopCommodityQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('ShopCommodity', ProductRest_1.ShopCommodity.prototype)) || this;
+        _this.quantity = _this.addFieldFilter("QUANTITY", converters_1.quantityConverter);
+        _this.productInfo = _this.addInnerFilterBuilder(new ProductInfo_1.ProductInfoFilter());
+        return _this;
+    }
+    return ShopCommodityQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.ShopCommodityQuery = ShopCommodityQuery;
+/**
+ * @class module:productRest.StockCommoditySortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:productRest.StockCommoditySortOrder>} informF1RegId Регистрационный номер раздела справки 1
+ * @property {FieldSorter&lt;module:productRest.StockCommoditySortOrder>} informF2RegId Регистрационный номер раздела справки 2
+ * @property {FieldSorter&lt;module:productRest.StockCommoditySortOrder>} quantity Количество
+ * @property {module:productInfo.ProductInfoInnerSortOrder&lt;module:productRest.StockCommoditySortOrder>} productInfo Информация о продукции
+ */
+var StockCommoditySortOrder = /** @class */ (function (_super) {
+    __extends(StockCommoditySortOrder, _super);
+    function StockCommoditySortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.informF1RegId = _this.addFieldSorter("INFORM_F1_REG_ID");
+        _this.informF2RegId = _this.addFieldSorter("INFORM_F2_REG_ID");
+        _this.quantity = _this.addFieldSorter("QUANTITY");
+        _this.productInfo = _this.addInnerSortOrder(new ProductInfo_1.ProductInfoInnerSortOrder());
+        return _this;
+    }
+    return StockCommoditySortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.StockCommoditySortOrder = StockCommoditySortOrder;
+/**
+ * @class module:productRest.StockCommodityQuery
+ * @classdesc Класс для формирования запроса на получение информации о биржевых товарах.
+ * @property {FieldFilter&lt;string, module:productRest.StockCommodityQuery, module:productRest.StockCommoditySortOrder, module:productRest.StockCommodity>} informF1RegId Регистрационный номер раздела справки 1
+ * @property {FieldFilter&lt;string, module:productRest.StockCommodityQuery, module:productRest.StockCommoditySortOrder, module:productRest.StockCommodity>} informF2RegId Регистрационный номер раздела справки 2
+ * @property {FieldFilter&lt;number, module:productRest.StockCommodityQuery, module:productRest.StockCommoditySortOrder, module:productRest.StockCommodity>} quantity Количество
+ * @property {module:productInfo.ProductInfoFilter&lt;module:productRest.StockCommodityQuery, module:productRest.StockCommoditySortOrder, module:productRest.StockCommodity>} productInfo Информация о продукции
+ */
+var StockCommodityQuery = /** @class */ (function (_super) {
+    __extends(StockCommodityQuery, _super);
+    function StockCommodityQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('StockCommodity', ProductRest_1.StockCommodity.prototype)) || this;
+        _this.informF1RegId = _this.addFieldFilter("INFORM_F1_REG_ID");
+        _this.informF2RegId = _this.addFieldFilter("INFORM_F2_REG_ID");
+        _this.quantity = _this.addFieldFilter("QUANTITY", converters_1.quantityConverter);
+        _this.productInfo = _this.addInnerFilterBuilder(new ProductInfo_1.ProductInfoFilter());
+        return _this;
+    }
+    return StockCommodityQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.StockCommodityQuery = StockCommodityQuery;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-actChargeOn.html">actChargeOn</a></li><li><a href="module-actWriteOff.html">actWriteOff</a></li><li><a href="module-orgInfo.html">orgInfo</a></li><li><a href="module-productInfo.html">productInfo</a></li><li><a href="module-productRest.html">productRest</a></li><li><a href="module-ticket.html">ticket</a></li><li><a href="module-transfer.html">transfer</a></li><li><a href="module-waybill.html">waybill</a></li><li><a href="module-waybillAct.html">waybillAct</a></li></ul><h3>Classes</h3><ul><li><a href="module-actChargeOn.ActChargeOnShop.html">ActChargeOnShop</a></li><li><a href="module-actChargeOn.ActChargeOnShopPosition.html">ActChargeOnShopPosition</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionQuery.html">ActChargeOnShopPositionQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionSortOrder.html">ActChargeOnShopPositionSortOrder</a></li><li><a href="module-actChargeOn.ActChargeOnShopQuery.html">ActChargeOnShopQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopSortOrder.html">ActChargeOnShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOff.html">ActWriteOff</a></li><li><a href="module-actWriteOff.ActWriteOffPosition.html">ActWriteOffPosition</a></li><li><a href="module-actWriteOff.ActWriteOffPositionQuery.html">ActWriteOffPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffPositionSortOrder.html">ActWriteOffPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffQuery.html">ActWriteOffQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShop.html">ActWriteOffShop</a></li><li><a href="module-actWriteOff.ActWriteOffShopPosition.html">ActWriteOffShopPosition</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionQuery.html">ActWriteOffShopPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionSortOrder.html">ActWriteOffShopPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffShopQuery.html">ActWriteOffShopQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopSortOrder.html">ActWriteOffShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffSortOrder.html">ActWriteOffSortOrder</a></li><li><a href="module-orgInfo.OrgInfo.html">OrgInfo</a></li><li><a href="module-orgInfo.OrgInfoAddress.html">OrgInfoAddress</a></li><li><a href="module-orgInfo.OrgInfoAddressFilter.html">OrgInfoAddressFilter</a></li><li><a href="module-orgInfo.OrgInfoAddressSortOrder.html">OrgInfoAddressSortOrder</a></li><li><a href="module-orgInfo.OrgInfoQuery.html">OrgInfoQuery</a></li><li><a href="module-orgInfo.OrgInfoSortOrder.html">OrgInfoSortOrder</a></li><li><a href="module-productInfo.ProductInfo.html">ProductInfo</a></li><li><a href="module-productInfo.ProductInfoFilter.html">ProductInfoFilter</a></li><li><a href="module-productInfo.ProductInfoInnerSortOrder.html">ProductInfoInnerSortOrder</a></li><li><a href="module-productRest.ProductRest.html">ProductRest</a></li><li><a href="module-productRest.ProductRestQuery.html">ProductRestQuery</a></li><li><a href="module-productRest.ProductRestSortOrder.html">ProductRestSortOrder</a></li><li><a href="module-productRest.ShopCommodity.html">ShopCommodity</a></li><li><a href="module-productRest.ShopCommodityQuery.html">ShopCommodityQuery</a></li><li><a href="module-productRest.ShopCommoditySortOrder.html">ShopCommoditySortOrder</a></li><li><a href="module-productRest.StockCommodity.html">StockCommodity</a></li><li><a href="module-productRest.StockCommodityQuery.html">StockCommodityQuery</a></li><li><a href="module-productRest.StockCommoditySortOrder.html">StockCommoditySortOrder</a></li><li><a href="module-ticket.ConfirmTicket.html">ConfirmTicket</a></li><li><a href="module-ticket.ConfirmTicketQuery.html">ConfirmTicketQuery</a></li><li><a href="module-ticket.ConfirmTicketSortOrder.html">ConfirmTicketSortOrder</a></li><li><a href="module-ticket.Ticket.html">Ticket</a></li><li><a href="module-ticket.TicketQuery.html">TicketQuery</a></li><li><a href="module-ticket.TicketSortOrder.html">TicketSortOrder</a></li><li><a href="module-transfer.TransferFromShop.html">TransferFromShop</a></li><li><a href="module-transfer.TransferFromShopPosition.html">TransferFromShopPosition</a></li><li><a href="module-transfer.TransferFromShopPositionQuery.html">TransferFromShopPositionQuery</a></li><li><a href="module-transfer.TransferFromShopPositionSortOrder.html">TransferFromShopPositionSortOrder</a></li><li><a href="module-transfer.TransferFromShopQuery.html">TransferFromShopQuery</a></li><li><a href="module-transfer.TransferFromShopSortOrder.html">TransferFromShopSortOrder</a></li><li><a href="module-transfer.TransferToShop.html">TransferToShop</a></li><li><a href="module-transfer.TransferToShopPosition.html">TransferToShopPosition</a></li><li><a href="module-transfer.TransferToShopPositionQuery.html">TransferToShopPositionQuery</a></li><li><a href="module-transfer.TransferToShopPositionSortOrder.html">TransferToShopPositionSortOrder</a></li><li><a href="module-transfer.TransferToShopQuery.html">TransferToShopQuery</a></li><li><a href="module-transfer.TransferToShopSortOrder.html">TransferToShopSortOrder</a></li><li><a href="module-waybill.Transport.html">Transport</a></li><li><a href="module-waybill.TtnInformF2Reg.html">TtnInformF2Reg</a></li><li><a href="module-waybill.TtnInformF2RegPosition.html">TtnInformF2RegPosition</a></li><li><a href="module-waybill.TtnInformF2RegPositionQuery.html">TtnInformF2RegPositionQuery</a></li><li><a href="module-waybill.TtnInformF2RegPositionSortOrder.html">TtnInformF2RegPositionSortOrder</a></li><li><a href="module-waybill.TtnInformF2RegQuery.html">TtnInformF2RegQuery</a></li><li><a href="module-waybill.TtnInformF2RegSortOrder.html">TtnInformF2RegSortOrder</a></li><li><a href="module-waybill.Waybill.html">Waybill</a></li><li><a href="module-waybill.WaybillPosition.html">WaybillPosition</a></li><li><a href="module-waybill.WaybillPositionMark.html">WaybillPositionMark</a></li><li><a href="module-waybill.WaybillPositionMarkQuery.html">WaybillPositionMarkQuery</a></li><li><a href="module-waybill.WaybillPositionMarkSortOrder.html">WaybillPositionMarkSortOrder</a></li><li><a href="module-waybill.WaybillPositionQuery.html">WaybillPositionQuery</a></li><li><a href="module-waybill.WaybillPositionSortOrder.html">WaybillPositionSortOrder</a></li><li><a href="module-waybill.WaybillQuery.html">WaybillQuery</a></li><li><a href="module-waybill.WaybillSortOrder.html">WaybillSortOrder</a></li><li><a href="module-waybillAct.WaybillAct.html">WaybillAct</a></li><li><a href="module-waybillAct.WaybillActPosition.html">WaybillActPosition</a></li><li><a href="module-waybillAct.WaybillActPositionMark.html">WaybillActPositionMark</a></li><li><a href="module-waybillAct.WaybillActPositionMarkQuery.html">WaybillActPositionMarkQuery</a></li><li><a href="module-waybillAct.WaybillActPositionMarkSortOrder.html">WaybillActPositionMarkSortOrder</a></li><li><a href="module-waybillAct.WaybillActPositionQuery.html">WaybillActPositionQuery</a></li><li><a href="module-waybillAct.WaybillActPositionSortOrder.html">WaybillActPositionSortOrder</a></li><li><a href="module-waybillAct.WaybillActQuery.html">WaybillActQuery</a></li><li><a href="module-waybillAct.WaybillActSortOrder.html">WaybillActSortOrder</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Version">Version</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 03 2018 17:48:55 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

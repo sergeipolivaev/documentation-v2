@@ -1,0 +1,18 @@
+sidebarTitle: Webhooks Облака Эвотор
+owner: Evotor
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+- title: Введение
+  url: /rest_webhooks_overview.html
+- title: Создание вебхуков
+  url: /rest_webhooks_creating_webhooks.html
+- title: Настройка сервера
+  url: /rest_webhooks_configuring_your_server.html
+- title: Тестирование вебхуков
+  url: /rest_webhooks_configuring_your_server.html
+- title: Гарантия доставки
+  url: /rest_webhooks_ensured_delivery.html
+- title: Безопасность вебхуков
+  url: /rest_webhooks_securing_your_webhooks.html

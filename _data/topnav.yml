@@ -2,10 +2,10 @@
 ## if you want to list an external url, use url instead of url. the theme will apply a different link base.
 navbar_singleitems:
 - items:
-    - title: REST API Облака
-      url: https://api.evotor.ru/docs/
-        #https://api.evotor.ru/docs/
-        #/rest_overview.html
+#    - title: REST API Облака
+#      url: /rest_index.html
+#        #https://api.evotor.ru/docs/
+#        #/rest_overview.html
 #    - title: Java SDK
 #      url: /java_introduction.html
 #    - title: React Native
@@ -15,10 +15,16 @@ navbar_singleitems:
 navbar_dropdowns:
 - folders:
 
+    - title: REST API Облака
+      folderitems:
+        - title: V 1
+          url: https://api.evotor.ru/docs/
+        - title: V 2 (в разработке)
+          url: /rest_index.html
     - title: SDK cмарт-терминала
       folderitems:
         - title: Java SDK
-          url: /java_introduction.html
+          url: /doc_java_app_development_prerequisites.html
         - title: React Native SDK
           url: /rn_gettingstarted.html
 

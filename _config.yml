@@ -25,11 +25,12 @@ javadoc: /javadoc
 
 markdown: kramdown
 kramdown:
- input: GFM
+ input: "GFM"
  auto_ids: true
  transliterated_header_ids: true
  hard_wrap: false
- syntax_highlighter: rouge
+ syntax_highlighter: "rouge"
+ toc_levels: '1,2'
 
 collections:
   docs:
@@ -65,6 +66,14 @@ defaults:
       toc: false
       github_button: true
       search: false
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      sidebar: evomain
+      topnav: topnav
 
 google_analytics: UA-84163503-7
 
@@ -87,8 +96,14 @@ google_analytics: UA-84163503-7
 #      - summary
 
 exclude:
+  - buildandpush.sh
+  - Dockerfile
   - Gemfile
   - Gemfile.lock
+  - Jenkinsfile
+  - jekyll.sh
+  - README.md
+  - tar_exclude
 
 plugins:
 #  - jekyll-algolia

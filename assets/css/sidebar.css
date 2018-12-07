@@ -77,7 +77,8 @@ li.level1.open > ul > li.level1items.open > a:before, li.level2.open > ul > li.l
     font-size: 13px;
     color: black;
     margin:10px 0px;
-}
+    font-weight: bold;
+  }
 
 .productTitle {
     font-size: 18px;

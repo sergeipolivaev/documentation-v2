@@ -14,7 +14,7 @@ product: Java SDK
 
    {% include tip.html content="Подробную информацию о том, как создать новый проект в Android Studio смотрите на сайте [developer.android.com](https://developer.android.com/training/basics/firstapp/creating-project.html)" %}
 
-2. В файле `build.gradle` проекта:
+2. В файле `build.gradle` проекта укажите следующее:
 
    ```
    allprojects {
@@ -26,7 +26,7 @@ product: Java SDK
    }
    ```
 
-3. В файле `build.gradle` приложения (папка `app`), в зависимости подключите библиотеку `egais-api`:
+3. В файле `build.gradle` приложения (папка `app`), подключите библиотеку `egais-api` в зависимости:
 
    ```
    implementation 'com.github.evotor:egais-api:ebe58e1a79'

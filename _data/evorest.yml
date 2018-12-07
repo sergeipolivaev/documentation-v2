@@ -1,28 +1,16 @@
-sidebarTitle: REST API Облака Эвотор
+sidebarTitle: Обзор REST API Облака Эвотор
 owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
 folders:
-- title: Начало
-  folderitems:
-  - title: Введение
-    url: /rest_overview.html
-  - title: MIME-типы
-    url: /rest_mime_types.html
-- title: Руководства
-  folderitems:
-  - title: Получение ключа издателя
-    url: /rest_publisher_access_token.html
-  - title: Работа с push-уведомлениями
-    url: /rest_push_notifications_guide.html
-#- title: Cloud-api
-#  folderitems:
-#  - title: Push-уведомления
-#    url: /rest_push_notifications.html
-- title: Publisher-api
-  folderitems:
-  - title: Push-уведомления
-    url: /rest_push_notifications.html
-  - title: События приложения
-    url: /rest_events_streaming.html
+- title: Введение
+  url: /rest_overview.html
+- title: Авторизация запросов к Облаку Эвотор
+  url: /doc_authorization.html
+- title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
+  url: /doc_evotor_api_authorization.html
+#  - title: MIME-типы
+#    url: /rest_mime_types.html
+#- title: События
+#  url: /rest_events.html

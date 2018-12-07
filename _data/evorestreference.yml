@@ -1,0 +1,68 @@
+sidebarTitle: Справочник Customer's API
+owner: Evotor
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+- title: Магазины
+  url: /rest_stores.html
+- title: Смарт-терминалы
+  url: /rest_smart_terminals.html
+- title: Сотрудники
+  url: /rest_employees.html
+- title: Документы
+  url: /rest_documents.html
+  folderitems:
+  - title: Общие поля документов
+    url: /rest_common_fields.html
+  - title: Открытие смены на смарт-терминале
+    url: /rest_open_session.html
+  - title: Открытие смены в ККТ
+    url: /rest_pos_open_session.html
+  - title: Закрытие смены
+    url: /rest_close_session.html
+  - title: Внесение наличных в кассу
+    url: /rest_cash_income.html
+  - title: Изъятие наличных из кассы
+    url: /rest_cash_outcome.html
+  - title: Инвентаризация
+    url: /rest_inventory.html
+  - title: Приемка товара
+    url: /rest_accept.html
+  - title: Переоценка товара
+    url: /rest_revaluation.html
+  - title: Списание товара
+    url: /rest_write_off.html
+  - title: Возврат товара поставщику
+    url: /rest_return.html
+  - title: Вскрытие тары
+    url: /rest_open_tare.html
+  - title: Продажа товара
+    url: /rest_sell.html
+  - title: Возврат товара продавцу
+    url: /rest_payback.html
+  - title: Выкуп (товара у клиента)
+    url: /rest_buy.html
+  - title: Обратный выкуп (товара клиентом)
+    url: /rest_buyback.html
+  - title: X-отчет (без гашения)
+    url: /rest_x_report.html
+  - title: Z-отчет (с гашением)
+    url: /rest_z_report.html
+- title: Товары и модификации товаров
+  url: /rest_products.html
+  folderitems:
+  - title: Обычный товар
+    url: /rest_normal_product.html
+  - title: Маркированный алкоголь
+    url: /rect_marked_alcohol.html
+  - title: Немаркированный алкоголь
+    url: /rest_alcohol_not_marked.html
+  - title: Услуга
+    url: /rest_service_product.html
+- title: Группы товаров и группы модификаций
+  url: /rest_products_groups.html
+- title: Задачи для множественных операций
+  url: /rest_bulk_tasks.html
+- title: Изображения товаров
+  url: /rest_images.html

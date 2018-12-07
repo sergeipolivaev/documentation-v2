@@ -57,7 +57,7 @@ product: Java SDK
 ```
 
    Где:
-   
+
    Атрибут `android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"` задаёт фон, на котором отображается иконка приложения.
 
    Элемент `<action android:name="android.intent.action.MAIN" />` указывает, что иконка приложения будет отображаться на главном экране смарт-терминала.

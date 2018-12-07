@@ -4,8 +4,7 @@ keywords:
 summary:
 sidebar: evoreact
 permalink: rn_app_installation.html
-tags: [terminal, react]
-folder: rn_SDK
+product: React Native
 published: true
 ---
 

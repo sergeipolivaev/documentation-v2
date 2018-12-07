@@ -1,29 +1,46 @@
-sidebarTitle: Java SDK
+sidebarTitle: Руководства по Java SDK
 owner: Evotor
 
 ## Keep this commented out content because it shows the YAML model for the sidebar.
 
 folders:
 
-- title: Введение
-  url: /java_introduction.html
+- title: Начало работы
+  folderitems:
+  - title: Подготовка к разработке приложения
+    url: /doc_java_app_development_prerequisites.html
+#TODO  - title: Создание первого приложения
+#TODO    url: /doc_java_development_of_the_first_app.html
+  - title: Установка приложения
+    url: /doc_app_installation.html
+- title: Приложение на смарт-терминале
+  folderitems:
+  - title: Приложение в интерфейсе смарт-терминала
+    url: /doc_java_app_icon.html
+  - title: Передача данных
+    url: /doc_java_third_party_service_communication.html
+#TODO  - title: Библиотеки Эвотора
+#TODO    url: /doc_java_evotor_libraries.html
+  - title: Точки интеграции
+    url: /doc_app_integration_points.html
+
+
 - title: Манифест Java-приложения
   url: /doc_java_app_manifest.html
 - title: Точки интеграции
   url: /doc_app_integration_points.html
+- title: Использование приёмников широковещательных сообщений
+  url: /doc_java_broadcastreceiver.html
 
-- title: Руководства
+- title: Интеграционная библиотека
   folderitems:
   - title: Подключение библиотеки integration library
     url: /doc_java_integration_library_connection.html
-  - title: Вызов приложения из интерфейса смарт-терминала
-    url: /doc_java_app_icon.html
+#  - title: Вызов приложения из интерфейса смарт-терминала
+#    url: /doc_java_app_icon.html
 
   - title: Вызов окон смарт-терминала
     url: /doc_java_navigation.html
-
-  - title: Обмен сообщениями приложения и стороннего сервиса
-    url: /doc_java_third_party_service_communication.html
 
   - title: Обработка событий смарт-терминала
     url: /doc_java_st_events.html
@@ -46,6 +63,9 @@ folders:
   - title: Использование различных способов оплаты
     url: /doc_java_payment_systems.html
 
+  - title: Комбинированная оплата
+    url: /doc_java_combined_payment.html
+
   - title: Получение информации о кассовых сменах
     url: /doc_java_session.html
 
@@ -59,15 +79,6 @@ folders:
     url: /doc_java_logging.html
 
     subfolders:
-    - title: ЕГАИС
-      subfolderitems:
-        - title: Подготовка проекта для работы с egais-api
-          url: /doc_egais_project_creation.html
-        - title: Чтение данных ЕГАИС
-          url: /doc_egais_data_reading_access.html
-        - title: Получение настроек пользователя из УТМ
-          url: /doc_egais_clientsettingsquery.html
-
     - title: Чеки
       subfolderitems:
         - title: Открытие чека в приложении
@@ -75,10 +86,13 @@ folders:
         - title: Разделение чека
           url: /doc_java_receipt_division.html
         - title: Начисление скидок
-          url: / doc_java_discounts.html
+          url: /doc_java_discounts.html
 
         - title: Работа с позициями чека
-          url: / doc_java_receipt_interactions.html
+          url: /doc_java_receipt_interactions.html
+
+        - title: Запись в чек данных агентской схемы
+          url: /doc_java_counterparties.html
 
         - title: Создание дополнительных полей в чеке
           url: /doc_java_receipt_extras.html
@@ -98,6 +112,15 @@ folders:
         - title: Работа с принтером чеков
           url: /doc_java_bill_printer.html
 
+- title: ЕГАИС
+  folderitems:
+    - title: Подготовка проекта для работы с egais-api
+      url: /doc_egais_project_creation.html
+    - title: Чтение данных ЕГАИС
+      url: /doc_egais_data_reading_access.html
+    - title: Получение настроек пользователя из УТМ
+      url: /doc_egais_clientsettingsquery.html
+
 - title: Драйвера для оборудования
   folderitems:
   - title: Подготовка к разработке
@@ -111,13 +134,21 @@ folders:
   - title: SDK для подключаемого USB-оборудования
     url: /doc_drivers_other.html
 
-- title: Справочники
-  folderitems:
-  - title: Библиотека integration-library
-    url: /integration-library\index.html
-  - title: Библиотека egais-api
-    url: /egais-api\index.html
+#- title: Примеры реализации
+#  url: /java_examples.html
 
 
-- title: Примеры реализации
-  url: /java_examples.html
+###########################
+
+related_resources_title: Справочники
+
+related_resources_list:
+
+- title: Справочник integration-library
+  url: /integration-library\index.html
+- title: Справочник egais-api
+  url: /egais-api\index.html
+- title: Приложение для работы с integration-library
+  url: https://github.com/evotor/evotor-api-example
+- title: Приложение для работы с egais-api
+  url: https://github.com/evotor/egais-api-example

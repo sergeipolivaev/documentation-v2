@@ -1,10 +1,12 @@
 ---
 title: Push-уведомления
 permalink: rest_push_notifications.html
-sidebar: evorest
+sidebar: evorestpublisherreference
 tags: []
-product: REST API
+product: Publisher API
 ---
+
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %} 
 
 ## Передать push-уведомление
 
@@ -82,7 +84,7 @@ Location: /api/apps/:app-id/push-notifications/:task-id
 
 ## Получить push-уведомление
 
-    GET /api/apps/{appId}/push-notifications/{push-id}
+    GET /api/apps/{app-id}/push-notifications/{push-id}
 
 ### Ответ
 

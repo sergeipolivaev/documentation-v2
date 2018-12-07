@@ -1,0 +1,310 @@
+---
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W4CBFKS');
+  </script>
+  <meta charset="utf-8">
+  <title>{{page.title}} | {{site.uistring.title}}</title>
+  <base target="_self">
+  <meta name="description" content="{% if page.content %}{{ page.content | truncatewords: 30 | strip_html }} {% else %}{{site.uistring.description}}{% endif %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" value="notranslate">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+
+  <!--stylesheets / link tags loaded here-->
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/{{site.highlighting_css}}.css" />
+  <link rel="stylesheet" href="assets/css/{{site.navbar_style}}.css" />
+  <link rel="stylesheet" href="assets/css/customstyles.css" />
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/navgoco.jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+  <div class="page-container">
+
+
+    <!-- Navigation -->
+
+    {% include topnav1.html %}
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <li>
+        <!--start search-->
+        <div id="search-demo-container">
+          <form action="search.html" method="get">
+            <input type="text" id="search-input" placeholder="{{site.uistring.search_placeholder_global}}" name="query">
+          </form>
+        </div>
+        <!--end search-->
+      </li>
+    </ul>
+  </div>
+  </div>
+  <!-- /.container -->
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Платформа Эвотор</h1>
+      <p class="lead">Платформа Эвотор это Облако и терминал. Хочешь узнать больше? Тебе сюда.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="col-sm-4">
+          <p>Вы уже решили как ваше приложение может помочь вашим клиентам?</p>
+          <p>Разрабатывайте с помощью наших инструментов.</p>
+        </div>
+        <div class="col-sm-8 box">
+          <a href="https://dev.evotor.ru/#/store/auth/login">
+          <p>Зарегистроваться!!!!!1111</p>
+          </a>
+        </div>
+
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+<hr>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="col-sm-4 box">
+          <a href="/rest_index.html">
+          <p>Начните использовать REST API Облака Эвотор.</p>
+          </a>
+        </div>
+        <div class="col-sm-8">
+          <p>Разработайте приложения для смарт-терминала с помощью наших SDK.</p>
+          <row>
+            <div class="col-sm-6 box">
+              <a href="/java_introduction.html">
+              <p>Java</p>
+              </a>
+            </div>
+            <div class="col-sm-6 box">
+              <a href="/rn_gettingstarted.html">
+              <p>JavaScript</p>
+              </a>
+            </div>
+          </row>
+        </div>
+
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+<hr>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="col-sm-6 box">
+          <p>Ваше приложение готово и вы думаете как с его помощью заработать. Вам поможет информация из раздела **"Эвотор.Маркет**</p>
+        </div>
+        <div class="col-sm-6 box">
+          <a href="https://support.evotor.ru/hc/ru">
+          <p>Не нашли ответ на свой вопрос в [разделе ЧаВо](ссылка) или знаете как улучшить документацию?</p>
+          <p>Обратитесь к другим разработчикам или нашей поддержке.</p>
+          <p>Помогите нам стать лучше: откройте issue на интересующий раздел документации</p>
+          </a>
+        </div>
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+<hr>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <!-- main area -->
+      <div class="col-xs-12">
+        {% if page.type == "search" %}
+        <h1>{{page.product}} {{site.uistring.search_results_page_title}}</h1>{% endif %}
+
+        <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12 trusted-by">Some of our users include:</div>
+    </div>
+  </div>
+
+  <div class="container">
+      <div class="row logos">
+          <a href="http://argus-sec.com/"><img src="assets/company-logos/Argus-cbc04f8f2b9.png"/></a>
+          <a href="http://www.boxever.com/"><img src="assets/company-logos/Boxever-cb68bea5910.png"/></a>
+          <a href="http://www.branch.io/"><img src="assets/company-logos/Branch-cb70e6100a8.png"/></a>
+          <a href="https://www.cesanta.com/"><img src="assets/company-logos/cesanta-cb55e32215b.png"/></a>
+          <a href="https://www.coreos.com/"><img src="assets/company-logos/CoreOS-cb87ca3ae0a.png"/></a>
+          <a href="http://www.crononauta.com/"><img src="assets/company-logos/crononauta-cbac536a81e.png"/></a>
+          <a href="https://www.digitalocean.com/"><img src="assets/company-logos/digitalocean-cb08a67adb3.png"/></a>
+          <a href="https://www.docker.com/"><img src="assets/company-logos/Docker-cbed8d5e698.png"/></a>
+          <a href="http://www.ericsson.com/"><img src="assets/company-logos/Ericsson-cbc7b4ff694.png"/></a>
+          <a href="http://www.eurotech.com/"><img src="assets/company-logos/Eurotech-cbb537d2291.png"/></a>
+          <a href="https://www.fosdem.org/"><img src="assets/company-logos/Fosdem-cba89eb91f5.png"/></a>
+          <a href="https://freshtracks.io/"><img src="assets/company-logos/FreshTracks-cb802bfd636.png"/></a>
+          <a href="https://giantswarm.io/"><img src="assets/company-logos/giantswarm-cbd27183f7f.png"/></a>
+          <a href="https://www.hostingadvice.com/"><img src="assets/company-logos/HostingAdvice-cbbc3aa5bc4.png" alt="HostingAdvice.com"/></a>
+          <a href="http://improbable.io/"><img src="assets/company-logos/Improbable-cb7f47b9828.png"/></a>
+          <a href="https://www.jodel-app.com/"><img src="assets/company-logos/Jodel-cbd9d81b36a.png"/></a>
+          <a href="https://www.justwatch.com/"><img src="assets/company-logos/JustWatch-cb2974db5b7.png"/></a>
+          <a href="https://www.kumina.nl/"><img src="assets/company-logos/Kumina-cbdc88cf968.png"/></a>
+          <a href="https://latency.at/"><img src="assets/company-logos/latencyat-cb3ec77a635.png"/></a>
+          <a href="https://loodse.com"><img src="assets/company-logos/Loodse-cb133af14ec.png"/></a>
+          <a href="http://www.mavensecurities.com/"><img src="assets/company-logos/MavenSecurities-cb59382c058.png"/></a>
+          <a href="http://www.outbrain.com/"><img src="assets/company-logos/Outbrain-cba597cf86d.png"/></a>
+          <a href="https://www.percona.com/"><img src="assets/company-logos/Percona-cb5a7682fbc.png"/></a>
+          <a href="https://www.pingcap.com/"><img src="assets/company-logos/pingcap-cbf9ced754f.png"/></a>
+          <a href="https://www.qaware.de/"><img src="assets/company-logos/Qaware-cb43fa8cdb1.png"/></a>
+          <a href="http://www.quobyte.com/"><img src="assets/company-logos/quobyte-cb1c65cc370.png"/></a>
+          <a href="https://www.robustperception.io/"><img src="assets/company-logos/RobustPerception-cb65ad3b2fc.png"/></a>
+          <a href="http://www.showmax.com/"><img src="assets/company-logos/ShowMax-cb1a469a782.png"/></a>
+          <a href="https://www.shuttlecloud.com/"><img src="assets/company-logos/shuttlecloud-cb32e043c91.png"/></a>
+          <a href="https://www.soundcloud.com/"><img src="assets/company-logos/soundcloud-cb3fb09c0c7.png"/></a>
+          <a href="https://www.space.net/"><img src="assets/company-logos/Spacenet-cb561ccaa88.png"/></a>
+          <a href="https://www.sysdig.com/"><img src="assets/company-logos/Sysdig-cb6ba61e218.png"/></a>
+          <a href="https://transloadit.com/"><img src="assets/company-logos/transloadit-cb7107a0f8a.png"/></a>
+          <a href="https://www.uda100.com/"><img src="assets/company-logos/WeLearn-cbc41a45958.png"/></a>
+          <a href="https://www.unosoft.hu/"><img src="assets/company-logos/unosoft-cb99b859fed.png"/></a>
+          <a href="https://www.variomedia.de/"><img src="assets/company-logos/variomedia-cb074f416e3.png"/></a>
+          <a href="https://www.weave.works/"><img src="assets/company-logos/weave-cbbb076a3a7.png"/></a>
+      </div>
+    </div>>
+
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </div>
+
+  <!--/.page-container-->
+
+
+
+  <!--scripts loaded here-->
+  <script src="assets/js/jquery.magnific-popup.js"></script>
+  <script>
+    $('.no_icon').magnificPopup({
+      type: 'image',
+      closeBtnInside: false,
+      closeOnContentClick: false,
+
+      callbacks: {
+        open: function() {
+          var self = this;
+          self.wrap.on('click.pinhandler', 'img', function() {
+            self.wrap.toggleClass('mfp-force-scrollbars');
+          });
+        },
+        beforeClose: function() {
+          this.wrap.off('click.pinhandler');
+          this.wrap.removeClass('mfp-force-scrollbars');
+        }
+      },
+
+      image: {
+        verticalFit: false
+      }
+
+    });
+  </script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/toc.js"></script>
+  <script src="assets/js/anchor.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#docnavsidebar").navgoco({
+        caretHtml: '',
+        accordion: false,
+        openClass: 'open', // open
+        save: false, // leave false or nav highlighting doesn't work right
+        cookie: {
+          name: 'navgoco',
+          expires: false,
+          path: '/'
+        },
+        slide: {
+          duration: 300,
+          easing: 'swing'
+        }
+      });
+
+    });
+  </script>
+  <script src="assets/js/customscripts.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+  </script>
+  <script src="assets/js/tabs.js"></script>
+  <!-- Add copy to clipboard button -->
+  <script>
+    var allCodeBlocksElements = $("pre");
+
+    allCodeBlocksElements.each(function(i) {
+      // add different id for each code block
+
+      // target
+      var currentId = "codeblock" + (i + 1);
+      $(this).attr('id', currentId);
+
+      //trigger
+      var clipButton = '<button class="btn btn-sm copy-btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+      $(this).prepend(clipButton);
+    });
+
+    new Clipboard('.btn');
+  </script>
+
+</body>
+{% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
+
+</html>

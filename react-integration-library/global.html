@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+		<title>Globals</title>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.min.css">
+		<link type="text/css" rel="stylesheet" href="css/template.min.css">
+			<style>
+				.page-header,
+				pre.code-toolbar > .toolbar:hover {
+					background-color: #2D6F8E;
+				}
+				.callout-primary,
+				.toc .nav > li > a:hover,
+				.toc .nav > li > a:focus,
+				.toc .nav > li.active > a,
+				.toc .nav > li.active > a:hover,
+				.toc .nav > li.active > a:focus,
+				pre.code-toolbar > .toolbar:hover {
+					border-left-color: #2D6F8E;
+				}
+				pre.code-toolbar > .toolbar:hover {
+					border-bottom-color: #2D6F8E;
+				}
+				.callout-primary h5,
+				.symbol-title.collapsible-symbol .toggle-icon,
+				.breadcrumb li a,
+				.toc .nav > li > a:hover,
+				.toc .nav > li > a:focus,
+				.toc .nav > li.active > a,
+				.toc .nav > li.active > a:hover,
+				.toc .nav > li.active > a:focus {
+					color: #2D6F8E;
+				}
+			</style>
+		<script type="text/javascript">
+			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"Эвотор React Native SDK","systemSummary":"","systemLogo":"","systemColor":"#2D6F8E","navMembers":[{"kind":"class","title":"Классы","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Интерфейсы","summary":"All documented interfaces."},{"kind":"module","title":"Модули","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"","copyright":"FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.","linenums":true,"collapseSymbols":true,"inverseNav":true,"inlineNav":false,"outputSourceFiles":true,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":[],"scripts":[],"monospaceLinks":false,"cleverLinks":false};
+			window.DOCLET_TOC_ENABLED = true;
+			window.DOCLET_AFILTER_ENABLED = false;
+		</script>
+</head>
+<body>
+	<!-- start:navbar.hbs -->
+	<header class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">
+					Эвотор React Native SDK
+				</a>
+				<!-- displayed on small devices -->
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="topNavigation">
+				<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="list_class.html" class="dropdown-toggle" data-toggle="dropdown">Классы<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="module-devices.DeviceServiceConnector.html">devices.DeviceServiceConnector</a></li>
+											<li><a href="module-devices.PrintableBarcode.html">devices.PrintableBarcode</a></li>
+											<li><a href="module-devices.PrintableImage.html">devices.PrintableImage</a></li>
+											<li><a href="module-devices.PrintableText.html">devices.PrintableText</a></li>
+											<li><a href="module-devices.Printer.html">devices.Printer</a></li>
+											<li><a href="module-devices.Scales.html">devices.Scales</a></li>
+											<li><a href="module-devices.Scanner.html">devices.Scanner</a></li>
+											<li><a href="module-devices.Weight.html">devices.Weight</a></li>
+											<li><a href="module-errors.DeviceError.html">errors.DeviceError</a></li>
+											<li><a href="module-errors.IntegrationError.html">errors.IntegrationError</a></li>
+											<li><a href="module-errors.NavigationError.html">errors.NavigationError</a></li>
+											<li><a href="module-errors.NoActivityError.html">errors.NoActivityError</a></li>
+											<li><a href="module-inventory.InventoryAPI.html">inventory.InventoryAPI</a></li>
+											<li><a href="module-inventory.Product.html">inventory.Product</a></li>
+											<li><a href="module-inventory.ProductGroup.html">inventory.ProductGroup</a></li>
+											<li><a href="module-inventory.ProductQuery.html">inventory.ProductQuery</a></li>
+											<li><a href="module-inventory.ProductSortOrder.html">inventory.ProductSortOrder</a></li>
+											<li><a href="module-navigation.Intent.html">navigation.Intent</a></li>
+											<li><a href="module-navigation.NavigationAPI.html">navigation.NavigationAPI</a></li>
+											<li><a href="module-receipt.ExtraKey.html">receipt.ExtraKey</a></li>
+											<li><a href="module-receipt.OpenReceiptCommandResult.html">receipt.OpenReceiptCommandResult</a></li>
+											<li><a href="module-receipt.Payment.html">receipt.Payment</a></li>
+											<li><a href="module-receipt.PaymentPurpose.html">receipt.PaymentPurpose</a></li>
+											<li><a href="module-receipt.PaymentSystem.html">receipt.PaymentSystem</a></li>
+											<li><a href="module-receipt.Position.html">receipt.Position</a></li>
+											<li><a href="module-receipt.PositionAdd.html">receipt.PositionAdd</a></li>
+											<li><a href="module-receipt.PositionBuilder.html">receipt.PositionBuilder</a></li>
+											<li><a href="module-receipt.PositionEdit.html">receipt.PositionEdit</a></li>
+											<li><a href="module-receipt.PositionRemove.html">receipt.PositionRemove</a></li>
+											<li><a href="module-receipt.PrintExtraPlacePositionAllSubpositionsFooter.html">receipt.PrintExtraPlacePositionAllSubpositionsFooter</a></li>
+											<li><a href="module-receipt.PrintExtraPlacePositionFooter.html">receipt.PrintExtraPlacePositionFooter</a></li>
+											<li><a href="module-receipt.PrintExtraPlacePrintGroupHeader.html">receipt.PrintExtraPlacePrintGroupHeader</a></li>
+											<li><a href="module-receipt.PrintExtraPlacePrintGroupSummary.html">receipt.PrintExtraPlacePrintGroupSummary</a></li>
+											<li><a href="module-receipt.PrintExtraPlacePrintGroupTop.html">receipt.PrintExtraPlacePrintGroupTop</a></li>
+											<li><a href="module-receipt.PrintGroup.html">receipt.PrintGroup</a></li>
+											<li><a href="module-receipt.PrintReceipt.html">receipt.PrintReceipt</a></li>
+											<li><a href="module-receipt.Receipt.html">receipt.Receipt</a></li>
+											<li><a href="module-receipt.ReceiptAPI.html">receipt.ReceiptAPI</a></li>
+											<li><a href="module-receipt.ReceiptHeader.html">receipt.ReceiptHeader</a></li>
+											<li><a href="module-receipt.RegisterReceiptCommandResult.html">receipt.RegisterReceiptCommandResult</a></li>
+											<li><a href="module-receipt.SetExtra.html">receipt.SetExtra</a></li>
+											<li><a href="module-receipt.SetPrintExtra.html">receipt.SetPrintExtra</a></li>
+											<li><a href="module-receipt.SetPrintGroup.html">receipt.SetPrintGroup</a></li>
+											<li><a href="module-receipt.UuidGenerator.html">receipt.UuidGenerator</a></li>
+											<li><a href="module-services.BeforePositionsEditedEventResult.html">services.BeforePositionsEditedEventResult</a></li>
+											<li><a href="module-services.BroadcastReceiver.html">services.BroadcastReceiver</a></li>
+											<li><a href="module-services.CashDrawerEvent.html">services.CashDrawerEvent</a></li>
+											<li><a href="module-services.CashOperationEvent.html">services.CashOperationEvent</a></li>
+											<li><a href="module-services.IntegrationCallback.html">services.IntegrationCallback</a></li>
+											<li><a href="module-services.PaymentSelectedEventResult.html">services.PaymentSelectedEventResult</a></li>
+											<li><a href="module-services.PaymentSystemEvent.html">services.PaymentSystemEvent</a></li>
+											<li><a href="module-services.PaymentSystemPaymentErrorResult.html">services.PaymentSystemPaymentErrorResult</a></li>
+											<li><a href="module-services.PaymentSystemPaymentOkResult.html">services.PaymentSystemPaymentOkResult</a></li>
+											<li><a href="module-services.PositionEvent.html">services.PositionEvent</a></li>
+											<li><a href="module-services.PrintExtraRequiredEventResult.html">services.PrintExtraRequiredEventResult</a></li>
+											<li><a href="module-services.PrintGroupRequiredEventResult.html">services.PrintGroupRequiredEventResult</a></li>
+											<li><a href="module-services.ProductEvent.html">services.ProductEvent</a></li>
+											<li><a href="module-services.PushNotificationReceiver.html">services.PushNotificationReceiver</a></li>
+											<li><a href="module-services.ReceiptDiscountEventResult.html">services.ReceiptDiscountEventResult</a></li>
+											<li><a href="module-services.ReceiptEvent.html">services.ReceiptEvent</a></li>
+											<li><a href="module-services.ServiceAPI.html">services.ServiceAPI</a></li>
+											<li><a href="module-session.SessionAPI.html">session.SessionAPI</a></li>
+											<li><a href="module-user.Grant.html">user.Grant</a></li>
+											<li><a href="module-user.User.html">user.User</a></li>
+											<li><a href="module-user.UserAPI.html">user.UserAPI</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_module.html" class="dropdown-toggle" data-toggle="dropdown">Модули<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="module-devices.html">devices</a></li>
+											<li><a href="module-errors.html">errors</a></li>
+											<li><a href="module-inventory.html">inventory</a></li>
+											<li><a href="module-navigation.html">navigation</a></li>
+											<li><a href="module-receipt.html">receipt</a></li>
+											<li><a href="module-services.html">services</a></li>
+											<li><a href="module-session.html">session</a></li>
+											<li><a href="module-types.html">types</a></li>
+											<li><a href="module-user.html">user</a></li>
+									</ul>
+								</li>
+				</ul>
+					<!-- start:lunr-search-navbar.hbs -->
+					<form class="navbar-form navbar-right" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" id="lunr-search-input">
+							<div class="input-group-btn">
+								<button class="btn btn-default" id="lunr-search-submit">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+					<!-- start:lunr-search-navbar.hbs -->		</div>
+		</div>
+	</header>
+	<!-- end:navbar.hbs -->		<div class="page-header">
+			<div class="container">
+				<span class="kind">global</span>
+				<h1><span class="name">Globals</span></h1>
+				<div class="summary"><p>All documented globals.</p></div>			</div>
+		</div>
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-9 main-content">
+						<ol class="breadcrumb">
+							<li><a href="index.html">Home</a></li>
+							<li class="active">Globals</li>
+						</ol>
+					<section>
+							<article class="secondary">
+							</article>
+					</section>
+			</div>
+				<div class="col-md-3 side-content">
+					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
+				</div>
+		</div>
+	</div>
+	<footer>
+				<div class="copyright">FooDoc Copyright © 2016 The contributors to the JSDoc3 and FooDoc projects.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on 20th Jul 2018 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clipboard.min.js"></script>
+	<script src="js/prism.min.js"></script>
+	<script src="js/template.min.js"></script>
+		<!-- start:lunr-search-modal.hbs -->
+		<div class="modal fade" id="lunr-search-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Search results</h4>
+					</div>
+					<div class="modal-body" id="lunr-search-body">
+					</div>
+					<div class="modal-footer" id="lunr-search-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+		<!-- end:lunr-search-modal.hbs -->		<script src="js/lunr.min.js"></script>
+	
+</body>
+</html>

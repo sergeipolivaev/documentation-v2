@@ -3,7 +3,7 @@ title: Подготовка к разработке
 keywords:
 sidebar: evojava
 permalink: doc_drivers_library_connection.html
-tags:
+product: Java SDK
 ---
 
 Для начала разработки подключите библиотеку для работы с оборудованием.

@@ -5,9 +5,12 @@ permalink: doc_java_inventory.html
 tags:
 product: Java SDK
 ---
+
+{% include important.html content="В связи с изменением законодательства, с первого января 2019 года значения `VAT_18` и `VAT_18_118` (класс [`TaxNumber`](./integration-library/ru/evotor/framework/receipt/TaxNumber.html)) могут указывать как на 18%, так и на 20% ставку НДС. Наименования значений (`VAT_18` и `VAT_18_118`), при этом не меняются.<br> Реальное значение ставки НДС зависит от того, имеет пользователь доступ к новому значению НДС или нет. Например, пользователь установил приложение [\"Пакет обновлений\"](https://market.evotor.ru/store/apps/9ddd7629-3397-47eb-a83a-1d987aa71610)." %}
+
 ## Методы
 
-Класс [`InventoryApi`](https://github.com/evotor/integration-library/blob/master/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt) содержит методы, описанные ниже.
+Класс [`InventoryApi`](./integration-library/ru/evotor/framework/inventory/InventoryApi.html) содержит методы, описанные ниже.
 
 ### Получить все штрихкоды товара:
 

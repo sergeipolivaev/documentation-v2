@@ -63,11 +63,24 @@
         </div>
         <!--end search-->
       </li>
+      <li>
+        <a class="btn btn-login noCrossRef" href="https://dev.evotor.ru/#/store/auth/login" role="button">Вход</a>
+      </li>
     </ul>
   </div>
   </div>
   <!-- /.container -->
   </nav>
+
+
+  <!-- SubNav -->
+  {% if page.product == "Customer API" %}
+  {% include navscustomer.html %}
+  {% elsif page.product == "Publisher API" %}
+  {% include navspublisher.html %}
+  {% endif %}
+
+
   <div class="container">
     <div class="row row-offcanvas row-offcanvas-left">
 

@@ -4,8 +4,7 @@ keywords:
 summary:
 sidebar: evoreact
 permalink: rn_dependencies.html
-tags: [terminal, react]
-folder: rn_SDK
+product: React Native
 published: false
 ---
 

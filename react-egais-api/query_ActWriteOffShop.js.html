@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: query/ActWriteOffShop.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: query/ActWriteOffShop.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __extends = (this &amp;&amp; this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array &amp;&amp; function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var abstract_query_builder_1 = require("abstract-query-builder");
+var ActWriteOffShop_1 = require("../model/document/ActWriteOffShop");
+var ProductInfo_1 = require("./inner/ProductInfo");
+var converters_1 = require("./converters");
+var executor_1 = require("./executor");
+/**
+ * @class module:actWriteOff.ActWriteOffShopSortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} uuid Уникальный идентификатор акта списания из магазина
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} docOwner Отправитель акта списания из магазина
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} identity Идентификатор акта списания из магазина (клиентский, к заполнению необязательный)
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} number Номер документа
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} actDate Дата составления
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} type Причина списания (Пересортица/Недостача/Уценка/Порча/Потери/Проверки/Арест/Иные цели/Реализация)
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} note Примечание
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} status Статус акта списания
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} rejectComment Комментарий для отказа на акт списания из магазина
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopSortOrder>} replyId Уникальный идентификатор документа (присваивается УТМ); совпадает с идентификатором исходящего документа, который получили в ответе
+ */
+var ActWriteOffShopSortOrder = /** @class */ (function (_super) {
+    __extends(ActWriteOffShopSortOrder, _super);
+    function ActWriteOffShopSortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.uuid = _this.addFieldSorter("UUID");
+        _this.docOwner = _this.addFieldSorter("OWNER");
+        _this.identity = _this.addFieldSorter("IDENTITY");
+        _this.number = _this.addFieldSorter("NUMBER");
+        _this.actDate = _this.addFieldSorter("ACT_DATE");
+        _this.type = _this.addFieldSorter("TYPE_WRITE_OFF");
+        _this.note = _this.addFieldSorter("NOTE");
+        _this.status = _this.addFieldSorter("STATUS");
+        _this.rejectComment = _this.addFieldSorter("REJECT_COMMENT");
+        _this.replyId = _this.addFieldSorter("REPLY_ID");
+        return _this;
+    }
+    return ActWriteOffShopSortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.ActWriteOffShopSortOrder = ActWriteOffShopSortOrder;
+/**
+ * @class module:actWriteOff.ActWriteOffShopQuery
+ * @classdesc Класс для формирования запроса на получение актов списания из магазина.
+ * @property {FieldFilter&lt;string, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} uuid Уникальный идентификатор акта списания из магазина
+ * @property {FieldFilter&lt;string, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} docOwner Отправитель акта списания из магазина
+ * @property {FieldFilter&lt;?string, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} identity Идентификатор акта списания из магазина (клиентский, к заполнению необязательный)
+ * @property {FieldFilter&lt;?string, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} number Номер документа
+ * @property {FieldFilter&lt;Date, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} actDate Дата составления
+ * @property {FieldFilter&lt;module:actWriteOff#ActWriteOffType, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} type Причина списания (Пересортица/Недостача/Уценка/Порча/Потери/Проверки/Арест/Иные цели/Реализация)
+ * @property {FieldFilter&lt;?string, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} note Примечание
+ * @property {FieldFilter&lt;module:actWriteOff#ActWriteOffStatus, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} status Статус акта списания
+ * @property {FieldFilter&lt;?string, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} rejectComment Комментарий для отказа на акт списания из магазина
+ * @property {FieldFilter&lt;?string, module:actWriteOff.ActWriteOffShopQuery, module:actWriteOff.ActWriteOffShopSortOrder, module:actWriteOff.ActWriteOffShop>} replyId Уникальный идентификатор документа (присваивается УТМ); совпадает с идентификатором исходящего документа, который получили в ответе
+ */
+var ActWriteOffShopQuery = /** @class */ (function (_super) {
+    __extends(ActWriteOffShopQuery, _super);
+    function ActWriteOffShopQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('ActWriteOffShop', ActWriteOffShop_1.default.prototype)) || this;
+        _this.uuid = _this.addFieldFilter("UUID");
+        _this.docOwner = _this.addFieldFilter("OWNER");
+        _this.identity = _this.addFieldFilter("IDENTITY");
+        _this.number = _this.addFieldFilter("NUMBER");
+        _this.actDate = _this.addFieldFilter("ACT_DATE");
+        _this.type = _this.addFieldFilter("TYPE_WRITE_OFF");
+        _this.note = _this.addFieldFilter("NOTE");
+        _this.status = _this.addFieldFilter("STATUS");
+        _this.rejectComment = _this.addFieldFilter("REJECT_COMMENT");
+        _this.replyId = _this.addFieldFilter("REPLY_ID");
+        return _this;
+    }
+    return ActWriteOffShopQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.default = ActWriteOffShopQuery;
+/**
+ * @class module:actWriteOff.ActWriteOffShopPositionSortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopPositionSortOrder>} uuid Уникальный идентификатор позиции акта списания со склада
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopPositionSortOrder>} actWriteOffShopUuid Уникальный идентификатор акта списания со склада
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopPositionSortOrder>} identity Идентификатор позиции акта списания со склада
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopPositionSortOrder>} quantity Количество
+ * @property {FieldSorter&lt;module:actWriteOff.ActWriteOffShopPositionSortOrder>} informF2MarkInfoJson Информация о марках в формате JSON
+ * @property {module:productInfo.ProductInfoInnerSortOrder&lt;module:actWriteOff.ActWriteOffShopPositionSortOrder>} productInfo Информация о продукции
+ */
+var ActWriteOffShopPositionSortOrder = /** @class */ (function (_super) {
+    __extends(ActWriteOffShopPositionSortOrder, _super);
+    function ActWriteOffShopPositionSortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.uuid = _this.addFieldSorter("UUID");
+        _this.actWriteOffShopUuid = _this.addFieldSorter("ACT_WRITE_OFF_SHOP_UUID");
+        _this.identity = _this.addFieldSorter("IDENTITY");
+        _this.quantity = _this.addFieldSorter("QUANTITY");
+        _this.informF2MarkInfoJson = _this.addFieldSorter("INFORM_F2_MARK_INFO_JSON");
+        _this.productInfo = _this.addInnerSortOrder(new ProductInfo_1.ProductInfoInnerSortOrder());
+        return _this;
+    }
+    return ActWriteOffShopPositionSortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.ActWriteOffShopPositionSortOrder = ActWriteOffShopPositionSortOrder;
+/**
+ * @class module:actWriteOff.ActWriteOffShopPositionQuery
+ * @classdesc Класс для формирования запроса на получение позиций акта списания из магазина.
+ * @property {FieldFilter&lt;string, module:actWriteOff.ActWriteOffShopPositionQuery, module:actWriteOff.ActWriteOffShopPositionSortOrder, module:actWriteOff.ActWriteOffShopPosition>} uuid Уникальный идентификатор позиции акта списания со склада
+ * @property {FieldFilter&lt;string, module:actWriteOff.ActWriteOffShopPositionQuery, module:actWriteOff.ActWriteOffShopPositionSortOrder, module:actWriteOff.ActWriteOffShopPosition>} actWriteOffShopUuid Уникальный идентификатор акта списания со склада
+ * @property {FieldFilter&lt;?string, module:actWriteOff.ActWriteOffShopPositionQuery, module:actWriteOff.ActWriteOffShopPositionSortOrder, module:actWriteOff.ActWriteOffShopPosition>} identity Идентификатор позиции акта списания со склада
+ * @property {FieldFilter&lt;number, module:actWriteOff.ActWriteOffShopPositionQuery, module:actWriteOff.ActWriteOffShopPositionSortOrder, module:actWriteOff.ActWriteOffShopPosition>} quantity Количество
+ * @property {FieldFilter&lt;?string, module:actWriteOff.ActWriteOffShopPositionQuery, module:actWriteOff.ActWriteOffShopPositionSortOrder, module:actWriteOff.ActWriteOffShopPosition>} informF2MarkInfoJson Информация о марках в формате JSON
+ * @property {module:productInfo.ProductInfoFilter&lt;module:actWriteOff.ActWriteOffShopPositionQuery, module:actWriteOff.ActWriteOffShopPositionSortOrder, module:actWriteOff.ActWriteOffShopPosition>} productInfo Информация о продукции
+ */
+var ActWriteOffShopPositionQuery = /** @class */ (function (_super) {
+    __extends(ActWriteOffShopPositionQuery, _super);
+    function ActWriteOffShopPositionQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('ActWriteOffShopPosition', ActWriteOffShop_1.ActWriteOffShopPosition.prototype)) || this;
+        _this.uuid = _this.addFieldFilter("UUID");
+        _this.actWriteOffShopUuid = _this.addFieldFilter("ACT_WRITE_OFF_SHOP_UUID");
+        _this.identity = _this.addFieldFilter("IDENTITY");
+        _this.quantity = _this.addFieldFilter("QUANTITY", converters_1.quantityConverter);
+        _this.informF2MarkInfoJson = _this.addFieldFilter("INFORM_F2_MARK_INFO_JSON");
+        _this.productInfo = _this.addInnerFilterBuilder(new ProductInfo_1.ProductInfoFilter());
+        return _this;
+    }
+    return ActWriteOffShopPositionQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.ActWriteOffShopPositionQuery = ActWriteOffShopPositionQuery;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-actChargeOn.html">actChargeOn</a></li><li><a href="module-actWriteOff.html">actWriteOff</a></li><li><a href="module-orgInfo.html">orgInfo</a></li><li><a href="module-productInfo.html">productInfo</a></li><li><a href="module-productRest.html">productRest</a></li><li><a href="module-ticket.html">ticket</a></li><li><a href="module-transfer.html">transfer</a></li><li><a href="module-waybill.html">waybill</a></li><li><a href="module-waybillAct.html">waybillAct</a></li></ul><h3>Classes</h3><ul><li><a href="module-actChargeOn.ActChargeOnShop.html">ActChargeOnShop</a></li><li><a href="module-actChargeOn.ActChargeOnShopPosition.html">ActChargeOnShopPosition</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionQuery.html">ActChargeOnShopPositionQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionSortOrder.html">ActChargeOnShopPositionSortOrder</a></li><li><a href="module-actChargeOn.ActChargeOnShopQuery.html">ActChargeOnShopQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopSortOrder.html">ActChargeOnShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOff.html">ActWriteOff</a></li><li><a href="module-actWriteOff.ActWriteOffPosition.html">ActWriteOffPosition</a></li><li><a href="module-actWriteOff.ActWriteOffPositionQuery.html">ActWriteOffPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffPositionSortOrder.html">ActWriteOffPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffQuery.html">ActWriteOffQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShop.html">ActWriteOffShop</a></li><li><a href="module-actWriteOff.ActWriteOffShopPosition.html">ActWriteOffShopPosition</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionQuery.html">ActWriteOffShopPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionSortOrder.html">ActWriteOffShopPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffShopQuery.html">ActWriteOffShopQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopSortOrder.html">ActWriteOffShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffSortOrder.html">ActWriteOffSortOrder</a></li><li><a href="module-orgInfo.OrgInfo.html">OrgInfo</a></li><li><a href="module-orgInfo.OrgInfoAddress.html">OrgInfoAddress</a></li><li><a href="module-orgInfo.OrgInfoAddressFilter.html">OrgInfoAddressFilter</a></li><li><a href="module-orgInfo.OrgInfoAddressSortOrder.html">OrgInfoAddressSortOrder</a></li><li><a href="module-orgInfo.OrgInfoQuery.html">OrgInfoQuery</a></li><li><a href="module-orgInfo.OrgInfoSortOrder.html">OrgInfoSortOrder</a></li><li><a href="module-productInfo.ProductInfo.html">ProductInfo</a></li><li><a href="module-productInfo.ProductInfoFilter.html">ProductInfoFilter</a></li><li><a href="module-productInfo.ProductInfoInnerSortOrder.html">ProductInfoInnerSortOrder</a></li><li><a href="module-productRest.ProductRest.html">ProductRest</a></li><li><a href="module-productRest.ProductRestQuery.html">ProductRestQuery</a></li><li><a href="module-productRest.ProductRestSortOrder.html">ProductRestSortOrder</a></li><li><a href="module-productRest.ShopCommodity.html">ShopCommodity</a></li><li><a href="module-productRest.ShopCommodityQuery.html">ShopCommodityQuery</a></li><li><a href="module-productRest.ShopCommoditySortOrder.html">ShopCommoditySortOrder</a></li><li><a href="module-productRest.StockCommodity.html">StockCommodity</a></li><li><a href="module-productRest.StockCommodityQuery.html">StockCommodityQuery</a></li><li><a href="module-productRest.StockCommoditySortOrder.html">StockCommoditySortOrder</a></li><li><a href="module-ticket.ConfirmTicket.html">ConfirmTicket</a></li><li><a href="module-ticket.ConfirmTicketQuery.html">ConfirmTicketQuery</a></li><li><a href="module-ticket.ConfirmTicketSortOrder.html">ConfirmTicketSortOrder</a></li><li><a href="module-ticket.Ticket.html">Ticket</a></li><li><a href="module-ticket.TicketQuery.html">TicketQuery</a></li><li><a href="module-ticket.TicketSortOrder.html">TicketSortOrder</a></li><li><a href="module-transfer.TransferFromShop.html">TransferFromShop</a></li><li><a href="module-transfer.TransferFromShopPosition.html">TransferFromShopPosition</a></li><li><a href="module-transfer.TransferFromShopPositionQuery.html">TransferFromShopPositionQuery</a></li><li><a href="module-transfer.TransferFromShopPositionSortOrder.html">TransferFromShopPositionSortOrder</a></li><li><a href="module-transfer.TransferFromShopQuery.html">TransferFromShopQuery</a></li><li><a href="module-transfer.TransferFromShopSortOrder.html">TransferFromShopSortOrder</a></li><li><a href="module-transfer.TransferToShop.html">TransferToShop</a></li><li><a href="module-transfer.TransferToShopPosition.html">TransferToShopPosition</a></li><li><a href="module-transfer.TransferToShopPositionQuery.html">TransferToShopPositionQuery</a></li><li><a href="module-transfer.TransferToShopPositionSortOrder.html">TransferToShopPositionSortOrder</a></li><li><a href="module-transfer.TransferToShopQuery.html">TransferToShopQuery</a></li><li><a href="module-transfer.TransferToShopSortOrder.html">TransferToShopSortOrder</a></li><li><a href="module-waybill.Transport.html">Transport</a></li><li><a href="module-waybill.TtnInformF2Reg.html">TtnInformF2Reg</a></li><li><a href="module-waybill.TtnInformF2RegPosition.html">TtnInformF2RegPosition</a></li><li><a href="module-waybill.TtnInformF2RegPositionQuery.html">TtnInformF2RegPositionQuery</a></li><li><a href="module-waybill.TtnInformF2RegPositionSortOrder.html">TtnInformF2RegPositionSortOrder</a></li><li><a href="module-waybill.TtnInformF2RegQuery.html">TtnInformF2RegQuery</a></li><li><a href="module-waybill.TtnInformF2RegSortOrder.html">TtnInformF2RegSortOrder</a></li><li><a href="module-waybill.Waybill.html">Waybill</a></li><li><a href="module-waybill.WaybillPosition.html">WaybillPosition</a></li><li><a href="module-waybill.WaybillPositionMark.html">WaybillPositionMark</a></li><li><a href="module-waybill.WaybillPositionMarkQuery.html">WaybillPositionMarkQuery</a></li><li><a href="module-waybill.WaybillPositionMarkSortOrder.html">WaybillPositionMarkSortOrder</a></li><li><a href="module-waybill.WaybillPositionQuery.html">WaybillPositionQuery</a></li><li><a href="module-waybill.WaybillPositionSortOrder.html">WaybillPositionSortOrder</a></li><li><a href="module-waybill.WaybillQuery.html">WaybillQuery</a></li><li><a href="module-waybill.WaybillSortOrder.html">WaybillSortOrder</a></li><li><a href="module-waybillAct.WaybillAct.html">WaybillAct</a></li><li><a href="module-waybillAct.WaybillActPosition.html">WaybillActPosition</a></li><li><a href="module-waybillAct.WaybillActPositionMark.html">WaybillActPositionMark</a></li><li><a href="module-waybillAct.WaybillActPositionMarkQuery.html">WaybillActPositionMarkQuery</a></li><li><a href="module-waybillAct.WaybillActPositionMarkSortOrder.html">WaybillActPositionMarkSortOrder</a></li><li><a href="module-waybillAct.WaybillActPositionQuery.html">WaybillActPositionQuery</a></li><li><a href="module-waybillAct.WaybillActPositionSortOrder.html">WaybillActPositionSortOrder</a></li><li><a href="module-waybillAct.WaybillActQuery.html">WaybillActQuery</a></li><li><a href="module-waybillAct.WaybillActSortOrder.html">WaybillActSortOrder</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Version">Version</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 03 2018 17:48:55 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

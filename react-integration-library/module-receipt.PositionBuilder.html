@@ -1,0 +1,2980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: PositionBuilder</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: PositionBuilder</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>
+            <span class="ancestors"><a href="module-receipt.html">receipt</a>.</span>PositionBuilder</h2>
+        
+            <div class="class-description">Класс для создания и редактирования позиций чека.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line204">line 204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".copyFrom"><span class="type-signature">(static) </span>copyFrom<span class="signature">(position)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Создаёт редактор новой позиции из данных указанной позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-receipt.Position.html">module:receipt.Position</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Позиция</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line248">line 248</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".newInstance"><span class="type-signature">(static) </span>newInstance<span class="signature">(product, quantity)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Создаёт редактор новой позиции из данных указанного товара с указанным количеством.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>product</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-inventory.Product.html">module:inventory.Product</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Товар</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>quantity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Количество</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line212">line 212</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="build"><span class="type-signature"></span>build<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="module-receipt.Position.html">module:receipt.Position</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Завершает редактирование позиции.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line440">line 440</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Созданная позиция
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.Position.html">module:receipt.Position</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setBarcode"><span class="type-signature"></span>setBarcode<span class="signature">(barcode)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает штрикход текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>barcode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Штрихкод</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line429">line 429</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setExtraKeys"><span class="type-signature"></span>setExtraKeys<span class="signature">(extraKeys)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает дополнительные поля текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>extraKeys</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="module-receipt.ExtraKey.html">module:receipt.ExtraKey</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Марка</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line374">line 374</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setMark"><span class="type-signature"></span>setMark<span class="signature">(mark)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает алкогольную марку текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mark</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Марка</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line363">line 363</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setMeasureName"><span class="type-signature"></span>setMeasureName<span class="signature">(measureName)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает единицу измерения текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>measureName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Единица измерения</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line385">line 385</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setMeasurePrecision"><span class="type-signature"></span>setMeasurePrecision<span class="signature">(measurePrecision)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает точность измерения текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>measurePrecision</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Точность измерения</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line396">line 396</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setPrice"><span class="type-signature"></span>setPrice<span class="signature">(price)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает цену текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>price</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Цена</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line341">line 341</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setPriceWithDiscountPosition"><span class="type-signature"></span>setPriceWithDiscountPosition<span class="signature">(priceWithDiscountPosition)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает цену текущей позиции со скидкой.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>priceWithDiscountPosition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Цена со скидкой</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line352">line 352</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setQuantity"><span class="type-signature"></span>setQuantity<span class="signature">(quantity)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает количество текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>quantity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Количество</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line330">line 330</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setSubPositions"><span class="type-signature"></span>setSubPositions<span class="signature">(subPositions)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает субпозиции текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>subPositions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="module-receipt.Position.html">module:receipt.Position</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Субпозиции</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line418">line 418</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setTaxNumber"><span class="type-signature"></span>setTaxNumber<span class="signature">(taxNumber)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает налоговый номер текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>taxNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">TaxNumber</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Налоговый номер</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line407">line 407</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setUuid"><span class="type-signature"></span>setUuid<span class="signature">(uuid)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Устанавливает идентификатор (uuid) текущей позиции.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>uuid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Идентификатор</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line319">line 319</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toAlcoholMarked"><span class="type-signature"></span>toAlcoholMarked<span class="signature">(mark, alcoholByVolume, alcoholProductKindCode, tareVolume)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    ХЗ ЧТО ДЕЛАЕТ
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mark</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Алкогольная марка</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alcoholByVolume</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Процентное содержание алкоголя</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alcoholProductKindCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Спиртовой код</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tareVolume</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Объём тары</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line268">line 268</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toAlcoholNotMarked"><span class="type-signature"></span>toAlcoholNotMarked<span class="signature">(alcoholByVolume, alcoholProductKindCode, tareVolume)</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    ХЗ ЧТО ДЕЛАЕТ
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>alcoholByVolume</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Процентное содержание алкоголя</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alcoholProductKindCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Спиртовой код</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tareVolume</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Объём тары</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line283">line 283</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toNormal"><span class="type-signature"></span>toNormal<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    ХЗ ЧТО ДЕЛАЕТ
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line297">line 297</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toService"><span class="type-signature"></span>toService<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    ХЗ ЧТО ДЕЛАЕТ
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="APIs_Receipt.js.html">APIs/Receipt.js</a>, <a href="APIs_Receipt.js.html#line308">line 308</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Редактор текущей позиции
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-receipt.PositionBuilder.html">module:receipt.PositionBuilder</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-devices.html">devices</a></li><li><a href="module-errors.html">errors</a></li><li><a href="module-inventory.html">inventory</a></li><li><a href="module-navigation.html">navigation</a></li><li><a href="module-receipt.html">receipt</a></li><li><a href="module-services.html">services</a></li><li><a href="module-session.html">session</a></li><li><a href="module-types.html">types</a></li><li><a href="module-user.html">user</a></li></ul><h3>Classes</h3><ul><li><a href="module-devices.DeviceServiceConnector.html">DeviceServiceConnector</a></li><li><a href="module-devices.PrintableBarcode.html">PrintableBarcode</a></li><li><a href="module-devices.PrintableImage.html">PrintableImage</a></li><li><a href="module-devices.PrintableText.html">PrintableText</a></li><li><a href="module-devices.Printer.html">Printer</a></li><li><a href="module-devices.Scales.html">Scales</a></li><li><a href="module-devices.Scanner.html">Scanner</a></li><li><a href="module-devices.Weight.html">Weight</a></li><li><a href="module-errors.DeviceError.html">DeviceError</a></li><li><a href="module-errors.IntegrationError.html">IntegrationError</a></li><li><a href="module-errors.NavigationError.html">NavigationError</a></li><li><a href="module-errors.NoActivityError.html">NoActivityError</a></li><li><a href="module-inventory.InventoryAPI.html">InventoryAPI</a></li><li><a href="module-inventory.Product.html">Product</a></li><li><a href="module-inventory.ProductGroup.html">ProductGroup</a></li><li><a href="module-inventory.ProductQuery.html">ProductQuery</a></li><li><a href="module-inventory.ProductSortOrder.html">ProductSortOrder</a></li><li><a href="module-navigation.Intent.html">Intent</a></li><li><a href="module-navigation.NavigationAPI.html">NavigationAPI</a></li><li><a href="module-receipt.ExtraKey.html">ExtraKey</a></li><li><a href="module-receipt.OpenReceiptCommandResult.html">OpenReceiptCommandResult</a></li><li><a href="module-receipt.Payment.html">Payment</a></li><li><a href="module-receipt.PaymentPurpose.html">PaymentPurpose</a></li><li><a href="module-receipt.PaymentSystem.html">PaymentSystem</a></li><li><a href="module-receipt.Position.html">Position</a></li><li><a href="module-receipt.PositionAdd.html">PositionAdd</a></li><li><a href="module-receipt.PositionBuilder.html">PositionBuilder</a></li><li><a href="module-receipt.PositionEdit.html">PositionEdit</a></li><li><a href="module-receipt.PositionRemove.html">PositionRemove</a></li><li><a href="module-receipt.PrintExtraPlacePositionAllSubpositionsFooter.html">PrintExtraPlacePositionAllSubpositionsFooter</a></li><li><a href="module-receipt.PrintExtraPlacePositionFooter.html">PrintExtraPlacePositionFooter</a></li><li><a href="module-receipt.PrintExtraPlacePrintGroupHeader.html">PrintExtraPlacePrintGroupHeader</a></li><li><a href="module-receipt.PrintExtraPlacePrintGroupSummary.html">PrintExtraPlacePrintGroupSummary</a></li><li><a href="module-receipt.PrintExtraPlacePrintGroupTop.html">PrintExtraPlacePrintGroupTop</a></li><li><a href="module-receipt.PrintGroup.html">PrintGroup</a></li><li><a href="module-receipt.PrintReceipt.html">PrintReceipt</a></li><li><a href="module-receipt.Receipt.html">Receipt</a></li><li><a href="module-receipt.ReceiptAPI.html">ReceiptAPI</a></li><li><a href="module-receipt.ReceiptHeader.html">ReceiptHeader</a></li><li><a href="module-receipt.RegisterReceiptCommandResult.html">RegisterReceiptCommandResult</a></li><li><a href="module-receipt.SetExtra.html">SetExtra</a></li><li><a href="module-receipt.SetPrintExtra.html">SetPrintExtra</a></li><li><a href="module-receipt.SetPrintGroup.html">SetPrintGroup</a></li><li><a href="module-receipt.UuidGenerator.html">UuidGenerator</a></li><li><a href="module-services.BeforePositionsEditedEventResult.html">BeforePositionsEditedEventResult</a></li><li><a href="module-services.BroadcastReceiver.html">BroadcastReceiver</a></li><li><a href="module-services.CashDrawerEvent.html">CashDrawerEvent</a></li><li><a href="module-services.CashOperationEvent.html">CashOperationEvent</a></li><li><a href="module-services.IntegrationCallback.html">IntegrationCallback</a></li><li><a href="module-services.PaymentSelectedEventResult.html">PaymentSelectedEventResult</a></li><li><a href="module-services.PaymentSystemEvent.html">PaymentSystemEvent</a></li><li><a href="module-services.PaymentSystemPaymentErrorResult.html">PaymentSystemPaymentErrorResult</a></li><li><a href="module-services.PaymentSystemPaymentOkResult.html">PaymentSystemPaymentOkResult</a></li><li><a href="module-services.PositionEvent.html">PositionEvent</a></li><li><a href="module-services.PrintExtraRequiredEventResult.html">PrintExtraRequiredEventResult</a></li><li><a href="module-services.PrintGroupRequiredEventResult.html">PrintGroupRequiredEventResult</a></li><li><a href="module-services.ProductEvent.html">ProductEvent</a></li><li><a href="module-services.PushNotificationReceiver.html">PushNotificationReceiver</a></li><li><a href="module-services.ReceiptDiscountEventResult.html">ReceiptDiscountEventResult</a></li><li><a href="module-services.ReceiptEvent.html">ReceiptEvent</a></li><li><a href="module-services.ServiceAPI.html">ServiceAPI</a></li><li><a href="module-session.SessionAPI.html">SessionAPI</a></li><li><a href="module-user.Grant.html">Grant</a></li><li><a href="module-user.User.html">User</a></li><li><a href="module-user.UserAPI.html">UserAPI</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jul 20 2018 13:13:42 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

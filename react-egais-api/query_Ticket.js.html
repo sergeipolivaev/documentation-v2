@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: query/Ticket.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: query/Ticket.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __extends = (this &amp;&amp; this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array &amp;&amp; function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var abstract_query_builder_1 = require("abstract-query-builder");
+var Ticket_1 = require("../model/document/Ticket");
+var executor_1 = require("./executor");
+/**
+ * @class module:ticket.TicketSortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} uuid Уникальный идентификатор
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} owner Кто подает документы
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} ticketDate Дата квитанции
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} identity Идентификатор документа(исходного, клиентский из содержимого XML(может не быть))
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} docId Ид задачи из файловой базы
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} transportId Транспортный ид из файловой базы
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} regId Присвоенный документу номер
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} docHash Хэш документа
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} docType Тип исходного документа
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} conclusionType Результат фиксации
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} resultDate Дата фиксации
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} resultComments Описание результата фиксации, описание ошибки фиксации
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} operationResultName Операция
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} operationResultResult Результат выполнения
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} operationResultComment Сообщение
+ * @property {FieldSorter&lt;module:ticket.TicketSortOrder>} operationResultDate Дата операции
+ */
+var TicketSortOrder = /** @class */ (function (_super) {
+    __extends(TicketSortOrder, _super);
+    function TicketSortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.uuid = _this.addFieldSorter("UUID");
+        _this.owner = _this.addFieldSorter("OWNER");
+        _this.ticketDate = _this.addFieldSorter("TICKET_DATE");
+        _this.identity = _this.addFieldSorter("IDENTITY");
+        _this.docId = _this.addFieldSorter("DOC_ID");
+        _this.transportId = _this.addFieldSorter("TRANSPORT_ID");
+        _this.regId = _this.addFieldSorter("REG_ID");
+        _this.docHash = _this.addFieldSorter("DOC_HASH");
+        _this.docType = _this.addFieldSorter("DOC_TYPE");
+        _this.conclusionType = _this.addFieldSorter("RESULT_CONCLUSION");
+        _this.resultDate = _this.addFieldSorter("RESULT_DATE");
+        _this.resultComments = _this.addFieldSorter("RESULT_COMMENTS");
+        _this.operationResultName = _this.addFieldSorter("OPERATION_RESULT_NAME");
+        _this.operationResultResult = _this.addFieldSorter("OPERATION_RESULT_RESULT");
+        _this.operationResultComment = _this.addFieldSorter("OPERATION_RESULT_COMMENT");
+        _this.operationResultDate = _this.addFieldSorter("OPERATION_RESULT_DATE");
+        return _this;
+    }
+    return TicketSortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.TicketSortOrder = TicketSortOrder;
+/**
+ * @class module:ticket.TicketQuery
+ * @classdesc Класс для формирования запроса на получение подтверждения акта разногласий для Товарно-Транспортной Накладной.
+ * @property {FieldFilter&lt;string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} uuid Уникальный идентификатор
+ * @property {FieldFilter&lt;string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} owner Кто подает документы
+ * @property {FieldFilter&lt;?Date, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} ticketDate Дата квитанции
+ * @property {FieldFilter&lt;?string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} identity Идентификатор документа(исходного, клиентский из содержимого XML(может не быть))
+ * @property {FieldFilter&lt;?string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} docId Ид задачи из файловой базы
+ * @property {FieldFilter&lt;?string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} transportId Транспортный ид из файловой базы
+ * @property {FieldFilter&lt;?string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} regId Присвоенный документу номер
+ * @property {FieldFilter&lt;?string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} docHash Хэш документа
+ * @property {FieldFilter&lt;?module:ticket#DocType, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} docType Тип исходного документа
+ * @property {FieldFilter&lt;?module:ticket#ConclusionType, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} conclusionType Результат фиксации
+ * @property {FieldFilter&lt;?Date, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} resultDate Дата фиксации
+ * @property {FieldFilter&lt;?string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} resultComments Описание результата фиксации, описание ошибки фиксации
+ * @property {FieldFilter&lt;string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} operationResultName Операция
+ * @property {FieldFilter&lt;?module:ticket#OperationResult, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} operationResultResult Результат выполнения
+ * @property {FieldFilter&lt;?string, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} operationResultComment Сообщение
+ * @property {FieldFilter&lt;?Date, module:ticket.TicketQuery, module:ticket.TicketSortOrder, module:ticket.Ticket>} operationResultDate Дата операции
+ */
+var TicketQuery = /** @class */ (function (_super) {
+    __extends(TicketQuery, _super);
+    function TicketQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('Ticket', Ticket_1.default.prototype)) || this;
+        _this.uuid = _this.addFieldFilter("UUID");
+        _this.owner = _this.addFieldFilter("OWNER");
+        _this.ticketDate = _this.addFieldFilter("TICKET_DATE");
+        _this.identity = _this.addFieldFilter("IDENTITY");
+        _this.docId = _this.addFieldFilter("DOC_ID");
+        _this.transportId = _this.addFieldFilter("TRANSPORT_ID");
+        _this.regId = _this.addFieldFilter("REG_ID");
+        _this.docHash = _this.addFieldFilter("DOC_HASH");
+        _this.docType = _this.addFieldFilter("DOC_TYPE");
+        _this.conclusionType = _this.addFieldFilter("RESULT_CONCLUSION");
+        _this.resultDate = _this.addFieldFilter("RESULT_DATE");
+        _this.resultComments = _this.addFieldFilter("RESULT_COMMENTS");
+        _this.operationResultName = _this.addFieldFilter("OPERATION_RESULT_NAME");
+        _this.operationResultResult = _this.addFieldFilter("OPERATION_RESULT_RESULT");
+        _this.operationResultComment = _this.addFieldFilter("OPERATION_RESULT_COMMENT");
+        _this.operationResultDate = _this.addFieldFilter("OPERATION_RESULT_DATE");
+        return _this;
+    }
+    return TicketQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.default = TicketQuery;
+/**
+ * @class module:ticket.ConfirmTicketSortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} uuid Уникальный идентификатор
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} owner Кто подает документы
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} identity Идентификатор документа(исходного, клиентский из содержимого XML(может не быть))
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} isConfirm Тип подтверждения: Принимаем/отказываем
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} ticketNumber Номер подтверждения
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} ticketDate Дата составления подтверждения
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} wbRegId ИД накладной в системе
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} note Примечания
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} status Статус (подтвержден/отклонен)
+ * @property {FieldSorter&lt;module:ticket.ConfirmTicketSortOrder>} rejectComment Комментарий для отказа
+ */
+var ConfirmTicketSortOrder = /** @class */ (function (_super) {
+    __extends(ConfirmTicketSortOrder, _super);
+    function ConfirmTicketSortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.uuid = _this.addFieldSorter("UUID");
+        _this.owner = _this.addFieldSorter("OWNER");
+        _this.identity = _this.addFieldSorter("IDENTITY");
+        _this.isConfirm = _this.addFieldSorter("IS_CONFIRM");
+        _this.ticketNumber = _this.addFieldSorter("TICKET_NUMBER");
+        _this.ticketDate = _this.addFieldSorter("TICKET_DATE");
+        _this.wbRegId = _this.addFieldSorter("WB_REG_ID");
+        _this.note = _this.addFieldSorter("NOTE");
+        _this.status = _this.addFieldSorter("STATUS");
+        _this.rejectComment = _this.addFieldSorter("REJECT_COMMENT");
+        return _this;
+    }
+    return ConfirmTicketSortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.ConfirmTicketSortOrder = ConfirmTicketSortOrder;
+/**
+ * @class module:ticket.ConfirmTicketQuery
+ * @classdesc Класс для формирования запроса на получение подтверждения акта разногласий для Товарно-Транспортной Накладной.
+ * @property {FieldFilter&lt;string, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} uuid Уникальный идентификатор
+ * @property {FieldFilter&lt;string, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} owner Кто подает документы
+ * @property {FieldFilter&lt;?string, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} identity Идентификатор документа(исходного, клиентский из содержимого XML(может не быть))
+ * @property {FieldFilter&lt;?module:ticket#ConclusionType, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} isConfirm Тип подтверждения: Принимаем/отказываем
+ * @property {FieldFilter&lt;?string, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} ticketNumber Номер подтверждения
+ * @property {FieldFilter&lt;?Date, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} ticketDate Дата составления подтверждения
+ * @property {FieldFilter&lt;?string, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} wbRegId ИД накладной в системе
+ * @property {FieldFilter&lt;?string, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} note Примечания
+ * @property {FieldFilter&lt;module:ticket#ConfirmTicketStatus, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} status Статус (подтвержден/отклонен)
+ * @property {FieldFilter&lt;?string, module:ticket.ConfirmTicketQuery, module:ticket.ConfirmTicketSortOrder, module:ticket.ConfirmTicket>} rejectComment Комментарий для отказа
+ */
+var ConfirmTicketQuery = /** @class */ (function (_super) {
+    __extends(ConfirmTicketQuery, _super);
+    function ConfirmTicketQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('ConfirmTicket', Ticket_1.ConfirmTicket.prototype)) || this;
+        _this.uuid = _this.addFieldFilter("UUID");
+        _this.owner = _this.addFieldFilter("OWNER");
+        _this.identity = _this.addFieldFilter("IDENTITY");
+        _this.isConfirm = _this.addFieldFilter("IS_CONFIRM");
+        _this.ticketNumber = _this.addFieldFilter("TICKET_NUMBER");
+        _this.ticketDate = _this.addFieldFilter("TICKET_DATE");
+        _this.wbRegId = _this.addFieldFilter("WB_REG_ID");
+        _this.note = _this.addFieldFilter("NOTE");
+        _this.status = _this.addFieldFilter("STATUS");
+        _this.rejectComment = _this.addFieldFilter("REJECT_COMMENT");
+        return _this;
+    }
+    return ConfirmTicketQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.ConfirmTicketQuery = ConfirmTicketQuery;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-actChargeOn.html">actChargeOn</a></li><li><a href="module-actWriteOff.html">actWriteOff</a></li><li><a href="module-orgInfo.html">orgInfo</a></li><li><a href="module-productInfo.html">productInfo</a></li><li><a href="module-productRest.html">productRest</a></li><li><a href="module-ticket.html">ticket</a></li><li><a href="module-transfer.html">transfer</a></li><li><a href="module-waybill.html">waybill</a></li><li><a href="module-waybillAct.html">waybillAct</a></li></ul><h3>Classes</h3><ul><li><a href="module-actChargeOn.ActChargeOnShop.html">ActChargeOnShop</a></li><li><a href="module-actChargeOn.ActChargeOnShopPosition.html">ActChargeOnShopPosition</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionQuery.html">ActChargeOnShopPositionQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionSortOrder.html">ActChargeOnShopPositionSortOrder</a></li><li><a href="module-actChargeOn.ActChargeOnShopQuery.html">ActChargeOnShopQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopSortOrder.html">ActChargeOnShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOff.html">ActWriteOff</a></li><li><a href="module-actWriteOff.ActWriteOffPosition.html">ActWriteOffPosition</a></li><li><a href="module-actWriteOff.ActWriteOffPositionQuery.html">ActWriteOffPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffPositionSortOrder.html">ActWriteOffPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffQuery.html">ActWriteOffQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShop.html">ActWriteOffShop</a></li><li><a href="module-actWriteOff.ActWriteOffShopPosition.html">ActWriteOffShopPosition</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionQuery.html">ActWriteOffShopPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionSortOrder.html">ActWriteOffShopPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffShopQuery.html">ActWriteOffShopQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopSortOrder.html">ActWriteOffShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffSortOrder.html">ActWriteOffSortOrder</a></li><li><a href="module-orgInfo.OrgInfo.html">OrgInfo</a></li><li><a href="module-orgInfo.OrgInfoAddress.html">OrgInfoAddress</a></li><li><a href="module-orgInfo.OrgInfoAddressFilter.html">OrgInfoAddressFilter</a></li><li><a href="module-orgInfo.OrgInfoAddressSortOrder.html">OrgInfoAddressSortOrder</a></li><li><a href="module-orgInfo.OrgInfoQuery.html">OrgInfoQuery</a></li><li><a href="module-orgInfo.OrgInfoSortOrder.html">OrgInfoSortOrder</a></li><li><a href="module-productInfo.ProductInfo.html">ProductInfo</a></li><li><a href="module-productInfo.ProductInfoFilter.html">ProductInfoFilter</a></li><li><a href="module-productInfo.ProductInfoInnerSortOrder.html">ProductInfoInnerSortOrder</a></li><li><a href="module-productRest.ProductRest.html">ProductRest</a></li><li><a href="module-productRest.ProductRestQuery.html">ProductRestQuery</a></li><li><a href="module-productRest.ProductRestSortOrder.html">ProductRestSortOrder</a></li><li><a href="module-productRest.ShopCommodity.html">ShopCommodity</a></li><li><a href="module-productRest.ShopCommodityQuery.html">ShopCommodityQuery</a></li><li><a href="module-productRest.ShopCommoditySortOrder.html">ShopCommoditySortOrder</a></li><li><a href="module-productRest.StockCommodity.html">StockCommodity</a></li><li><a href="module-productRest.StockCommodityQuery.html">StockCommodityQuery</a></li><li><a href="module-productRest.StockCommoditySortOrder.html">StockCommoditySortOrder</a></li><li><a href="module-ticket.ConfirmTicket.html">ConfirmTicket</a></li><li><a href="module-ticket.ConfirmTicketQuery.html">ConfirmTicketQuery</a></li><li><a href="module-ticket.ConfirmTicketSortOrder.html">ConfirmTicketSortOrder</a></li><li><a href="module-ticket.Ticket.html">Ticket</a></li><li><a href="module-ticket.TicketQuery.html">TicketQuery</a></li><li><a href="module-ticket.TicketSortOrder.html">TicketSortOrder</a></li><li><a href="module-transfer.TransferFromShop.html">TransferFromShop</a></li><li><a href="module-transfer.TransferFromShopPosition.html">TransferFromShopPosition</a></li><li><a href="module-transfer.TransferFromShopPositionQuery.html">TransferFromShopPositionQuery</a></li><li><a href="module-transfer.TransferFromShopPositionSortOrder.html">TransferFromShopPositionSortOrder</a></li><li><a href="module-transfer.TransferFromShopQuery.html">TransferFromShopQuery</a></li><li><a href="module-transfer.TransferFromShopSortOrder.html">TransferFromShopSortOrder</a></li><li><a href="module-transfer.TransferToShop.html">TransferToShop</a></li><li><a href="module-transfer.TransferToShopPosition.html">TransferToShopPosition</a></li><li><a href="module-transfer.TransferToShopPositionQuery.html">TransferToShopPositionQuery</a></li><li><a href="module-transfer.TransferToShopPositionSortOrder.html">TransferToShopPositionSortOrder</a></li><li><a href="module-transfer.TransferToShopQuery.html">TransferToShopQuery</a></li><li><a href="module-transfer.TransferToShopSortOrder.html">TransferToShopSortOrder</a></li><li><a href="module-waybill.Transport.html">Transport</a></li><li><a href="module-waybill.TtnInformF2Reg.html">TtnInformF2Reg</a></li><li><a href="module-waybill.TtnInformF2RegPosition.html">TtnInformF2RegPosition</a></li><li><a href="module-waybill.TtnInformF2RegPositionQuery.html">TtnInformF2RegPositionQuery</a></li><li><a href="module-waybill.TtnInformF2RegPositionSortOrder.html">TtnInformF2RegPositionSortOrder</a></li><li><a href="module-waybill.TtnInformF2RegQuery.html">TtnInformF2RegQuery</a></li><li><a href="module-waybill.TtnInformF2RegSortOrder.html">TtnInformF2RegSortOrder</a></li><li><a href="module-waybill.Waybill.html">Waybill</a></li><li><a href="module-waybill.WaybillPosition.html">WaybillPosition</a></li><li><a href="module-waybill.WaybillPositionMark.html">WaybillPositionMark</a></li><li><a href="module-waybill.WaybillPositionMarkQuery.html">WaybillPositionMarkQuery</a></li><li><a href="module-waybill.WaybillPositionMarkSortOrder.html">WaybillPositionMarkSortOrder</a></li><li><a href="module-waybill.WaybillPositionQuery.html">WaybillPositionQuery</a></li><li><a href="module-waybill.WaybillPositionSortOrder.html">WaybillPositionSortOrder</a></li><li><a href="module-waybill.WaybillQuery.html">WaybillQuery</a></li><li><a href="module-waybill.WaybillSortOrder.html">WaybillSortOrder</a></li><li><a href="module-waybillAct.WaybillAct.html">WaybillAct</a></li><li><a href="module-waybillAct.WaybillActPosition.html">WaybillActPosition</a></li><li><a href="module-waybillAct.WaybillActPositionMark.html">WaybillActPositionMark</a></li><li><a href="module-waybillAct.WaybillActPositionMarkQuery.html">WaybillActPositionMarkQuery</a></li><li><a href="module-waybillAct.WaybillActPositionMarkSortOrder.html">WaybillActPositionMarkSortOrder</a></li><li><a href="module-waybillAct.WaybillActPositionQuery.html">WaybillActPositionQuery</a></li><li><a href="module-waybillAct.WaybillActPositionSortOrder.html">WaybillActPositionSortOrder</a></li><li><a href="module-waybillAct.WaybillActQuery.html">WaybillActQuery</a></li><li><a href="module-waybillAct.WaybillActSortOrder.html">WaybillActSortOrder</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Version">Version</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 03 2018 17:48:55 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

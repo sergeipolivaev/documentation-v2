@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: query/TtnInformF2Reg.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: query/TtnInformF2Reg.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __extends = (this &amp;&amp; this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array &amp;&amp; function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var abstract_query_builder_1 = require("abstract-query-builder");
+var TtnInformF2Reg_1 = require("../model/document/TtnInformF2Reg");
+var executor_1 = require("./executor");
+/**
+ * @class module:waybill.TtnInformF2RegSortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} uuid Уникальный идентификатор справки 2 информации о предыдущих отгрузках
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} owner Кто подает документы
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} identity Идентификатор документа (клиентский)
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} wbRegId ИД накладной в системе (присвоенный)
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} egaisFixNumber Номер фиксации накладной(отгрузки) в ЕГАИС
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} egaisFixDate Дата составления накладной(отгрузки) в ЕГАИС
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} wbNumber Номер накладной
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} wbDate Дата составления накладной
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} shipperId Грузоотправитель
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} consigneeId Грузоотправитель
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} supplierId Поставщик
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} waybillId Уникальный идентификатор ТТН
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegSortOrder>} status Текущий статус справки 2
+ */
+var TtnInformF2RegSortOrder = /** @class */ (function (_super) {
+    __extends(TtnInformF2RegSortOrder, _super);
+    function TtnInformF2RegSortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.uuid = _this.addFieldSorter("UUID");
+        _this.owner = _this.addFieldSorter("OWNER");
+        _this.identity = _this.addFieldSorter("IDENTITY");
+        _this.wbRegId = _this.addFieldSorter("WB_REG_ID");
+        _this.egaisFixNumber = _this.addFieldSorter("EGAIS_FIX_NUMBER");
+        _this.egaisFixDate = _this.addFieldSorter("EGAIS_FIX_DATE");
+        _this.wbNumber = _this.addFieldSorter("WB_NUMBER");
+        _this.wbDate = _this.addFieldSorter("WB_DATE");
+        _this.shipperId = _this.addFieldSorter("SHIPPER_ID");
+        _this.consigneeId = _this.addFieldSorter("CONSIGNEE_ID");
+        _this.supplierId = _this.addFieldSorter("SUPPLIER_ID");
+        _this.waybillId = _this.addFieldSorter("WAY_BILL_ID");
+        _this.status = _this.addFieldSorter("STATUS");
+        return _this;
+    }
+    return TtnInformF2RegSortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.TtnInformF2RegSortOrder = TtnInformF2RegSortOrder;
+/**
+ * @class module:waybill.TtnInformF2RegQuery
+ * @classdesc Класс для формирования запроса на получение справок 2 к ТТН.
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} uuid Уникальный идентификатор справки 2 информации о предыдущих отгрузках
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} owner Кто подает документы
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} identity Идентификатор документа (клиентский)
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} wbRegId ИД накладной в системе (присвоенный)
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} egaisFixNumber Номер фиксации накладной(отгрузки) в ЕГАИС
+ * @property {FieldFilter&lt;Date, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} egaisFixDate Дата составления накладной(отгрузки) в ЕГАИС
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} wbNumber Номер накладной
+ * @property {FieldFilter&lt;Date, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} wbDate Дата составления накладной
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} shipperId Грузоотправитель
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} consigneeId Грузоотправитель
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} supplierId Поставщик
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} waybillId Уникальный идентификатор ТТН
+ * @property {FieldFilter&lt;module:waybill#TtnInformF2RegStatus, module:waybill.TtnInformF2RegQuery, module:waybill.TtnInformF2RegSortOrder, module:waybill.TtnInformF2Reg>} status Текущий статус справки 2
+ */
+var TtnInformF2RegQuery = /** @class */ (function (_super) {
+    __extends(TtnInformF2RegQuery, _super);
+    function TtnInformF2RegQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('TtnInformF2Reg', TtnInformF2Reg_1.default.prototype)) || this;
+        _this.uuid = _this.addFieldFilter("UUID");
+        _this.owner = _this.addFieldFilter("OWNER");
+        _this.identity = _this.addFieldFilter("IDENTITY");
+        _this.wbRegId = _this.addFieldFilter("WB_REG_ID");
+        _this.egaisFixNumber = _this.addFieldFilter("EGAIS_FIX_NUMBER");
+        _this.egaisFixDate = _this.addFieldFilter("EGAIS_FIX_DATE");
+        _this.wbNumber = _this.addFieldFilter("WB_NUMBER");
+        _this.wbDate = _this.addFieldFilter("WB_DATE");
+        _this.shipperId = _this.addFieldFilter("SHIPPER_ID");
+        _this.consigneeId = _this.addFieldFilter("CONSIGNEE_ID");
+        _this.supplierId = _this.addFieldFilter("SUPPLIER_ID");
+        _this.waybillId = _this.addFieldFilter("WAY_BILL_ID");
+        _this.status = _this.addFieldFilter("STATUS");
+        return _this;
+    }
+    return TtnInformF2RegQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.default = TtnInformF2RegQuery;
+/**
+ * @class module:waybill.TtnInformF2RegPositionSortOrder
+ * @classdesc Класс для сортировки элементов в результе запроса.
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegPositionSortOrder>} uuid Уникальный идентификатор позиции
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegPositionSortOrder>} ttnInformF2RegUuid Уникальный идентификатор справки 2
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegPositionSortOrder>} identity Идентификатор позиции внутри накладной
+ * @property {FieldSorter&lt;module:waybill.TtnInformF2RegPositionSortOrder>} informF2RegId Регистрационный номер записи справки 2
+ */
+var TtnInformF2RegPositionSortOrder = /** @class */ (function (_super) {
+    __extends(TtnInformF2RegPositionSortOrder, _super);
+    function TtnInformF2RegPositionSortOrder() {
+        var _this = _super.call(this, function () { return _this; }) || this;
+        _this.uuid = _this.addFieldSorter("UUID");
+        _this.ttnInformF2RegUuid = _this.addFieldSorter("TTN_INFORM_F2_REG_ID");
+        _this.identity = _this.addFieldSorter("IDENTITY");
+        _this.informF2RegId = _this.addFieldSorter("INFORM_F2_REG_ID");
+        return _this;
+    }
+    return TtnInformF2RegPositionSortOrder;
+}(abstract_query_builder_1.SortOrder));
+exports.TtnInformF2RegPositionSortOrder = TtnInformF2RegPositionSortOrder;
+/**
+ * @class module:waybill.TtnInformF2RegPositionQuery
+ * @classdesc Класс для формирования запроса на получение позиций акта списания из магазина.
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegPositionQuery, module:waybill.TtnInformF2RegPositionSortOrder, module:waybill.TtnInformF2RegPosition>} uuid Уникальный идентификатор позиции
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegPositionQuery, module:waybill.TtnInformF2RegPositionSortOrder, module:waybill.TtnInformF2RegPosition>} ttnInformF2RegUuid Уникальный идентификатор справки 2
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegPositionQuery, module:waybill.TtnInformF2RegPositionSortOrder, module:waybill.TtnInformF2RegPosition>} identity Идентификатор позиции внутри накладной
+ * @property {FieldFilter&lt;string, module:waybill.TtnInformF2RegPositionQuery, module:waybill.TtnInformF2RegPositionSortOrder, module:waybill.TtnInformF2RegPosition>} informF2RegId Регистрационный номер записи справки 2
+ */
+var TtnInformF2RegPositionQuery = /** @class */ (function (_super) {
+    __extends(TtnInformF2RegPositionQuery, _super);
+    function TtnInformF2RegPositionQuery() {
+        var _this = _super.call(this, function () { return _this; }, executor_1.default('TtnInformF2RegPosition', TtnInformF2Reg_1.TtnInformF2RegPosition.prototype)) || this;
+        _this.uuid = _this.addFieldFilter("UUID");
+        _this.ttnInformF2RegUuid = _this.addFieldFilter("TTN_INFORM_F2_REG_ID");
+        _this.identity = _this.addFieldFilter("IDENTITY");
+        _this.informF2RegId = _this.addFieldFilter("INFORM_F2_REG_ID");
+        return _this;
+    }
+    return TtnInformF2RegPositionQuery;
+}(abstract_query_builder_1.FilterBuilder));
+exports.TtnInformF2RegPositionQuery = TtnInformF2RegPositionQuery;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-actChargeOn.html">actChargeOn</a></li><li><a href="module-actWriteOff.html">actWriteOff</a></li><li><a href="module-orgInfo.html">orgInfo</a></li><li><a href="module-productInfo.html">productInfo</a></li><li><a href="module-productRest.html">productRest</a></li><li><a href="module-ticket.html">ticket</a></li><li><a href="module-transfer.html">transfer</a></li><li><a href="module-waybill.html">waybill</a></li><li><a href="module-waybillAct.html">waybillAct</a></li></ul><h3>Classes</h3><ul><li><a href="module-actChargeOn.ActChargeOnShop.html">ActChargeOnShop</a></li><li><a href="module-actChargeOn.ActChargeOnShopPosition.html">ActChargeOnShopPosition</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionQuery.html">ActChargeOnShopPositionQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopPositionSortOrder.html">ActChargeOnShopPositionSortOrder</a></li><li><a href="module-actChargeOn.ActChargeOnShopQuery.html">ActChargeOnShopQuery</a></li><li><a href="module-actChargeOn.ActChargeOnShopSortOrder.html">ActChargeOnShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOff.html">ActWriteOff</a></li><li><a href="module-actWriteOff.ActWriteOffPosition.html">ActWriteOffPosition</a></li><li><a href="module-actWriteOff.ActWriteOffPositionQuery.html">ActWriteOffPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffPositionSortOrder.html">ActWriteOffPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffQuery.html">ActWriteOffQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShop.html">ActWriteOffShop</a></li><li><a href="module-actWriteOff.ActWriteOffShopPosition.html">ActWriteOffShopPosition</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionQuery.html">ActWriteOffShopPositionQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopPositionSortOrder.html">ActWriteOffShopPositionSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffShopQuery.html">ActWriteOffShopQuery</a></li><li><a href="module-actWriteOff.ActWriteOffShopSortOrder.html">ActWriteOffShopSortOrder</a></li><li><a href="module-actWriteOff.ActWriteOffSortOrder.html">ActWriteOffSortOrder</a></li><li><a href="module-orgInfo.OrgInfo.html">OrgInfo</a></li><li><a href="module-orgInfo.OrgInfoAddress.html">OrgInfoAddress</a></li><li><a href="module-orgInfo.OrgInfoAddressFilter.html">OrgInfoAddressFilter</a></li><li><a href="module-orgInfo.OrgInfoAddressSortOrder.html">OrgInfoAddressSortOrder</a></li><li><a href="module-orgInfo.OrgInfoQuery.html">OrgInfoQuery</a></li><li><a href="module-orgInfo.OrgInfoSortOrder.html">OrgInfoSortOrder</a></li><li><a href="module-productInfo.ProductInfo.html">ProductInfo</a></li><li><a href="module-productInfo.ProductInfoFilter.html">ProductInfoFilter</a></li><li><a href="module-productInfo.ProductInfoInnerSortOrder.html">ProductInfoInnerSortOrder</a></li><li><a href="module-productRest.ProductRest.html">ProductRest</a></li><li><a href="module-productRest.ProductRestQuery.html">ProductRestQuery</a></li><li><a href="module-productRest.ProductRestSortOrder.html">ProductRestSortOrder</a></li><li><a href="module-productRest.ShopCommodity.html">ShopCommodity</a></li><li><a href="module-productRest.ShopCommodityQuery.html">ShopCommodityQuery</a></li><li><a href="module-productRest.ShopCommoditySortOrder.html">ShopCommoditySortOrder</a></li><li><a href="module-productRest.StockCommodity.html">StockCommodity</a></li><li><a href="module-productRest.StockCommodityQuery.html">StockCommodityQuery</a></li><li><a href="module-productRest.StockCommoditySortOrder.html">StockCommoditySortOrder</a></li><li><a href="module-ticket.ConfirmTicket.html">ConfirmTicket</a></li><li><a href="module-ticket.ConfirmTicketQuery.html">ConfirmTicketQuery</a></li><li><a href="module-ticket.ConfirmTicketSortOrder.html">ConfirmTicketSortOrder</a></li><li><a href="module-ticket.Ticket.html">Ticket</a></li><li><a href="module-ticket.TicketQuery.html">TicketQuery</a></li><li><a href="module-ticket.TicketSortOrder.html">TicketSortOrder</a></li><li><a href="module-transfer.TransferFromShop.html">TransferFromShop</a></li><li><a href="module-transfer.TransferFromShopPosition.html">TransferFromShopPosition</a></li><li><a href="module-transfer.TransferFromShopPositionQuery.html">TransferFromShopPositionQuery</a></li><li><a href="module-transfer.TransferFromShopPositionSortOrder.html">TransferFromShopPositionSortOrder</a></li><li><a href="module-transfer.TransferFromShopQuery.html">TransferFromShopQuery</a></li><li><a href="module-transfer.TransferFromShopSortOrder.html">TransferFromShopSortOrder</a></li><li><a href="module-transfer.TransferToShop.html">TransferToShop</a></li><li><a href="module-transfer.TransferToShopPosition.html">TransferToShopPosition</a></li><li><a href="module-transfer.TransferToShopPositionQuery.html">TransferToShopPositionQuery</a></li><li><a href="module-transfer.TransferToShopPositionSortOrder.html">TransferToShopPositionSortOrder</a></li><li><a href="module-transfer.TransferToShopQuery.html">TransferToShopQuery</a></li><li><a href="module-transfer.TransferToShopSortOrder.html">TransferToShopSortOrder</a></li><li><a href="module-waybill.Transport.html">Transport</a></li><li><a href="module-waybill.TtnInformF2Reg.html">TtnInformF2Reg</a></li><li><a href="module-waybill.TtnInformF2RegPosition.html">TtnInformF2RegPosition</a></li><li><a href="module-waybill.TtnInformF2RegPositionQuery.html">TtnInformF2RegPositionQuery</a></li><li><a href="module-waybill.TtnInformF2RegPositionSortOrder.html">TtnInformF2RegPositionSortOrder</a></li><li><a href="module-waybill.TtnInformF2RegQuery.html">TtnInformF2RegQuery</a></li><li><a href="module-waybill.TtnInformF2RegSortOrder.html">TtnInformF2RegSortOrder</a></li><li><a href="module-waybill.Waybill.html">Waybill</a></li><li><a href="module-waybill.WaybillPosition.html">WaybillPosition</a></li><li><a href="module-waybill.WaybillPositionMark.html">WaybillPositionMark</a></li><li><a href="module-waybill.WaybillPositionMarkQuery.html">WaybillPositionMarkQuery</a></li><li><a href="module-waybill.WaybillPositionMarkSortOrder.html">WaybillPositionMarkSortOrder</a></li><li><a href="module-waybill.WaybillPositionQuery.html">WaybillPositionQuery</a></li><li><a href="module-waybill.WaybillPositionSortOrder.html">WaybillPositionSortOrder</a></li><li><a href="module-waybill.WaybillQuery.html">WaybillQuery</a></li><li><a href="module-waybill.WaybillSortOrder.html">WaybillSortOrder</a></li><li><a href="module-waybillAct.WaybillAct.html">WaybillAct</a></li><li><a href="module-waybillAct.WaybillActPosition.html">WaybillActPosition</a></li><li><a href="module-waybillAct.WaybillActPositionMark.html">WaybillActPositionMark</a></li><li><a href="module-waybillAct.WaybillActPositionMarkQuery.html">WaybillActPositionMarkQuery</a></li><li><a href="module-waybillAct.WaybillActPositionMarkSortOrder.html">WaybillActPositionMarkSortOrder</a></li><li><a href="module-waybillAct.WaybillActPositionQuery.html">WaybillActPositionQuery</a></li><li><a href="module-waybillAct.WaybillActPositionSortOrder.html">WaybillActPositionSortOrder</a></li><li><a href="module-waybillAct.WaybillActQuery.html">WaybillActQuery</a></li><li><a href="module-waybillAct.WaybillActSortOrder.html">WaybillActSortOrder</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Version">Version</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Aug 03 2018 17:48:55 GMT+0300 (RTZ 2 (зима))
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

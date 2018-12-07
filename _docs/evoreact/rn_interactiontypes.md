@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evoreact
 permalink: rn_interactiontypes.html
-tags: [terminal, react]
+product: React Native
 ---
 
 ## Получение данных {#getter}

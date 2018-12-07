@@ -6,9 +6,7 @@ pipeline {
         environment name: "GIT_BRANCH", value: "origin/develop"
       }
       steps {
-        sh '''#!/usr/bin/bash
-             . ~/.rvm/scripts/rvm && bundle exec jekyll build
-        '''
+        sh "docker run --rm -e \"JEKYLL_UID=\$(id -u jenkins)\" -e \"JEKYLL_GID=\$(id -g jenkins)\" --volume=\"${env.WORKSPACE}:/srv/jekyll\" jekyll/builder:3.8 jekyll build"
         sh "docker build -t docker-registry.market.local/developer-documentation-v2:$BUILD_TAG ."
       }
     }
@@ -29,6 +27,22 @@ pipeline {
           --kube-context test-cluster \
           --namespace test \
           --values ./helm/values/test.yaml \
+          --set image.tag=$BUILD_TAG \
+          --wait \
+          dev-docs-v2 \
+          ./helm/dev-docs-v2
+        """
+      }
+    }
+    stage('Deploy to Prod [develop]') {
+      when {
+        environment name: "GIT_BRANCH", value: "origin/develop"
+      }
+      steps {
+        sh """helm upgrade --install \
+          --kube-context prod-cluster \
+          --namespace prod \
+          --values ./helm/values/develop.yaml \
           --set image.tag=$BUILD_TAG \
           --wait \
           dev-docs-v2 \

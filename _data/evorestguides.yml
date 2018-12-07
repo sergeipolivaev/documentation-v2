@@ -1,0 +1,10 @@
+sidebarTitle: Руководства Customer's API
+owner: Evotor
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+- title: Customers's API
+  folderitems:
+  - title: Введение
+    url: /rest_customer_guides.html

@@ -3,7 +3,7 @@ title: Получение данных из ЕГАИС
 permalink: doc_egais_data_reading_access.html
 sidebar: evojava
 tags:
-product:
+product: Java SDK
 ---
 
 С помощью `egais-api` ваше приложение может получать данные из ЕГАИС.
@@ -43,7 +43,3 @@ product:
 | [WayBillPositionMarkQuery.kt](./egais-api/ru/evotor/egais/api/query/WayBillPositionMarkQuery.html) | [WayBillPositionMark](./egais-api/ru/evotor/egais/api/model/document/waybill/WayBillPositionMark.html) | Марка позиций ТТН |
 | [WayBillPositionQuery.kt](./egais-api/ru/evotor/egais/api/query/WayBillPositionQuery.html) | [WayBillPosition](./egais-api/ru/evotor/egais/api/model/document/waybill/WayBillPosition.html) | Позиция в товарно-транспортной накладной (ТТН) |
 | [WayBillQuery.kt](./egais-api/ru/evotor/egais/api/query/WayBillQuery.html) | [WayBill](./egais-api/ru/evotor/egais/api/model/document/waybill/WayBill.html) | Товарно-транспортная накладная |
-
-## Пример
-
-Пример приложения, которое получает данные ЕГАИС с помощью запросов к базе данных смарт-терминала.

@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evomain
 permalink: doc_drivers_scales.html
-tags:
+product: Java SDK
 ---
 
 ### Определение внешнего сервиса в AndroidManifest.xml

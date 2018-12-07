@@ -1,0 +1,123 @@
+sidebarTitle: Java SDK
+owner: Evotor
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+
+- title: Введение
+  url: /java_introduction.html
+- title: Манифест Java-приложения
+  url: /doc_java_app_manifest.html
+- title: Точки интеграции
+  url: /doc_app_integration_points.html
+
+- title: Руководства
+  folderitems:
+  - title: Подключение библиотеки integration library
+    url: /doc_java_integration_library_connection.html
+  - title: Вызов приложения из интерфейса смарт-терминала
+    url: /doc_java_app_icon.html
+
+  - title: Вызов окон смарт-терминала
+    url: /doc_java_navigation.html
+
+  - title: Обмен сообщениями приложения и стороннего сервиса
+    url: /doc_java_third_party_service_communication.html
+
+  - title: Обработка событий смарт-терминала
+    url: /doc_java_st_events.html
+
+  - title: Работа с пользователями смарт-терминала
+    url: /doc_java_app_users.html
+
+  - title: Получение данных из базы данных смарт-терминала
+    url: /java_query_api.html
+
+  - title: Товароучёт
+    url: /doc_java_inventory.html
+
+  - title: Поиск товара по штрихкоду
+    url: /doc_java_receipt_api.html
+
+  - title: Передача электронных чеков
+    url: /doc_java_online_store_receipt.html
+
+  - title: Использование различных способов оплаты
+    url: /doc_java_payment_systems.html
+
+  - title: Получение информации о кассовых сменах
+    url: /doc_java_session.html
+
+  - title: Оповещение пользователей с помощью push-уведомлений
+    url: /doc_java_pushnotifications.html
+
+  - title: Печать Z-отчёта
+    url: /doc_java_z_report.html
+
+  - title: Доступ к логам
+    url: /doc_java_logging.html
+
+    subfolders:
+    - title: ЕГАИС
+      subfolderitems:
+        - title: Подготовка проекта для работы с egais-api
+          url: /doc_egais_project_creation.html
+        - title: Чтение данных ЕГАИС
+          url: /doc_egais_data_reading_access.html
+        - title: Получение настроек пользователя из УТМ
+          url: /doc_egais_clientsettingsquery.html
+
+    - title: Чеки
+      subfolderitems:
+        - title: Открытие чека в приложении
+          url: /doc_java_receipt_creation.html
+        - title: Разделение чека
+          url: /doc_java_receipt_division.html
+        - title: Начисление скидок
+          url: / doc_java_discounts.html
+
+        - title: Работа с позициями чека
+          url: / doc_java_receipt_interactions.html
+
+        - title: Создание дополнительных полей в чеке
+          url: /doc_java_receipt_extras.html
+
+        - title: Получить данные сформированного чека
+          url: /doc_java_get_receipt.html
+
+        - title: Печать внутри кассового чека
+          url: /doc_java_receipt_print.html
+
+    - title: Оборудование
+      subfolderitems:
+        - title: Работа с весами
+          url: /doc_java_scales.html
+        - title: Работа со сканером штрихкодов
+          url: /doc_java_barcode_scanner.html
+        - title: Работа с принтером чеков
+          url: /doc_java_bill_printer.html
+
+- title: Драйвера для оборудования
+  folderitems:
+  - title: Подготовка к разработке
+    url: /doc_drivers_library_connection.html
+  - title: SDK для денежного ящика
+    url: /doc_drivers_cashdrawer.html
+  - title: SDK для банковский терминалов
+    url: /doc_drivers_pinpads.html
+  - title: SDK для весов
+    url: /doc_drivers_scales.html
+  - title: SDK для подключаемого USB-оборудования
+    url: /doc_drivers_other.html
+
+- title: Справочники
+  folderitems:
+  - title: Библиотека integration-library
+    url: /integration-library\index.html
+  - title: Библиотека egais-api
+    url: /egais-api\index.html
+
+
+- title: Примеры реализации
+  url: /java_examples.html

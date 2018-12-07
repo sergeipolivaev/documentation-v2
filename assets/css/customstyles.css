@@ -332,6 +332,7 @@ table > thead:first-child > tr:first-child > td {
 table > tbody + tbody {
     b
 }
+
 table > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
@@ -392,7 +393,7 @@ pre, table code {
     background-color: transparent !important;
 }
 /* svg styling */
-*
+/*
  * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
  *
  * [1] IE9
@@ -548,6 +549,7 @@ ul#docnavsidebar li a:focus {
     vertical-align: top;
     width: 24%;
     margin: 1px;
+    height: 250px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -604,4 +606,257 @@ pre code {
 /*copy to clipboard button styles*/
 .copy-btn {
     float: right;
+}
+
+/*Box styles*/
+.box:hover{
+  background: blue;
+  cursor: pointer;
+}
+
+/*login button*/
+.btn-login {
+  color: #fff;
+  background-color: #FF7800;
+  border-color: #FF7800;
+  position: fixed;
+  margin-left: 15px;
+}
+
+
+/*rest-jumbotron*/
+.jumbotron {
+background-color: #ADD8E6;
+background-size: cover;
+}
+
+
+/*markdown-toc styles*/
+
+#markdown-toc {
+  margin: 1em 1.5em 2em;
+}
+
+#markdown-toc li {
+  font-size: 14px;
+  list-style-type: lower-roman;
+  margin: 0.25em 0;
+}
+
+#markdown-toc li a {
+  color: #333;
+  text-decoration: underline;
+}
+
+#markdown-toc li a:hover {
+  color: #327fc7;
+}
+
+
+/*------------------------------------------------------------------------------
+     Global Documentation Styles
+------------------------------------------------------------------------------*/
+
+body {
+  font: 13px/1.4em "Helvetica Neue", arial,freesans,clean,sans-serif;
+  background-color: #fff;
+  color: #393939;
+}
+
+p {
+  margin: 1em 0;
+}
+
+h1 {
+  font-size: 20px;
+  padding: .5em 0;
+  margin: 2em 0 1em;
+  font-weight: normal;
+}
+
+body:not(.enterprise) .enterprise-only {
+  display: none;
+}
+body.dev-mode .enterprise-only {
+  border: 3px solid red;
+}
+body.dev-mode .not-enterprise {
+  border: 3px dashed blue;
+}
+body.dev-mode.enterprise .not-enterprise {
+  display: none;
+}
+
+.content h1 {
+  font-weight: 300;
+  -webkit-backface-visibility: hidden;
+  font-size: 36px;
+  margin: 0em 0 0.5em;
+  position: relative;
+  line-height: 30px;
+}
+
+.anchor {
+  position: absolute;
+  left: -32px;
+  top: 0;
+  opacity: 0;
+  padding: 0 5px 0 10px;
+  height: 100%;
+  width: 20px;
+  font: normal normal 16px/20px octicons;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+
+  -webkit-transition: opacity 0.3s ease-in-out 0s;
+  -moz-transition: opacity 0.3s ease-in-out 0s;
+  transition: opacity 0.3s ease-in-out 0s;
+}
+
+h1 .anchor {
+  line-height: 55px;
+}
+
+.content h1:hover .anchor, .content h2:hover .anchor, .content h3:hover .anchor, .content h4:hover .anchor, .anchor:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 22px;
+  color: #333;
+  margin: 2em auto 1em;
+  position: relative;
+  font-weight: 300;
+}
+
+.library-list h1 {
+  margin: 20px 0 20px;
+  padding: 20px 0 20px;
+}
+
+.library-list h2 {
+  margin-bottom: -17px;
+  margin-left: 0px;
+  font-size: 16px;
+  max-width: 190px;
+}
+
+.library-list ul {
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.library-list ul li {
+  padding-left: 200px;
+  padding-right: 200px;
+  font-size: 14px;
+}
+
+.change h2, .sidebar-shell h2 {
+  margin: 1.2em 0 1em;
+}
+
+.change > .title {
+  line-height: 1.4em;
+  margin: 1.2em 0 0px;
+  padding-left: 0;
+  font-size: 30px;
+}
+
+h2 span.step {
+  color: #666;
+}
+
+h3 {
+  font-size: 14px;
+  color: #333;
+  margin: 1.5em 0 .5em;
+  position: relative;
+}
+
+h4 {
+  margin: 1em 0;
+  position: relative;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+h6 {
+  font-size: 13px;
+  color: #666;
+}
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration:underline;
+}
+
+blockquote {
+  margin:0 -5px;
+  padding: 0px 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+
+dd + dd {
+  margin-bottom: 0;
+}
+
+a img {
+  border: 0px;
+}
+
+.button, .button-secondary {
+  background-color: #297fc7;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.button:hover {
+  text-decoration: none;
+  background-color: #3088d0;
+}
+
+.button-secondary {
+  background-color: #738797;
+  font-size: 15px;
+  padding: 12px;
+  -webkit-backface-visibility: hidden;
+}
+
+.button-secondary:hover {
+  text-decoration: none;
+  background-color: #7e909e;
+}
+
+.rss-subscribe {
+  display: block;
+  padding: 15px 14px 16px 47px;
+  background: url(/assets/images/feed-icon.png) 10px center no-repeat;
+  color: #444;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.rss-subscribe:hover {
+  background-color: #f4f4f7;
+  text-decoration: none;
 }
