@@ -50,17 +50,17 @@ pipeline {
         """
       }
     }
-    stage('Build [EVOADMIN-1298-JEKYLL-DOCKER-BUILD]') {
+    stage('Build [master]') {
       when {
-        environment name: "GIT_BRANCH", value: "origin/EVOADMIN-1298-JEKYLL-DOCKER-BUILD"
+        environment name: "GIT_BRANCH", value: "origin/master"
       }
       steps {
         sh "docker run --rm -e \"JEKYLL_UID=\$(id -u jenkins)\" -e \"JEKYLL_GID=\$(id -g jenkins)\" --volume=\"${env.WORKSPACE}:/srv/jekyll\" jekyll/builder:3.8 jekyll build"
       }
     }
-    stage('Deploy [EVOADMIN-1298-JEKYLL-DOCKER-BUILD]') {
+    stage('Deploy [master]') {
       when {
-        environment name: "GIT_BRANCH", value: "origin/EVOADMIN-1298-JEKYLL-DOCKER-BUILD"
+        environment name: "GIT_BRANCH", value: "origin/master"
       }
       steps {
         sh '''set -e
