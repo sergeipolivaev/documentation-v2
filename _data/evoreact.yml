@@ -88,9 +88,9 @@ related_resources_title: Справочники и примеры
 related_resources_list:
 
 - title: Справочник integration-library
-  url: /react-integration-library\index.html
+  url: /docs/beta/react-integration-library\index.html
 - title: Справочник egais-api
-  url: /react-egais-api\index.html
+  url: /docs/beta/react-egais-api\index.html
 - title: Приложение для работы с integration-library
   url: https://github.com/evotor/react-native-evotor-api-example
 - title: Приложение для работы с egais-api
