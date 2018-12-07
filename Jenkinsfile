@@ -63,8 +63,7 @@ pipeline {
         environment name: "GIT_BRANCH", value: "origin/master"
       }
       steps {
-        sh '''#!/usr/bin/bash
-              set -e
+        sh '''set -e
               arch=docs_v2_${BUILD_TIMESTAMP}.tgz
               tar -czf ${arch} --exclude-from=tar_exclude -C _site .
               echo "Deploing to ${SERVER_NAME}..."
