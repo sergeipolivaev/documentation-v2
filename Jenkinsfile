@@ -50,21 +50,20 @@ pipeline {
         """
       }
     }
-    stage('Build [master]') {
+    stage('Build [EVOADMIN-1298-JEKYLL-DOCKER-BUILD]') {
       when {
-        environment name: "GIT_BRANCH", value: "origin/master"
+        environment name: "GIT_BRANCH", value: "origin/EVOADMIN-1298-JEKYLL-DOCKER-BUILD"
       }
       steps {
         sh "docker run --rm -e \"JEKYLL_UID=\$(id -u jenkins)\" -e \"JEKYLL_GID=\$(id -g jenkins)\" --volume=\"${env.WORKSPACE}:/srv/jekyll\" jekyll/builder:3.8 jekyll build"
       }
     }
-    stage('Deploy [master]') {
+    stage('Deploy [EVOADMIN-1298-JEKYLL-DOCKER-BUILD]') {
       when {
-        environment name: "GIT_BRANCH", value: "origin/master"
+        environment name: "GIT_BRANCH", value: "origin/EVOADMIN-1298-JEKYLL-DOCKER-BUILD"
       }
       steps {
-        sh '''#!/usr/bin/bash
-              set -e
+        sh '''set -e
               arch=docs_v2_${BUILD_TIMESTAMP}.tgz
               tar -czf ${arch} --exclude-from=tar_exclude -C _site .
               echo "Deploing to ${SERVER_NAME}..."
