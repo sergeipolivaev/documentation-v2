@@ -20,7 +20,7 @@ navbar_dropdowns:
         - title: V 1
           url: https://api.evotor.ru/docs/
         - title: V 2 (в разработке)
-          url: /docs\beta\rest_index.html
+          url: /rest_index.html
     - title: SDK cмарт-терминала
       folderitems:
         - title: Java SDK
