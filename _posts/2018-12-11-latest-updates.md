@@ -10,7 +10,7 @@ github_button: false
 
 * Обновлены способы оплаты:
 
-  * Класс [PaymentType](./integration-library/build/javadoc/ru/evotor/framework/payment/PaymentType.html) в Java SDK.
+  * Класс [PaymentType](./integration-library/ru/evotor/framework/payment/PaymentType.html) в Java SDK.
   * Значения поля `payments.payment.type` в документах:
     - [Продажи товара](./docs/beta/rest_sell.html);
     - [Возврата товара продавцу](./docs/beta/rest_payback.html);
@@ -19,7 +19,7 @@ github_button: false
 
 * В позициях чека реализована детализация способов расчётов.
 
-  * Класс [SettlementMethod](./integration-library/build/javadoc/ru/evotor/framework/receipt/position/SettlementMethod.html) в Java SDK.
+  * Класс [SettlementMethod](./integration-library/ru/evotor/framework/receipt/position/SettlementMethod.html) в Java SDK.
   * Значения поля `positions.position.payment_feature` в документах:
     - [Продажи товара](./docs/beta/rest_sell.html);
     - [Возврата товара продавцу](./docs/beta/rest_payback.html);
