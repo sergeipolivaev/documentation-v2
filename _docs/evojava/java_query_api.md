@@ -12,22 +12,22 @@ product: Java SDK
 
 Пример запроса для получения данных товара:
 
-```js
-const products = await new ProductQuery()
-        .alcoholByVolume.between(40, 70)
-        .intersection(new ProductQuery()
-            .price.greater(100, true)
-            .or().tareVolume.greater(10)
-            .union(new ProductQuery()
-                .price.lower(5)
-                .and().name.like("Водка")
-            )
-        ).sortOrder(new ProductSortOrder()
-            .price.asc()
-            .alcoholByVolume.desc()
-            .tareVolume.asc()
-        ).limit(1000)
-        .execute();
+```java
+val products = ProductQuery()
+                .alcoholByVolume.between(BigDecimal(40), BigDecimal(70))
+                .and(ProductQuery()
+                        .price.greater(BigDecimal(100), true)
+                        .or().tareVolume.greater(BigDecimal(10))
+                        .or(ProductQuery()
+                                .price.lower(BigDecimal(5))
+                                .and().name.like("Спиртное")
+                        )
+                ).sortOrder(ProductQuery.SortOrder()
+                        .price.asc()
+                        .alcoholByVolume.desc()
+                        .tareVolume.asc()
+                ).limit(1000)
+                .execute(context)
 ```
 
 ## Операторы
