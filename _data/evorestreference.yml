@@ -55,7 +55,7 @@ folders:
   - title: Обычный товар
     url: /rest_normal_product.html
   - title: Маркированный алкоголь
-    url: /rect_marked_alcohol.html
+    url: /rest_marked_alcohol.html
   - title: Немаркированный алкоголь
     url: /rest_alcohol_not_marked.html
   - title: Услуга
