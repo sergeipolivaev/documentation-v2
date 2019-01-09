@@ -33,8 +33,7 @@ search: false
         "content": {{ doc.content | strip_html | strip_newlines | jsonify }},
         "url": "{{ doc.url | remove: '/' | xml_escape }}",
         "product": "{{doc.product | xml_escape}}"
-      }
-      {% unless forloop.last %},{% endunless %}
+      },
       {% endunless %}
     {% endfor %}{% endfor %}
   };
