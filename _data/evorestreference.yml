@@ -58,6 +58,8 @@ folders:
     url: /rest_marked_alcohol.html
   - title: Немаркированный алкоголь
     url: /rest_alcohol_not_marked.html
+  - title: Маркированный табак
+    url: /rest_tobacco_marked.html
   - title: Услуга
     url: /rest_service_product.html
 - title: Группы товаров и группы модификаций
