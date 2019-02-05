@@ -46,7 +46,14 @@ fun getProductByUuid(context: Context, uuid: String): ProductItem?
 
 Поля, уникальные для товаров:
 
-* `type` – тип товара. Допустимые значения: NORMAL (обычный товар), ALCOHOL_MARKED (маркированный алкоголь) и ALKOHOL_NOT_MARKED (не маркированный алкоголь).
+* `type` – тип товара. Допустимые значения:
+
+  * NORMAL (обычный товар);
+  * ALCOHOL_MARKED (маркированный алкоголь);
+  * ALKOHOL_NOT_MARKED (немаркированный алкоголь);
+  * SERVICE (услуга);
+  * TOBACCO_MARKED (маркированный табак).
+
 * `price` – цена товара.
 * `quantity` – количество товара.
 * `description` – описание товара.
