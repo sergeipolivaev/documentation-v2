@@ -75,6 +75,8 @@ defaults:
       sidebar: evomain
       topnav: topnav
 
+future: true
+
 google_analytics: UA-84163503-7
 
 #algolia:
