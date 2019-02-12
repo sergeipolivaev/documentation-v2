@@ -104,6 +104,8 @@ exclude:
   - jekyll.sh
   - README.md
   - tar_exclude
+  - _docs/templates/
+  - helm/
 
 plugins:
 #  - jekyll-algolia
