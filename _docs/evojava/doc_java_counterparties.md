@@ -18,13 +18,15 @@ API смарт-терминала позволяет записывать дан
 
 Для различных типов агентов или субагентов агентские реквизиты должны содержать различный набор необходимых данных. Этот набор определён форматом фискальных данных (ФФД).
 
+{% include tip.html content="Используйте метод [`getRegisteredFfdVersion`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredFfdVersion-context-) класса [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html), чтобы узнать на какую версию фискальных документов зарегистрирована касса пользователя вашего приложения." %} 
+
 Чтобы создать агентские реквизиты с необходимыми данными для соответствующего типа агента или субагента используйте метод `create*ТипАгента`. Например:
 
 ```kotlin
 AgentRequisites.createForAgent(principalInn, principalPhones)
 ```
 
-{% include important.html content="Используйте только те типы агентов или субагентов, которые были указаны при регистрации кассы. Вы можете получить их с помощью методов [`getRegisteredAgentTypes`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredAgentTypes-context-) или [`getRegisteredSubagentTypes`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredSubagentTypes-context-) класса [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html)." %}
+{% include important.html content="Используйте только те типы агентов или субагентов, которые были указаны при регистрации кассы. Вы можете получить их с помощью методов [`getRegisteredAgentTypes`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredAgentTypes-context-) или [`getRegisteredSubagentTypes`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredSubagentTypes-context-) класса `KktApi.kt`." %}
 
 Чтобы записать агентские реквизиты в позицию используйте метод [`setAgentRequisites`](./integration-library/ru/evotor/framework/receipt/Position.Builder.html#setAgentRequisites--) класса `Position.Builder`:
 

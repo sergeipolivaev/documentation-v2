@@ -25,3 +25,5 @@ github_button: false
     - [Возврата товара продавцу](./rest_payback.html);
     - [Выкупа (товара у клиента)](./rest_buy.html);
     - [Обратного выкупа (товара клиентом)](./rest_buyback.html).
+
+Используйте метод `getRegisteredFfdVersion` класса [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html), чтобы узнать на какую версию фискальных документов зарегистрирована касса пользователя вашего приложения.
