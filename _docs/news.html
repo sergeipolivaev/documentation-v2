@@ -15,7 +15,7 @@ github_button: false
   <p>Значения налоговой ставки используются при работе с товарами (см. раздел <a href="./doc_java_inventory.html">“Товароучёт”)</a> и позициями чека (см. раздел <a href="./doc_java_receipt_interactions.html">“Работа с позициями чека”</a>).</p>
   <p>Если вы работаете с REST API Облака Эвотор, то информацию об изменении налоговой ставки вы можете найти в схемах следующих документов и продуктов:</p>
   <ul>
-    <li><a href="./rest_sell.html">Продажа товара</a>;</li>
+    <li><a href="./docs/beta/rest_sell.html">Продажа товара</a>;</li>
     <li><a href="./docs/beta/rest_payback.html">Возврат товара продавцу</a>;</li>
     <li><a href="./docs/beta/rest_buy.html">Выкуп (товара у клиента)</a>;</li>
     <li><a href="./docs/beta/rest_buyback.html">Обратный выкуп (товара клиентом)</a>;</li>
@@ -38,7 +38,7 @@ github_button: false
     <h2><a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a></h2>
     <span class="post-meta">{{ post.date | date: "%-d %b, %Y" }} </span>
 
-    <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 100 }} {% endif %}</p>
+    <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 104 }} {% endif %}</p>
 
     {% endfor %}
 
