@@ -13,7 +13,7 @@ github_button: false
 ## Добавлено
 
 * В класс [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html) добавлен метод [`isVatRate20Available`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#isVatRate20Available-context-). С помощью метода вы можете узнать установлено ли на смарт-терминале приложение ["Пакет обновлений"](https://market.evotor.ru/store/apps/9ddd7629-3397-47eb-a83a-1d987aa71610). Так вы сможете понять пробивает смарт-терминал фискальные документы по ставке НДС 20% или нет.
-* В класс [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html) добавлен метод [`getRegisteredFfdVersion`](/integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredFfdVersion-context-). Используйте метод, чтобы узнать на какую версию фискальных документов зарегистрирована касса пользователя вашего приложения.
+* В класс [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html) добавлен метод [`getRegisteredFfdVersion`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredFfdVersion-context-). Используйте метод, чтобы узнать на какую версию фискальных документов зарегистрирована касса пользователя вашего приложения.
 * Добавлена поддержка [агентской схемы договорных отношений](./doc_agency_agreement.html). Теперь вы можете определить типы агентов и субагентов, указанные при регистрации кассы и [записать эти данные в чек](./doc_java_counterparties.html).
 
 ## Изменено
