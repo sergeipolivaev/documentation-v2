@@ -20,6 +20,8 @@ github_button: false
 
 * В команду печати чека возврата [`PrintPaybackReceiptCommand.kt`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintPaybackReceiptCommand.html) добавлен новый параметр `sellReceiptUuid`, с помощью которого вы сможете формировать чеки возврата на основании чеков продажи. Параметр поможет правильно определять ставку НДС, возвращаемого товара.
 
+  {% include note.html content="Эта функциональность доступна если на смарт-терминале установлен компонент EvotorPos версии 6.24.6." %}
+
 ## Исправлено
 
 * Исправлена ошибка, возникавшая при вызове `PrintSellReceiptCommand().process()`, в рамках смены, открытой более 24 часов назад. Теперь возвращается ошибка с корректным кодом `-2` и сообщением "Session time expired".
