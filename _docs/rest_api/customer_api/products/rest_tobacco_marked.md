@@ -1,12 +1,12 @@
 ---
-title: Обычный товар
-permalink: rest_normal_product.html
+title: Маркированный табак
+permalink: rest_tobacco_marked.html
 sidebar: evorestreference
 product: Customer API
 ---
 
 
-Схема товара с типом `NORMAL`.
+Схема товара с типом `TOBACCO_MARKED`.
 
 {% include important.html content="В связи с изменением законодательства, с первого января 2019 года значения `VAT_18` и `VAT_18_118` могут указывать как на 18%, так и на 20% ставку НДС." %}
 
@@ -24,7 +24,7 @@ product: Customer API
   "barcodes": [
     "2000000000060"
   ],
-  "type": "NORMAL",
+  "type": "TOBACCO_MARKED",
   "id": "01ba18b6-8707-5f47-3d9c-4db058054cb2",
   "quantity": 12,
   "cost_price": 100.123,
