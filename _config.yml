@@ -107,6 +107,7 @@ exclude:
   - README.md
   - tar_exclude
   - _docs/templates/
+  - _docs/drafts/
   - helm/
 
 plugins:
