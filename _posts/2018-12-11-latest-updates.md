@@ -2,6 +2,7 @@
 title: Поддержка ФФД 1.05
 sidebar: evomain
 permalink: new_ffd_support.html
+summary: "Пройдите по ссылке, чтобы узнать какие изменения были сделаны, чтобы поддержать новый формат фискальных документов."
 published: true
 github_button: false
 ---
