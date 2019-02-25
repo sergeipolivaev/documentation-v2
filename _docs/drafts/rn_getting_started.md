@@ -22,14 +22,14 @@ product:
 3. Выполните команду:
 
    ```
-   npm install evotor-integration-library --save
+   npm install
    ```
 
-4. Выполните команду (ВОЗМОЖНО НАДО ПОМЕНЯТЬ МЕСТАМИ ПУНКТЫ 3 И 4):
+4. Выполните команду:
 
-  ```
-  npm install
-  ```
+   ```
+   npm install evotor-integration-library --save
+   ```
 
 5. Выполните команду:
 
@@ -48,10 +48,6 @@ product:
    ```
 
 7. В файле android\build.gradle укажите:
-
-   <!-- ```
-   minSdkVersion 22
-   ``` -->
 
    ```
    allprojects {
@@ -74,7 +70,7 @@ product:
   minSdkVersion 22
   ```
 
-9. Из раздела <application> файла  AndroidManifest.xml удалите аттрибут:
+9. Из раздела <application> файла AndroidManifest.xml удалите аттрибут:
 
    ```
    android:allowBackup="false"
