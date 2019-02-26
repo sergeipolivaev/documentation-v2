@@ -20,7 +20,7 @@ product: Java SDK
    * `evotor.intent.action.receipt.sell.POSITION_EDITED` – редактирование позиции чека.
    * `evotor.intent.action.receipt.sell.POSITION_REMOVED` – удаление позиции из чека.
    * `evotor.intent.action.receipt.sell.CLEARED` – очистка всего чека.
-   * `evotor.intent.action.receipt.sell.CLOSED` – закрытие чека.
+   * `evotor.intent.action.receipt.sell.RECEIPT_CLOSED` – закрытие чека.
 
 * [**PaybackReceiptBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/PaybackReceiptBroadcastReceiver.html) – приёмник событий, связанных с чеком возврата.
 
@@ -31,7 +31,7 @@ product: Java SDK
    * `evotor.intent.action.receipt.payback.POSITION_EDITED` – редактирование позиции чека.
    * `evotor.intent.action.receipt.payback.POSITION_REMOVED` – удаление позиции из чека.
    * `evotor.intent.action.receipt.payback.CLEARED` – очистка всего чека.
-   * `evotor.intent.action.receipt.payback.CLOSED` – закрытие чека.
+   * `evotor.intent.action.receipt.payback.RECEIPT_CLOSED` – закрытие чека.
 
 * [**BuyReceiptBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/BuyReceiptBroadcastReceiver.html) – приёмник событий, связанных с чеком покупки.
 
@@ -42,7 +42,7 @@ product: Java SDK
    * `evotor.intent.action.receipt.buy.POSITION_EDITED` – редактирование позиции чека.
    * `evotor.intent.action.receipt.buy.POSITION_REMOVED` – удаление позиции из чека.
    * `evotor.intent.action.receipt.buy.CLEARED` – очистка всего чека.
-   * `evotor.intent.action.receipt.buy.CLOSED` – закрытие чека.
+   * `evotor.intent.action.receipt.buy.RECEIPT_CLOSED` – закрытие чека.
 
 * [**BuybackReceiptBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/BuybackReceiptBroadcastReceiver.html) – приёмник событий, связанных с чеком возврата покупки.
 
@@ -53,7 +53,7 @@ product: Java SDK
    * `evotor.intent.action.receipt.buyback.POSITION_EDITED` – редактирование позиции чека.
    * `evotor.intent.action.receipt.buyback.POSITION_REMOVED` – удаление позиции из чека.
    * `evotor.intent.action.receipt.buyback.CLEARED` – очистка всего чека.
-   * `evotor.intent.action.receipt.buyback.CLOSED` – закрытие чека.
+   * `evotor.intent.action.receipt.buyback.RECEIPT_CLOSED` – закрытие чека.
 
 * [**InventoryBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/InventoryBroadcastReceiver.html) – приёмник событий, связанных с товароучётом.
 
@@ -67,7 +67,7 @@ product: Java SDK
 
    * `evotor.intent.action.cashDrawer.OPEN` – открытие денежного ящика.
 
-* [**CashOperationBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/CashOperationBroadcastReceiver.html) – приёмник событий, связанных с денежными операциями.
+* [**KktBroadcastReceiver**](./integration-library/ru/evotor/framework/kkt/event/handler/receiver/KktBroadcastReceiver.html) – приёмник событий, связанных с денежными операциями.
 
    Приёмник содержит методы для обработки следующих сообщений:
 
