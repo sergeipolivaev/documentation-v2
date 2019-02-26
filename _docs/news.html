@@ -38,7 +38,8 @@ github_button: false
     <h2><a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a></h2>
     <span class="post-meta">{{ post.date | date: "%-d %b, %Y" }} </span>
 
-    <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 104 }} {% endif %}</p>
+    <p>{% if post.summary %} {{ post.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 50 | strip_html}} {% endif %}</p>
+    <p><a class="post-link" href="{{ post.url | remove: "/" }}">Посмотреть новость</p>
 
     {% endfor %}
 

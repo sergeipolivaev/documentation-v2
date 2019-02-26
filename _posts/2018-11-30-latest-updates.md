@@ -2,6 +2,7 @@
 title: Ноябрь
 sidebar: evomain
 permalink: november_updates.html
+summary: "Чтобы ваши приложения могли помочь предпринимателям, которые торгуют алкоголем, мы разработали egais-api. Подробнее читайте в новости."
 published: true
 github_button: false
 ---
