@@ -1,0 +1,19 @@
+sidebarTitle: Разработка для смарт-терминала
+owner: Evotor
+
+## Keep this commented out content because it shows the YAML model for the sidebar.
+
+folders:
+
+- title: Основные темы (Описывать концепты, актуальные для обоих SDK)
+  folderitems:
+  - title: Обзор обоих SDK (для чего нужно, какие библиотеки входят)
+    url: /stub.html
+  - title: Компоненты интеграционных приложений (Интеграционные службы, Интеграционные операции, может проводники контента)
+    url: /stub.html
+  - title: Точки интеграции (входа) (команды, события, сообщения)
+    url: /stub.html
+  - title: Манифест приложения (специфическая для Эвотора информация, разрешения для приложений)
+    url: /stub.html
+  - title: Обмен данными со сторонними сервисами
+    url: /stub.html
