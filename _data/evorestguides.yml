@@ -6,5 +6,5 @@ owner: Evotor
 folders:
 - title: Customers's API
   folderitems:
-  - title: Введение
-    url: /rest_customer_guides.html
+  - title: Корректная обработка остатков при первой синхронизации ТУ и Облака Эвотор
+    url: /rest_quantities_synchronization_guide.html
