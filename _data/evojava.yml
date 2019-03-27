@@ -7,6 +7,8 @@ folders:
 
 - title: Приложение на смарт-терминале #TODO: вынести в stcoretopics
   folderitems:
+  - title: Основы создания приложений для смарт-терминала
+    url: /java_st_app_basics.html
   - title: Манифест Java-приложения
     url: /doc_java_app_manifest.html
   - title: Использование приёмников широковещательных сообщений
@@ -87,6 +89,8 @@ folders:
     url: /doc_java_receipt_print.html
   - title: Передача электронных чеков
     url: /doc_java_online_store_receipt.html
+  - title: Печать чека коррекции
+    url: /doc_java_correction_receipt.html
 - title: Смены и информация о ККТ
   folderitems:
   - title: Получение информации о кассовых сменах
