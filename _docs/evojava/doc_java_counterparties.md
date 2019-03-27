@@ -14,13 +14,13 @@ API смарт-терминала позволяет записывать дан
 * `Subagent`;
 * `TransactionOperator`.
 
-Некоторые из полей этих классов помечены аннотацией `@FfdTag`. Это означает, что такие поля будут записаны в кассу в виде тегов фискального документа с указанными номерами.
+Некоторые из полей этих классов помечены аннотацией `@FiscalRequisite`. Это означает, что такие поля будут записаны в кассу в виде тегов фискального документа. Все теги фискальных документов хранятся в классе [`FiscalTags`](./integration-library/ru/evotor/framework/kkt/FiscalTags.html).
 
-Для различных типов агентов или субагентов агентские реквизиты должны содержать различный набор необходимых данных. Этот набор определён форматом фискальных данных (ФФД).
+Aгентские реквизиты различных типов агентов или субагентов содержат различный набор необходимых данных. Этот набор определён форматом фискальных данных (ФФД).
 
-{% include tip.html content="Используйте метод [`getRegisteredFfdVersion`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredFfdVersion-context-) класса [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html), чтобы узнать на какую версию фискальных документов зарегистрирована касса пользователя вашего приложения." %} 
+{% include tip.html content="Используйте метод [`getRegisteredFfdVersion`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#getRegisteredFfdVersion-context-) класса [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html), чтобы узнать на какую версию фискальных документов зарегистрирована касса пользователя вашего приложения." %}
 
-Чтобы создать агентские реквизиты с необходимыми данными для соответствующего типа агента или субагента используйте метод `create*ТипАгента`. Например:
+Чтобы создать агентские реквизиты с необходимыми данными для соответствующего типа агента или субагента используйте метод `createFor*ТипАгента`. Например:
 
 ```kotlin
 AgentRequisites.createForAgent(principalInn, principalPhones)
