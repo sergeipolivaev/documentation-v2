@@ -62,9 +62,11 @@ ru.evotor.framework.kkt
 ru.evotor.framework.kkt.api
 ru.evotor.framework.kkt.event
 ru.evotor.framework.kkt.event.handler.receiver
+ru.evotor.framework.kkt.event.handler.service
 ru.evotor.framework.navigation
 ru.evotor.framework.payment
 ru.evotor.framework.receipt
+ru.evotor.framework.receipt.correction
 ru.evotor.framework.receipt.event
 ru.evotor.framework.receipt.event.handler.receiver
 ru.evotor.framework.receipt.position
