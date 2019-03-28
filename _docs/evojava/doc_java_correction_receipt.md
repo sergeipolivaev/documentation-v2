@@ -7,7 +7,7 @@ product: Java SDK
 
 Чек коррекции необходим для исправления разницы между поступившей выручкой и данных о выручке, переданных в ФНС. Такая разница может возникнуть из-за ошибок кассира или технических сбоев.
 
-{% include note.html content="Чек коррекции необходимо оформлять в течение кассовой смены, в день, когда была допущена ошибка, или любой последующий день. Подробнее правилах оформления чеков коррекции [читайте на сайте ФНС](https://www.nalog.ru/rn27/news/activities_fts/7636412/)." %}
+{% include note.html content="Чек коррекции необходимо оформлять в течение кассовой смены, в день, когда была допущена ошибка, или любой последующий день. Подробнее о правилах оформления чеков коррекции [читайте на сайте ФНС](https://www.nalog.ru/rn27/news/activities_fts/7636412/)." %}
 
 Чтобы напечатать чек коррекции используйте метод [`registerCorrectionReceipt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#registerCorrectionReceipt-context-settlementType-taxationSystem-correctionType-basisForCorrection-prescriptionNumber-correctableSettlementDate-amountPaid-paymentMean-vatRate-correctionDescription-callback-).
 
