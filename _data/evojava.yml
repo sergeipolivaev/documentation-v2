@@ -5,73 +5,99 @@ owner: Evotor
 
 folders:
 
+- title: Приложение на смарт-терминале #TODO: вынести в stcoretopics
+  folderitems:
+  - title: Основы создания приложений для смарт-терминала
+    url: /java_st_app_basics.html
+  - title: Манифест Java-приложения
+    url: /doc_java_app_manifest.html
+  - title: Использование приёмников широковещательных сообщений
+    url: /doc_java_broadcastreceiver.html
+  - title: Передача данных
+    url: /doc_java_third_party_service_communication.html
+    #TODO  - title: Библиотеки Эвотора
+    #TODO    url: /doc_java_evotor_libraries.html
+  - title: Точки интеграции
+    url: /doc_app_integration_points.html
+  - title: Получение данных из базы данных смарт-терминала
+    url: /java_query_api.html
+  - title: Обработка событий смарт-терминала
+    url: /doc_java_st_events.html
+  - title: Доступ к логам
+    url: /doc_java_logging.html
 - title: Начало работы
   folderitems:
   - title: Подготовка к разработке приложения
     url: /doc_java_app_development_prerequisites.html
-#TODO  - title: Создание первого приложения
-#TODO    url: /doc_java_development_of_the_first_app.html
+  - title: Подключение библиотеки integration-library
+    url: /doc_java_integration_library_connection.html
+  - title: Подготовка проекта для работы с egais-api
+    url: /doc_egais_project_creation.html
+    #TODO  - title: Создание первого приложения
+    #TODO    url: /doc_java_development_of_the_first_app.html
   - title: Установка приложения
     url: /doc_app_installation.html
-- title: Приложение на смарт-терминале
+- title: Навигация и интерфейс смарт-терминала
   folderitems:
   - title: Приложение в интерфейсе смарт-терминала
     url: /doc_java_app_icon.html
-  - title: Передача данных
-    url: /doc_java_third_party_service_communication.html
-#TODO  - title: Библиотеки Эвотора
-#TODO    url: /doc_java_evotor_libraries.html
-  - title: Точки интеграции
-    url: /doc_app_integration_points.html
-
-
-- title: Манифест Java-приложения
-  url: /doc_java_app_manifest.html
-- title: Использование приёмников широковещательных сообщений
-  url: /doc_java_broadcastreceiver.html
-
-- title: Интеграционная библиотека
-  folderitems:
-  - title: Подключение библиотеки integration library
-    url: /doc_java_integration_library_connection.html
-#  - title: Вызов приложения из интерфейса смарт-терминала
-#    url: /doc_java_app_icon.html
-
-  - title: Вызов окон смарт-терминала
-    url: /doc_java_navigation.html
-
-  - title: Обработка событий смарт-терминала
-    url: /doc_java_st_events.html
-
-  - title: Работа с пользователями смарт-терминала
-    url: /doc_java_app_users.html
-
-  - title: Получение данных из базы данных смарт-терминала
-    url: /java_query_api.html
-
-  - title: Товароучёт
-    url: /doc_java_inventory.html
-
-  - title: Поиск товара по штрихкоду
-    url: /doc_java_receipt_api.html
-
-  - title: Передача электронных чеков
-    url: /doc_java_online_store_receipt.html
-
-  - title: Использование различных способов оплаты
-    url: /doc_java_payment_systems.html
-
-  - title: Комбинированная оплата
-    url: /doc_java_combined_payment.html
-
-  - title: Получение информации о кассовых сменах
-    url: /doc_java_session.html
-
+  - title: Вызов окон (экранов, форм) смарт-терминала
+    url: /stub.html
   - title: Оповещение пользователей с помощью push-уведомлений
     url: /doc_java_pushnotifications.html
-
+- title: Пользователи
+  folderitems:
+  - title: Работа с пользователями смарт-терминала
+    url: /doc_java_app_users.html
+- title: Товароучёт
+  folderitems:
+  - title: Работа товарами
+    url: /doc_java_inventory.html
+  - title: Поиск товара по штрихкоду
+    url: /doc_java_receipt_api.html
+- title: Алкоголь (ЕГАИС)
+  folderitems:
+    - title: Чтение данных ЕГАИС
+      url: /doc_egais_data_reading_access.html
+    - title: Получение настроек пользователя из УТМ
+      url: /doc_egais_clientsettingsquery.html
+- title: Оплата
+  folderitems:
+  - title: Использование различных способов оплаты
+    url: /doc_java_payment_systems.html
+  - title: Комбинированная оплата
+    url: /doc_java_combined_payment.html
+- title: Чеки
+  folderitems:
+  - title: Введение
+    url: /doc_java_receipt_overview.html
+  - title: Открытие чека в приложении
+    url: /doc_java_receipt_creation.html
+  - title: Работа с позициями чека
+    url: /doc_java_receipt_interactions.html
+  - title: Разделение чека
+    url: /doc_java_receipt_division.html
+  - title: Начисление скидок
+    url: /doc_java_discounts.html
+  - title: Запись в чек данных агентской схемы
+    url: /doc_java_counterparties.html
+  - title: Создание дополнительных полей в чеке
+    url: /doc_java_receipt_extras.html
+  - title: Получение данных сформированного чека
+    url: /doc_java_get_receipt.html
+  - title: Печать внутри кассового чека
+    url: /doc_java_receipt_print.html
+  - title: Передача электронных чеков
+    url: /doc_java_online_store_receipt.html
+  - title: Печать чека коррекции
+    url: /doc_java_correction_receipt.html
+- title: Смены и информация о ККТ
+  folderitems:
+  - title: Получение информации о кассовых сменах
+    url: /doc_java_session.html
   - title: Печать Z-отчёта
     url: /doc_java_z_report.html
+<<<<<<< HEAD
 
   - title: Доступ к логам
     url: /doc_java_logging.html
@@ -115,15 +141,17 @@ folders:
           url: /doc_java_bill_printer.html
 
 - title: ЕГАИС
+=======
+- title: Оборудование
+>>>>>>> React_Native_Drafts
   folderitems:
-    - title: Подготовка проекта для работы с egais-api
-      url: /doc_egais_project_creation.html
-    - title: Чтение данных ЕГАИС
-      url: /doc_egais_data_reading_access.html
-    - title: Получение настроек пользователя из УТМ
-      url: /doc_egais_clientsettingsquery.html
-
-- title: Драйвера для оборудования
+  - title: Работа с весами
+    url: /doc_java_scales.html
+  - title: Работа со сканером штрихкодов
+    url: /doc_java_barcode_scanner.html
+  - title: Работа с принтером чеков
+    url: /doc_java_bill_printer.html
+- title: Драйвера для оборудования #TODO:вынести в отдельный сайдбар
   folderitems:
   - title: Подготовка к разработке
     url: /doc_drivers_library_connection.html
