@@ -12,7 +12,11 @@ github_button: false
 ## Добавлено {#added}
 
 * В класс [`KktApi.kt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html) добавлен метод [`registerCorrectionReceipt`](./integration-library/ru/evotor/framework/kkt/api/KktApi.html#isVatRate20Available-context-). С помощью метода вы можете [печатать чеки коррекции](./doc_java_correction_receipt.html).
+<<<<<<< HEAD
 * Добавлен новый класс с перечислением возможных ставок НДС -- [`VatRate.kt`](./integration-library/ru/evotor/framework/receipt/position/VatRate.kt).
+=======
+* Добавлен новый класс с перечислением возможных ставок НДС -- [`VatRate.kt`](./integration-library/ru/evotor/framework/receipt/position/VatRate.html).
+>>>>>>> correction_receipt
 
 ## Изменено {#changed}
 
