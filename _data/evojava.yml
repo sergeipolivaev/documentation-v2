@@ -64,6 +64,9 @@ folders:
   - title: Комбинированная оплата
     url: /doc_java_combined_payment.html
 
+  - title: Оплата чеков из интерфейса приложения
+    url: /doc_java_in_app_receipt_payment.html
+
   - title: Получение информации о кассовых сменах
     url: /doc_java_session.html
 
