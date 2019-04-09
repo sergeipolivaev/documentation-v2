@@ -1,12 +1,8 @@
-android.support.compat
 android.support.coreui
-android.support.coreutils
-android.support.fragment
 android.support.graphics.drawable
 android.support.graphics.drawable.animated
 android.support.mediacompat
 android.support.v4
-android.support.v7.appcompat
 ru.evotor
 ru.evotor.devices.commons
 ru.evotor.devices.commons.exception
@@ -69,6 +65,9 @@ ru.evotor.framework.receipt
 ru.evotor.framework.receipt.correction
 ru.evotor.framework.receipt.event
 ru.evotor.framework.receipt.event.handler.receiver
+ru.evotor.framework.receipt.formation.api
+ru.evotor.framework.receipt.formation.event
+ru.evotor.framework.receipt.formation.event.handler.service
 ru.evotor.framework.receipt.position
 ru.evotor.framework.receipt.position.event
 ru.evotor.framework.receipt.position.provider
@@ -76,4 +75,3 @@ ru.evotor.framework.receipt.print_extras
 ru.evotor.framework.system
 ru.evotor.framework.users
 ru.evotor.integrations
-ru.evotor.pushNotifications
