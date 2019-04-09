@@ -8,7 +8,7 @@ product: Java SDK
 
 *Чтобы напечатать z-отчёт:*
 
-1. В [манифесте](./doc_java_app_manifest.html) укажите права приложения:
+1. В [манифесте](./doc_java_app_manifest.html) укажите разрешение на печать Z-отчётов:
 
    ```xml
    <uses-permission android:name="ru.evotor.permission.PRINT_Z_REPORT" />

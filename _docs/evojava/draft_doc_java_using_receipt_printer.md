@@ -17,21 +17,21 @@ published: false
 
 На встроенном принтере можно печатать следующие данные:
 
-* Штрихкоды (в том числе QR-коды);
-* Изображения (**какие есть ограничения?**);
-* Текст (**какие есть ограничения?**).
+* [Штрихкоды (в том числе QR-коды)](./integration-library/ru/evotor/devices/commons/printer/printable/PrintableBarcode.BarcodeType.html);
+* [Изображения](./integration-library/ru/evotor/devices/commons/printer/printable/PrintableImage.html);
+* [Текст](./integration-library/ru/evotor/devices/commons/printer/printable/PrintableText.html).
 
-{% include tip.html content="При печати текста или изображений вам помогут методы [`getAllowableSymbolsLineLength`](./ДОБАВИТЬ JAVADOC) (возвращает количество символов, которые помещаются в одной строке чека) и [`getAllowablePixelLineLength`](./ДОБАВИТЬ JAVADOC) (возвращает доступную для печати ширину бумаги в пикселях)." %}
+{% include tip.html content="При печати текста или изображений вам помогут методы [`getAllowableSymbolsLineLength()`](./integration-library/ru/evotor/devices/commons/services/PrinterService.html#getAllowableSymbolsLineLength--) (возвращает количество символов, которые помещаются в одной строке чека) и [`getAllowablePixelLineLength()`](./integration-library/ru/evotor/devices/commons/services/PrinterService.html#getAllowablePixelLineLength--) (возвращает доступную для печати ширину бумаги в пикселях)." %}
 
 ## Разрешение
 
-Для печати произвольных данных на чековой ленте (как без привязки к документу, так и внутри кассового чека), в [манифесте приложения](./ссылка на файл манифеста) необходимо объявить разрешение:
+Для печати произвольных данных на чековой ленте (как внутри кассового чека, так и без привязки к документу), в [манифесте приложения](./doc_java_app_manifest.html) необходимо объявить разрешение:
 
 ```xml
 <uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />
 ```
 
-{% include note.html content="Для печати Z-отчётов [используется другое разрешение](./doc_java_z_report.html#permission), а для печати чеков коррекции указывать разрешение не надо вовсе." %}
+{% include note.html content="Для печати Z-отчётов [используется другое разрешение](./doc_java_z_report.html), а для [печати чеков коррекции](./doc_java_correction_receipt.html) указывать разрешение не надо." %}
 
 ## Печать произвольных данных на чековой ленте
 
@@ -39,18 +39,18 @@ published: false
 
 *Чтобы печатать произвольные данные на чековой ленте:*
 
-1. В методе обратного вызова `onCreate()` инициализируйте принтер чеков, с помощью метода [`startInitConnections(final Context appContext)`](./ДОБАВИТЬ JAVADOC):
+1. В методе обратного вызова `onCreate()` инициализируйте принтер чеков, с помощью метода [`startInitConnections(final Context appContext)`](./integration-library/ru/evotor/devices/commons/DeviceServiceConnector.html#startInitConnections--):
 
    ```java
    DeviceServiceConnector.startInitConnections(getApplicationContext());
    ```
 
-   {% include note.html content="Чтобы не препятствовать вызывающему потоку, класс инициализируется асинхронно. Поэтому, если вам необходимо выполнить какой-либо код сразу после подключения принтера, вызовите метод [`addConnectionWrapper(ConnectionWrapper connectionWrapper)`](./ДОБАВИТЬ JAVADOC), чтобы получить событие об успешном подключении." %}
+   {% include note.html content="Чтобы не препятствовать вызывающему потоку, класс инициализируется асинхронно. Поэтому, если вам необходимо выполнить какой-либо код сразу после подключения принтера, вызовите метод [`addConnectionWrapper(ConnectionWrapper connectionWrapper)`](.//integration-library/ru/evotor/devices/commons/DeviceServiceConnector.html#addConnectionWrapper--), чтобы получить событие об успешном подключении." %}
 
-2. Вызовите метод [`getPrinterService()`](./ДОБАВИТЬ JAVADOC).
-3. Напечатайте необходимые данные с помощью метода [`printDocument(int deviceId, PrinterDocument printerDocument)`](./).
+2. Вызовите метод [`getPrinterService()`](./integration-library/ru/evotor/devices/commons/DeviceServiceConnector.html#getPrinterService--).
+3. Напечатайте необходимые данные с помощью метода [`printDocument(int deviceId, PrinterDocument printerDocument)`](./integration-library/ru/evotor/devices/commons/services/PrinterService.html#printDocument--).
 
-   {% include important.html content="В настоящий момент(**УТОЧНИТЬ**) печать возможна только на встроенном принтере, поэтому вместо номера устройства всегда передавайте константу `ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX`." %}
+   {% include important.html content="Печать возможна только на встроенном принтере, поэтому вместо номера устройства всегда передавайте константу `ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX`." %}
 
 [Посмотрите пример операции для печати произвольных данных](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/PrintActivity.java).
 
@@ -135,5 +135,5 @@ published: false
 
 ## См. также
 
-* Печать Z-отчёта
-* Печать чека коррекции
+* [Печать Z-отчёта](./doc_java_z_report.html)
+* [Печать чека коррекции](./doc_java_correction_receipt.html)
