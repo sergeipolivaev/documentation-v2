@@ -93,6 +93,6 @@ product: Java SDK
 
 ## См. также {#seealso}
 
-* [Печать внутри кассового чека](./doc_java_receipt_print.html);
+* [Работа с принтером чеков](./doc_java_bill_printer.html);
 * [Печать Z-отчёта](./doc_java_z_report.html);
 * [Печать чека коррекции](./doc_java_correction_receipt.html).
