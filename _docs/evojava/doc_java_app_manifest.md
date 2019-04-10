@@ -23,6 +23,8 @@ product: Java SDK
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mythirdjavaapplication">
 
+    <uses-permission android:name="<Имя разрешения>" />
+
   <application
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"

@@ -2,7 +2,7 @@
 title: Апрель
 sidebar: evomain
 permalink: april_updates.html
-summary: "Добавлен возможность оплачивать чеки из интерфейса приложения."
+summary: "Добавлена возможность оплачивать чеки из интерфейса приложения. Так же, к списку типов штрихкодов добавлен QR-код."
 published: true
 github_button: false
 ---
@@ -14,3 +14,4 @@ github_button: false
 ## Изменено {#changed}
 
 * В перечисление [доступных типов штрихкодов](./integration-library/ru/evotor/devices/commons/printer/printable/PrintableBarcode.BarcodeType.html) добавлен QR-код.
+* Переписаны разделы посвящённые [работе с принтером чеков](./doc_java_bill_printer.html) и [печати внутри кассового чека](./doc_java_receipt_print.html). В частности, добавлен [список классов данных](doc_java_bill_printer.html#supporteddatatypes), которые можно напечатать.
