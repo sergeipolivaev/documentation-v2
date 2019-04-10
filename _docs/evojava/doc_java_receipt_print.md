@@ -1,56 +1,69 @@
 ---
 title: Печать внутри кассового чека
-sidebar: evojava
 permalink: doc_java_receipt_print.html
-tags: [java, terminal, equipment]
+sidebar: evojava
 product: Java SDK
 ---
 
-Смарт-терминал позволяет приложениям печатать свои данные внутри кассового чека: тексты, штрихкоды или изображения.
+Ваше приложение может печатать произвольные данные внутри кассовых чеков, которые сопровождают продажу, возврат, а также покупку и возврат покупки. Вы также можете точно указать в какой части чека будут напечатаны данные.
 
-Следующие методы определяют, где печатаются переданные данные:
+{% include note.html content="Список поддерживаемых данных представлен в разделе [\"Работа с принтером чеков\"](./doc_java_bill_printer.html#supporteddatatypes)." %}
 
-* `PrintExtraPlacePrintGroupTop` – данные печатаются после клише и до текста "Кассовый чек";
-* `PrintExtraPlacePrintGroupHeader` – данные печатаются после текста "Кассовый чек", до имени пользователя;
-* `PrintExtraPlacePrintGroupSummary` – данные печатаются после итога и списка оплат, до текста "всего оплачено";
-* `PrintExtraPlacePositionFooter` – данные печатаются в позиции в чеке, до [подпозиций](./doc_java_receipt_interactions.html#Position);
-* `PrintExtraPlacePositionAllSubpositionsFooter` – данные печатаются в позиции в чеке, после всех подпозиций.
+## Разрешение
 
-## Печать данных внутри кассового чека
+Для печати произвольных данных внутри кассового чека, в [манифесте приложения](./doc_java_app_manifest.html) необходимо объявить разрешение:
 
-*Чтобы приложение печатало данные внутри кассового чека:*
+```xml
+<uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />
+```
 
-1. В [манифесте приложения](./doc_java_app_manifest.html), укажите права приложения:
+{% include note.html content="Такое же разрешение необходимо для [печати произвольных данных на чековой ленте](./doc_java_bill_printer.html). Для печати Z-отчётов [используется другое разрешение](./doc_java_z_report.html), а для [печати чеков коррекции](./doc_java_correction_receipt.html) указывать разрешение не надо." %}
+
+## Печать произвольных данных внутри кассового чека
+
+*Чтобы печатать произвольные данные внутри кассовых чеков:*
+
+1. Создайте службу, производную от [`IntegrationService`](./integration-library/ru/evotor/framework/core/IntegrationService.html), которая будет передавать данные для печати, например `MyPrintService`.
+
+2. В манифесте приложения, в intent-фильтре службы `MyPrintService`, укажите действие, которое определяет в чеке какого типа требуется печатать переданные службой данные:
 
    ```xml
-   <uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />
+   <service
+    android:name=".MyPrintService"
+    android:enabled="false"
+    android:exported="true">
+    <intent-filter>
+        <!-- Печать произвольных данных в чеке продажи -->
+        <action android:name="evo.v2.receipt.sell.printExtra.REQUIRED" />
+        <!-- Печать произвольных данных в чеке возврата -->
+        <action android:name="evo.v2.receipt.payback.printExtra.REQUIRED" />
+        <!-- Печать произвольных данных в чеке покупки -->
+        <action android:name="evo.v2.receipt.buy.printExtra.REQUIRED" />
+        <!-- Печать произвольных данных в чеке возврата покупки -->
+        <action android:name="evo.v2.receipt.buyback.printExtra.REQUIRED" />
+    </intent-filter>
+   </service>
    ```
-
-2. Создайте службу, которая отвечает за передачу данных для печати.
-3. Объявите службу в манифесте приложения и укажите `intent-filter`:
-
-   ```xml
-   <action android:name="<Событие>" />
-   ```
-
-   где необходимо указать событие, при которое определяет тип чека, в котором будут напечатаны данные. Возможны следующие события:
-   * `evo.v2.receipt.sell.printExtra.REQUIRED` – печать внутри кассового чека продажи товара.
-   * `evo.v2.receipt.buy.printExtra.REQUIRED`  – печать внутри кассового чека покупки товара.
-   * `evo.v2.receipt.payback.printExtra.REQUIRED` – печать внутри кассового чека возврата проданного товара.
-   * `evo.v2.receipt.buyback.printExtra.REQUIRED` – печать внутри кассового чека возврата купленного товара.
-
-4. В службе, подпишите процессор `PrintExtraRequiredEventProcessor` на событие:
+3. В службе `MyPrintService`, подпишите процессор [`PrintExtraRequiredEventProcessor`](./integration-library/ru/evotor/framework/core/action/event/receipt/print_extra/PrintExtraRequiredEventProcessor.html) на событие [`PrintExtraRequiredEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/print_extra/PrintExtraRequiredEvent.html), которое указывает тип чека, в котором будут напечатаны данные:
 
    ```java
-   processorMap.put(
-                   //NAME_SELL_RECEIPT – имя события, которое указывает тип чека, где будут напечатаны данные.
-                   PrintExtraRequiredEvent.NAME_SELL_RECEIPT,
-                   new PrintExtraRequiredEventProcessor() {
-                   }
-                   )
+   Map<String, ActionProcessor> processorMap = new HashMap<>();
+        processorMap.put(
+                /**
+                 * Возможные события:
+                 * NAME_SELL_RECEIPT – данные будут напечатаны в чеке продажи.
+                 * NAME_PAYBACK_RECEIPT – данные будут напечатаны в чеке возврата.
+                 * NAME_BUY_RECEIPT – данные будут напечатаны в чеке покупки.
+                 * NAME_BUYBACK_RECEIPT – данные будут напечатаны в чеке возврата покупки.
+                 */
+                PrintExtraRequiredEvent.NAME_SELL_RECEIPT,
+                new PrintExtraRequiredEventProcessor() {
+                  //Тело процессора.
+                }
+        );
    ```
 
-5. В службе, в методе `PrintExtraRequiredEventProcessor` укажите место и массив данных, которые требуется распечатать:
+4. Передайте в процессор массив данных для печати и реализуйте один из классов пакета [`ru.evotor.framework.receipt.print_extras`](./integration-library/ru/evotor/framework/receipt/print_extras/package-summary.html), которые определяют где в чеке будут напечатаны данные:
 
    ```java
    new PrintExtraRequiredEventProcessor() {
@@ -58,7 +71,10 @@ product: Java SDK
        public void call(String s, PrintExtraRequiredEvent printExtraRequiredEvent, Callback callback) {
            List<SetPrintExtra> setPrintExtras = new ArrayList<SetPrintExtra>();
            setPrintExtras.add(new SetPrintExtra(
-                   //Метод, который указывает место, где будут распечатаны данные.
+                   /**
+                    * Класс, который указывает место, где будут распечатаны данные.
+                    * В данном случае данные будут распечатаны сверху от чека: после клише, до текста "Кассовый чек".
+                    */
                    new PrintExtraPlacePrintGroupTop(null),
                    //Массив данных, которые требуется распечатать.
                    new IPrintable[]{
@@ -68,74 +84,15 @@ product: Java SDK
                    }
            ));
          }
-       }
+       };
    ```
 
-   {% include note.html content="Наполняйте массив `IPrintable` только теми элементами, которые требуется распечатать. Например, если на чеке необходимо распечатать только штрихкод, в массив следует добавить только элемент `new PrintableBarcode(\"<Штрихкод>\", PrintableBarcode.BarcodeType.CODE39)`. Пустые элементы в массиве `IPrintable` приведут к исключению." %}
+   {% include important.html content="Наполняйте массив `IPrintable` только теми элементами, которые требуется распечатать. Например, если на чеке необходимо распечатать только штрихкод, в массив следует добавить только элемент `new PrintableBarcode(\"<Штрихкод>\", PrintableBarcode.BarcodeType.CODE39)`. Пустые элементы в массиве `IPrintable` приведут к исключению." %}
 
-### Пример
+[Посмотрите пример службы для печати произвольных данных в чеке продажи](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyPrintService.java).
 
-Печать внутри кассового [чека продажи](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyPrintService.java) и [возврата](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyPrintPaybackService.java) в демонстрационном приложении.
+## См. также {#seealso}
 
-Ниже приведена служба, которая передаёт данные для печати с помощью всех доступных методов:
-
-```java
-processorMap.put(
-                PrintExtraRequiredEvent.NAME_SELL_RECEIPT,
-                new PrintExtraRequiredEventProcessor() {
-                    @Override
-                    public void call(String s, PrintExtraRequiredEvent printExtraRequiredEvent, Callback callback) {
-                        List<SetPrintExtra> setPrintExtras = new ArrayList<SetPrintExtra>();
-                        setPrintExtras.add(new SetPrintExtra(
-                                new PrintExtraPlacePrintGroupTop(null),
-                                new IPrintable[]{
-                                        new PrintableText("<Текст>"),
-                                        new PrintableBarcode("<Штрихкод>", PrintableBarcode.BarcodeType.CODE39),
-                                        new PrintableImage(BitmapFactory.decodeFile("<путь к файлу изображения>"))
-                                }
-                        ));
-                        setPrintExtras.add(new SetPrintExtra(
-                                new PrintExtraPlacePrintGroupHeader(null),
-                                new IPrintable[]{
-                                        new PrintableBarcode("<Штрихкод>", PrintableBarcode.BarcodeType.CODE39),
-                                        new PrintableText("<Текст>")
-                                }
-                        ));
-                        setPrintExtras.add(new SetPrintExtra(
-                                new PrintExtraPlacePrintGroupSummary(null),
-                                new IPrintable[]{
-                                        new PrintableText("<Текст>"),
-                                        new PrintableImage(BitmapFactory.decodeFile("<путь к файлу изображения>")),
-                                        new PrintableBarcode("<Штрихкод>", PrintableBarcode.BarcodeType.CODE39),
-                                        new PrintableText("<Текст>")
-                                }
-                        ));
-                        Receipt r = ReceiptApi.getReceipt(DiscountService.this, Receipt.Type.SELL);
-                        if (r != null) {
-                            for (Position p : r.getPositions()) {
-                                setPrintExtras.add(new SetPrintExtra(
-                                        new PrintExtraPlacePositionFooter(p.getUuid()),
-                                        new IPrintable[]{
-                                                new PrintableBarcode("<Штрихкод>", PrintableBarcode.BarcodeType.CODE39),
-                                                new PrintableText("<Текст>\n" + p.getUuid() + "\n<Текст>")
-                                        }
-                                ));
-                                setPrintExtras.add(new SetPrintExtra(
-                                        new PrintExtraPlacePositionAllSubpositionsFooter(p.getUuid()),
-                                        new IPrintable[]{
-                                                new PrintableBarcode("<Штрихкод>", PrintableBarcode.BarcodeType.CODE39),
-                                                new PrintableText("<Текст>\n" + p.getUuid() + "\n<Текст>")
-                                        }
-                                ));
-
-                            }
-                        }
-                        try {
-                            callback.onResult(new PrintExtraRequiredEventResult(setPrintExtras).toBundle());
-                        } catch (RemoteException exc) {
-                            exc.printStackTrace();
-                        }
-                    }
-                }
-        );
-```
+* [Печать внутри кассового чека](./doc_java_receipt_print.html);
+* [Печать Z-отчёта](./doc_java_z_report.html);
+* [Печать чека коррекции](./doc_java_correction_receipt.html).

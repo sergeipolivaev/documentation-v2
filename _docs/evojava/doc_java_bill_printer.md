@@ -1,81 +1,60 @@
 ---
 title: Работа с принтером чеков
-sidebar: evojava
 permalink: doc_java_bill_printer.html
-tags:
+sidebar: evojava
 product: Java SDK
 ---
 
-## Работа с принтером чеков
+Все модели смарт-терминалов оборудованы встроенным принтером чеков, который используется для:
 
-*Чтобы приложение печатало свои данные на чеке, выполните следующие действия:*
+* печати различных типов документов: [Z-отчёта и чеков](./doc_java_bill_printer.html#seealso);
+* печати произвольных данных (текста, изображений, штрихкодов или QR-кодов) на чековой ленте.
 
-1. В манифесте приложения укажите следующий элемент:
+В зависимости от того как ваше приложение будет использовать встроенный принтер чеков, оно должно обладать необходимыми разрешениями.
 
-   ```xml
-   <uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />
-   ```
+## Поддерживаемы данные {#supporteddatatypes}
 
-2. В колбэке `onCreate()` или при запуске операции (`activity`) инициализируйте класс `ru.evotor.devices.commons.DeviceServiceConnector`:
+На встроенном принтере можно печатать следующие данные:
+
+* [Штрихкоды (в том числе QR-коды)](./integration-library/ru/evotor/devices/commons/printer/printable/PrintableBarcode.BarcodeType.html);
+* [Изображения](./integration-library/ru/evotor/devices/commons/printer/printable/PrintableImage.html);
+* [Текст](./integration-library/ru/evotor/devices/commons/printer/printable/PrintableText.html).
+
+{% include tip.html content="При печати текста или изображений вам помогут методы [`getAllowableSymbolsLineLength()`](./integration-library/ru/evotor/devices/commons/services/PrinterService.html#getAllowableSymbolsLineLength--) (возвращает количество символов, которые помещаются в одной строке чека) и [`getAllowablePixelLineLength()`](./integration-library/ru/evotor/devices/commons/services/PrinterService.html#getAllowablePixelLineLength--) (возвращает доступную для печати ширину бумаги в пикселях)." %}
+
+## Разрешение
+
+Для печати произвольных данных на чековой ленте, в [манифесте приложения](./doc_java_app_manifest.html) необходимо объявить разрешение:
+
+```xml
+<uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />
+```
+
+{% include note.html content="Такое же разрешение необходимо для [печати произвольных данных внутри кассового чека](./doc_java_receipt_print.html). Для печати Z-отчётов [используется другое разрешение](./doc_java_z_report.html), а для [печати чеков коррекции](./doc_java_correction_receipt.html) указывать разрешение не надо." %}
+
+## Печать произвольных данных на чековой ленте
+
+*Чтобы печатать произвольные данные на чековой ленте:*
+
+1. В методе обратного вызова `onCreate()` инициализируйте принтер чеков, с помощью метода [`startInitConnections(final Context appContext)`](./integration-library/ru/evotor/devices/commons/DeviceServiceConnector.html#startInitConnections--):
 
    ```java
    DeviceServiceConnector.startInitConnections(getApplicationContext());
    ```
 
-   Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
+   {% include note.html content="Чтобы не препятствовать вызывающему потоку, класс инициализируется асинхронно. Поэтому, если вам необходимо выполнить какой-либо код сразу после подключения принтера, вызовите метод [`addConnectionWrapper(ConnectionWrapper connectionWrapper)`](.//integration-library/ru/evotor/devices/commons/DeviceServiceConnector.html#addConnectionWrapper--), чтобы получить событие об успешном подключении." %}
 
-   {% include tip.html content="Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. <br/><br/>
+2. Вызовите метод [`getPrinterService()`](./integration-library/ru/evotor/devices/commons/DeviceServiceConnector.html#getPrinterService--).
+3. Напечатайте необходимые данные с помощью метода [`printDocument(int deviceId, PrinterDocument printerDocument)`](./integration-library/ru/evotor/devices/commons/services/PrinterService.html#printDocument--).
 
-   Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения." %}
+   {% include important.html content="Печать возможна только на встроенном принтере, поэтому вместо номера устройства всегда передавайте константу `ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX`." %}
 
-3. Вызовите метод `DeviceServiceConnector.getPrinterService()`.
+{% include important.html content="Вызов методов из главного потока приложения вернёт исключение `DeviceServiceOperationOnMainThreadException`, так как работа с удалённой службой может занимать длительное время." %}
 
-    Метод возвращает объект `ru.evotor.devices.commons.IPrinterServiceWrapper`. Не может быть `null`
+[Посмотрите пример операции для печати произвольных данных](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/PrintActivity.java).
 
-    Метод может вернуть следующие исключения (`exception`):
+## См. также {#seealso}
 
-      * `ru.evotor.devices.commons.exception.ServiceNotConnectedException` возвращается в результате серии неудачных попыток подключиться к принтеру.
-      * `ru.evotor.devices.commons.exception.DeviceServiceException` – наследованое исключение.
-
-4. Вы можете вызвать следующие методы объекта `ru.evotor.devices.commons.IPrinterService`:
-
-    * `int getAllowableSymbolsLineLength(int deviceId)` – возвращает количество символов, которые помещаются на одной строке чека.
-    * `int getAllowablePixelLineLength(int deviceId)` – возвращает доступную для печати ширину бумаги в пикселях.
-    * `void printDocument(int deviceId, in PrinterDocument printerDocument)` – печатает указанный массив объектов: текст, штрихкоды, изображения.
-
-        Аргумент `deviceId` указывает устройство, для которого вызывается метод.
-
-        {% include important.html content="В настоящий момент печать возможна только на ККМ, встроенной в смарт-терминал, поэтому вместо номера устройства всегда следует передавать константу `ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX`." %}
-
-        Каждый из методов может вернуть наследованное исключение `ru.evotor.devices.commons.exception.DeviceServiceException`.
-
-5. Передайте данные в печать с помощью метода `printDocument(int deviceId, in PrinterDocument printerDocument)`.
-
-    Аргумент `PrinterDocument` содержит список элементов печати `IPrintable`:
-
-    * Тексты – `ru.evotor.devices.commons.printer.printable.PrintableText`;
-    * Штрихкоды – `ru.evotor.devices.commons.printer.printable.PrintableBarcode`;
-    * Картинки – `ru.evotor.devices.commons.printer.printable.PrintableImage`.
-
-{% include important.html content="Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения.<br/>
-Вызов методов из главного потока приложения вернёт исключение `DeviceServiceOperationOnMainThreadException`." %}
-
-## Примеры
-
-Код для печати сообщения на чеке:
-
-```java
-try {
-  DeviceServiceConnector.getPrinterService().printDocument(
-    DEFAULT_DEVICE_INDEX_UNSET,
-    new PrinterDocument(
-              new PrintableText("Первая строка"),
-              new PrintableText("Довольно длинный текст, помещающийся лишь на несколько строк"),
-              new PrintableBarcode("1234567890", PrintableBarcode.BarcodeType.CODE39),
-              new PrintableImage(bitmap1)));
-} catch (DeviceServiceException exc) {
-
-}
-```
-
-Пример работы с принтером чеков в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/PrintActivity.java).
+* [Печать внутри кассового чека](./doc_java_receipt_print.html);
+* [Печать Z-отчёта](./doc_java_z_report.html);
+* [Печать чека коррекции](./doc_java_correction_receipt.html).
