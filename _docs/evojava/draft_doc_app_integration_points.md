@@ -14,7 +14,7 @@ product: Java SDK
 * Команды --
 * Широковещательные сообщения --
 
-## События
+## События {#events}
 
 С помощью событий смарт-терминал сообщает установленным интеграционным приложениям о различных действиях пользователя: изменении позиций в чеке, разделении платежей, начислении скидок на чек и других.
 
@@ -68,7 +68,7 @@ product: Java SDK
 
 Для этого необходимо...**TODO**
 
-## Команды
+## Команды {#commands}
 
 Ваше приложение может отдавать смарт-терминалу команды, например, открыть чек или напечатать Z-отчёт. После обработки команды устройство возвращает соответствующий результат.
 
@@ -101,6 +101,64 @@ new OpenSellReceiptCommand(positionAddList, extra).process(context, callback);
 
 * Снять и напечатать Z-отчёт: [`PrintZReportCommand`](./). Подробнее о снятии и печати Z-отчёта [читайте в разделе "Печать Z-отчёта."](./)
 
-## Широковещательные сообщения
+## Широковещательные сообщения {#broadcasts}
 
-Подробнее о приёмниках и широковещательных сообщениях [читайте в соответствующем разделе](./doc_java_broadcastreceiver.html).
+Смарт-терминал автоматически рассылает *широковещательные сообщения* при возникновении различных событий: открытии чека продажи, сканировании штрихкода, открытии карточки товара и др.
+
+Чтобы ваше приложение реагировало на такие события, подпишите его на получение соответствующих широковещательных сообщений. Для этого используйте *приёмники широковещательных сообщений* (`BroadcastReceiver`).
+
+В `integration-library` все широковещательные сообщения поделены на группы. Для каждой из групп есть свой приёмник, который содержит методы обработки соответствующих сообщений. Всего таких приёмников восемь:
+
+* [**SellReceiptBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/SellReceiptBroadcastReceiver.html) – приёмник событий, связанных с чеком продажи.
+* [**PaybackReceiptBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/PaybackReceiptBroadcastReceiver.html) – приёмник событий, связанных с чеком возврата.
+* [**BuyReceiptBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/BuyReceiptBroadcastReceiver.html) – приёмник событий, связанных с чеком покупки.
+* [**BuybackReceiptBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/BuybackReceiptBroadcastReceiver.html) – приёмник событий, связанных с чеком возврата покупки.
+* [**InventoryBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/InventoryBroadcastReceiver.html) – приёмник событий, связанных с товароучётом.
+* [**CashDrawerBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/CashDrawerBroadcastReceiver.html) – приёмник событий, связанных с денежным ящиком.
+* [**KktBroadcastReceiver**](./integration-library/ru/evotor/framework/kkt/event/handler/receiver/KktBroadcastReceiver.html) – приёмник событий, связанных с денежными операциями.
+* [**ScannerBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/ScannerBroadcastReceiver.html) – приёмник событий, связанных со сканером штрихкодов.
+
+  Подробнее о работе со сканером штрихкодов читайте [здесь](./doc_java_barcode_scanner.html).
+
+## Подписка приложения на сообщения
+
+*Чтобы подписать приложение на получение сообщений:*
+
+1. Создайте приёмник, унаследованный от соответствующего класса.
+
+   Приёмник должен переопределять методы класса.
+
+2. В манифесте приложения, в intent-фильтре приёмника, укажите какие события требуется получать.
+
+## Пример
+
+Приёмник `MyReceiver`, обрабатывающий сообщения об открытии и закрытии чека покупки:
+
+```java
+public class MyReceiver extends BuyReceiptBroadcastReceiver {
+
+    @Override
+    void  handleReceiptOpenedEvent(Context context, ReceiptOpenedEvent receiptOpenedEvent) {
+      //Тело метода.
+    };
+
+    @Override
+    void  handleReceiptClosedEvent(Context context, ReceiptClosedEvent receiptClosedEvent) {
+      //Тело метода.
+    };
+};
+```
+
+Приёмник `MyReceiver` в манифесте приложения:
+
+```xml
+<receiver
+    android:name=".MyReceiver"
+    android:enabled="true"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="evotor.intent.action.receipt.buy.OPENED" />
+        <action android:name="evotor.intent.action.receipt.buy.CLOSED" />
+    </intent-filter>
+</receiver>
+```
