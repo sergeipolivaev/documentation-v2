@@ -1,18 +1,18 @@
 ---
-title: Взаимодействие со смарт-терминалом
+title: Способы взаимодействия со смарт-терминалом
 keywords:
 sidebar: evojava
 permalink: draft_doc_app_integration_points.html
 product: Java SDK
 ---
 
-## О способах взаимодействия
+Для взаимодействия со смарт-терминалом, ваши приложения могут:
 
-Существует три способа взаимодействия со смарт-терминалом:
+* Обрабатывать события смарт-терминала, которые содержат данные о различных действиях пользователя.
+* Отдавать устройству команды на выполнение определённых действий.
+* Обрабатывать широковещательные сообщения, которые смарт-терминал передаёт всем подписанным приложениям.
 
-* События -- .
-* Команды --
-* Широковещательные сообщения --
+В этом разделе вы найдёте обзор всех трёх способов, с помощью которых интеграционные приложения взаимодействуют со смарт-терминалом.
 
 ## События {#events}
 
@@ -27,7 +27,7 @@ product: Java SDK
 {% include note.html content="Первое приложение, которое получает событие, смарт-терминал выбирает случайным образом." %}
 {% include important.html content="Возможно нежелательное [зацикливание обработки одного события различными интеграционными приложениями](./draft_doc_app_integration_points.html#eventlooping)." %}
 
-Для получения события, в элементе `<action>` intent-фильтра соответствующей [интеграционной службы](./TODO РАЗДЕЛ ПРО ИНТЕГРАЦИОННЫЕ КОМПОНЕНТЫ) вашего приложения требуется указать значение выбранной константы события.
+Для получения события, в элементе `<action>` intent-фильтра соответствующей интеграционной службы вашего приложения требуется указать значение выбранной константы события.
 
 Например, служба, которая обрабатывает событие начисления скидки на чек продажи, в манифесте приложения будет выглядеть так:
 
@@ -46,21 +46,21 @@ product: Java SDK
 
 Смарт-терминал распространяет следующие события:
 
-* Намерение изменить позицию чека: [`BeforePositionsEditedEvent`](./). О том как обрабатывать событие, [читайте в разделе ""](./).
-* Разделение платежей в чеке продажи: [`PaymentSelectedEvent`](./). О том как обрабатывать событие, [читайте в разделе ""](./).
-* Начисление скидки на чек: [`ReceiptDiscountEvent`](./). О том как обрабатывать событие, [читайте в разделе ""](./).
-* Разделение чека на печатные группы: [`PrintGroupRequiredEvent`](./). О том как обрабатывать событие, [читайте в разделе ""](./).
-* Объединение позиций чека: [`PositionsMergeEvent`](./). О том как обрабатывать событие, [читайте в разделе ""](./).
-* Передача оплаты чека продажи другому приложению (например, при выборе приложения "Комбооплата"): [`PaymentDelegatorEvent`](./). О том как обрабатывать событие, [читайте в разделе ""](./).
-* Печать в чеке произвольных данных: [`PrintExtraRequiredEvent`](./). О том как обрабатывать событие, [читайте в разделе ""](./).
-* Оплата различных чеков сторонними платёжными системами (в intent-фильтре указывайте значение константы родительского события [`PaymentSystemEvent`](./)):
+* Намерение изменить позицию чека: [`BeforePositionsEditedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html). О том как обрабатывать событие, [читайте в разделе "Работа с позициями чека"](./doc_java_receipt_interactions.html).
+* Разделение платежей в чеке продажи: [`PaymentSelectedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/PaymentSelectedEvent.html). О том как обрабатывать событие, [читайте в разделе "Разделение чека"](./doc_java_receipt_division.html).
+* Начисление скидки на чек: [`ReceiptDiscountEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/discount/ReceiptDiscountEvent.html). О том как обрабатывать событие, [читайте в разделе "Начисление скидок"](./doc_java_discounts.html).
+* Разделение чека на печатные группы: [`PrintGroupRequiredEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/print_group/PrintGroupRequiredEvent.html). О том как обрабатывать событие, [читайте в разделе "Разделение чека"](./doc_java_receipt_division.html).
+* Объединение позиций чека: [`PositionsMergeEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/merges/PositionsMergeEvent.html).
+* Передача оплаты чека продажи другому приложению (например, при выборе приложения "Комбооплата"): [`PaymentDelegatorEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/combined/event/PaymentDelegatorEvent.html). О том как обрабатывать событие, [читайте в разделе "Комбинированная оплата"](./doc_java_combined_payment.html).
+* Печать в чеке произвольных данных: [`PrintExtraRequiredEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/print_extra/PrintExtraRequiredEvent.html). О том как обрабатывать событие, [читайте в разделе "Печать внутри кассового чека"](./doc_java_receipt_print.html).
+* Оплата различных чеков сторонними платёжными системами (в intent-фильтре указывайте значение константы родительского события [`PaymentSystemEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/system/event/PaymentSystemEvent.html)):
 
-   * Оплата чека продажи: [`PaymentSystemSellEvent`](./).
-   * Отмена оплаты чека продажи: [`PaymentSystemSellCancelEvent`](./).
-   * Оплата чека возврата: [`PaymentSystemPaybackEvent`](./).
-   * Отмена оплаты чека возврата: [`PaymentSystemPaybackCancelEvent`](./).
+   * Оплата чека продажи: [`PaymentSystemSellEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/system/event/PaymentSystemSellEvent.html).
+   * Отмена оплаты чека продажи: [`PaymentSystemSellCancelEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/system/event/PaymentSystemSellCancelEvent.html).
+   * Оплата чека возврата: [`PaymentSystemPaybackEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/system/event/PaymentSystemPaybackEvent.html).
+   * Отмена оплаты чека возврата: [`PaymentSystemPaybackCancelEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/system/event/PaymentSystemPaybackCancelEvent.html).
 
-   О том как обрабатывать события, [читайте в разделе ""](./).
+   О том как обрабатывать события, [читайте в разделе "Использование различных способов оплаты"](./doc_java_payment_systems.html).
 
 ### Зацикливание обработки события {#eventlooping}
 
@@ -72,9 +72,9 @@ product: Java SDK
 
 Ваше приложение может отдавать смарт-терминалу команды, например, открыть чек или напечатать Z-отчёт. После обработки команды устройство возвращает соответствующий результат.
 
-Для использования некоторых команд, в манифесте приложения, в элементе `<uses-permission />` необходимо указать соответствующее [разрешение](./ссылка на раздел о разрешениях в топике про манифест приложения).
+Для использования некоторых команд, в манифесте приложения, в элементе `<uses-permission />` необходимо указать соответствующее [разрешение](./doc_java_app_manifest.html#permissions).
 
-Команды вызываются в коде операции или службы(**ТАК ЛИ ЭТО?**), например, так:
+Команды вызываются в коде операции или службы, например, так:
 
 ```java
 //Команда открытия чека продажи и вызов метода process.
@@ -85,21 +85,21 @@ new OpenSellReceiptCommand(positionAddList, extra).process(context, callback);
 
 * Открыть чек:
 
-   * Продажи: [`OpenSellReceiptCommand`](./)
-   * Возврата: [`OpenPaybackReceiptCommand`](./)
-   * Покупки: [`OpenBuyReceiptCommand`](./)
-   * Возврата покупки: [`OpenBuybackReceiptCommand`](./)
+   * Продажи: [`OpenSellReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/open_receipt_command/OpenSellReceiptCommand.html)
+   * Возврата: [`OpenPaybackReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/open_receipt_command/OpenPaybackReceiptCommand.html)
+   * Покупки: [`OpenBuyReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/open_receipt_command/OpenBuyReceiptCommand.html)
+   * Возврата покупки: [`OpenBuybackReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/open_receipt_command/OpenBuybackReceiptCommand.html)
 
 * Напечатать чек:
 
-   * Продажи: [`PrintSellReceiptCommand`](./)
-   * Возврата: [`PrintPaybackReceiptCommand`](./)
-   * Покупки: [`PrintBuyReceiptCommand`](./)
-   * Возврата покупки: [`PrintBuybackReceiptCommand`](./)
+   * Продажи: [`PrintSellReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintSellReceiptCommand.html)
+   * Возврата: [`PrintPaybackReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintPaybackReceiptCommand.html)
+   * Покупки: [`PrintBuyReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintBuyReceiptCommand.html)
+   * Возврата покупки: [`PrintBuybackReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintBuybackReceiptCommand.html)
 
    {% include note.html content="Команды печати чеков продажи и возврата также используются для [отправки чеков по СМС и электронной почте](./doc_java_online_store_receipt.html)." %}
 
-* Снять и напечатать Z-отчёт: [`PrintZReportCommand`](./). Подробнее о снятии и печати Z-отчёта [читайте в разделе "Печать Z-отчёта."](./doc_java_z_report.html)
+* Снять и напечатать Z-отчёт: [`PrintZReportCommand`](./integration-library/ru/evotor/framework/core/action/command/print_z_report_command/PrintZReportCommand.html). Подробнее о снятии и печати Z-отчёта [читайте в разделе "Печать Z-отчёта."](./doc_java_z_report.html)
 
 ## Широковещательные сообщения {#broadcasts}
 
@@ -124,6 +124,5 @@ new OpenSellReceiptCommand(positionAddList, extra).process(context, callback);
 
 ## См. также
 
-* [Интеграционные компоненты](./);
-* [Использование приёмников широковещательных сообщений](./doc_java_broadcastreceiver.html);
-*
+<!-- TODO * [Интеграционные компоненты](./); -->
+* [Использование приёмников широковещательных сообщений](./doc_java_broadcastreceiver.html).
