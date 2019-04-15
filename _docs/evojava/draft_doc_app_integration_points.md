@@ -74,7 +74,7 @@ product: Java SDK
 
 Для использования некоторых команд, в манифесте приложения, в элементе `<uses-permission />` необходимо указать соответствующее [разрешение](./ссылка на раздел о разрешениях в топике про манифест приложения).
 
-Команды вызываются в коде операции или службы(**ТАК ЛИ ЭТО?**), например, следующим образом:
+Команды вызываются в коде операции или службы(**ТАК ЛИ ЭТО?**), например, так:
 
 ```java
 //Команда открытия чека продажи и вызов метода process.
@@ -97,15 +97,15 @@ new OpenSellReceiptCommand(positionAddList, extra).process(context, callback);
    * Покупки: [`PrintBuyReceiptCommand`](./)
    * Возврата покупки: [`PrintBuybackReceiptCommand`](./)
 
-   {% include note.html content="Команды печати чеков также используются для [отправки чеков по СМС и электронной почте](./)." %}
+   {% include note.html content="Команды печати чеков продажи и возврата также используются для [отправки чеков по СМС и электронной почте](./doc_java_online_store_receipt.html)." %}
 
-* Снять и напечатать Z-отчёт: [`PrintZReportCommand`](./). Подробнее о снятии и печати Z-отчёта [читайте в разделе "Печать Z-отчёта."](./)
+* Снять и напечатать Z-отчёт: [`PrintZReportCommand`](./). Подробнее о снятии и печати Z-отчёта [читайте в разделе "Печать Z-отчёта."](./doc_java_z_report.html)
 
 ## Широковещательные сообщения {#broadcasts}
 
-Смарт-терминал автоматически рассылает *широковещательные сообщения* при возникновении различных событий: открытии чека продажи, сканировании штрихкода, открытии карточки товара и др.
+Смарт-терминал автоматически рассылает *широковещательные сообщения* при возникновении различных событий: открытии чека продажи, сканировании штрихкода, открытии карточки товара и других.
 
-Чтобы ваше приложение реагировало на такие события, подпишите его на получение соответствующих широковещательных сообщений. Для этого используйте *приёмники широковещательных сообщений* (`BroadcastReceiver`).
+Чтобы ваше приложение реагировало на такие события, подпишите его на получение соответствующих сообщений. Для этого используйте *приёмники широковещательных сообщений* (`BroadcastReceiver`).
 
 В `integration-library` все широковещательные сообщения поделены на группы. Для каждой из групп есть свой приёмник, который содержит методы обработки соответствующих сообщений. Всего таких приёмников восемь:
 
@@ -118,47 +118,12 @@ new OpenSellReceiptCommand(positionAddList, extra).process(context, callback);
 * [**KktBroadcastReceiver**](./integration-library/ru/evotor/framework/kkt/event/handler/receiver/KktBroadcastReceiver.html) – приёмник событий, связанных с денежными операциями.
 * [**ScannerBroadcastReceiver**](./integration-library/ru/evotor/framework/core/action/broadcast/ScannerBroadcastReceiver.html) – приёмник событий, связанных со сканером штрихкодов.
 
-  Подробнее о работе со сканером штрихкодов читайте [здесь](./doc_java_barcode_scanner.html).
+  Подробнее о работе со сканером штрихкодов [читайте в разделе "Работа со сканером штрихкодов"](./doc_java_barcode_scanner.html).
 
-## Подписка приложения на сообщения
+О том, как подписывать приёмники на сообщения [читайте в разделе "Использование приёмников широковещательных сообщений"](./doc_java_broadcastreceiver.html).
 
-*Чтобы подписать приложение на получение сообщений:*
+## См. также
 
-1. Создайте приёмник, унаследованный от соответствующего класса.
-
-   Приёмник должен переопределять методы класса.
-
-2. В манифесте приложения, в intent-фильтре приёмника, укажите какие события требуется получать.
-
-## Пример
-
-Приёмник `MyReceiver`, обрабатывающий сообщения об открытии и закрытии чека покупки:
-
-```java
-public class MyReceiver extends BuyReceiptBroadcastReceiver {
-
-    @Override
-    void  handleReceiptOpenedEvent(Context context, ReceiptOpenedEvent receiptOpenedEvent) {
-      //Тело метода.
-    };
-
-    @Override
-    void  handleReceiptClosedEvent(Context context, ReceiptClosedEvent receiptClosedEvent) {
-      //Тело метода.
-    };
-};
-```
-
-Приёмник `MyReceiver` в манифесте приложения:
-
-```xml
-<receiver
-    android:name=".MyReceiver"
-    android:enabled="true"
-    android:exported="true">
-    <intent-filter>
-        <action android:name="evotor.intent.action.receipt.buy.OPENED" />
-        <action android:name="evotor.intent.action.receipt.buy.CLOSED" />
-    </intent-filter>
-</receiver>
-```
+* [Интеграционные компоненты](./);
+* [Использование приёмников широковещательных сообщений](./doc_java_broadcastreceiver.html);
+*
