@@ -21,7 +21,7 @@ folders:
     url: /doc_java_third_party_service_communication.html
 #TODO  - title: Библиотеки Эвотора
 #TODO    url: /doc_java_evotor_libraries.html
-  - title: Точки интеграции
+  - title: Способы взаимодействия со смарт-терминалом
     url: /doc_app_integration_points.html
 
 
