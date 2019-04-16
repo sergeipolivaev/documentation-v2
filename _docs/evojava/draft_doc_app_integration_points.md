@@ -2,7 +2,7 @@
 title: Способы взаимодействия со смарт-терминалом
 keywords:
 sidebar: evojava
-permalink: draft_doc_app_integration_points.html
+permalink: doc_app_integration_points.html
 product: Java SDK
 ---
 

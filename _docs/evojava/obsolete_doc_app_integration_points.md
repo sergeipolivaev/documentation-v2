@@ -1,4 +1,5 @@
 ---
+published: false
 title: Точки интеграции
 keywords:
 sidebar: evojava
