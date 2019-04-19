@@ -2,13 +2,34 @@
 title: Работа с позициями чека
 sidebar: evojava
 permalink: doc_java_receipt_interactions.html
-tags:
 product: Java SDK
 ---
 
-## Использование службы и получение событий о намерении изменения чека
+Когда пользователь или установленные на смарт-терминале интеграционные приложения изменяют позиции чека, смарт-терминал распространяет событие изменения чека [`BeforePositionsEditedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html).
 
-1. Создайте службу, например `MyIntegrationService`, которая наследует класс `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `BeforePositionsEditedEventProcessor` (процессор наследует класс `ActionProcessor`).
+Обрабатывая это событие, ваше приложение может делать свои изменения: добавлять, изменять и удалять позиции чека.
+
+## Получение события изменения чека
+
+*Чтобы получать событие изменения чека:*
+
+1. Создайте службу, например `MyIntegrationService`, которая наследует класс `IntegrationService`.
+
+2. В манифесте приложения, в элементе `<action>` intent-фильтра службы, укажите событие изменения чека:
+
+   ```xml
+   <service
+     android:name=".MyIntegrationService"
+     android:enabled="true"
+     android:exported="true">
+     <intent-filter>
+       <category android:name="android.intent.category.DEFAULT" />
+       <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
+     </intent-filter>
+   </service>
+   ```
+
+3. В методе обратного вызова `onCreate` службы, зарегистрируйте процессор [`BeforePositionsEditedEventProcessor`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEventProcessor.html):
 
    ```java
    public class MyIntegrationService extends IntegrationService {
@@ -27,54 +48,156 @@ product: Java SDK
    }
    ```
 
-2. Объявите службу в манифесте приложения:
+## Обработка события изменения чека
 
-   ```xml
-   <service
-           android:name=".MyIntegrationService"
-           android:enabled="true"
-           android:exported="true">
-           <intent-filter>
-               <category android:name="android.intent.category.DEFAULT" />
-               <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
-           </intent-filter>
-   </service>
-   ```
-
-В метод `call` процессора приходит событие [`beforePositionsEditedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html). и объект для возврата результата `callback`.
-
-
-
-В ответ приложение возвращает результат со списком возможных изменений:
-
-```java
-public BeforePositionsEditedEventResult(
-        @Nullable List<IPositionChange> changes,
-        @Nullable SetExtra extra
-)
-```
-
-Чтобы вернуть результат, используйте метод:
+В метод `call` процессора приходит событие [`BeforePositionsEditedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html) и объект для возврата результата `callback`:
 
 ```java
 callback.onResult(beforePositionsEditedEventResult)
 ```
 
-Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (`Activity`), которая наследует класс `IntegrationActivity`:
+Приложение возвращает результат [`BeforePositionsEditedEventResult`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEventResult.html), который содержит список сделанных изменений и дополнительные поля.
+
+Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите интеграционную операцию (`Activity`), которая наследует класс `IntegrationActivity`:
 
 ```java
 callback.startActivity(new Intent(context, MainActivity.class));
 ```
 
-Ваша операция должна вызвать метод `setIntegrationResult`.
-
-Например:
+Чтобы вернуть результат из интеграционной операции, вызовите метод `setIntegrationResult()`:
 
 ```java
 setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 ```
 
 Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html).
+
+## Добавление, изменение и удаление позиций {#PositionAltering}
+
+Для добавления позиции используйте метод [`PositionAdd(val position: Position)`](./integration-library/ru/evotor/framework/core/action/event/receipt/changes/position/PositionAdd.html).
+
+Пример:
+
+```java
+//Создаём список изменений, который будет передан в результате.
+List<IPositionChange> changes = new ArrayList<>();
+//Создаём позицию, которая будет добавлена в чек.
+Position PositionToBeAdded = Position.Builder.newInstance(
+        UUID.randomUUID().toString(),
+        null,
+        "Зажигалка",
+        "шт",
+        0,
+        new BigDecimal(30),
+        new BigDecimal(qty.getText().toString())
+).build();
+//Добавляем позицию в список изменений.
+changes.add(new PositionAdd(PositionToBeAdded));
+//Возвращаем результат со списком изменений.
+setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
+```
+
+Для изменения позиции используйте метод [`PositionEdit(val position: Position)`](./integration-library/ru/evotor/framework/core/action/event/receipt/changes/position/PositionEdit.html).
+
+Пример:
+
+```java
+String ProdUuid = "6c1ca1d9-9f38-42ee-aa63-c4fb046d6a94";
+String UuidOfPositionToBeEdited = null;
+//Ищем в чеке товар по идентификатору.
+Receipt CurrentSellReceipt = ReceiptApi.getReceipt(MyIntegrationActivity.this, Receipt.Type.SELL);
+if (CurrentSellReceipt != null) {
+    for (Position ItemOfReceipt : CurrentSellReceipt.getPositions()) {
+        if (ItemOfReceipt.getProductUuid().equals(ProdUuid)) {
+            UuidOfPositionToBeEdited = ItemOfReceipt.getUuid();
+            Log.e("", "Product UUID: " + ProdUuid + " Position UUID: " + PositionToBeEdited);
+        }
+    }
+}
+
+if (UuidOfPositionToBeEdited != null) {
+    //Создаём список изменений, который будет передан в результате.
+    List<IPositionChange> changes = new ArrayList<>();
+    ProductItem.Product Item = (ProductItem.Product) InventoryApi.getProductByUuid(SuggestActivity.this, ProdUuid);
+    //Добавляем новую позицию с изменённым количеством товара.
+    changes.add(new PositionEdit(
+            Position.Builder.newInstance(
+                    UuidOfPositionToBeEdited,
+                    item.getUuid(),
+                    item.getName(),
+                    item.getMeasureName(),
+                    item.getMeasurePrecision(),
+                    item.getPrice(),
+                    new BigDecimal(qty.getText().toString())
+            ).build()
+    ));
+    //Возвращаем результат со списком изменений.
+    setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
+}
+```
+
+Для удаления позиции используйте метод [`PositionRemove(private val positionUuid: String)`](./integration-library/ru/evotor/framework/core/action/event/receipt/changes/position/PositionRemove.html).
+
+Пример:
+
+```java
+//Создаём список изменений, который будет передан в результате.
+List<IPositionChange> changes = new ArrayList<>();
+//Удаляем позицию
+changes.add(new PositionRemove(positionUuid));
+//Возвращаем результат со списком изменений.
+setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
+```
+
+Посмотрите пример использования методов в [демонстрационном приложении](./https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/SuggestActivity.java).
+
+## Зацикливание обработки события изменения чека {#BeforePositionsEditedEventLoop}
+
+Зацикливание обработки события `BeforePositionsEditedEvent` возникает если в ответ на изменение чека пользователем или другими интеграционными приложениями, ваше приложение всегда вносит свои изменения.
+
+Чтобы избежать этого, просмотрите список сделанных изменений с помощью метода [`getChanges()`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html#getChanges--) и убедитесь, что вашему приложению необходимо реагировать на эти изменения.
+
+Если такой необходимости нет, пропустите обработку события вызвав метод [`skip()`](./integration-library/ru/evotor/framework/core/action/processor/ActionProcessor.Callback.html#skip--).
+
+Пример:
+
+```java
+public void call(@NonNull String action, @NonNull BeforePositionsEditedEvent event, @NonNull Callback callback) {
+    boolean hasCoffee = false;
+    Position foundPosition = null;
+    String uuid = null, productUuid = null;
+    //Просматриваем все изменения в чеке.
+    for (IPositionChange change : event.getChanges()) {
+        //Сохраняем позицию товара, если необходимый товар добавлен в чек.
+        if (change instanceof PositionAdd) {
+            foundPosition = ((PositionAdd) change).getPosition();
+            if (foundPosition.getName().toLowerCase().contains("кофе")) {
+                uuid = foundPosition.getUuid();
+                productUuid = foundPosition.getProductUuid();
+                hasCoffee = true;
+                break;
+            }
+        }
+    }
+
+    try {
+        if (hasCoffee) {
+            //Передаём полученные о товаре данные в интеграционную операцию
+            Intent intent = new Intent(getApplicationContext(), EditActivity.class);
+            intent.putExtra("foundPosition", foundPosition);
+            intent.putExtra("uuid", uuid);
+            intent.putExtra("productUuid", productUuid);
+            callback.startActivity(intent);
+        } else {
+            //Пропускаем обработку события, если необходимых изменений не обнаружено.
+            callback.skip();
+        }
+    } catch (RemoteException e) {
+        e.printStackTrace();
+    }
+}
+});
+```
 
 ## Описание позиции {#Position}
 
@@ -137,138 +260,4 @@ val freeProductPosition = Position.Builder.newInstance(
                 BigDecimal(100),
                 BigDecimal(100)
         ).build()
-```
-
-## Добавление, изменение и удаление позиций {#PositionAltering}
-
-Чтобы добавить позицию:
-
-* В Java-приложении используйте метод:
-
-  ```java
-  data class PositionAdd(val position: Position) : IPositionChange {
-
-      override fun toBundle(): Bundle {
-          return Bundle().apply {
-              putBundle(
-                      PositionMapper.KEY_POSITION,
-                      PositionMapper.toBundle(position)
-              )
-          }
-      }
-
-      override fun getPositionUuid(): String? {
-          return position.uuid
-      }
-
-      override fun getType(): IChange.Type {
-          return IChange.Type.POSITION_ADD
-      }
-
-      companion object {
-          @JvmStatic
-          fun from(bundle: Bundle?): PositionAdd? {
-              bundle ?: return null
-
-              return PositionAdd(
-                      PositionMapper.from(
-                              bundle.getBundle(PositionMapper.KEY_POSITION)
-                      ) ?: return null
-              )
-          }
-      }
-  }
-  ```
-
-* В JS-приложении используйте метод:
-
-  ```javascript
-  function processBeforePositionsEdited(actionData) {
-  var position = {
-      "uuid" : "8e0ffg-lk3e-e93bnk-v0p41",
-      "productUuid" : "trb44-i32lev-9833jf",
-      "productCode" : "1024",
-      "productType" : "NORMAL",
-      "name" : "myLittlePosition",
-      "measureName" : "kg",
-      "measurePrecision" : 0,
-      "price" : "100",
-      "quantity" : "1"
-  }
-      receipt.addPosition(JSON.stringify(position));
-  }
-  ```
-
-Чтобы изменить позицию, используйте следующий метод:
-
-```java
-data class PositionEdit(val position: Position) : IPositionChange {
-
-    override fun toBundle(): Bundle {
-        return Bundle().apply {
-            putBundle(
-                    PositionMapper.KEY_POSITION,
-                    PositionMapper.toBundle(position)
-            )
-        }
-    }
-
-    override fun getPositionUuid(): String? {
-        return position.uuid
-    }
-
-    override fun getType(): IChange.Type {
-        return IChange.Type.POSITION_EDIT
-    }
-
-    companion object {
-        @JvmStatic
-        fun from(bundle: Bundle?): PositionEdit? {
-            bundle ?: return null
-
-            return PositionEdit(
-                    PositionMapper.from(bundle.getBundle(PositionMapper.KEY_POSITION)) ?: return null
-            )
-        }
-    }
-}
-```
-
-Чтобы удалить позицию, используйте следующий метод:
-
-```java
-data class PositionRemove(
-        private val positionUuid: String
-) : IPositionChange {
-
-    override fun toBundle(): Bundle {
-        return Bundle().apply {
-            putString(
-                    KEY_POSITION_UUID,
-                    positionUuid
-            )
-        }
-    }
-
-    override fun getPositionUuid(): String? {
-        return positionUuid
-    }
-
-    override fun getType(): IChange.Type {
-        return IChange.Type.POSITION_REMOVE
-    }
-
-    companion object {
-        const val KEY_POSITION_UUID = "positionUuid"
-
-        @JvmStatic
-        fun from(bundle: Bundle?): PositionRemove? {
-            bundle ?: return null
-
-            return PositionRemove(
-                    bundle.getString(KEY_POSITION_UUID) ?: return null
-            )
-        }
-    }
-}
 ```

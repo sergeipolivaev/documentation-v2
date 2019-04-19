@@ -18,13 +18,11 @@ product: Java SDK
 
 С помощью событий смарт-терминал сообщает установленным интеграционным приложениям о различных действиях пользователя и других приложений: изменении позиций в чеке, разделении платежей, начислении скидок на чек и других.
 
-
 Схема ниже показывает процесс распространения события в смарт-терминале.
 
 {% include image.html file="EventSequenceDiagram.png" url="images/EventSequenceDiagram.png" caption="Жизненный цикл события, которое распространяет смарт-терминал." %}
 
 {% include note.html content="Первое приложение, которое получает событие, смарт-терминал выбирает случайным образом." %}
-{% include important.html content="Когда ваше приложение реагирует на изменения, сделанные другими приложениями, возможно возникновение бесконечного цикла обработки события. Чтобы избежать этого, приложения должны проверять необходимость добавления собственных изменений после изменений, сделанных другими приложениями." %}
 
 После оповещения приложения, смарт-терминал ожидает результата обработки события. Для обработки событий требуется использовать соответствующие им процессоры. Например, для обработки события начисления скидки на чек, используйте процессор [`ReceiptDiscountEventProcessor`](./integration-library/ru/evotor/framework/core/action/event/receipt/discount/ReceiptDiscountEventProcessor.html).
 
@@ -46,7 +44,10 @@ product: Java SDK
 
 Смарт-терминал распространяет следующие события:
 
-* Намерение изменить позицию чека: [`BeforePositionsEditedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html). О том как обрабатывать событие, [читайте в разделе "Работа с позициями чека"](./doc_java_receipt_interactions.html).
+* Изменение чека: [`BeforePositionsEditedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.html). О том как обрабатывать событие, [читайте в разделе "Работа с позициями чека"](./doc_java_receipt_interactions.html).
+
+   {% include important.html content="Когда ваше приложение реагирует на изменения, сделанные другими приложениями, возможно возникновение [бесконечного цикла обработки события](./doc_java_receipt_interactions.html#BeforePositionsEditedEventLoop)." %}
+
 * Разделение платежей в чеке продажи: [`PaymentSelectedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/PaymentSelectedEvent.html). О том как обрабатывать событие, [читайте в разделе "Разделение чека"](./doc_java_receipt_division.html).
 * Начисление скидки на чек: [`ReceiptDiscountEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/discount/ReceiptDiscountEvent.html). О том как обрабатывать событие, [читайте в разделе "Начисление скидок"](./doc_java_discounts.html).
 * Разделение чека на печатные группы: [`PrintGroupRequiredEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/print_group/PrintGroupRequiredEvent.html). О том как обрабатывать событие, [читайте в разделе "Разделение чека"](./doc_java_receipt_division.html).
