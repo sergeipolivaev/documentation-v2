@@ -8,3 +8,5 @@ folders:
   folderitems:
   - title: Корректная обработка остатков при первой синхронизации ТУ и Облака Эвотор
     url: /rest_quantities_synchronization_guide.html
+  - title: Работа с модификациями товаров
+    url: /rest_product_modifications_guide.html
