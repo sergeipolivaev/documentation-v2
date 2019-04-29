@@ -200,7 +200,7 @@ product: Customer API
 
    ```shell
    curl --request POST \
-     --url https://test-api.evotor.ru/stores/{идентификатор_магазина_пользователя}/products \
+     --url https://api.evotor.ru/stores/{идентификатор_магазина_пользователя}/products \
      --header 'accept: application/vnd.evotor.v2+json;charset=UTF-8' \
      --header 'content-type: application/vnd.evotor.v2+json' \
      --header 'x-authorization: {токен_пользователя}' \
