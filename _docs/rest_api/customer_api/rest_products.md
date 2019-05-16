@@ -24,23 +24,21 @@ product: Customer API
 ### Пример тела запроса
 
 ```json
-[
-  {
-    "parent_id": "1ddea16b-971b-dee5-3798-1b29a7aa2e27",
-    "name": "Сидр",
-    "measure_name": "шт",
-    "tax": "VAT_18",
-    "allow_to_sell": true,
-    "price": 123.12,
-    "description": "Вкусный яблочный сидр",
-    "article_number": "СДР-ЯБЛЧ",
-    "code": "42",
-    "barcodes": [
-      "2000000000060"
-    ],
-    "type": "ALCOHOL_NOT_MARKED"
-  }
-]
+{
+  "parent_id": "1ddea16b-971b-dee5-3798-1b29a7aa2e27",
+  "name": "Сидр",
+  "measure_name": "шт",
+  "tax": "VAT_18",
+  "allow_to_sell": true,
+  "price": 123.12,
+  "description": "Вкусный яблочный сидр",
+  "article_number": "СДР-ЯБЛЧ",
+  "code": "42",
+  "barcodes": [
+    "2000000000060"
+  ],
+  "type": "ALCOHOL_NOT_MARKED"
+}
 ```
 
 ### Ответ
@@ -106,6 +104,8 @@ product: Customer API
     PUT /stores/{store-id}/products
 
 Создаёт/заменяет товары или модификации товаров в магазине. За раз вы можете создать до 1000 объектов. Идентификаторы объектов формирует клиент API.
+
+Для выполнения множественных операций - указывайте `Content-Type` с модификатором `+bulk`.
 
 ### Пример тела запроса
 

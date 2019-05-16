@@ -61,7 +61,7 @@ GET https://api.evotor.ru/stores/{store-id}/documents?limit=50
 {
   "items": [{}],
   "paging": {
-    "next_cursor": "string"
+    "cursor": "string"
   }
 }
 ```
