@@ -103,8 +103,7 @@ INTENT_FILTER_PAY_SYSTEM
 `android:label` – имя драйвера, которое будет отображаться пользователю при инициализации устройства
 Пример отображения иконки и имени драйвера
 
-{: .center-image}
-![picture_1](images/pinpad.png)
+{% include image.html file="pinpad.png" url="images/pinpad.png" %}
 
 Можно задать `activity` настроек:
 
