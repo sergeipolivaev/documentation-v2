@@ -27,6 +27,8 @@ folders:
 
 - title: Манифест Java-приложения
   url: /doc_java_app_manifest.html
+#TODO  - title: Обработка событий смарт-терминала
+#TODO  url: /doc_java_st_events_processing.html
 - title: Использование приёмников широковещательных сообщений
   url: /doc_java_broadcastreceiver.html
 
@@ -54,6 +56,9 @@ folders:
 
   - title: Поиск товара по штрихкоду
     url: /doc_java_receipt_api.html
+
+  - title: Обработка события сканирования штрихкода
+    url: /doc_java_return_positions_for_barcode_requested.html
 
   - title: Передача электронных чеков
     url: /doc_java_online_store_receipt.html
