@@ -10,6 +10,8 @@ published: true
 
 Обрабатывая данные, содержащиеся в событии сканирования штрихкода, приложения могут добавлять позиции в чек продажи и / или создавать новые товары.
 
+{% include note.html content="Штрихкод может быть представлен в любом формате (например, EAN-8, EAN-13, QR-код или DataMatrix)." %}
+
 ## Разрешение на обработку события сканирования штрихкода
 
 Для обработки события сканирования штрихкода, в манифесте приложения необходимо указать следующее разрешение:
@@ -41,7 +43,7 @@ published: true
 
 ## Обработка события
 
-После сканирования штрихкода, служба получит событие `ReturnPositionsForBarcodeRequestedEvent`, которое содержит строку штрихкода (`barcode`) и параметр `creatingNewProduct` со значением `false`. С помощью параметра `creatingNewProduct` смарт-терминал сообщает приложениям о необходимости создания нового товара.
+После сканирования штрихкода, служба получит событие `ReturnPositionsForBarcodeRequestedEvent`, которое содержит полученные о сканера данные (`barcode`) и параметр `creatingNewProduct` со значением `false`. С помощью параметра `creatingNewProduct` смарт-терминал сообщает приложениям о необходимости создания нового товара.
 
 Получив событие, служба `BarcodeEventHandlerService` может добавить существующий товар в чек продажи или запустить процесс создания нового товара.
 
@@ -124,13 +126,17 @@ class CreateProductActivity : Activity() {
 
         // Ключ штрихкода, присвоенный в службе BarcodeEventHandlerService
         val scannedBarcode = intent.getStringExtra("SCANNED_BARCODE")
-        val barcode = scannedBarcode.substring(0..13)
-        val ean13 = barcode.substring(1)
-        val ean8 = barcode.substring(6)
+
+        val parsedBarcode: String
+
+        /*
+        Помимо штрихкода, отсканированные данные могут содержать различную информацию, например, вес или розничную цену товара.
+        Реализуем логику, которая выделяет штрихкод из общей строки отсканированных данных и помещает его в переменную parsedBarcode.
+        */
 
         // Открываем окно создания нового товара с пердзаполненным полем штрихкода
         startActivityForResult(NavigationApi.createIntentForNewProduct(NavigationApi.NewProductIntentBuilder()
-                .setBarcode(if (barcode.substring(0..5) == "000000") ean8 else ean13)
+                .setBarcode(parsedBarcode)
         ), 5555)
     }
 
