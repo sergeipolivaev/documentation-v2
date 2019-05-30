@@ -3,6 +3,7 @@ title: Обработка события сканирования штрихко
 permalink: doc_java_return_positions_for_barcode_requested.html
 sidebar: evojava
 product: Java SDK
+published: false
 ---
 
 Когда пользователь сканирует штрихкод, смарт-терминал рассылает событие [`ReturnPositionsForBarcodeRequestedEvent`](./ссылка на javadoc).

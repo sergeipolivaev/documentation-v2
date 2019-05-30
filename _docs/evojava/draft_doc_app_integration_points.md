@@ -90,12 +90,10 @@ new OpenSellReceiptCommand(positionAddList, extra).process(context, callback);
 
    * Продажи: [`PrintSellReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintSellReceiptCommand.html)
    * Возврата: [`PrintPaybackReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintPaybackReceiptCommand.html)
-
-   {% include note.html content="Команды печати чеков продажи и возврата также используются для [отправки чеков по СМС и электронной почте](./doc_java_online_store_receipt.html)." %}
-
    * Покупки: [`PrintBuyReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintBuyReceiptCommand.html)
    * Возврата покупки: [`PrintBuybackReceiptCommand`](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintBuybackReceiptCommand.html)
 
+   {% include note.html content="Команды печати чеков также используются для [отправки чеков по СМС и электронной почте](./doc_java_online_store_receipt.html)." %}
 
 * Снять и напечатать Z-отчёт: [`PrintZReportCommand`](./integration-library/ru/evotor/framework/core/action/command/print_z_report_command/PrintZReportCommand.html). Подробнее о снятии и печати Z-отчёта [читайте в разделе "Печать Z-отчёта."](./doc_java_z_report.html)
 

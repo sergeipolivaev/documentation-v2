@@ -1,5 +1,5 @@
 ---
-title: Апрель
+title: Май
 sidebar: evomain
 permalink: april_updates.html
 summary: "Добавлена возможность оплачивать чеки из интерфейса приложения. Так же, к списку типов штрихкодов добавлен QR-код."
@@ -10,6 +10,8 @@ github_button: false
 ## Добавлено {#added}
 
 * Добавлен новый интерфейс [SellApi.kt](./integration-library/ru/evotor/framework/receipt/formation/api/SellApi.html), с помощью которого приложения могут запускать оплату текущего открытого чека продажи. Подробнее читайте в разделе ["Оплата чеков из интерфейса приложения"](./doc_java_in_app_receipt_payment.html).
+* Добавлены команды печати чеков [покупки](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintBuyReceiptCommand.html) и [возврата покупки](./integration-library/ru/evotor/framework/core/action/command/print_receipt_command/PrintBuybackReceiptCommand.html).
+* Добавлено [широковещательное событие применения скидки к чеку](./integration-library/ru/evotor/framework/receipt/event/ApplyDiscountToReceiptEvent.html). Обрабатывайте событие с помощью метода `handleApplyDiscountToReceiptEvent()` классов [`SellReceiptBroadcastReceiver`](./integration-library/ru/evotor/framework/core/action/broadcast/SellReceiptBroadcastReceiver.html), [`PaybackReceiptBroadcastReceiver`](./integration-library/ru/evotor/framework/core/action/broadcast/PaybackReceiptBroadcastReceiver.html), [`BuyReceiptBroadcastReceiver`](./integration-library/ru/evotor/framework/core/action/broadcast/BuyReceiptBroadcastReceiver.html) и [`BuybackReceiptBroadcastReceiver`](./integration-library/ru/evotor/framework/core/action/broadcast/BuybackReceiptBroadcastReceiver.html).
 
 ## Изменено {#changed}
 
