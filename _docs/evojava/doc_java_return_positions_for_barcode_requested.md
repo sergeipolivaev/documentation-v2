@@ -3,6 +3,7 @@ title: Обработка события сканирования штрихко
 permalink: doc_java_return_positions_for_barcode_requested.html
 sidebar: evojava
 product: Java SDK
+published: true
 ---
 
 Когда пользователь сканирует штрихкод, смарт-терминал рассылает событие [`ReturnPositionsForBarcodeRequestedEvent`](./ссылка на javadoc).
@@ -61,13 +62,18 @@ product: Java SDK
 
 Если приложение не нашло необходимый товар, но готово создать новый (результат обработки события содержит параметр `iCanCreateNewProduct == true`), смарт-терминал передаст приложению событие `ReturnPositionsForBarcodeRequestedEvent` с параметром `creatingNewProduct == true`. В ответ на это событие метод `handleEvent()` должен вернуть `null`.
 
-{% include tip.html content="Для создания нового товара вы можете воспользоваться методами [`NavigationApi`](./)." %}
 
-После создания товара приложение должно вернуть одну или несколько позиций, которые будут добавлены в чек продажи. Рекомендуется возвращать одну позицию, которая ссылается на созданный товар.
+После создания товара приложение должно вернуть одну или несколько позиций, которые будут добавлены в чек продажи. [Рекомендуется возвращать одну позицию, которая ссылается на созданный товар](./doc_java_return_positions_for_barcode_requested.html#CreateProductActivity).
+
+{% include tip.html content="Для создания нового товара воспользуйтесь методами [`NavigationApi`](./doc_java_navigation.html)." %}
 
 Если ни одно из приложений не готово создать новый товар, смарт-терминал самостоятельно запустит процесс создания нового товара.
 
 ## Пример
+
+### Служба, обрабатывающая событие сканирование чека
+
+Если служба не может найти необходимый товар, она запускает операцию создания нового товара.
 
 ```kotlin
 open class BarcodeEventHandlerService : SellIntegrationService() {
@@ -108,7 +114,54 @@ open class BarcodeEventHandlerService : SellIntegrationService() {
 }
 ```
 
-<!-- ## См. также
+### Операция создания нового товара {#CreateProductActivity}
+
+```kotlin
+class CreateProductActivity : Activity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Ключ штрихкода, присвоенный в службе BarcodeEventHandlerService
+        val scannedBarcode = intent.getStringExtra("SCANNED_BARCODE")
+        val barcode = scannedBarcode.substring(0..13)
+        val ean13 = barcode.substring(1)
+        val ean8 = barcode.substring(6)
+
+        // Открываем окно создания нового товара с пердзаполненным полем штрихкода
+        startActivityForResult(NavigationApi.createIntentForNewProduct(NavigationApi.NewProductIntentBuilder()
+                .setBarcode(if (barcode.substring(0..5) == "000000") ean8 else ean13)
+        ), 5555)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {//Параметр data содержит идентификатор созданного товара
+    super.onActivityResult(requestCode, resultCode, data)
+    if (requestCode == 5555) {
+        // Ищем созданный товар по идентификатору
+        val prodItem = data?.getStringExtra("productUuid")?.let { InventoryApi.getProductByUuid(this, it) }
+        if (pi == null) {
+            finish()
+            return
+        }
+        val p = prodItem as ProductItem.Product
+        val b = intent.getBundleExtra(KEY_INTENT_DATA)
+        val r = b.getParcelable<IntegrationResponse>(KEY_INTEGRATION_RESPONSE)
+        r?.onResult(Bundle().apply {
+            putBundle(IntegrationManager.KEY_DATA,
+                    // Возвращаем результат со списком позиций и сообщаем смарт-терминалу, что создавать новый товар не требуется (iCanCreateNewProduct == false)
+                    ReturnPositionsForBarcodeRequestedEvent.Result(listOf(
+                            Position(
+                              // Указываем параметры позиции
+                            )
+                    ), false).toBundle())
+        })
+        finish()
+    }
+    }
+}
+```
+
+<!-- TODO ## См. также
 
 * [Обработка событий смарт-терминала](./doc_java_return_st_events_processing.html) -->
 
