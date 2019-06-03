@@ -48,7 +48,7 @@ product: Java SDK
 
    {% include important.html content="Когда ваше приложение реагирует на изменения, сделанные другими приложениями, возможно возникновение [бесконечного цикла обработки события](./doc_java_receipt_interactions.html#BeforePositionsEditedEventLoop)." %}
 
-* Сканирование штрихкода: [`ReturnPositionsForBarcodeRequestedEvent`](./ссылка на javadoc). О том как обрабатывать событие, [читайте в разделе "Обработка события сканирования штрихкода"](./doc_java_return_positions_for_barcode_requested.html).
+* Сканирование штрихкода: [`ReturnPositionsForBarcodeRequestedEvent`](./integration-library/ru/evotor/framework/receipt/formation/event/ReturnPositionsForBarcodeRequestedEvent.html). О том как обрабатывать событие, [читайте в разделе "Обработка события сканирования штрихкода"](./doc_java_return_positions_for_barcode_requested.html).
 * Разделение платежей в чеке продажи: [`PaymentSelectedEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/payment/PaymentSelectedEvent.html). О том как обрабатывать событие, [читайте в разделе "Разделение чека"](./doc_java_receipt_division.html).
 * Начисление скидки на чек: [`ReceiptDiscountEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/discount/ReceiptDiscountEvent.html). О том как обрабатывать событие, [читайте в разделе "Начисление скидок"](./doc_java_discounts.html).
 * Разделение чека на печатные группы: [`PrintGroupRequiredEvent`](./integration-library/ru/evotor/framework/core/action/event/receipt/print_group/PrintGroupRequiredEvent.html). О том как обрабатывать событие, [читайте в разделе "Разделение чека"](./doc_java_receipt_division.html).
