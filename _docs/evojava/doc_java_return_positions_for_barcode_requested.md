@@ -6,9 +6,11 @@ product: Java SDK
 published: true
 ---
 
-Когда пользователь сканирует штрихкод (EAN-13, QR-код, DataMatrix или любой другой), смарт-терминал рассылает событие [`ReturnPositionsForBarcodeRequestedEvent`](./ссылка на javadoc).
+Когда пользователь сканирует штрихкод (EAN-13, QR-код, DataMatrix или любой другой), смарт-терминал рассылает событие [`ReturnPositionsForBarcodeRequestedEvent`](./integration-library/ru/evotor/framework/receipt/formation/event/ReturnPositionsForBarcodeRequestedEvent.html).
 
 Обрабатывая данные, содержащиеся в событии сканирования штрихкода, приложения могут добавлять позиции в чек продажи и / или создавать новые товары.
+
+<!-- #TODO ДОБАВИТЬ СХЕМУ РАСПРОСТРОСТРАНЕНИЯ ШТРИХКОДОВ -->
 
 ## Разрешение на обработку события сканирования штрихкода
 
@@ -47,8 +49,8 @@ published: true
 
 Чтобы обработать событие сканирования штрихкода:
 
-1. Унаследуйте службу `BarcodeEventHandlerService` от службы [`SellIntegrationService`](./ссылка на javadoc).
-2. Переопределите метод [`handleEvent()`](./) и передайте в него событие сканирования штрихкода [`ReturnPositionsForBarcodeRequestedEvent`](./).
+1. Унаследуйте службу `BarcodeEventHandlerService` от класса [`SellIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html).
+2. Переопределите метод [`handleEvent()`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html#handleEvent-event-) и передайте в него событие сканирования штрихкода [`ReturnPositionsForBarcodeRequestedEvent`](./integration-library/ru/evotor/framework/receipt/formation/event/ReturnPositionsForBarcodeRequestedEvent.html).
 
    В методе следует реализовать логику поиска товаров по данным из события и наполнения списка позиций, который будет добавлен в чек продажи.
 
@@ -65,7 +67,7 @@ published: true
 
 После создания товара приложение должно вернуть одну или несколько позиций, которые будут добавлены в чек продажи. [Рекомендуется возвращать одну позицию, которая ссылается на созданный товар](./doc_java_return_positions_for_barcode_requested.html#CreateProductActivity).
 
-{% include tip.html content="Для создания нового товара воспользуйтесь методами [`NavigationApi`](./doc_java_navigation.html)." %}
+{% include tip.html content="Для создания нового товара воспользуйтесь методами [`NavigationApi`](./integration-library/build/javadoc/ru/evotor/framework/navigation/NavigationApi.html)." %}
 
 Если ни одно из приложений не готово создать новый товар, смарт-терминал самостоятельно запустит процесс создания нового товара.
 
@@ -81,15 +83,15 @@ open class BarcodeEventHandlerService : SellIntegrationService() {
     override fun handleEvent(
             /*
                 ReturnPositionsForBarcodeRequestedEvent(
-                    val barcode: String, – строка, содержащая штрихкод. Штрихкод может быть любого типа
-                    val creatingNewProduct: Boolean – указывает на необходимость создания нового товара по отсканированному штрихкоду
+                    val barcode: String, – строка данных, полученных от сканера штрихкодов.
+                    val creatingNewProduct: Boolean – указывает на необходимость создать новый товар. Сразу после сканирования штрихкода всегда содержит false.
                 )
              */
             event: ReturnPositionsForBarcodeRequestedEvent
     ):
             /*
                 ReturnPositionsForBarcodeRequestedEvent.Result(
-                    val positions: List<Position>, – список позиций, которые будут добавлены в чек продажи
+                    val positions: List<Position>, – список позиций, которые будут добавлены в чек.
                     val iCanCreateNewProduct: Boolean – указывает, будет приложение создавать товар на основе отсканированного штрихкода или нет
                 )
              */
@@ -165,35 +167,3 @@ class CreateProductActivity : Activity() {
 <!-- TODO ## См. также
 
 * [Обработка событий смарт-терминала](./doc_java_return_st_events_processing.html) -->
-
-
-
-<!-- ## DRAFT
-
-Эта функциональность предваряет глобальные изменения в API смарт-терминала.
-
-В рамках этой задачи сделаны следующие изменения:
-
-* Создан новый пакет framework.common, в котором будут храниться родительские классы необходимые для интеграций. В пакет добавлены:
-
-   * интеграционная служба второй версии (IntegrationServiceV2). Чтобы поддержать заявленную функциональность, необходимо наследоваться от этой версии службы.
-   * родительское событие IntegrationEvent.
-
-* Добавлено событие ReturnPositionsForBarcodeRequestedEvent, унаследованное от IntegrationEvent.
-* Добавлены две службы для обработки события: ReceiptFormationIntegrationService и SellIntegrationService. Обе службы унаследованы от IntegrationServiceV2.
-* Изменён класс RequiresIntentAction. Теперь он необходим не только приёмникам широковещательных сообщений, но и для обработки событий смарт-терминала с помощью IntegrationServiceV2.
-
-
-Для документирования понадобится:
-
-* Добавить разел об обработке событий смарт-терминала с помощью интеграционных служб обоих версий.
-* Обновить раздел doc_app_integration_points.html#events (дописать новое событие со ссылкой на javadoc).
-* Обновить javadoc по созданным сущностям.
-* Описать новое разрешение(?)
-
-
-Начиная с версии Evotor POS X.X.X приложения могут добавлять позиции в чек продажи и создавать новые товары на основе данных, полученных от сканера штрихкодов.
-
-Для этого в интеграционной библиотеке были созданы соответствующие интеграционные же службы. Вы можете видеть, что эти службы (наполнения чека и продажи) наследуют новую версию [интеграционной службы](./).
-
-Таким образом механизм работы с новой функциональностью во многом напоминает обычную обработку [событий](./). -->
