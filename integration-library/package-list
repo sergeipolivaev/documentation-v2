@@ -1,12 +1,3 @@
-android.support.compat
-android.support.coreui
-android.support.coreutils
-android.support.fragment
-android.support.graphics.drawable
-android.support.graphics.drawable.animated
-android.support.mediacompat
-android.support.v4
-android.support.v7.appcompat
 ru.evotor
 ru.evotor.devices.commons
 ru.evotor.devices.commons.exception
@@ -18,6 +9,8 @@ ru.evotor.devices.commons.scales
 ru.evotor.devices.commons.services
 ru.evotor.framework
 ru.evotor.framework.calculator
+ru.evotor.framework.common.event
+ru.evotor.framework.common.event.handler.service
 ru.evotor.framework.component
 ru.evotor.framework.component.viewdata
 ru.evotor.framework.core
@@ -79,4 +72,3 @@ ru.evotor.framework.receipt.print_extras
 ru.evotor.framework.system
 ru.evotor.framework.users
 ru.evotor.integrations
-ru.evotor.pushNotifications
