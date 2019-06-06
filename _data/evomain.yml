@@ -27,9 +27,7 @@ folders:
 
 - title: Разработка
   folderitems:
-  - title: Введение
-    url: /doc_dev_introduction.html
-
+  - title:
     subfolders:
     - title: Облако Эвотор
       subfolderitems:
@@ -50,8 +48,10 @@ folders:
         url: /doc_smart_terminal_documents.html
     - title: Приложение на портале разработчика Эвотор
       subfolderitems:
-      - title: Введение
-        url: /doc_dev_site_introduction.html
+#      - title: Введение
+#        url: /doc_dev_site_introduction.html
+      - title: Черновики, модерация и публикация приложения
+        url: /doc_app_review.html
         subsubfolders:
         - title: Тестирование приложения
           subsubfolderitems:
@@ -61,11 +61,6 @@ folders:
             url: /doc_app_installation.html
           - title: Перевод приложения в тестирование
             url: /doc_app_testing.html
-      - title: Черновики, модерация и публикация приложения
-        url: /doc_app_review.html
-
-#        - title: Статистика
-#          subsubfolderitems:
 
     - title: Смарт-терминал
       subfolderitems:
