@@ -64,7 +64,7 @@ folders:
     url: /rest_service_product.html
 - title: Группы товаров и группы модификаций
   url: /rest_products_groups.html
-- title: Задачи для множественных операций
+- title: Задачи для массовых операций
   url: /rest_bulk_tasks.html
 - title: Изображения товаров
   url: /rest_images.html

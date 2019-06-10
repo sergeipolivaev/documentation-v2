@@ -1,5 +1,5 @@
 ---
-title: Задачи для множественных операций
+title: Задачи для массовых операций
 permalink: rest_bulk_tasks.html
 sidebar: evorestreference
 product: Customer API
@@ -7,7 +7,7 @@ product: Customer API
 
 В разделе приведены методы для получения информации о состоянии задач на массовый импорт данных в Облако Эвотор.
 
-{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %} 
+{% include note.html content="Общую информацию о запросах к API Облака вы найдёте в разделе [**Введение**](./rest_overview.html)." %}
 
 ## Получить информацию о состоянии задач
 
