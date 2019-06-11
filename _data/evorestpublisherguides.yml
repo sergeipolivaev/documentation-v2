@@ -8,5 +8,7 @@ folders:
   url: /rest_publisher_access_token.html
 - title: Работа с push-уведомлениями
   url: /rest_push_notifications_guide.html
+- title: Авторизация запросов по протоколу OAuth
+  url: /rest_oauth20_authorization_guide.html
 #  - title: События приложения
 #    url: /rest_events_streaming.html
