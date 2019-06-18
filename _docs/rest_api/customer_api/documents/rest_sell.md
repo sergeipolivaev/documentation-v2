@@ -26,12 +26,14 @@ product: Customer API
           },
           "product_id": "1022722e-9441-4beb-beae-c6bc5e7af30d",
           "parent_id": "1c4ba9e5-27f1-40a6-87a7-dfb08aa0cca8",
-          "attributes_choices": {
-            "attribute_id": "5f4c26b9-3a19-4f6e-bb67-5c71efa712ad",
-            "attribute_name": "Цвет",
-            "choice_id": "ec990252-4de7-4a00-9782-f65a8e847d2a",
-            "choice_value": "Бесцветный"
-          },
+          "attributes_choices": [
+            {
+              "attribute_id": "5f4c26b9-3a19-4f6e-bb67-5c71efa712ad",
+              "attribute_name": "Цвет",
+              "choice_id": "ec990252-4de7-4a00-9782-f65a8e847d2a",
+              "choice_value": "Бесцветный"
+            }
+          ],
           "quantity": 123.123,
           "initial_quantity": 123.123,
           "product_type": "NORMAL",
@@ -200,7 +202,7 @@ product: Customer API
 `positions.position.result_sum`|`number `|Отпускная стоимость товарной позиции с учётом скидок. До двух знаков в дробной части.
 `positions.position.code`|`string`|*Необязательный*. Код товара или модификации товара. Поле не передаётся, если производится продажа или возврат товара "Позиция по свободной цене".
 `positions.position.bar_code`|`string`|*Необязательный*. Штрихкод, по которому товар добавили в документ приемки.
-`positions.position.attributes_choices`|`object`|Объект, содержащий описание характеристик и их значений на момент формирования документа. Присутствует только в случае, если позиция сформирована на основе модификации товара.
+`positions.position.attributes_choices`|`array`|Массив, содержащий объекты с описанием характеристик и их значений на момент формирования документа. Присутствует только в случае, если позиция сформирована на основе модификации товара.
 `positions.position.attributes_choices.attribute_id`|`string`|Идентификатор характеристики.
 `positions.position.attributes_choices.attribute_name`|`string`|Название характеристики.
 `positions.position.attributes_choices.choice_id`|`string`|Идентификатор значения характеристики.
