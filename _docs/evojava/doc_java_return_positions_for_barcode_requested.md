@@ -14,7 +14,9 @@ published: true
 
 ## Разрешение на обработку события сканирования штрихкода
 
-Для обработки события сканирования штрихкода, в манифесте приложения необходимо указать следующее разрешение:
+Событие сканирования штрихкода обрабатывается с помощью службы [`SellIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html).
+
+Для работы с этой службой, в манифесте приложения необходимо указать следующее разрешение:
 
 ```xml
 <uses-permission android:name="ru.evotor.permission.SELL_INTEGRATION_SERVICE" />
