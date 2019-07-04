@@ -1,59 +1,123 @@
 ---
-title: Обработка события добавления данных клиента в чек
+title: Добавление реквизитов покупателя в чек
 permalink: doc_java_purchase_requisites_event_processing.html
 sidebar: evojava
 product: Java SDK
 published: false
 ---
 
-Начина
+Согласно ФФД версии 1.05 и выше, при расчёте между организациями и (или) индивидуальными предпринимателями, в чеке необходимо указывать *реквизиты покупателя*: название организации (или ФИО индивидуального предпринимателя) и ИНН (или номер паспорта). Эти данные могут понадобиться, например, при продаже страховых договоров.
 
-Цель: дать возможность определённым бизнесам (страховым агенствам, букмекерским конторам и т.п.) добавлять в чек (весь чек, а не только позицию) наименование клиента (тег 1227, может быть выражено в виде ФИО) и ИНН клиента (тег 1228)
+Реквизиты покупателя хранятся в поле [`Purchaser`](./), печатной группы чека и могут быть добавлены в чеки продажи, возврата, покупки и возврата покупки.
 
-Данные покупателя могут быть добавлены в чеки следующих типов:
+Чтобы добавить реквизиты покупателя в чек, приложение должно обработать событие [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent`](./).
 
-* Продажи
-* Возврата
-* Покупки
-* Возврата покупки
+{% include important.html content="Пользователь cможет указывать реквизиты покупателя только после покупки и установки приложения [\"Пакет обновлений \"](https://market.evotor.ru/store/apps/9ddd7629-3397-47eb-a83a-1d987aa71610). Используйте метод [`isPurchaserActive()`](./) чтобы убедиться, что у пользователя активна функция добавления реквизитов покупателя." %}
 
-## Разрешение на обработку события добавления в чек печатных групп с данными клиента (Разрешение не нужно)
+## Разрешение на обработку события добавления реквизитов покупателя
 
-Для обработки события добавления в чек печатных групп с данными клиента, в манифесте приложения необходимо указать следующее разрешение:
+Событие `ReturnPurchaserRequisitesForPrintGroupRequestedEvent` может обрабатываться различными службами, в зависимости от того, в какой чек ваше приложение будет добавлять реквизиты покупателя:
+
+* [`SellIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html) позволяет добавить реквизиты покупателя в чек продажи;
+* [`PaybackIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/PaybackIntegrationService.html) позволяет добавить реквизиты покупателя в чек возврата;
+* [`BuyIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/BuyIntegrationService.html) позволяет добавить реквизиты покупателя в чек покупки;
+* [`BuybackIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/BuybackIntegrationService.html) позволяет добавить реквизиты покупателя в чек возврата покупки.
+
+Для использования любой из этих служб, в манифесте приложения необходимо указать соответствующее разрешение:
 
 ```xml
+<!-- Разрешение на использование службы для работы с чеком продажи  -->
 <uses-permission android:name="ru.evotor.permission.SELL_INTEGRATION_SERVICE" />
+<!-- Разрешение на использование службы для работы с чеком возврата  -->
+<uses-permission android:name="ru.evotor.permission.PAYBACK_INTEGRATION_SERVICE" />
+<!-- Разрешение на использование службы для работы с чеком покупки  -->
+<uses-permission android:name="ru.evotor.permission.BUY_INTEGRATION_SERVICE" />
+<!-- Разрешение на использование службы для работы с чеком возврата покупки  -->
+<uses-permission android:name="ru.evotor.permission.BUYBACK_INTEGRATION_SERVICE" />
 ```
 
 ## Получение события
 
-Смарт-терминал распространяет событие [ReturnPurchaserRequisitesForPrintGroupRequestedEvent] после того, как пользователь укажет данные покупателя на экране оплаты чека.
+Создайте службу, которая будет обрабатывать событие, например, `PurchaserSellService`.
 
-Указать 
+{% include note.html content="В примере рассматривается добавление реквизитов в чек продажи. Для добавления реквизитов в чеки других типов, используйте соответствующие службы." %}
 
-Создайте службу, которая будет обрабатывать событие, например, `BarcodeEventHandlerService`.
-
-В манифесте приложения, в разделе службы, укажите разрешение, а в intent-фильтре службы, укажите событие сканирования чека:
+В манифесте приложения, в разделе службы, укажите соответствующее разрешение, а в intent-фильтре службы, укажите событие:
 
 ```xml
 <service
-    android:name=".BarcodeEventHandlerService"
+    android:name=".PurchaserSellService"
     android:enabled="true"
     android:exported="true"
     android:permission="ru.evotor.permission.SELL_INTEGRATION_SERVICE">
-    <!-- служба использует объявленное разрешение -->
+    <!-- служба использует необходимое разрешение -->
     <intent-filter>
-        <!-- событие сканирования штрихкода -->
-        <action android:name="ru.evotor.event.sell.BARCODE_RECEIVED" />
-        <category android:name="android.intent.category.EVOTOR" />
+        <!-- событие добавления реквизитов -->
+        <action android:name="ru.evotor.event.sell.PURCHASER_REQUISITES"/>
+        <category android:name="android.intent.category.DEFAULT"/>
     </intent-filter>
 </service>
 ```
 
 ## Обработка события
 
+{% include tip.html content="Перед обработкой события, убедитесь, что у пользователя [активна функция добавления реквизитов покупателя](./)." %} 
 
+Смарт-терминал рассылает событие `ReturnPurchaserRequisitesForPrintGroupRequestedEvent` перед формированием чека (при завершении оплаты).
 
-Чтобы обработать событие добавления данных покупателя:
+Чтобы обработать событие добавления реквизитов покупателя:
 
-1. Создайте службу 
+1. Унаследуйте службу `PurchaserSellService` от класса [`SellIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html).
+2. Переопределите метод [`handleEvent()`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html#handleEvent-event-) и передайте в него запрос на добавление реквизитов, полученный от смарт-терминала [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent`](./integration-library/ru/evotor/framework/receipt/formation/event/ReturnPositionsForBarcodeRequestedEvent.html).
+
+   Ваше приложение должно предоставить пользователю возможность указать реквизиты покупателя. Для этого вам может понадобиться вызвать соответствующее окно приложения, например, [по нажатию кнопки на экране оплаты](./doc_java_app_icon.html#SalesScreen). В открывшемся окне, пользователь укажет необходимые данные, которые надо будет вернуть в результате.
+
+3. Верните результат [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent.Result()`](./).
+
+## Пример
+
+```java
+class PurchaserSellService : SellIntegrationService() {
+
+    override fun handleEvent(event: ReturnPurchaserRequisitesForPrintGroupRequestedEvent)
+            : ReturnPurchaserRequisitesForPrintGroupRequestedEvent.Result? {
+        return handleEvent(event, this)
+    }
+
+    /**
+     * Обрабатвыаем событие и получаем реквизиты покупателя из контекста приложения.
+     */
+    fun handleEvent(event: ReturnPurchaserRequisitesForPrintGroupRequestedEvent, context: Context)
+            : ReturnPurchaserRequisitesForPrintGroupRequestedEvent.Result? {
+        //Массив печатных групп и соответствующих им объектов с реквизитами покупателя.
+        val map = mutableMapOf<PrintGroup?, Purchaser?>()
+        //Реквизиты покупателя, которые пользователь указал в MainActivity.
+        val currentPurchaser = getCurrentPurchaser(event.receiptUuid, context)
+
+        //Наполняем массив.
+        event.printGroups.forEach { printGroup -> currentPurchaser?.let { map[printGroup] = it } }
+
+        return ReturnPurchaserRequisitesForPrintGroupRequestedEvent.Result(map)
+    }
+
+    private fun getCurrentPurchaser(receiptUuid: String, context: Context): Purchaser? {
+        val purchaserName: String?
+        val purchaserDocumentNumber: String?
+        val oldReceiptUuid: String?
+
+        /**
+         * Из SharedPreferences, получаем реквизиты покупателя, которые пользователь указал в MainActivity.
+         */
+        PreferenceManager.getDefaultSharedPreferences(context).run {
+            purchaserName = getString(MainActivity.TAG_1227_NAME, null)
+            purchaserDocumentNumber = getString(MainActivity.TAG_1228_INN, null)
+            oldReceiptUuid = getString(MainActivity.PURCHASER_UUID, null)
+        }
+
+        return if (purchaserName != null && purchaserDocumentNumber != null && oldReceiptUuid == receiptUuid) {
+            Purchaser(purchaserName, purchaserDocumentNumber, PurchaserType.NATURAL_PERSON)
+        } else null
+    }
+
+}
+```
