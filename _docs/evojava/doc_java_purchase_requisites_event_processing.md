@@ -8,11 +8,11 @@ published: false
 
 Согласно ФФД версии 1.05 и выше, при расчёте между организациями и (или) индивидуальными предпринимателями, в чеке необходимо указывать *реквизиты покупателя*: название организации (или ФИО индивидуального предпринимателя) и ИНН (или номер паспорта). Эти данные могут понадобиться, например, при продаже страховых договоров.
 
-Реквизиты покупателя хранятся в поле [`Purchaser`](./), печатной группы чека и могут быть добавлены в чеки продажи, возврата, покупки и возврата покупки.
+Реквизиты покупателя хранятся в поле [`Purchaser`](./integration-library/ru/evotor/framework/receipt/Purchaser.html), печатной группы чека и могут быть добавлены в чеки продажи, возврата, покупки и возврата покупки.
 
-Чтобы добавить реквизиты покупателя в чек, приложение должно обработать событие [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent`](./).
+Чтобы добавить реквизиты покупателя в чек, приложение должно обработать событие [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent`](./integration-library/ru/evotor/framework/receipt/formation/event/ReturnPurchaserRequisitesForPrintGroupRequestedEvent.html), с помощью которого смарт-терминал запрашивает реквизиты покупателя.
 
-{% include important.html content="Пользователь cможет указывать реквизиты покупателя только после покупки и установки приложения [\"Пакет обновлений \"](https://market.evotor.ru/store/apps/9ddd7629-3397-47eb-a83a-1d987aa71610). Используйте метод [`isPurchaserActive()`](./) чтобы убедиться, что у пользователя активна функция добавления реквизитов покупателя." %}
+{% include important.html content="Пользователь cможет указывать реквизиты покупателя только после покупки и установки приложения [\"Пакет обновлений \"](https://market.evotor.ru/store/apps/9ddd7629-3397-47eb-a83a-1d987aa71610). Используйте метод [`isPurchaserActive()`](./integration-library/ru/evotor/framework/features/FeaturesApi.html#isPurchaserActive-context-) чтобы убедиться, что у пользователя активна функция добавления реквизитов покупателя." %}
 
 ## Разрешение на обработку события добавления реквизитов покупателя
 
@@ -61,18 +61,18 @@ published: false
 
 ## Обработка события
 
-{% include tip.html content="Перед обработкой события, убедитесь, что у пользователя [активна функция добавления реквизитов покупателя](./)." %} 
+{% include tip.html content="Перед обработкой события, убедитесь, что у пользователя [активна функция добавления реквизитов покупателя](./integration-library/ru/evotor/framework/features/FeaturesApi.html#isPurchaserActive-context-)." %} 
 
-Смарт-терминал рассылает событие `ReturnPurchaserRequisitesForPrintGroupRequestedEvent` перед формированием чека (при завершении оплаты).
+Смарт-терминал рассылает запрашивает реквизиты покупателя перед формированием чека (при завершении оплаты).
 
-Чтобы обработать событие добавления реквизитов покупателя:
+Чтобы добавить реквизиты покупателя в чек:
 
 1. Унаследуйте службу `PurchaserSellService` от класса [`SellIntegrationService`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html).
-2. Переопределите метод [`handleEvent()`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html#handleEvent-event-) и передайте в него запрос на добавление реквизитов, полученный от смарт-терминала [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent`](./integration-library/ru/evotor/framework/receipt/formation/event/ReturnPositionsForBarcodeRequestedEvent.html).
+2. Переопределите метод [`handleEvent()`](./integration-library/ru/evotor/framework/receipt/formation/event/handler/service/SellIntegrationService.html#handleEvent-event-) и передайте в него запрос на добавление реквизитов, полученный от смарт-терминала [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent`](./integration-library/ru/evotor/framework/receipt/framework/receipt/formation/event/handler/service/SellIntegrationService.html#handleEvent-event-).
 
    Ваше приложение должно предоставить пользователю возможность указать реквизиты покупателя. Для этого вам может понадобиться вызвать соответствующее окно приложения, например, [по нажатию кнопки на экране оплаты](./doc_java_app_icon.html#SalesScreen). В открывшемся окне, пользователь укажет необходимые данные, которые надо будет вернуть в результате.
 
-3. Верните результат [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent.Result()`](./).
+3. Верните результат [`ReturnPurchaserRequisitesForPrintGroupRequestedEvent.Result()`](./integration-library/ru/evotor/framework/receipt/formation/event/ReturnPurchaserRequisitesForPrintGroupRequestedEvent.Result.html).
 
 ## Пример
 
