@@ -112,6 +112,9 @@ folders:
         - title: Печать чека коррекции
           url: /doc_java_correction_receipt.html
 
+        - title: Добавление реквизитов покупателя в чек
+          url: /doc_java_purchase_requisites_event_processing.html
+
 
     - title: Оборудование
       subfolderitems:

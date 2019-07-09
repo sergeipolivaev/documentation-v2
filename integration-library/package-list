@@ -47,6 +47,8 @@ ru.evotor.framework.device.cash_drawer.event
 ru.evotor.framework.device.cash_drawer.event.handler.receiver
 ru.evotor.framework.device.scanner.event
 ru.evotor.framework.device.scanner.event.handler.receiver
+ru.evotor.framework.device.scanner.event.handler.service
+ru.evotor.framework.features
 ru.evotor.framework.inventory
 ru.evotor.framework.inventory.event
 ru.evotor.framework.inventory.event.handler.receiver
@@ -56,6 +58,7 @@ ru.evotor.framework.kkt.api
 ru.evotor.framework.kkt.event
 ru.evotor.framework.kkt.event.handler.receiver
 ru.evotor.framework.kkt.event.handler.service
+ru.evotor.framework.kkt.provider
 ru.evotor.framework.navigation
 ru.evotor.framework.payment
 ru.evotor.framework.receipt
