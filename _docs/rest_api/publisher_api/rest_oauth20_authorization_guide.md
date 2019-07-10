@@ -143,7 +143,7 @@ product: Publisher API
 ```shell
 curl -X POST \
   'https://dev.evotor.ru/api/v1/publisher/app/oauth/public/apps/537f5c5d-a173-466b-863a-dac5eb9d5bd0/versions/537f5c5d-a173-466b-863a-dac5eb9d5bd1/oauth-apps?type=web' \
-  -H 'Authorization: 9179d710-56a4-49ea-b042-435e3257eaf6' \
+  -H 'Authorization: Bearer 9179d710-56a4-49ea-b042-435e3257eaf6' \
   -H 'Content-Type: application/json' \
   -H 'Origin: https://dev.evotor.ru' \
   -H 'User-Agent: ' \
@@ -155,7 +155,7 @@ curl -X POST \
 
 Где:
 
-* Заголовок `Authorization` содержит токен доступа.
+* Заголовок `Authorization` содержит bearer-токен доступа.
 
    Токен доступа вы можете получить в личном кабинете разработчика следующим образом:
 
