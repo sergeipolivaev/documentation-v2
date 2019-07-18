@@ -6,8 +6,8 @@ owner: Evotor
 folders:
 - title: Customers's API
   folderitems:
-#  - title: Руководство по переходу на API Облака V2
-#    url: /rest_api_v2_migration_guide.html
+  - title: Руководство по переходу на API Облака V2
+    url: /rest_api_v2_migration_guide.html
   - title: Корректная обработка остатков при первой синхронизации ТУ и Облака Эвотор
     url: /rest_quantities_synchronization_guide.html
   - title: Работа с модификациями товаров

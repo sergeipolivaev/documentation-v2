@@ -3,7 +3,7 @@ title: Руководство по переходу на API Облака V2
 permalink: rest_api_v2_migration_guide.html
 sidebar: evorestguides
 product: Customer API
-published: false
+published: true
 ---
 
 
