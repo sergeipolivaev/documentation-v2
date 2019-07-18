@@ -17,9 +17,9 @@ navbar_dropdowns:
 
     - title: REST API Облака
       folderitems:
-        - title: V 1
+        - title: V 1 (устаревшая версия)
           url: https://api.evotor.ru/docs/
-        - title: V 2 (в разработке)
+        - title: V 2
           url: /rest_index.html
     - title: SDK cмарт-терминала
       folderitems:
