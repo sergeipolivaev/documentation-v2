@@ -2,7 +2,6 @@ language: russian
 exclude: [vendor]
 # Link to home
 url: /
-baseurl: /beta
 
 # link to github repo
 github_editme_path: https://github.com/evotor/documentation-v2/tree/develop/
